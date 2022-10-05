@@ -1,0 +1,861 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="gason" href="https://gason1997.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="gason" href="https://gason1997.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="gason" href="https://gason1997.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="grasshopper" />
+
+
+<link rel="canonical" href="https://gason1997.github.io/2022/08/17/arc-study/rhino-GH/GH/%E5%88%9D%E7%BA%A7/0.%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A/">
+
+
+
+  <title>
+0.基本原理解释 - grasshopper初级 - Rhino与grasshopper - 建筑学习类 |
+Sang`s Homepage = gason</title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">0.基本原理解释
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-17 19:18:17">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-17T19:18:17+08:00">2022-08-17</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>8.9k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>8 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Sang`s Homepage</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s1.ax1x.com/2022/08/17/vDuYGR.png">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/arc-study/" itemprop="item" rel="index" title="分类于 建筑学习类"><span itemprop="name">建筑学习类</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/arc-study/rhino-GH/" itemprop="item" rel="index" title="分类于 Rhino与grasshopper"><span itemprop="name">Rhino与grasshopper</span></a>
+<meta itemprop="position" content="2" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/arc-study/rhino-GH/grasshopper%E5%88%9D%E7%BA%A7/" itemprop="item" rel="index" title="分类于 grasshopper初级"><span itemprop="name">grasshopper初级</span></a>
+<meta itemprop="position" content="3" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://gason1997.github.io/2022/08/17/arc-study/rhino-GH/GH/%E5%88%9D%E7%BA%A7/0.%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="小矮人gason">
+    <meta itemprop="description" content=", 大丈夫之志应如长江东奔大海">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="gason">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="introduction介绍"><a class="markdownIt-Anchor" href="#introduction介绍">#</a> Introduction (介绍)</h1>
+<p>Welcome to the first Grasshopper tutorial on the TOI-Pedia. In this tutorial you will learn the basic actions needed to create the scripts of the beginner tutorials. First you will need to know how to add nodes and geometry to you Grasshopper canvas. Next, some basic functions will be discussed that are important to understand before you continue learning Grasshopper.</p>
+<p>During Grasshopper tutorials, several images will display how you should create the script. You may notice that the input and output names of the Grasshopper components are full names, not just one character, which may be the case when you first open Grasshopper. If you want a similar display, take a look at the Display tab and turn on “Draw Full Names”.</p>
+<blockquote>
+<p>欢迎来到 TOI-Pedia 上的第一个 Grasshopper 教程。在本教程中，您将学习创建初学者教程脚本所需的基本操作。首先，您需要知道如何将节点和几何图形添加到 Grasshopper 画布。接下来，将讨论一些在继续学习 Grasshopper 之前需要了解的基本功能。</p>
+</blockquote>
+<blockquote>
+<p>在 Grasshopper 教程中，有几张图片将显示您应该如何创建脚本。您可能会注意到 Grasshopper 组件的输入和输出名称是全名，而不仅仅是一个字符，第一次打开 Grasshopper 时可能会出现这种情况。如果您想要类似的显示，请查看 “显示” 选项卡并打开 “绘制全名”。</p>
+</blockquote>
+<p>您将在本教程中学习的一些功能。<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vDu7Js"><img data-src="https://s1.ax1x.com/2022/08/17/vDu7Js.png" alt="vDu7Js.png"></a></p>
+<h1 id="adding-nodes-to-the-canvas向画布添加节点"><a class="markdownIt-Anchor" href="#adding-nodes-to-the-canvas向画布添加节点">#</a> Adding Nodes to the Canvas (向画布添加节点)</h1>
+<p>1.Generally speaking, there are two ways to add nodes to the canvas of Grasshopper. First you can select a node by clicking on one of the pull down menus at the top. For example: if you want to add a point to the canvas of Grasshopper, click on geometry and select point:</p>
+<ul>
+<li>Create a point parameter  <code>Params » Geometry » Point</code></li>
+</ul>
+<p>Now you have added a point parameter to the canvas. By right clicking on the point in the canvas, you can select which point in Rhino you want to add to this parameter.</p>
+<blockquote>
+<p>1. 一般来说，在 Grasshopper 的画布上添加节点有两种方式。首先，您可以通过单击顶部的下拉菜单之一来选择一个节点。例如：如果要在 Grasshopper 的画布上添加一个点，点击几何图形并选择点：</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>创建点参数  <code>Params » Geometry » Point</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>现在您已经向画布添加了一个点参数。通过右键单击画布中的点，您可以选择 Rhino 中要添加到此参数的点。</p>
+</blockquote>
+<p>使用几何选项卡创建一个点。<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vDKiS1"><img data-src="https://s1.ax1x.com/2022/08/17/vDKiS1.png" alt="vDKiS1.png"></a></p>
+<hr>
+<ul>
+<li>2.Set a Rhino point on the Grasshopper parameter RMB on node » Set one Point</li>
+</ul>
+<p>The Rhino viewport is now visible. Select the point you want to connect to the Grasshopper parameter.</p>
+<blockquote>
+<ul>
+<li>2. 在节点上的 Grasshopper 参数 RMB 上设置 Rhino 点 » 设置一个点</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Rhino 视口现在可见。选择要连接到 Grasshopper 参数的点。</p>
+</blockquote>
+<p>从 Rhino 设置一个点。<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vDMcKP"><img data-src="https://s1.ax1x.com/2022/08/17/vDMcKP.md.png" alt="vDMcKP.md.png"></a></p>
+<hr>
+<p>3.A second method of creating a Grasshopper node is by double clicking on the canvas. This method is used most often by designers who are familiar with the Grasshopper interface. However it does mean that you have to know what node you are looking for.</p>
+<p>Create a node by double clicking on the canvasDouble click on  <code>canvas » Type your function</code></p>
+<blockquote>
+<p>创建 Grasshopper 节点的第二种方法是双击画布。熟悉 Grasshopper 界面的设计人员最常使用此方法。但是，这确实意味着您必须知道要查找的节点。</p>
+</blockquote>
+<blockquote>
+<p>通过双击画布创建节点双击 <code>画布 » 键入您的功能</code></p>
+</blockquote>
+<p>双击画布创建 Grasshopper 组件<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vDMzG9"><img data-src="https://s1.ax1x.com/2022/08/17/vDMzG9.png" alt="vDMzG9.png"></a></p>
+<hr>
+<p>4.If you want to know to which tab a node belongs to, hold ctrl+alt and click on the node. This can be useful when you are looking for a function that does something similar, but with a slightly different operation.</p>
+<p>Find a component in the toolbar  <code>CTRL + ALT » Select Node</code></p>
+<blockquote>
+<p>4. 如果您想知道某个节点属于哪个选项卡，请按住 ctrl+alt 并单击该节点。当您正在寻找执行类似操作但操作略有不同的函数时，这可能很有用。</p>
+</blockquote>
+<blockquote>
+<p>在工具栏中查找组件  <code>CTRL + ALT » 选择节点</code></p>
+</blockquote>
+<p>通过 CTRL + ALT 查找此功能所属的选项卡。<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vDQEIe"><img data-src="https://s1.ax1x.com/2022/08/17/vDQEIe.png" alt="vDQEIe.png"></a></p>
+<hr>
+<h1 id="inputs输入"><a class="markdownIt-Anchor" href="#inputs输入">#</a> Inputs (输入)</h1>
+<p>1.One has access to so called “numeric inputs”. For numeric inputs the user can select from a predefined range of numbers. The most used numeric input is the “number slider”. The slider can be set to any range of numbers, with a predefined precision and whole, odd or even numbers. For this tutorial it is advised to check out the following numeric inputs:</p>
+<ul>
+<li>Number slider:  <code>Params » Input tab » Number Slider</code></li>
+<li>Digit scroller:  <code>Params » Input tab » Digit Scroller</code></li>
+<li>Control knob:  <code>Params » Input tab » Control knob</code></li>
+<li>MD Slider:  <code>Params » Input tab » MD Slider</code></li>
+</ul>
+<p>The ranges of the different numeric inputs can be changed by double clicking on the input.</p>
+<ul>
+<li>Try changing the slider or scroller to get another output.</li>
+</ul>
+<blockquote>
+<p>1. 一个人可以访问所谓的 “数字输入”。对于数字输入，用户可以从预定义的数字范围中进行选择。最常用的数字输入是 “数字滑块”。滑块可以设置为任何数字范围，具有预定义的精度和整数、奇数或偶数。对于本教程，建议检查以下数字输入：</p>
+</blockquote>
+<blockquote>
+<p>数字滑块： <code>参数 » 输入选项卡 » 数字滑块</code> <br>
+数字滚动条： <code>参数 » 输入选项卡 » 数字滚动条</code> <br>
+控制旋钮： <code>参数 » 输入选项卡 » 控制旋钮</code> <br>
+ MD 滑块： <code>参数 » 输入选项卡 » MD 滑块</code></p>
+</blockquote>
+<blockquote>
+<p>可以通过双击输入来更改不同数字输入的范围。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>尝试更改滑块或滚动条以获得另一个输出。</li>
+</ul>
+</blockquote>
+<p>四种不同的数字输入。<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vDQ7JH"><img data-src="https://s1.ax1x.com/2022/08/17/vDQ7JH.png" alt="vDQ7JH.png"></a></p>
+<hr>
+<p><span class="exturl" data-url="aHR0cDovLzIuVG8=">2.To</span> be able to see the output of the values you have to connect a panel to it. This can be done by drawing a connection line between the output of the numeric input and the input of the panel.</p>
+<ul>
+<li>Add a panel to the canvas  <code>Params » Input » Panel</code></li>
+</ul>
+<p>The panel is one of the most used components of Grasshopper. With the panel you are able to see what geometry/points/numbers etc. are generated by a function, or a set of functions.</p>
+<blockquote>
+<p>2. 为了能够看到值的输出，您必须将面板连接到它。这可以通过在数字输入的输出和面板的输入之间画一条连接线来完成。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>将面板添加到画布 <code>Params » Input » Panel</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>面板是 Grasshopper 最常用的组件之一。使用该面板，您可以查看由一个函数或一组函数生成的几何 / 点 / 数字等。</p>
+</blockquote>
+<p>连接面板以查看数字输入的输出。<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vDl161"><img data-src="https://s1.ax1x.com/2022/08/17/vDl161.png" alt="vDl161.png"></a></p>
+<hr>
+<p>3.You can disconnect two nodes by holding CTRL and draw the connection again. Another method is right clicking on the input/output of one of the nodes and select disconnect.</p>
+<ul>
+<li>Disconnect a wire RMB one of the  <code>functions » Disconnect » Disconnect function</code></li>
+</ul>
+<blockquote>
+<p>3. 您可以通过按住 CTRL 断开两个节点并再次绘制连接。另一种方法是右键单击其中一个节点的输入 / 输出并选择断开连接。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>断线 RMB 功能之一 » 断线 » 断线功能</li>
+</ul>
+</blockquote>
+<p>按住 CTRL 断开连接并再次绘制连接。<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vDlqNF"><img data-src="https://s1.ax1x.com/2022/08/17/vDlqNF.png" alt="vDlqNF.png"></a></p>
+<h1 id="sequences序列"><a class="markdownIt-Anchor" href="#sequences序列">#</a> Sequences (序列)</h1>
+<p>In addition to numeric inputs, you can also generate a sequence of numbers. If you connect a panel to such a function, you will not only see one output, but a list of outputs. Lists are the main way information is transferred between functions. Therefore it is important that you understand the way a node generates an output.</p>
+<blockquote>
+<p>除了数字输入，您还可以生成数字序列。如果您将面板连接到此类功能，您将不仅会看到一个输出，还会看到输出列表。列表是函数之间传递信息的主要方式。因此，了解节点生成输出的方式非常重要。</p>
+</blockquote>
+<p>For the “beginner tutorials” of the TOI-Pedia, you have to be familiar with three sequence functions:</p>
+<blockquote>
+<p>对于 TOI-Pedia 的 “初学者教程”，你必须熟悉三个序列函数：</p>
+</blockquote>
+<p><strong>1.Series</strong>: The most basic way to build a number sequence. Specify the start (S), Size (N) and the amount of values © with a numeric input. For this example, connect three different number sliders.</p>
+<ul>
+<li>Create a Series component  <code>Sets » Sequence » Series</code></li>
+</ul>
+<blockquote>
+<p><strong>1. 系列</strong>：构建数字序列的最基本方法。使用数字输入指定开始 (S)、大小 (N) 和值的数量 ©。在此示例中，连接三个不同的数字滑块。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>创建系列组件 <code>集 » 序列 » 系列</code></li>
+</ul>
+</blockquote>
+<p><strong>2.Range</strong>: The range works by setting a domain (D) and the amount (N) of subdivisions into which the domain will be split. Notice the different names of domain types.</p>
+<ul>
+<li>Construct a domain  <code>Maths » Domain » Construct Domain</code></li>
+<li>Create a Range of numbers  <code>Sets » Sequence » Range</code></li>
+</ul>
+<blockquote>
+<p><strong>2. 范围</strong>：范围通过设置域 (D) 和域将被分割成的细分数量 (N) 来工作。注意域名类型的不同名称。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>构建领域数学 » 领域 » 构建领域</li>
+<li>创建一个数字范围集合 » 序列 » 范围</li>
+</ul>
+</blockquote>
+<p><strong>3.Repeat Data</strong>: with repeat data the input (D) is repeated until the set number of items (L) is satisfied. The data input, can also be a previously generated list of information that will be repeated.</p>
+<p>A range node can also be generated witch just a number slider as input to the domain. In this, your domain will automatically start at the value 0.</p>
+<ul>
+<li>Repeat the data  <code>Sets » Sequence » Repeat Data</code></li>
+</ul>
+<blockquote>
+<p><strong>3. 重复数据</strong>：使用重复数据，重复输入（D），直到满足设定的项目数（L）。数据输入也可以是先前生成的将重复的信息列表。</p>
+</blockquote>
+<blockquote>
+<p>范围节点也可以生成，只需一个数字滑块作为域的输入。在这种情况下，您的域将自动从值 0 开始。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>重复数据 <code>集 » 序列 » 重复数据</code></li>
+</ul>
+</blockquote>
+<p>三种不同的序列<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vD3tRH"><img data-src="https://s1.ax1x.com/2022/08/17/vD3tRH.png" alt="vD3tRH.png"></a></p>
+<blockquote>
+<p>🚩 思考<br>
+读完本章后，你可能会问自己为什么会对生成数字列表感兴趣。对于设计建筑，我们不应该关注几何和表面吗？是的，以某种方式你应该专注于几何。然而，Grasshopper<br>
+ 是一种构建脚本以生成几何图形的可视化方式。例如，数字列表可能会导致点列表，然后会导致您用于设计的曲线。<br>
+生成包含信息的列表，并且能够轻松更改它导致不同的几何形状是参数化设计的本质。</p>
+</blockquote>
+<h1 id="list-actions列出操作"><a class="markdownIt-Anchor" href="#list-actions列出操作">#</a> List Actions (列出操作)</h1>
+<p>After you created a list with values in Grasshopper, it is important to learn about list actions. Let’s say you have created a list of 100 points and now you want to change the height of one of the points. This means you have to be able to edit the list. We call this: list editing.</p>
+<p>When you start learning Grasshopper, it is recommended to take a look at the list section in the sets tab. Here you find all the functions you can use to alter your data.</p>
+<ul>
+<li>Take a look at the list commands:  <code>Sets » List</code></li>
+</ul>
+<blockquote>
+<p>在 Grasshopper 中创建包含值的列表后，了解列表操作非常重要。假设您创建了一个包含 100 个点的列表，现在您想要更改其中一个点的高度。这意味着您必须能够编辑列表。我们称之为：列表编辑。</p>
+</blockquote>
+<blockquote>
+<p>当您开始学习 Grasshopper 时，建议您查看设置选项卡中的列表部分。在这里，您可以找到可用于更改数据的所有功能</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>查看列表命令： <code>Sets » List</code></li>
+</ul>
+</blockquote>
+<p>编辑列表的所有功能。看一看！<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vD3IoT"><img data-src="https://s1.ax1x.com/2022/08/17/vD3IoT.png" alt="vD3IoT.png"></a></p>
+<hr>
+<p>在本教程中，您将学习对 “初学者教程” 很重要的三个列表选项。</p>
+<p><strong>1. 列表项</strong>：列表项从列表中提取一项。记下输入列表中的索引（第一个面板中值的字体编号）。索引从 0 开始。这意味着，如果您想使用列表项函数检索第一个数字，请将数字 0 添加到索引 (I)。</p>
+<ul>
+<li>创建列表项 <code>集 » 列表 » 列表项</code></li>
+</ul>
+<p><strong>2. 列表长度</strong>：此函数返回带有值的列表的长度。请注意，列表中的最后一个数字始终比列表长度小 1。这是因为列表从索引 0 开始。</p>
+<ul>
+<li>计算列表的长度  <code>Sets » List » List Length</code></li>
+</ul>
+<p><strong>3. 移位长度</strong>：移位列表将列表中的项目移动移位值（S）。正数 (S) 将列表中的项目向上移动，负数 (S) 向下移动。</p>
+<ul>
+<li>移动列表 <code>Sets » List » Shift List</code></li>
+</ul>
+<p>三个列表编辑功能，检查更改滑块的数字输入时会发生什么。<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vD8Cfe"><img data-src="https://s1.ax1x.com/2022/08/17/vD8Cfe.png" alt="vD8Cfe.png"></a></p>
+<h1 id="random-and-jitter随机和抖动"><a class="markdownIt-Anchor" href="#random-and-jitter随机和抖动">#</a> Random and Jitter (随机和抖动)</h1>
+<p>One of the nice aspects using the computer to create a design, is that you can use pseudo-random numbers to change it. This can be useful, for example, if you want to populate a surface or plane with objects on random locations. If you would like to do this yourself, take a look at Random Points on Surface. In this chapter you will learn two nodes that are used most often.</p>
+<blockquote>
+<p>使用计算机创建设计的好处之一是您可以使用伪随机数来更改它。例如，如果您想用随机位置上的对象填充曲面或平面，这可能很有用。如果您想自己执行此操作，请查看 Random Points on Surface。在本章中，您将学习两个最常用的节点。</p>
+</blockquote>
+<hr>
+<p><strong>Random</strong>: This function creates one or a range of pseudo-random numbers in a range ®. The first input is a domain, similar to the Range component we discussed in the sequence chapter. Next, the function asks for an amount of Random numbers (N) between that domain. Finally you have the possibility to add a seed to the function. The seed is, what we call, the internal state of you computer. This state determines what the outcome of the function will be. By right-clicking on the random node, you can change the output to whole numbers, which are called integers in programming language.</p>
+<ul>
+<li>Generate a list of random numbers  <code>Sets » Sequence » Random</code></li>
+<li>Set the random generator to integers  <code>RMB on Random function » Integer Numbers</code></li>
+</ul>
+<blockquote>
+<p><strong>随机</strong>：此函数在范围 ® 中创建一个或一系列伪随机数。第一个输入是一个域，类似于我们在序列章节中讨论的 Range 组件。接下来，该函数要求该域之间的随机数 (N)。最后，您可以向函数添加种子。种子就是我们所说的计算机的内部状态。这种状态决定了函数的结果。通过右键单击随机节点，您可以将输出更改为整数，在编程语言中称为整数。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>生成随机数列表  <code>Sets » Sequence » Random</code></li>
+<li>在 Random 函数上将随机生成器设置为整数  <code>RMB » 整数</code></li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>Jitter</strong>: The jitter function is able to shuffle a list (L). This list can contain any type of data. The node also asks for a jitter value between 0.0 (no shuffle) and 1.0 (complete shuffle). Finally, you can again define a state by changing the seed.</p>
+<ul>
+<li>Create a jitter  <code>Sets » Sequence » Jitter</code></li>
+</ul>
+<blockquote>
+<p><strong>抖动</strong>：抖动功能能够打乱列表（L）。此列表可以包含任何类型的数据。该节点还要求 0.0（无随机播放）和 1.0（完全随机播放）之间的抖动值。最后，您可以通过更改种子再次定义状态。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>创建抖动 <code>集 » 序列 » 抖动</code></li>
+</ul>
+</blockquote>
+<p>Grasshopper 脚本中的随机和抖动<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vDGF4U"><img data-src="https://s1.ax1x.com/2022/08/17/vDGF4U.png" alt="vDGF4U.png"></a></p>
+<h1 id="baking烘焙"><a class="markdownIt-Anchor" href="#baking烘焙">#</a> Baking (烘焙)</h1>
+<p>As you may notice, geometry from Grasshopper is always red or green. Green indicates that the object is selected in Grasshopper. If you want to be able to move or change the object in Rhino, we have to bake it.</p>
+<p>Right click on the final node and click on bake. This function will create the geometry in Rhino. Disable the preview of the nodes to make sure you don’t see the transparent Grasshopper version.</p>
+<ul>
+<li>Bake the geometry  <code>RMB on final script node » Bake</code></li>
+</ul>
+<blockquote>
+<p>您可能会注意到，Grasshopper 中的几何图形始终是红色或绿色的。绿色表示对象在 Grasshopper 中被选中。如果您希望能够在 Rhino 中移动或更改对象，我们必须烘焙它。</p>
+</blockquote>
+<blockquote>
+<p>右键单击最后一个节点，然后单击烘焙。此功能将在 Rhino 中创建几何图形。禁用节点预览以确保您看不到透明的 Grasshopper 版本。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>在最终脚本节点上烘焙 <code>几何RMB » 烘焙</code></li>
+</ul>
+</blockquote>
+<p>几何图形的烘焙版本<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/vDG058"><img data-src="https://s1.ax1x.com/2022/08/17/vDG058.png" alt="vDG058.png"></a></p>
+
+      <div class="tags">
+          <a href="/tags/grasshopper/" rel="tag"><i class="ic i-tag"></i> grasshopper</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-08-17 20:48:06" itemprop="dateModified" datetime="2022-08-17T20:48:06+08:00">2022-08-17</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>我移除了点赞打赏功能....别点了</p>
+  <div id="qr">
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>小矮人gason <i class="ic i-at"><em>@</em></i>gason
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://gason1997.github.io/2022/08/17/arc-study/rhino-GH/GH/%E5%88%9D%E7%BA%A7/0.%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A/" title="0.基本原理解释">https://gason1997.github.io/2022/08/17/arc-study/rhino-GH/GH/初级/0.基本原理解释/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/08/17/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.bmp.ovh&#x2F;imgs&#x2F;2022&#x2F;08&#x2F;17&#x2F;a6e210580afcfc6d.png" title="4.初识Grasshopper界面">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> grasshopper入门</span>
+  <h3>4.初识Grasshopper界面</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/08/21/map-study/leaflet-js/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2022&#x2F;08&#x2F;17&#x2F;vDuYGR.png" title="0.快速入门">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> leaflet初级</span>
+  <h3>0.快速入门</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#introduction%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text"> Introduction (介绍)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#adding-nodes-to-the-canvas%E5%90%91%E7%94%BB%E5%B8%83%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text"> Adding Nodes to the Canvas (向画布添加节点)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#inputs%E8%BE%93%E5%85%A5"><span class="toc-number">3.</span> <span class="toc-text"> Inputs (输入)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sequences%E5%BA%8F%E5%88%97"><span class="toc-number">4.</span> <span class="toc-text"> Sequences (序列)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#list-actions%E5%88%97%E5%87%BA%E6%93%8D%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text"> List Actions (列出操作)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#random-and-jitter%E9%9A%8F%E6%9C%BA%E5%92%8C%E6%8A%96%E5%8A%A8"><span class="toc-number">6.</span> <span class="toc-text"> Random and Jitter (随机和抖动)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#baking%E7%83%98%E7%84%99"><span class="toc-number">7.</span> <span class="toc-text"> Baking (烘焙)</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2022/08/17/arc-study/rhino-GH/GH/%E5%88%9D%E7%BA%A7/0.%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A/" rel="bookmark" title="0.基本原理解释">0.基本原理解释</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="小矮人gason"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">小矮人gason</p>
+  <div class="description" itemprop="description">大丈夫之志应如长江东奔大海</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">25</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">29</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">9</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS94aWFvLWFpLXJlbi01NS01Ng==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;xiao-ai-ren-55-56"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTI4ODYzNzQ4MA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;288637480"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS8yODAzMzAxNzAx" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;2803301701"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9icm9hZGxlYWYtbWFpemUtMzM1Lm5vdGlvbi5zaXRlL1Nhbmctcy1Ib21lcGFnZS00MzZhMGI4ZGExMjI0ODcwOWVkNGEzM2JkNzYyNDcwNA==" title="https:&#x2F;&#x2F;broadleaf-maize-335.notion.site&#x2F;Sang-s-Homepage-436a0b8da12248709ed4a33bd7624704"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归纳</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>相关链接</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/08/17/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/08/21/map-study/leaflet-js/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 地图框架类">地图框架类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/leaflet-js/" title="分类于 leaflet.js">leaflet.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/leaflet-js/leaflet%E6%95%99%E7%A8%8B/" title="分类于 leaflet教程">leaflet教程</a>
+</div>
+
+    <span><a href="/2022/08/27/map_study/leaflet-js/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/frame-study/" title="分类于 前端框架类">前端框架类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/frame-study/vue-study/" title="分类于 Vue">Vue</a>
+</div>
+
+    <span><a href="/2022/08/16/frame-study/vue-study/1.vue%E6%A0%B8%E5%BF%83/" title="1.vue核心">1.vue核心</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 建筑学习类">建筑学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/08/16/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 建筑学习类">建筑学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/revit-dynamo/" title="分类于 Revit与Dynamo">Revit与Dynamo</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/revit-dynamo/Dynamo/" title="分类于 Dynamo">Dynamo</a>
+</div>
+
+    <span><a href="/2022/08/15/arc-study/revit-dynamo/dynamo%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="Dynamo下载与安装">Dynamo下载与安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/management/" title="分类于 综合学习类">综合学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/management/GLZH/" title="分类于 管理综合">管理综合</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/management/GLZH/%E5%86%99%E4%BD%9C/" title="分类于 写作">写作</a>
+</div>
+
+    <span><a href="/2022/08/15/management/GLZH/writing/%E5%86%99%E4%BD%9C2/" title="写作2">写作2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/management/" title="分类于 综合学习类">综合学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/management/%E8%8B%B1%E8%AF%AD%E4%BA%8C/" title="分类于 英语二">英语二</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/management/%E8%8B%B1%E8%AF%AD%E4%BA%8C/%E5%AE%8C%E5%BD%A2%E5%A1%AB%E7%A9%BA/" title="分类于 完形填空">完形填空</a>
+</div>
+
+    <span><a href="/2022/08/15/management/English2/Cloze/%E5%AE%8C%E5%BD%A2%E5%A1%AB%E7%A9%BA1/" title="完形填空1">完形填空1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 建筑学习类">建筑学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/08/15/arc-study/rhino-GH/GH/0.gh%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="0.grasshopper下载与安装">0.grasshopper下载与安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 前端基础类">前端基础类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/HTML%E4%B8%8ECSS/" title="分类于 HTML与CSS">HTML与CSS</a>
+</div>
+
+    <span><a href="/2022/02/21/web-study/html-css/HTML/" title="HTML入门">HTML入门</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/management/" title="分类于 综合学习类">综合学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/management/GLZH/" title="分类于 管理综合">管理综合</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/management/GLZH/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/" title="分类于 逻辑推理">逻辑推理</a>
+</div>
+
+    <span><a href="/2022/08/15/management/GLZH/reasoning/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%862/" title="逻辑推理2">逻辑推理2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/management/" title="分类于 综合学习类">综合学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/management/%E8%8B%B1%E8%AF%AD%E4%BA%8C/" title="分类于 英语二">英语二</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/management/%E8%8B%B1%E8%AF%AD%E4%BA%8C/%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3/" title="分类于 阅读理解">阅读理解</a>
+</div>
+
+    <span><a href="/2022/08/15/management/English2/readingComprehension/%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A31/" title="阅读理解1">阅读理解1</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">小矮人gason @ Sang`s Homepage</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">92k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:24</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/08/17/arc-study/rhino-GH/GH/初级/0.基本原理解释/',
+    favicon: {
+      show: "点开格桑的网页了....",
+      hide: "离开格桑的网页了...."
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
