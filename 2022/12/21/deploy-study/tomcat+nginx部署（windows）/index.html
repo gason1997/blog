@@ -1,0 +1,601 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="gason" href="https://gason1997.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="gason" href="https://gason1997.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="gason" href="https://gason1997.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="javaweb&服务器部署" />
+
+
+<link rel="canonical" href="https://gason1997.github.io/2022/12/21/deploy-study/tomcat+nginx%E9%83%A8%E7%BD%B2%EF%BC%88windows%EF%BC%89/">
+
+
+
+  <title>
+tomcat+nginx 部署（windows） - 运维部署类 |
+Sang`s Homepage = gason</title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">tomcat+nginx 部署（windows）
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-12-21 19:43:58">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-12-21T19:43:58+08:00">2022-12-21</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>937</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Sang`s Homepage</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://tva2.sinaimg.cn/large/008sruU2ly8h4oy88dpf4j30go09e74j.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/deploy-study/" itemprop="item" rel="index" title="分类于 运维部署类"><span itemprop="name">运维部署类</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://gason1997.github.io/2022/12/21/deploy-study/tomcat+nginx%E9%83%A8%E7%BD%B2%EF%BC%88windows%EF%BC%89/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="小矮人gason">
+    <meta itemprop="description" content=", 大丈夫之志应如长江东奔大海">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="gason">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="一-起步"><a class="markdownIt-Anchor" href="#一-起步">#</a> 一、起步</h2>
+<p>在这里，我主要总结的是 tomcat+<span class="exturl" data-url="aHR0cHM6Ly9zby5jc2RuLm5ldC9zby9zZWFyY2g/cT1uZ2lueCZhbXA7c3BtPTEwMDEuMjEwMS4zMDAxLjcwMjA=">nginx</span> 项目部署的一些基础知识（扫盲）。</p>
+<figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- nginx是常用的web服务器，用于获取静态资源；</span><br><span class="line">- tomcat用于获取动态资源。</span><br></pre></td></tr></table></figure>
+<p><strong>一般 web 服务架构思路：</strong></p>
+<p>前端部署 nginx，端部署 tomcat。用户访问 nginx，静态资源 nginx 直接返回，动态资源的请求被 nginx 转发到 tomcat，tomcat 将处理完的结果返回给 nginx，然后返回给浏览器。</p>
+<h3 id="1什么是-nginx"><a class="markdownIt-Anchor" href="#1什么是-nginx">#</a> 1. 什么是 nginx？</h3>
+<figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.Nginx是一个高性能的HTTP和反向代理服务器。何为反向代理呢？即以代理服务器来接受Internet上的连接请求，然后将请求转发给内网上的服务器，并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。</span><br><span class="line"></span><br><span class="line">2.而Nginx主要完成的工作就是反向代理，比如我们向一台服务器的80端口发送了请求，该请求首先由Nginx监听到，其接受到请求内容后再转发给其他服务器，其他服务器处理完再将结果传送给Nginx，最后由Nginx来统一返回给初始请求端。</span><br><span class="line"></span><br><span class="line">3.Nginx最常见的使用就是作为静态资源服务器，比如将CSS，JS，html，htm等文件进行缓存处理。</span><br></pre></td></tr></table></figure>
+<h3 id="2进行-nginx-的安装调试"><a class="markdownIt-Anchor" href="#2进行-nginx-的安装调试">#</a> 2. 进行 Nginx 的安装调试</h3>
+<h4 id="21nginx-环境搭建"><a class="markdownIt-Anchor" href="#21nginx-环境搭建">#</a> 2.1.nginx 环境搭建</h4>
+<h4 id="22nginx-下载"><a class="markdownIt-Anchor" href="#22nginx-下载">#</a> 2.2.nginx 下载</h4>
+<blockquote>
+<p>下载网址（<span class="exturl" data-url="aHR0cDovL25naW54Lm9yZy9lbi9kb3dubG9hZC5odG1sJUVGJUJDJTg5">http://nginx.org/en/download.html）</span></p>
+</blockquote>
+<h4 id="23解压安装"><a class="markdownIt-Anchor" href="#23解压安装">#</a> 2.3. 解压安装</h4>
+<blockquote>
+<p>注意不要安装在中文路径下，安装在中文路径下无法启动，会报错。</p>
+</blockquote>
+<h4 id="24启动-nginx"><a class="markdownIt-Anchor" href="#24启动-nginx">#</a> 2.4. 启动 nginx</h4>
+<p><strong>2.4.1 双击 nginx.exe 启动</strong></p>
+<blockquote>
+<p>在任务管理器中可以找到对应的进程，说明启动成功</p>
+</blockquote>
+<p><strong>2.4.2 通过命令启动</strong></p>
+<blockquote>
+<p>打开 cmd 命令窗口，切换到 nginx 解压目录下，输入命令 nginx.exe 或者 start nginx （建议），回车即可</p>
+</blockquote>
+<h4 id="25检查-nginx-是否启动"><a class="markdownIt-Anchor" href="#25检查-nginx-是否启动">#</a> <strong>2.5. 检查 nginx 是否启动</strong></h4>
+<blockquote>
+<p>直接在浏览器地址栏输入网址 <span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDo4MA==">http://localhost:80</span>，回车，出现以下页面说明启动成功。</p>
+</blockquote>
+<blockquote>
+<p>nginx 的配置文件是 conf 目录下的 nginx.conf，默认配置的 nginx 监听的端口为 80，如果 80 端口被占用可以修改为未被占用的端口即可。</p>
+</blockquote>
+<h3 id="3进行-tomcat-按照调试"><a class="markdownIt-Anchor" href="#3进行-tomcat-按照调试">#</a> 3. 进行 tomcat 按照调试</h3>
+<h4 id="31tomcat-环境搭建"><a class="markdownIt-Anchor" href="#31tomcat-环境搭建">#</a> 3.1.tomcat 环境搭建</h4>
+
+      <div class="tags">
+          <a href="/tags/javaweb-%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/" rel="tag"><i class="ic i-tag"></i> javaweb&服务器部署</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-08-05 19:57:25" itemprop="dateModified" datetime="2022-08-05T19:57:25+08:00">2022-08-05</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>我移除了点赞打赏功能....别点了</p>
+  <div id="qr">
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>小矮人gason <i class="ic i-at"><em>@</em></i>gason
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://gason1997.github.io/2022/12/21/deploy-study/tomcat+nginx%E9%83%A8%E7%BD%B2%EF%BC%88windows%EF%BC%89/" title="tomcat+nginx 部署（windows）">https://gason1997.github.io/2022/12/21/deploy-study/tomcat+nginx部署（windows）/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/12/21/arc-study/rhino-GH/rhino/rhino%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;large&#x2F;008sruU2ly8h45kc8lu2fj31400u0dl5.jpg" title="rhino下载与安装">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Rhino</span>
+  <h3>rhino下载与安装</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/12/21/frame-study/vue-study/1.vue%E6%A0%B8%E5%BF%83/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s3.bmp.ovh&#x2F;imgs&#x2F;2022&#x2F;08&#x2F;16&#x2F;5cdd4b5d33115ed4.png" title="1.vue核心">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Vue</span>
+  <h3>1.vue核心</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E8%B5%B7%E6%AD%A5"><span class="toc-number">1.</span> <span class="toc-text"> 一、起步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E4%BB%80%E4%B9%88%E6%98%AF-nginx"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 什么是 nginx？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E8%BF%9B%E8%A1%8C-nginx-%E7%9A%84%E5%AE%89%E8%A3%85%E8%B0%83%E8%AF%95"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 进行 Nginx 的安装调试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21nginx-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.1.nginx 环境搭建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22nginx-%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2.2.nginx 下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23%E8%A7%A3%E5%8E%8B%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 2.3. 解压安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#24%E5%90%AF%E5%8A%A8-nginx"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 2.4. 启动 nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25%E6%A3%80%E6%9F%A5-nginx-%E6%98%AF%E5%90%A6%E5%90%AF%E5%8A%A8"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 2.5. 检查 nginx 是否启动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E8%BF%9B%E8%A1%8C-tomcat-%E6%8C%89%E7%85%A7%E8%B0%83%E8%AF%95"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. 进行 tomcat 按照调试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#31tomcat-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 3.1.tomcat 环境搭建</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2022/12/21/deploy-study/tomcat+nginx%E9%83%A8%E7%BD%B2%EF%BC%88windows%EF%BC%89/" rel="bookmark" title="tomcat+nginx 部署（windows）">tomcat+nginx 部署（windows）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="小矮人gason"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">小矮人gason</p>
+  <div class="description" itemprop="description">大丈夫之志应如长江东奔大海</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">20</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">24</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">13</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS94aWFvLWFpLXJlbi01NS01Ng==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;xiao-ai-ren-55-56"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTI4ODYzNzQ4MA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;288637480"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS8yODAzMzAxNzAx" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;2803301701"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9icm9hZGxlYWYtbWFpemUtMzM1Lm5vdGlvbi5zaXRlL1Nhbmctcy1Ib21lcGFnZS00MzZhMGI4ZGExMjI0ODcwOWVkNGEzM2JkNzYyNDcwNA==" title="https:&#x2F;&#x2F;broadleaf-maize-335.notion.site&#x2F;Sang-s-Homepage-436a0b8da12248709ed4a33bd7624704"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归纳</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>相关链接</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/12/21/arc-study/rhino-GH/rhino/rhino%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/12/21/frame-study/vue-study/1.vue%E6%A0%B8%E5%BF%83/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 建筑学习类">建筑学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 建筑学习类">建筑学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/revit-dynamo/" title="分类于 Revit与Dynamo">Revit与Dynamo</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/revit-dynamo/dynamo%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="Dynamo下载与安装">Dynamo下载与安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 建筑学习类">建筑学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/Rhino/" title="分类于 Rhino">Rhino</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/rhino/rhino%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="rhino下载与安装">rhino下载与安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 Web学习类">Web学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/js-study/" title="分类于 Javascript">Javascript</a>
+</div>
+
+    <span><a href="/2022/12/21/web-study/js-study/JavaScript/" title="JavaScript入门">JavaScript入门</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发类">三维开发类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/webGL-study/" title="分类于 webGL">webGL</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/webGL-study/%E8%B6%85%E5%9B%BEwebGL/" title="分类于 超图webGL">超图webGL</a>
+</div>
+
+    <span><a href="/2022/12/21/3D-study/webGL/supermap-webGL/" title="超图webGL开发指南">超图webGL开发指南</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 建筑学习类">建筑学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/0.gh%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="0.grasshopper下载与安装">0.grasshopper下载与安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/deploy-study/" title="分类于 运维部署类">运维部署类</a>
+</div>
+
+    <span><a href="/2022/12/21/deploy-study/tomcat+nginx%E9%83%A8%E7%BD%B2%EF%BC%88windows%EF%BC%89/" title="tomcat+nginx 部署（windows）">tomcat+nginx 部署（windows）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 地图框架类">地图框架类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/leaflet-js/" title="分类于 leaflet.js">leaflet.js</a>
+</div>
+
+    <span><a href="/2022/12/21/map-study/leaflet-js/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 建筑学习类">建筑学习类</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%88%9D%E7%BA%A7/" title="分类于 grasshopper初级">grasshopper初级</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/%E5%88%9D%E7%BA%A7/0.%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A/" title="0.基本原理解释">0.基本原理解释</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/gs-movies/my-documentary/" title="分类于 纪录片&documentary">纪录片&documentary</a>
+</div>
+
+    <span><a href="/2022/12/21/gs-movies/my-documentary/%E8%88%AA%E6%8B%8D%E4%B8%AD%E5%9B%BD%EF%BC%88%E7%AC%AC%E4%B8%80%E5%AD%A3%EF%BC%89/" title="航拍中国（第一季）">航拍中国（第一季）</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">小矮人gason @ Sang`s Homepage</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">105k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:35</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/12/21/deploy-study/tomcat+nginx部署（windows）/',
+    favicon: {
+      show: "点开格桑的网页了....",
+      hide: "离开格桑的网页了...."
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
