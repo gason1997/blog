@@ -2235,12 +2235,6 @@ main >.inner {
 .social .item.github i {
   color: #191717;
 }
-.social .item.twitter::before {
-  background-color: #00aff0;
-}
-.social .item.twitter i {
-  color: #00aff0;
-}
 .social .item.zhihu::before {
   background-color: #1e88e5;
 }
@@ -2253,17 +2247,23 @@ main >.inner {
 .social .item.music i {
   color: #e60026;
 }
-.social .item.weibo::before {
-  background-color: #ea716e;
-}
-.social .item.weibo i {
-  color: #ea716e;
-}
 .social .item.about::before {
   background-color: #3b5998;
 }
 .social .item.about i {
   color: #3b5998;
+}
+.social .item.twitter::before {
+  background-color: #00aff0;
+}
+.social .item.twitter i {
+  color: #00aff0;
+}
+.social .item.youtube::before {
+  background-color: #e60026;
+}
+.social .item.youtube i {
+  color: #e60026;
 }
 .social .item:focus i,
 .social .item:hover i {
