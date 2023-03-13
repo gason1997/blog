@@ -76,7 +76,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>1.1k</span>
+    <span>2.4k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -84,7 +84,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>1 分钟</span>
+    <span>2 分钟</span>
   </span>
 </div>
 
@@ -207,6 +207,91 @@ Docker 是一种开源的应用容器化平台，它能够让开发人员和系�
 <blockquote>
 <p>至此，在 windows 系统安装 docker 的基础教程到此结束了。</p>
 </blockquote>
+<h1 id="docker基础入门"><a class="markdownIt-Anchor" href="#docker基础入门">#</a> docker 基础入门</h1>
+<h2 id="docker-hello-world"><a class="markdownIt-Anchor" href="#docker-hello-world">#</a> docker hello world</h2>
+<p>Docker 允许你在容器内运行应用程序， 使用  <code>docker run</code>  命令来在容器内运行一个应用程序。<br>
+输入 <code>docker run ubuntu:15.10 /bin/echo &quot;Hello world&quot;</code> <br>
+ 输出 Hello world<br>
+<img data-src="https://s1.ax1x.com/2023/03/13/ppQeZiF.jpg" alt="ppQeZiF.jpg"><br>
+ 各个参数解析：</p>
+<ul>
+<li>
+<p>docker: Docker 的二进制执行文件。</p>
+</li>
+<li>
+<p>run: 与前面的 docker 组合来运行一个容器。</p>
+</li>
+<li>
+<p>ubuntu:15.10 指定要运行的镜像，Docker 首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库 Docker Hub 下载公共镜像。</p>
+</li>
+<li>
+<p>/bin/echo “Hello world”: 在启动的容器里执行的命令</p>
+</li>
+</ul>
+<p>以上命令完整的意思可以解释为：Docker 以 ubuntu15.10 镜像创建一个新容器，然后在容器里执行 bin/echo “Hello world”，然后输出结果。</p>
+<h2 id="运行交互式的容器"><a class="markdownIt-Anchor" href="#运行交互式的容器">#</a> 运行交互式的容器</h2>
+<p>通过 docker 的两个参数 -i -t，让 docker 运行的容器实现 &quot;对话&quot; 的能力：<br>
+输入 <code>docker run -i -t ubuntu:15.10 /bin/bash</code> <br>
+ 输出 <code>root@0123ce188bd8:/#</code> <br>
+<img data-src="https://s1.ax1x.com/2023/03/13/ppQewLt.jpg" alt="ppQewLt.jpg"><br>
+ 各个参数解析：</p>
+<ul>
+<li>-t: 在新容器内指定一个伪终端或终端。</li>
+<li>-i: 允许你对容器内的标准输入 (STDIN) 进行交互。<br>
+注意第二行 root@0123ce188bd8:/#，此时我们已进入一个 ubuntu15.10 系统的容器<br>
+我们尝试在容器中运行命令  <code>cat /proc/version</code>  和 <code>ls</code>  分别查看当前系统的版本信息和当前目录下的文件列表<br>
+<img data-src="https://s1.ax1x.com/2023/03/13/ppQedsI.jpg" alt="ppQedsI.jpg"><br>
+ 我们可以通过运行 exit 命令或者使用 CTRL+D 来退出容器。</li>
+</ul>
+<h2 id="启动容器后台模式"><a class="markdownIt-Anchor" href="#启动容器后台模式">#</a> 启动容器（后台模式）</h2>
+<p>使用以下命令创建一个以进程方式运行的容器<br>
+输入 <code>docker run -d ubuntu:15.10 /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</code> <br>
+ 输出 <code>2b1b7a428627c51ab8810d541d759f072b4fc75487eed05812646b8534a2fe63</code> <br>
+<img data-src="https://s1.ax1x.com/2023/03/13/ppQeqSJ.jpg" alt="ppQeqSJ.jpg"><br>
+ 在输出中，我们没有看到期望的 “hello world”，而是一串长字符<br>
+ 2b1b7a428627c51ab8810d541d759f072b4fc75487eed05812646b8534a2fe63<br>
+ 这个长字符串叫做容器 ID，对每个容器来说都是唯一的，我们可以通过容器 ID 来查看对应的容器发生了什么。<br>
+首先，我们需要确认容器有在运行，可以通过  <code>docker ps</code>  来查看：<br>
+<img data-src="https://s1.ax1x.com/2023/03/13/ppQeLl9.jpg" alt="ppQeLl9.jpg"><br>
+ 输出详情介绍：</p>
+<ul>
+<li>
+<p>CONTAINER ID: 容器 ID。</p>
+</li>
+<li>
+<p>IMAGE: 使用的镜像。</p>
+</li>
+<li>
+<p>COMMAND: 启动容器时运行的命令。</p>
+</li>
+<li>
+<p>CREATED: 容器的创建时间。</p>
+</li>
+<li>
+<p>STATUS: 容器状态。</p>
+</li>
+<li>
+<p>状态有 7 种：</p>
+<ul>
+<li>created（已创建）</li>
+<li>restarting（重启中）</li>
+<li>running 或 Up（运行中）</li>
+<li>removing（迁移中）</li>
+<li>paused（暂停）</li>
+<li>exited（停止）</li>
+<li>dead（死亡）</li>
+</ul>
+</li>
+<li>
+<p>PORTS: 容器的端口信息和使用的连接类型（tcp\udp）。</p>
+</li>
+<li>
+<p>NAMES: 自动分配的容器名称。</p>
+</li>
+</ul>
+<h2 id="停止容器"><a class="markdownIt-Anchor" href="#停止容器">#</a> 停止容器</h2>
+<p>我们使用  <code>docker stop</code>  命令来停止容器<br>
+通过  <code>docker ps</code>  查看，容器是否已经停止工作</p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/docker/" rel="tag"><i class="ic i-tag"></i> docker</a>
@@ -221,7 +306,7 @@ Docker 是一种开源的应用容器化平台，它能够让开发人员和系�
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-03-13 11:06:11" itemprop="dateModified" datetime="2023-03-13T11:06:11+08:00">2023-03-13</time>
+    <time title="修改时间：2023-03-13 11:58:36" itemprop="dateModified" datetime="2023-03-13T11:58:36+08:00">2023-03-13</time>
   </span>
 </div>
 
@@ -285,7 +370,7 @@ Docker 是一种开源的应用容器化平台，它能够让开发人员和系�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFdocker"><span class="toc-number">1.</span> <span class="toc-text"> 什么是 docker？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-docker"><span class="toc-number">2.</span> <span class="toc-text"> 安装 Docker</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFdocker"><span class="toc-number">1.</span> <span class="toc-text"> 什么是 docker？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-docker"><span class="toc-number">2.</span> <span class="toc-text"> 安装 Docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8"><span class="toc-number">3.</span> <span class="toc-text"> docker 基础入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-hello-world"><span class="toc-number">3.1.</span> <span class="toc-text"> docker hello world</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E4%BA%A4%E4%BA%92%E5%BC%8F%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="toc-number">3.2.</span> <span class="toc-text"> 运行交互式的容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8%E5%90%8E%E5%8F%B0%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.3.</span> <span class="toc-text"> 启动容器（后台模式）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%9C%E6%AD%A2%E5%AE%B9%E5%99%A8"><span class="toc-number">3.4.</span> <span class="toc-text"> 停止容器</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -407,19 +492,7 @@ Docker 是一种开源的应用容器化平台，它能够让开发人员和系�
 <a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2022/02/05/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E4%BA%A4%E9%80%9A/" title="3.具体应用-智慧交通">3.具体应用-智慧交通</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/map-study/leaflet-js/" title="分类于 leaflet.js">leaflet.js</a>
-</div>
-
-    <span><a href="/2022/12/21/map-study/leaflet-js/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
+    <span><a href="/2022/02/02/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF/" title="2.关键技术-大数据技术">2.关键技术-大数据技术</a></span>
   </li>
 
       
@@ -440,24 +513,88 @@ Docker 是一种开源的应用容器化平台，它能够让开发人员和系�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/gs-books/" title="分类于 “阅”过大海">“阅”过大海</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/gs-books/my-history/" title="分类于 历史传记">历史传记</a>
+<a href="/categories/%E7%9B%B8%E5%86%8C/" title="分类于 相册">相册</a>
 </div>
 
-    <span><a href="/2022/12/21/gs-books/my-history/%E9%82%93%E5%B0%8F%E5%B9%B3%E6%97%B6%E4%BB%A3/" title="邓小平时代">邓小平时代</a></span>
+    <span><a href="/2023/03/02/photoAlbum/" title="格桑的破相册">格桑的破相册</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
 </div>
 
-    <span><a href="/2023/03/13/web-study/dockerstudy/1.docker%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%89%E8%A3%85/" title="1.docker入门与安装">1.docker入门与安装</a></span>
+    <span><a href="/2022/03/10/gs-movies/my-movies/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/" title="辛德勒的名单">辛德勒的名单</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/0.gh%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="0.grasshopper下载与安装">0.grasshopper下载与安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/3.%E4%BB%8B%E7%BB%8DGrasshopper%20Geometry/" title="3.介绍Grasshopper Geometry（GH几何）">3.介绍Grasshopper Geometry（GH几何）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/demo-project/" title="分类于 js小工具">js小工具</a>
+</div>
+
+    <span><a href="/2023/03/02/project-summary/demo-project/%E5%9B%BE%E7%89%87%E8%BD%ACbase64/" title="图片转base64">图片转base64</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/WebGIS/" title="分类于 WebGIS">WebGIS</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/WebGIS/echarts-map/" title="分类于 echarts-map">echarts-map</a>
+</div>
+
+    <span><a href="/2022/12/22/map-study/echarts-map/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
   </li>
 
       
@@ -469,59 +606,7 @@ Docker 是一种开源的应用容器化平台，它能够让开发人员和系�
 <a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2022/02/02/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF/" title="2.关键技术-大数据技术">2.关键技术-大数据技术</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/js%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="分类于 js小游戏">js小游戏</a>
-</div>
-
-    <span><a href="/2023/03/03/project-summary/demo-project/%E6%89%AB%E9%9B%B7%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="扫雷小游戏">扫雷小游戏</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
-</div>
-
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/1.grasshopper%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" title="1.grasshopper是什么？">1.grasshopper是什么？</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/js-study/" title="分类于 Javascript">Javascript</a>
-</div>
-
-    <span><a href="/2022/12/21/web-study/js-study/JavaScript/" title="JavaScript入门">JavaScript入门</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
-</div>
-
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></span>
+    <span><a href="/2022/02/05/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E4%BA%A4%E9%80%9A/" title="3.具体应用-智慧交通">3.具体应用-智慧交通</a></span>
   </li>
 
   </ul>
@@ -546,7 +631,7 @@ Docker 是一种开源的应用容器化平台，它能够让开发人员和系�
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">132k 字</span>
+    <span title="站点总字数">133k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
