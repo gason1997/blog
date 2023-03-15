@@ -164,55 +164,36 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="vue安装"><a class="markdownIt-Anchor" href="#vue安装">#</a> vue 安装</h1>
-<p>基于前两篇教程，我们已经安装且可以正常使用 docker，那么在这里就需要简单装个 vue 项目，作为练手项目。</p>
+    <h1 id="vue安装"><a href="#vue安装" class="headerlink" title="vue安装"></a>vue安装</h1><p>基于前两篇教程，我们已经安装且可以正常使用docker，那么在这里就需要简单装个vue项目，作为练手项目。</p>
 <ul>
-<li>创建 Vue 项目：首先，你需要使用 Vue CLI 创建一个 Vue 项目。你可以通过以下命令安装 Vue CLI：</li>
+<li>创建Vue项目：首先，你需要使用Vue CLI创建一个Vue项目。你可以通过以下命令安装Vue CLI：<figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure></li>
+<li>然后，使用以下命令创建一个新的Vue项目：<figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create my-project</span><br></pre></td></tr></table></figure>
+这将在当前目录下创建一个名为my-project的Vue项目。</li>
 </ul>
-<figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
-<ul>
-<li>然后，使用以下命令创建一个新的 Vue 项目：</li>
-</ul>
-<figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create my-project</span><br></pre></td></tr></table></figure>
-<p>这将在当前目录下创建一个名为 my-project 的 Vue 项目。</p>
-<h1 id="创建dockerfile文件"><a class="markdownIt-Anchor" href="#创建dockerfile文件">#</a> 创建 Dockerfile 文件</h1>
-<p>接下来，需要创建一个 Dockerfile，用于构建 Docker 镜像。Dockerfile 是一个包含构建镜像所需命令的文本文件。<br>
-在项目根目录下创建一个名为 Dockerfile 的文件。<br>
-<img data-src="https://s1.ax1x.com/2023/03/13/ppQsBnA.jpg" alt="ppQsBnA.jpg"><br>
- 并写入一下内容：</p>
+<h1 id="创建Dockerfile文件"><a href="#创建Dockerfile文件" class="headerlink" title="创建Dockerfile文件"></a>创建Dockerfile文件</h1><p>接下来，需要创建一个Dockerfile，用于构建Docker镜像。Dockerfile是一个包含构建镜像所需命令的文本文件。<br>在项目根目录下创建一个名为Dockerfile的文件。<br><img data-src="https://s1.ax1x.com/2023/03/13/ppQsBnA.jpg" alt="ppQsBnA.jpg"><br>并写入一下内容：</p>
 <figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 使用Node.js v14作为基础镜像</span><br><span class="line">FROM node:14</span><br><span class="line"></span><br><span class="line"># 设置工作目录</span><br><span class="line">WORKDIR /app</span><br><span class="line"></span><br><span class="line"># 拷贝项目文件到容器中</span><br><span class="line">COPY . .</span><br><span class="line"></span><br><span class="line"># 安装依赖</span><br><span class="line">RUN npm install</span><br><span class="line"></span><br><span class="line"># 执行构建命令</span><br><span class="line">RUN npm run build</span><br><span class="line"></span><br><span class="line"># 暴露容器的80端口</span><br><span class="line">EXPOSE 80</span><br><span class="line"></span><br><span class="line"># 启动容器时运行的命令</span><br><span class="line">CMD [&quot;npm&quot;, &quot;run&quot;, &quot;serve&quot;]</span><br></pre></td></tr></table></figure>
-<p>该 <code>Dockerfile</code>  中包含了一些指令，其中：</p>
+<p>该<code>Dockerfile</code>中包含了一些指令，其中：</p>
 <ul>
-<li>
-<p><code>FROM</code> ：指定基础镜像，本例中使用 Node.js v14。</p>
+<li><p><code>FROM</code>：指定基础镜像，本例中使用Node.js v14。</p>
 </li>
-<li>
-<p><code>WORKDIR</code> ：设置工作目录为 /app，该目录用于保存项目文件。</p>
+<li><p><code>WORKDIR</code>：设置工作目录为&#x2F;app，该目录用于保存项目文件。</p>
 </li>
-<li>
-<p><code>COPY</code> ：将项目文件复制到容器中的 /app 目录下。</p>
+<li><p><code>COPY</code>：将项目文件复制到容器中的&#x2F;app目录下。</p>
 </li>
-<li>
-<p><code>RUN</code> ：执行 npm install 和 npm run build 命令，安装依赖并构建 Vue 项目。</p>
+<li><p><code>RUN</code>：执行npm install和npm run build命令，安装依赖并构建Vue项目。</p>
 </li>
-<li>
-<p><code>EXPOSE</code> ：暴露容器的 80 端口。</p>
+<li><p><code>EXPOSE</code>：暴露容器的80端口。</p>
 </li>
-<li>
-<p><code>CMD</code> ：指定容器启动时运行的命令，本例中为 npm run serve。</p>
+<li><p><code>CMD</code>：指定容器启动时运行的命令，本例中为npm run serve。</p>
 </li>
 </ul>
-<h1 id="构建docker镜像"><a class="markdownIt-Anchor" href="#构建docker镜像">#</a> 构建 Docker 镜像</h1>
-<p>使用以下命令构建 Docker 镜像：</p>
+<h1 id="构建Docker镜像"><a href="#构建Docker镜像" class="headerlink" title="构建Docker镜像"></a>构建Docker镜像</h1><p>使用以下命令构建Docker镜像：</p>
 <figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t my-project:latest .</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://s1.ax1x.com/2023/03/13/ppQsD0I.jpg" alt="ppQsD0I.jpg"><br>
- 该命令将在当前目录下的 Dockerfile 中构建一个名为 my-project:latest 的 Docker 镜像。</p>
-<h1 id="运行docker容器"><a class="markdownIt-Anchor" href="#运行docker容器">#</a> 运行 Docker 容器</h1>
-<figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8081:8080 my-project:latest</span><br></pre></td></tr></table></figure>
-<p>该命令将运行一个名为 my-project:latest 的 Docker 容器，并将容器的 8080 端口映射到本地机器的 8081 端口。</p>
-<p>-d 选项将容器作为守护进程运行，即在后台运行容器。</p>
-<h1 id="访问vue应用"><a class="markdownIt-Anchor" href="#访问vue应用">#</a> 访问 Vue 应用</h1>
-<p>现在，可以在 Web 浏览器中访问 Vue 应用了。在浏览器中输入 http://localhost:8081，即可查看 Vue 应</p>
+<p><img data-src="https://s1.ax1x.com/2023/03/13/ppQsD0I.jpg" alt="ppQsD0I.jpg"><br>该命令将在当前目录下的Dockerfile中构建一个名为my-project:latest的Docker镜像。</p>
+<h1 id="运行Docker容器"><a href="#运行Docker容器" class="headerlink" title="运行Docker容器"></a>运行Docker容器</h1><figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8081:8080 my-project:latest</span><br></pre></td></tr></table></figure>
+<p>该命令将运行一个名为my-project:latest的Docker容器，并将容器的8080端口映射到本地机器的8081端口。</p>
+<p>-d选项将容器作为守护进程运行，即在后台运行容器。</p>
+<h1 id="访问Vue应用"><a href="#访问Vue应用" class="headerlink" title="访问Vue应用"></a>访问Vue应用</h1><p>现在，可以在Web浏览器中访问Vue应用了。在浏览器中输入<span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDo4MDgx77yM5Y2z5Y+v5p+l55yLVnVl5bqU">http://localhost:8081，即可查看Vue应</span></p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/docker/" rel="tag"><i class="ic i-tag"></i> docker</a>
@@ -276,6 +257,14 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2023/03/14/web-study/dockerstudy/4.docker%E9%83%A8%E7%BD%B2%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2023&#x2F;03&#x2F;13&#x2F;ppQEeGd.jpg" title="4.docker部署数据库">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> docker</span>
+  <h3>4.docker部署数据库</h3>
+  </a>
+
     </div>
 </div>
 
@@ -292,11 +281,11 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text"> vue 安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAdockerfile%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text"> 创建 Dockerfile 文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9E%84%E5%BB%BAdocker%E9%95%9C%E5%83%8F"><span class="toc-number">3.</span> <span class="toc-text"> 构建 Docker 镜像</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E8%A1%8Cdocker%E5%AE%B9%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text"> 运行 Docker 容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BF%E9%97%AEvue%E5%BA%94%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text"> 访问 Vue 应用</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">vue安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BADockerfile%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">创建Dockerfile文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9E%84%E5%BB%BADocker%E9%95%9C%E5%83%8F"><span class="toc-number">3.</span> <span class="toc-text">构建Docker镜像</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E8%A1%8CDocker%E5%AE%B9%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">运行Docker容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BF%E9%97%AEVue%E5%BA%94%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">访问Vue应用</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2023/03/11/web-study/dockerstudy/1.docker%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%89%E8%A3%85/" rel="bookmark" title="1.docker入门与安装">1.docker入门与安装</a></li><li><a href="/2023/03/12/web-study/dockerstudy/2.docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/" rel="bookmark" title="2.docker容器使用">2.docker容器使用</a></li><li class="active"><a href="/2023/03/13/web-study/dockerstudy/3.docker+vue%E9%83%A8%E7%BD%B2%E5%B0%8F%E7%BB%83%E4%B9%A0/" rel="bookmark" title="3.docker+vue部署小练习">3.docker+vue部署小练习</a></li>
+          <li><a href="/2023/03/11/web-study/dockerstudy/1.docker%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%89%E8%A3%85/" rel="bookmark" title="1.docker入门与安装">1.docker入门与安装</a></li><li><a href="/2023/03/12/web-study/dockerstudy/2.docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/" rel="bookmark" title="2.docker容器使用">2.docker容器使用</a></li><li class="active"><a href="/2023/03/13/web-study/dockerstudy/3.docker+vue%E9%83%A8%E7%BD%B2%E5%B0%8F%E7%BB%83%E4%B9%A0/" rel="bookmark" title="3.docker+vue部署小练习">3.docker+vue部署小练习</a></li><li><a href="/2023/03/14/web-study/dockerstudy/4.docker%E9%83%A8%E7%BD%B2%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="bookmark" title="4.docker部署数据库">4.docker部署数据库</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -310,7 +299,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">38</span>
+        <span class="count">39</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -384,10 +373,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2023/03/12/web-study/dockerstudy/2.docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2023/03/14/web-study/dockerstudy/4.docker%E9%83%A8%E7%BD%B2%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -409,14 +400,14 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<a href="/categories/3D-study/three-js/" title="分类于 three.js">three.js</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+<a href="/categories/3D-study/three-js/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" title="分类于 入门基础">入门基础</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
+    <span><a href="/2022/06/10/3D-study/threeJs/1.%E5%9F%BA%E7%A1%80/" title="1.three.js基础">1.three.js基础</a></span>
   </li>
 
       
@@ -437,24 +428,36 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2023/03/13/web-study/dockerstudy/3.docker+vue%E9%83%A8%E7%BD%B2%E5%B0%8F%E7%BB%83%E4%B9%A0/" title="3.docker+vue部署小练习">3.docker+vue部署小练习</a></span>
+    <span><a href="/2022/02/06/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E7%8E%AF%E4%BF%9D/" title="3.具体应用-智慧环保">3.具体应用-智慧环保</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/map-study/leaflet-js/" title="分类于 leaflet.js">leaflet.js</a>
+<a href="/categories/web-study/CSS/" title="分类于 CSS">CSS</a>
 </div>
 
-    <span><a href="/2022/12/21/map-study/leaflet-js/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
+    <span><a href="/2022/12/21/web-study/css-/CSS/" title="CSS入门">CSS入门</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/14/web-study/dockerstudy/4.docker%E9%83%A8%E7%BD%B2%E6%95%B0%E6%8D%AE%E5%BA%93/" title="4.docker部署数据库">4.docker部署数据库</a></span>
   </li>
 
       
@@ -463,72 +466,62 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/3.%E4%BB%8B%E7%BB%8DGrasshopper%20Geometry/" title="3.介绍Grasshopper Geometry（GH几何）">3.介绍Grasshopper Geometry（GH几何）</a></span>
+    <span><a href="/2022/02/03/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%8A%80%E6%9C%AF/" title="2.关键技术-人工智能技术">2.关键技术-人工智能技术</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E7%9B%B8%E5%86%8C/" title="分类于 相册">相册</a>
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2023/03/02/photoAlbum/" title="格桑的破相册">格桑的破相册</a></span>
+    <span><a href="/2022/02/05/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E4%BA%A4%E9%80%9A/" title="3.具体应用-智慧交通">3.具体应用-智慧交通</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/%E6%95%B0%E5%AD%97%E5%8D%9A%E7%89%A9%E9%A6%86/" title="分类于 数字博物馆">数字博物馆</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/%E6%95%B0%E5%AD%97%E5%8D%9A%E7%89%A9%E9%A6%86/node%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" title="分类于 node后端开发">node后端开发</a>
+<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
 </div>
 
-    <span><a href="/2023/03/03/project-summary/demo-project/%E6%95%B0%E5%AD%97%E5%8D%9A%E7%89%A9%E9%A6%86/1.%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91-%E7%A1%AE%E5%AE%9A%E9%9C%80%E6%B1%82/" title="1.后端开发-确定需求">1.后端开发-确定需求</a></span>
+    <span><a href="/2022/03/10/gs-movies/my-movies/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/" title="辛德勒的名单">辛德勒的名单</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/web-study/js-study/" title="分类于 Javascript">Javascript</a>
+<a href="/categories/arc-study/revit-dynamo/" title="分类于 Revit与Dynamo">Revit与Dynamo</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/revit-dynamo/Revit/" title="分类于 Revit">Revit</a>
 </div>
 
-    <span><a href="/2022/12/21/web-study/js-study/JavaScript/" title="JavaScript入门">JavaScript入门</a></span>
+    <span><a href="/2022/12/21/arc-study/revit-dynamo/revit%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="Revit下载与安装">Revit下载与安装</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/gs-books/" title="分类于 “阅”过大海">“阅”过大海</a>
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/gs-books/my-history/" title="分类于 历史传记">历史传记</a>
+<a href="/categories/3D-study/webGL-study/" title="分类于 webGL">webGL</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/webGL-study/%E8%B6%85%E5%9B%BEwebGL/" title="分类于 超图webGL">超图webGL</a>
 </div>
 
-    <span><a href="/2022/12/21/gs-books/my-history/%E9%82%93%E5%B0%8F%E5%B9%B3%E6%97%B6%E4%BB%A3/" title="邓小平时代">邓小平时代</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/HTML/" title="分类于 HTML">HTML</a>
-</div>
-
-    <span><a href="/2022/12/21/web-study/html-/HTML/" title="HTML入门">HTML入门</a></span>
+    <span><a href="/2022/12/21/3D-study/webGL/supermap-webGL/" title="超图webGL开发指南">超图webGL开发指南</a></span>
   </li>
 
   </ul>
@@ -553,13 +546,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">136k 字</span>
+    <span title="站点总字数">138k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:03</span>
+    <span title="站点阅读时长">2:05</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
