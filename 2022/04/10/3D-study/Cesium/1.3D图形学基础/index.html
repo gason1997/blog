@@ -167,70 +167,82 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="简述Cesium的3D图形学"><a href="#简述Cesium的3D图形学" class="headerlink" title="简述Cesium的3D图形学"></a>简述Cesium的3D图形学</h1><p>Cesium是一个基于WebGL的开源虚拟地球和地理信息系统（GIS）库。它的3D图形学基础是基于WebGL的GPU加速渲染技术，其中WebGL是一种基于OpenGL ES 2.0的JavaScript API，可以在现代Web浏览器中呈现复杂的3D图形。</p>
-<p>在Cesium中，3D场景是通过大量的三角形面片组成的网格来表示的。这些网格通过使用顶点，法向量和纹理坐标来定义三角形面片。其中，顶点是网格中最基本的元素，定义了网格的形状。法向量是指定三角形面片的朝向，通常用于计算光照和阴影。纹理坐标是指定网格表面的纹理贴图的坐标，从而将纹理映射到网格表面上。</p>
-<p>在Cesium中，3D图形学基础也包括对虚拟摄像机的概念的支持，该摄像机可以在场景中自由移动和旋转。通过使用摄像机，可以实现视角的变换，从而提供不同的场景视图和交互方式。</p>
-<p>此外，Cesium还支持高级3D特效，如体积渲染、水面反射、雾化等等，从而进一步提升了可视化效果。这些特效的实现是基于现代GPU的高性能计算能力和并行处理能力的。</p>
-<h1 id="Cesium的图形学基础"><a href="#Cesium的图形学基础" class="headerlink" title="Cesium的图形学基础"></a>Cesium的图形学基础</h1><ul>
-<li><p>1.坐标系：Cesium中使用的是右手坐标系，其中x轴指向东，y轴指向北，z轴指向天空。坐标系的原点通常是地球表面的一个点，称为参考点。</p>
+    <h1 id="简述cesium的3d图形学"><a class="markdownIt-Anchor" href="#简述cesium的3d图形学">#</a> 简述 Cesium 的 3D 图形学</h1>
+<p>Cesium 是一个基于 WebGL 的开源虚拟地球和地理信息系统（GIS）库。它的 3D 图形学基础是基于 WebGL 的 GPU 加速渲染技术，其中 WebGL 是一种基于 OpenGL ES 2.0 的 JavaScript API，可以在现代 Web 浏览器中呈现复杂的 3D 图形。</p>
+<p>在 Cesium 中，3D 场景是通过大量的三角形面片组成的网格来表示的。这些网格通过使用顶点，法向量和纹理坐标来定义三角形面片。其中，顶点是网格中最基本的元素，定义了网格的形状。法向量是指定三角形面片的朝向，通常用于计算光照和阴影。纹理坐标是指定网格表面的纹理贴图的坐标，从而将纹理映射到网格表面上。</p>
+<p>在 Cesium 中，3D 图形学基础也包括对虚拟摄像机的概念的支持，该摄像机可以在场景中自由移动和旋转。通过使用摄像机，可以实现视角的变换，从而提供不同的场景视图和交互方式。</p>
+<p>此外，Cesium 还支持高级 3D 特效，如体积渲染、水面反射、雾化等等，从而进一步提升了可视化效果。这些特效的实现是基于现代 GPU 的高性能计算能力和并行处理能力的。</p>
+<h1 id="cesium的图形学基础"><a class="markdownIt-Anchor" href="#cesium的图形学基础">#</a> Cesium 的图形学基础</h1>
+<ul>
+<li>
+<p>1. 坐标系：Cesium 中使用的是右手坐标系，其中 x 轴指向东，y 轴指向北，z 轴指向天空。坐标系的原点通常是地球表面的一个点，称为参考点。</p>
 </li>
-<li><p>2.矩阵：在Cesium中，矩阵是一个二维数组，用于表示线性变换。常用的线性变换包括平移、旋转和缩放。矩阵可以用于将一个点或向量进行变换。</p>
+<li>
+<p>2. 矩阵：在 Cesium 中，矩阵是一个二维数组，用于表示线性变换。常用的线性变换包括平移、旋转和缩放。矩阵可以用于将一个点或向量进行变换。</p>
 </li>
-<li><p>3.向量：向量是具有大小和方向的量。在Cesium中，常用的向量有二维向量和三维向量。向量可以用于表示位置、速度和加速度等。</p>
+<li>
+<p>3. 向量：向量是具有大小和方向的量。在 Cesium 中，常用的向量有二维向量和三维向量。向量可以用于表示位置、速度和加速度等。</p>
 </li>
-<li><p>4.相机和视图：Cesium中的相机定义了观察场景的位置、朝向和视野。Cesium还支持多种视图，包括3D视图、2D视图和Columbus视图等。</p>
+<li>
+<p>4. 相机和视图：Cesium 中的相机定义了观察场景的位置、朝向和视野。Cesium 还支持多种视图，包括 3D 视图、2D 视图和 Columbus 视图等。</p>
 </li>
-<li><p>5.场景和对象：Cesium中的场景是所有3D对象的容器，包括地球、地形、建筑物、点线面等。Cesium中的对象包括图形、实体和贴图等，可以用于创建和渲染3D场景。</p>
+<li>
+<p>5. 场景和对象：Cesium 中的场景是所有 3D 对象的容器，包括地球、地形、建筑物、点线面等。Cesium 中的对象包括图形、实体和贴图等，可以用于创建和渲染 3D 场景。</p>
 </li>
-<li><p>6.材质和纹理：Cesium中的材质定义了3D对象的表面属性，如颜色、透明度、反射等。Cesium中的纹理用于将图像贴到3D对象的表面，如将地球表面的卫星图像贴上去。</p>
+<li>
+<p>6. 材质和纹理：Cesium 中的材质定义了 3D 对象的表面属性，如颜色、透明度、反射等。Cesium 中的纹理用于将图像贴到 3D 对象的表面，如将地球表面的卫星图像贴上去。</p>
 </li>
-<li><p>7.光照和阴影：Cesium中的光照用于模拟阳光、月光等自然光源，可以使场景更加真实。Cesium中的阴影可以在场景中产生遮挡效果，增加3D场景的逼真度。</p>
+<li>
+<p>7. 光照和阴影：Cesium 中的光照用于模拟阳光、月光等自然光源，可以使场景更加真实。Cesium 中的阴影可以在场景中产生遮挡效果，增加 3D 场景的逼真度。</p>
 </li>
-<li><p>8.地形和水面：Cesium中的地形可以用于显示山脉、河流等地形特征，可以使用DEM（数字高程模型）数据来生成地形。Cesium中的水面可以用于显示湖泊、河流等水域特征，可以使用流量数据来模拟水面流动。</p>
+<li>
+<p>8. 地形和水面：Cesium 中的地形可以用于显示山脉、河流等地形特征，可以使用 DEM（数字高程模型）数据来生成地形。Cesium 中的水面可以用于显示湖泊、河流等水域特征，可以使用流量数据来模拟水面流动。</p>
 </li>
 </ul>
 <blockquote>
-<p>在Cesium中，我们可以使用这些基本的概念和运算来进行3D图形学的开发。通过对这些基本概念的理解和掌握，可以更好地理解Cesium中的3D图形学相关内容，包括地球表面的坐标转换、模型的旋转和缩放、相机的位置和方向控制等。</p>
+<p>在 Cesium 中，我们可以使用这些基本的概念和运算来进行 3D 图形学的开发。通过对这些基本概念的理解和掌握，可以更好地理解 Cesium 中的 3D 图形学相关内容，包括地球表面的坐标转换、模型的旋转和缩放、相机的位置和方向控制等。</p>
 </blockquote>
-<h1 id="Cesium中创建3D对象"><a href="#Cesium中创建3D对象" class="headerlink" title="Cesium中创建3D对象"></a>Cesium中创建3D对象</h1><p><strong>在Cesium中创建3D对象的基本步骤如下：</strong></p>
+<h1 id="cesium中创建3d对象"><a class="markdownIt-Anchor" href="#cesium中创建3d对象">#</a> Cesium 中创建 3D 对象</h1>
+<p><strong>在 Cesium 中创建 3D 对象的基本步骤如下：</strong></p>
 <ul>
-<li>1.创建<code>场景(Scene)</code>对象</li>
+<li>1. 创建 <code>场景(Scene)</code>  对象</li>
 </ul>
-<p>首先，需要创建一个场景<code>对象(Scene)</code>，用来渲染和显示3D对象</p>
+<p>首先，需要创建一个场景 <code>对象(Scene)</code> ，用来渲染和显示 3D 对象</p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&#x27;cesiumContainer&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> scene = viewer.<span class="property">scene</span>;</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>2.创建基本几何体<br>Cesium支持创建多种基本几何体，包括<code>点(Point)</code>、<code>线(Line)</code>、<code>面(Polygon)</code>、<code>多边形(Polyline)</code>等。</li>
+<li>2. 创建基本几何体<br>
+ Cesium 支持创建多种基本几何体，包括 <code>点(Point)</code> 、 <code>线(Line)</code> 、 <code>面(Polygon)</code> 、 <code>多边形(Polyline)</code>  等。</li>
 </ul>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> point = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">PointGraphics</span>(&#123;</span><br><span class="line">    <span class="attr">color</span>: <span class="title class_">Cesium</span>.<span class="property">Color</span>.<span class="property">RED</span>,</span><br><span class="line">    <span class="attr">pixelSize</span>: <span class="number">10</span>,</span><br><span class="line">    <span class="attr">outlineWidth</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">outlineColor</span>: <span class="title class_">Cesium</span>.<span class="property">Color</span>.<span class="property">WHITE</span>,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> line = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">PolylineGraphics</span>(&#123;</span><br><span class="line">    <span class="attr">positions</span>: <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegreesArray</span>([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">30</span>, <span class="number">30</span>, <span class="number">0</span>]),</span><br><span class="line">    <span class="attr">width</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="attr">material</span>: <span class="title class_">Cesium</span>.<span class="property">Color</span>.<span class="property">YELLOW</span>,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> polygon = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">PolygonGraphics</span>(&#123;</span><br><span class="line">    <span class="attr">hierarchy</span>: <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegreesArray</span>([</span><br><span class="line">        -<span class="number">115.0</span>, <span class="number">37.0</span>,</span><br><span class="line">        -<span class="number">115.0</span>, <span class="number">32.0</span>,</span><br><span class="line">        -<span class="number">107.0</span>, <span class="number">33.0</span>,</span><br><span class="line">        -<span class="number">102.0</span>, <span class="number">31.0</span>,</span><br><span class="line">        -<span class="number">102.0</span>, <span class="number">35.0</span>]),</span><br><span class="line">    <span class="attr">material</span>: <span class="title class_">Cesium</span>.<span class="property">Color</span>.<span class="property">BLUE</span>.<span class="title function_">withAlpha</span>(<span class="number">0.5</span>),</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> polyline = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">PolylineGraphics</span>(&#123;</span><br><span class="line">    <span class="attr">positions</span>: <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegreesArray</span>([</span><br><span class="line">        -<span class="number">75</span>, <span class="number">35</span>,</span><br><span class="line">        -<span class="number">125</span>, <span class="number">35</span>]),</span><br><span class="line">    <span class="attr">width</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="attr">material</span>: <span class="title class_">Cesium</span>.<span class="property">Color</span>.<span class="property">GREEN</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>在创建几何体时，可以设置各种属性，如<code>颜色</code>、<code>大小</code>、<code>边框</code>、<code>材质</code>等。</p>
+<p>在创建几何体时，可以设置各种属性，如 <code>颜色</code> 、 <code>大小</code> 、 <code>边框</code> 、 <code>材质</code> 等。</p>
 </blockquote>
 <ul>
-<li>3.创建<code>实体(Entity)</code>对象<br>将基本几何体封装为实体(Entity)对象，用来添加到场景中进行显示。</li>
+<li>3. 创建 <code>实体(Entity)</code>  对象<br>
+将基本几何体封装为实体 (Entity) 对象，用来添加到场景中进行显示。</li>
 </ul>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pointEntity = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Entity</span>(&#123;</span><br><span class="line">    <span class="attr">position</span>: <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(-<span class="number">75.0</span>, <span class="number">40.0</span>),</span><br><span class="line">    <span class="attr">point</span>: point,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> lineEntity = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Entity</span>(&#123;</span><br><span class="line">    <span class="attr">polyline</span>: line,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> polygonEntity = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Entity</span>(&#123;</span><br><span class="line">    <span class="attr">polygon</span>: polygon,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> polylineEntity = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Entity</span>(&#123;</span><br><span class="line">    <span class="attr">polyline</span>: polyline,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>在创建实体对象时，可以设置实体的位置、姿态、属性等。</p>
 </blockquote>
 <ul>
-<li>4.添加实体到场景中<br>将创建好的实体对象添加到场景中进行显示。<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scene.<span class="property">primitives</span>.<span class="title function_">add</span>(pointEntity);</span><br><span class="line">scene.<span class="property">primitives</span>.<span class="title function_">add</span>(lineEntity);</span><br><span class="line">scene.<span class="property">primitives</span>.<span class="title function_">add</span>(polygonEntity);</span><br><span class="line">scene.<span class="property">primitives</span>.<span class="title function_">add</span>(polylineEntity);</span><br></pre></td></tr></table></figure>
-此时，创建的几何体就会在场景中显示出来。</li>
+<li>4. 添加实体到场景中<br>
+将创建好的实体对象添加到场景中进行显示。</li>
 </ul>
-<p>除了基本几何体外，Cesium还提供了材质、贴图和光照等功能来增强3D对象的外观。下面我们来分别介绍这些概念和用法。</p>
-<p>例如，为实体添加<code>贴图</code>：</p>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scene.<span class="property">primitives</span>.<span class="title function_">add</span>(pointEntity);</span><br><span class="line">scene.<span class="property">primitives</span>.<span class="title function_">add</span>(lineEntity);</span><br><span class="line">scene.<span class="property">primitives</span>.<span class="title function_">add</span>(polygonEntity);</span><br><span class="line">scene.<span class="property">primitives</span>.<span class="title function_">add</span>(polylineEntity);</span><br></pre></td></tr></table></figure>
+<p>此时，创建的几何体就会在场景中显示出来。</p>
+<p>除了基本几何体外，Cesium 还提供了材质、贴图和光照等功能来增强 3D 对象的外观。下面我们来分别介绍这些概念和用法。</p>
+<p>例如，为实体添加 <code>贴图</code> ：</p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建球体</span></span><br><span class="line"><span class="keyword">var</span> sphere = viewer.<span class="property">entities</span>.<span class="title function_">add</span>(&#123;</span><br><span class="line">    name : <span class="string">&#x27;Red sphere with image-based lighting&#x27;</span>,</span><br><span class="line">    <span class="attr">position</span>: <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(-<span class="number">75.59777</span>, <span class="number">40.03883</span>),</span><br><span class="line">    ellipsoid : &#123;</span><br><span class="line">        radii : <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Cartesian3</span>(<span class="number">500000.0</span>, <span class="number">500000.0</span>, <span class="number">500000.0</span>),</span><br><span class="line">        material : <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Material</span>(&#123;</span><br><span class="line">            fabric : &#123;</span><br><span class="line">                type : <span class="string">&#x27;Image&#x27;</span>,</span><br><span class="line">                uniforms : &#123;</span><br><span class="line">                    image : <span class="string">&#x27;path/to/image.jpg&#x27;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">scene.<span class="property">primitives</span>.<span class="title function_">add</span>(entity);</span><br></pre></td></tr></table></figure>
-
-<p>添加<code>光照</code>:</p>
-<p>光照是指模拟现实世界中光线照射物体的效果，Cesium提供了点光源、方向光和环境光等多种光源模拟方式。</p>
+<p>添加 <code>光照</code> :</p>
+<p>光照是指模拟现实世界中光线照射物体的效果，Cesium 提供了点光源、方向光和环境光等多种光源模拟方式。</p>
 <p>例如，我们可以使用以下代码创建一个点光源：</p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建点光源</span></span><br><span class="line"><span class="keyword">var</span> light = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">PointLight</span>(&#123;</span><br><span class="line">    color : <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Color</span>(<span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span>),</span><br><span class="line">    intensity : <span class="number">0.5</span>,</span><br><span class="line">    distance : <span class="number">20000.0</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将点光源附加到场景中</span></span><br><span class="line">viewer.<span class="property">scene</span>.<span class="title function_">addLightSource</span>(light);</span><br></pre></td></tr></table></figure>
-<p>添加<code>材质</code>:</p>
-<p>材质是指表面外观的属性，如颜色、透明度、金属度等。在Cesium中，我们可以使用Material来定义3D对象的材质。</p>
+<p>添加 <code>材质</code> :</p>
+<p>材质是指表面外观的属性，如颜色、透明度、金属度等。在 Cesium 中，我们可以使用 Material 来定义 3D 对象的材质。</p>
 <p>例如，我们可以使用以下代码将一个红色材质应用于一个正方体：</p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建正方体</span></span><br><span class="line"><span class="keyword">var</span> box = viewer.<span class="property">entities</span>.<span class="title function_">add</span>(&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Box&#x27;</span>,</span><br><span class="line">    <span class="attr">position</span>: <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(-<span class="number">75.170365</span>, <span class="number">39.920194</span>),</span><br><span class="line">    <span class="attr">box</span>: &#123;</span><br><span class="line">        <span class="attr">dimensions</span>: <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Cartesian3</span>(<span class="number">400000.0</span>, <span class="number">300000.0</span>, <span class="number">500000.0</span>),</span><br><span class="line">        <span class="attr">material</span>: <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">ColorMaterialProperty</span>(<span class="title class_">Cesium</span>.<span class="property">Color</span>.<span class="property">RED</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>以上就是在Cesium中创建3D对象的基本知识，包括点、线、面、多边形等基本几何体以及贴图、光照、材质等概念和用法。</p>
+<p>以上就是在 Cesium 中创建 3D 对象的基本知识，包括点、线、面、多边形等基本几何体以及贴图、光照、材质等概念和用法。</p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/Cesium-js/" rel="tag"><i class="ic i-tag"></i> Cesium.js</a>
@@ -317,7 +329,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0Cesium%E7%9A%843D%E5%9B%BE%E5%BD%A2%E5%AD%A6"><span class="toc-number">1.</span> <span class="toc-text">简述Cesium的3D图形学</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cesium%E7%9A%84%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">2.</span> <span class="toc-text">Cesium的图形学基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cesium%E4%B8%AD%E5%88%9B%E5%BB%BA3D%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.</span> <span class="toc-text">Cesium中创建3D对象</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0cesium%E7%9A%843d%E5%9B%BE%E5%BD%A2%E5%AD%A6"><span class="toc-number">1.</span> <span class="toc-text"> 简述 Cesium 的 3D 图形学</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cesium%E7%9A%84%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">2.</span> <span class="toc-text"> Cesium 的图形学基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cesium%E4%B8%AD%E5%88%9B%E5%BB%BA3d%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.</span> <span class="toc-text"> Cesium 中创建 3D 对象</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -436,48 +448,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
-</div>
-
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/1.grasshopper%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" title="1.grasshopper是什么？">1.grasshopper是什么？</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%9B%B8%E5%86%8C/" title="分类于 相册">相册</a>
-</div>
-
-    <span><a href="/2023/03/02/photoAlbum/" title="格桑的破相册">格桑的破相册</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/web-study/vue-study/" title="分类于 Vue">Vue</a>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
 </div>
 
-    <span><a href="/2022/12/21/web-study/vue-study/1.vue%E6%A0%B8%E5%BF%83/" title="1.vue核心">1.vue核心</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/HTML/" title="分类于 HTML">HTML</a>
-</div>
-
-    <span><a href="/2022/12/21/web-study/html-/HTML/" title="HTML入门">HTML入门</a></span>
+    <span><a href="/2023/03/11/web-study/dockerstudy/1.docker%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%89%E8%A3%85/" title="1.docker入门与安装">1.docker入门与安装</a></span>
   </li>
 
       
@@ -496,38 +472,10 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/revit-dynamo/" title="分类于 Revit与Dynamo">Revit与Dynamo</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/revit-dynamo/Revit/" title="分类于 Revit">Revit</a>
+<a href="/categories/arc-study/cim-study/" title="分类于 CIM">CIM</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/revit-dynamo/revit%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="Revit下载与安装">Revit下载与安装</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/js-study/" title="分类于 Javascript">Javascript</a>
-</div>
-
-    <span><a href="/2022/12/21/web-study/js-study/JavaScript/" title="JavaScript入门">JavaScript入门</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
-</div>
-
-    <span><a href="/2022/04/11/3D-study/Cesium/2.JavaScript%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" title="2.编程语言">2.编程语言</a></span>
+    <span><a href="/2023/03/03/arc-study/CIM/1.%E4%BB%80%E4%B9%88%E6%98%AFCIM%EF%BC%9F/" title="1.什么是CIM">1.什么是CIM</a></span>
   </li>
 
       
@@ -536,26 +484,84 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+<a href="/categories/arc-study/BIM/" title="分类于 BIM">BIM</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
+    <span><a href="/2023/03/02/arc-study/BIM/1.%E4%BB%80%E4%B9%88%E6%98%AFBIM%EF%BC%9F/" title="1.什么是BIM">1.什么是BIM</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/%E6%95%B0%E5%AD%97%E5%8D%9A%E7%89%A9%E9%A6%86/" title="分类于 数字博物馆">数字博物馆</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/%E6%95%B0%E5%AD%97%E5%8D%9A%E7%89%A9%E9%A6%86/node%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" title="分类于 node后端开发">node后端开发</a>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2023/03/03/project-summary/demo-project/%E6%95%B0%E5%AD%97%E5%8D%9A%E7%89%A9%E9%A6%86/1.%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91-%E7%A1%AE%E5%AE%9A%E9%9C%80%E6%B1%82/" title="1.后端开发-确定需求">1.后端开发-确定需求</a></span>
+    <span><a href="/2022/02/05/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E4%BA%A4%E9%80%9A/" title="3.具体应用-智慧交通">3.具体应用-智慧交通</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/12/web-study/dockerstudy/2.docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/" title="2.docker容器使用">2.docker容器使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/webGL-study/" title="分类于 webGL">webGL</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/webGL-study/%E8%B6%85%E5%9B%BEwebGL/" title="分类于 超图webGL">超图webGL</a>
+</div>
+
+    <span><a href="/2022/12/21/3D-study/webGL/supermap-webGL/" title="超图webGL开发指南">超图webGL开发指南</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/WebGIS/" title="分类于 WebGIS">WebGIS</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/WebGIS/echarts-map/" title="分类于 echarts-map">echarts-map</a>
+</div>
+
+    <span><a href="/2022/12/22/map-study/echarts-map/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/14/web-study/dockerstudy/4.docker%E9%83%A8%E7%BD%B2%E6%95%B0%E6%8D%AE%E5%BA%93/" title="4.docker部署数据库">4.docker部署数据库</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+</div>
+
+    <span><a href="/2022/02/06/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E7%8E%AF%E4%BF%9D/" title="3.具体应用-智慧环保">3.具体应用-智慧环保</a></span>
   </li>
 
   </ul>
@@ -580,13 +586,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">138k 字</span>
+    <span title="站点总字数">137k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:05</span>
+    <span title="站点阅读时长">2:04</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
