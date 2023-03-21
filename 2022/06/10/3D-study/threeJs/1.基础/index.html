@@ -167,108 +167,117 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="认识-three-js"><a href="#认识-three-js" class="headerlink" title="认识 three.js"></a>认识 three.js</h1><blockquote>
+    <h1 id="认识-threejs"><a class="markdownIt-Anchor" href="#认识-threejs">#</a> 认识 three.js</h1>
+<blockquote>
 <p>这是 Three.js 系列文章的第一篇。 Three.js 是一个尽可能简化在网页端获取 3D 内容的库。</p>
 </blockquote>
-<p>Three.js 经常会和 WebGL 混淆， 但也并不总是，three.js 其实是使用 WebGL 来绘制三维效果的。 WebGL 是一个只能画点、线和三角形的非常底层的系统. 想要用 WebGL 来做一些实用的东西通常需要大量的代码， 这就是 Three.js 的用武之地。它封装了诸如场景、灯光、阴影、材质、贴图、空间运算等一系列功能，不必要再从底层 WebGL 开始写起。</p>
-<p>在学习大多数编程语言的时候第一件事就是让电脑打印个”Hello World!”。 对于三维来说第一件事往往是创建一个三维的立方体。 所以从”Hello Cube!”开始。</p>
-<p>了解一下一个 three.js 应用的整体结构。一个 three.js 应用需要创建很多对象，并且将他们关联在一起。下图是一个基础的<strong>three.js 应用结构</strong>。</p>
+<p>Three.js 经常会和 WebGL 混淆， 但也并不总是，three.js 其实是使用 WebGL 来绘制三维效果的。 WebGL 是一个只能画点、线和三角形的非常底层的系统。想要用 WebGL 来做一些实用的东西通常需要大量的代码， 这就是 Three.js 的用武之地。它封装了诸如场景、灯光、阴影、材质、贴图、空间运算等一系列功能，不必要再从底层 WebGL 开始写起。</p>
+<p>在学习大多数编程语言的时候第一件事就是让电脑打印个 &quot;Hello World!&quot;。 对于三维来说第一件事往往是创建一个三维的立方体。 所以从 &quot;Hello Cube!&quot; 开始。</p>
+<p>了解一下一个 three.js 应用的整体结构。一个 three.js 应用需要创建很多对象，并且将他们关联在一起。下图是一个基础的<strong> three.js 应用结构</strong>。</p>
 <p><img data-src="https://s1.ax1x.com/2023/03/09/ppnSUPS.jpg" alt="ppnSUPS.jpg"></p>
 <ul>
-<li><p>首先有一个<code>渲染器(Renderer)</code>。这可以说是 three.js 的主要对象。你传入一个<code>场景(Scene)</code>和一个<code>摄像机(Camera)</code>到<code>渲染器(Renderer)</code>中，然后它会将摄像机视椎体中的三维场景渲染成一个二维图片显示在画布上。</p>
+<li>
+<p>首先有一个 <code>渲染器(Renderer)</code> 。这可以说是 three.js 的主要对象。你传入一个 <code>场景(Scene)</code>  和一个 <code>摄像机(Camera)</code>  到 <code>渲染器(Renderer)</code>  中，然后它会将摄像机视椎体中的三维场景渲染成一个二维图片显示在画布上。</p>
 </li>
-<li><p>其次有一个场景图 它是一个树状结构，由很多对象组成，比如图中包含了一个<code>场景(Scene)</code>对象 ，多个<code>网格(Mesh)</code>对象，<code>光源(Light)</code>对象，<code>群组(Group)</code>，<code>三维物体(Object3D)</code>，和<code>摄像机(Camera)</code>对象。一个<code>场景(Scene)</code>对象定义了场景图最基本的要素，并包了含背景色和雾等属性。这些对象通过一个层级关系明确的树状结构来展示出各自的位置和方向。子对象的位置和方向总是相对于父对象而言的。比如说汽车的轮子是汽车的子对象，这样移动和定位汽车时就会自动移动轮子。你可以在场景图的这篇文章中了解更多内容。</p>
+<li>
+<p>其次有一个场景图 它是一个树状结构，由很多对象组成，比如图中包含了一个 <code>场景(Scene)</code>  对象 ，多个 <code>网格(Mesh)</code>  对象， <code>光源(Light)</code>  对象， <code>群组(Group)</code> ， <code>三维物体(Object3D)</code> ，和 <code>摄像机(Camera)</code>  对象。一个 <code>场景(Scene)</code>  对象定义了场景图最基本的要素，并包了含背景色和雾等属性。这些对象通过一个层级关系明确的树状结构来展示出各自的位置和方向。子对象的位置和方向总是相对于父对象而言的。比如说汽车的轮子是汽车的子对象，这样移动和定位汽车时就会自动移动轮子。你可以在场景图的这篇文章中了解更多内容。</p>
 </li>
-<li><p>注意图中<code>摄像机(Camera)</code>是一半在场景图中，一半在场景图外的。这表示在 three.js 中，<code>摄像机(Camera)</code>和其他对象不同的是，它不一定要在场景图中才能起作用。相同的是，<code>摄像机(Camera)</code>作为其他对象的子对象，同样会继承它父对象的位置和朝向。在场景图这篇文章的结尾部分有放置多个<code>摄像机(Camera)</code>在一个场景中的例子。</p>
+<li>
+<p>注意图中 <code>摄像机(Camera)</code>  是一半在场景图中，一半在场景图外的。这表示在 three.js 中， <code>摄像机(Camera)</code>  和其他对象不同的是，它不一定要在场景图中才能起作用。相同的是， <code>摄像机(Camera)</code>  作为其他对象的子对象，同样会继承它父对象的位置和朝向。在场景图这篇文章的结尾部分有放置多个 <code>摄像机(Camera)</code>  在一个场景中的例子。</p>
 </li>
-<li><p><code>网格(Mesh)</code>对象可以理解为用一种特定的材质(Material)来绘制的一个特定的<code>几何体(Geometry)</code>。<code>材质(Material)</code>和<code>几何体(Geometry)</code>可以被多个<code>网格(Mesh)</code>对象使用。比如在不同的位置画两个蓝色立方体，会需要两个<code>网格(Mesh)</code>对象来代表每一个立方体的位置和方向。但只需一个<code>几何体(Geometry)</code>来存放立方体的顶点数据，和一种<code>材质(Material)</code>来定义立方体的颜色为蓝色就可以了。两个<code>网格(Mesh)</code>对象都引用了相同的<code>几何体(Geometry)</code>和<code>材质(Material)</code>。</p>
+<li>
+<p><code>网格(Mesh)</code>  对象可以理解为用一种特定的材质 (Material) 来绘制的一个特定的 <code>几何体(Geometry)</code> 。 <code>材质(Material)</code>  和 <code>几何体(Geometry)</code>  可以被多个 <code>网格(Mesh)</code>  对象使用。比如在不同的位置画两个蓝色立方体，会需要两个 <code>网格(Mesh)</code>  对象来代表每一个立方体的位置和方向。但只需一个 <code>几何体(Geometry)</code>  来存放立方体的顶点数据，和一种 <code>材质(Material)</code>  来定义立方体的颜色为蓝色就可以了。两个 <code>网格(Mesh)</code>  对象都引用了相同的 <code>几何体(Geometry)</code>  和 <code>材质(Material)</code> 。</p>
 </li>
-<li><p><code>几何体(Geometry)</code>对象顾名思义代表一些几何体，如球体、立方体、平面、狗、猫、人、树、建筑等物体的顶点信息。Three.js 内置了许多基本几何体 。你也可以创建自定义几何体或从文件中加载几何体。</p>
+<li>
+<p><code>几何体(Geometry)</code>  对象顾名思义代表一些几何体，如球体、立方体、平面、狗、猫、人、树、建筑等物体的顶点信息。Three.js 内置了许多基本几何体 。你也可以创建自定义几何体或从文件中加载几何体。</p>
 </li>
-<li><p><code>材质(Material)</code>对象代表绘制几何体的表面属性，包括使用的颜色，和光亮程度。一个<code>材质(Material)</code>可以引用一个或多个<code>纹理(Texture)</code>，这些纹理可以用来，打个比方，将图像包裹到几何体的表面。</p>
+<li>
+<p><code>材质(Material)</code>  对象代表绘制几何体的表面属性，包括使用的颜色，和光亮程度。一个 <code>材质(Material)</code>  可以引用一个或多个 <code>纹理(Texture)</code> ，这些纹理可以用来，打个比方，将图像包裹到几何体的表面。</p>
 </li>
-<li><p><code>纹理(Texture)</code>对象通常表示一幅要么从文件中加载，要么在画布上生成，要么由另一个场景渲染出的图像。</p>
+<li>
+<p><code>纹理(Texture)</code>  对象通常表示一幅要么从文件中加载，要么在画布上生成，要么由另一个场景渲染出的图像。</p>
 </li>
-<li><p><code>光源(Light)</code>对象代表不同种类的光。</p>
+<li>
+<p><code>光源(Light)</code>  对象代表不同种类的光。</p>
 </li>
 </ul>
-<p>有了以上基本概念，接下来就来画个下图所示的”Hello Cube”吧。<br><img data-src="https://s1.ax1x.com/2023/03/09/ppnS6aV.jpg" alt="ppnS6aV.jpg"></p>
-<h1 id="开始-three-js-之旅"><a href="#开始-three-js-之旅" class="headerlink" title="开始 three.js 之旅"></a>开始 three.js 之旅</h1><p>首先是加载 three.js</p>
+<p>有了以上基本概念，接下来就来画个下图所示的 &quot;Hello Cube&quot; 吧。<br>
+<img data-src="https://s1.ax1x.com/2023/03/09/ppnS6aV.jpg" alt="ppnS6aV.jpg"></p>
+<h1 id="开始-threejs-之旅"><a class="markdownIt-Anchor" href="#开始-threejs-之旅">#</a> 开始 three.js 之旅</h1>
+<p>首先是加载 three.js</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> * <span class="keyword">as</span> <span class="variable constant_">THREE</span> <span class="keyword">from</span> <span class="string">&quot;three&quot;</span>;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>把<code>type=&quot;module&quot;</code>放到 script 标签中很重要。这可以让使用<code>import</code>关键字加载 three.js。还有其他的方法可以加载 three.js，但是自 r106 开始，使用模块是最推荐的方式。模块的优点是可以很方便地导入需要的其他模块。这样就不用再手动引入它们所依赖的其他文件了。</p>
-<p>下一步需要一个<code>&lt;canvas&gt;</code>标签。</p>
+<p>把 <code>type=&quot;module&quot;</code>  放到 script 标签中很重要。这可以让使用 <code>import</code>  关键字加载 three.js。还有其他的方法可以加载 three.js，但是自 r106 开始，使用模块是最推荐的方式。模块的优点是可以很方便地导入需要的其他模块。这样就不用再手动引入它们所依赖的其他文件了。</p>
+<p>下一步需要一个 <code>&lt;canvas&gt;</code>  标签。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;c&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>Three.js 需要使用这个 canvas 标签来绘制，所以要先获取它然后传给 three.js。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> * <span class="keyword">as</span> <span class="variable constant_">THREE</span> <span class="keyword">from</span> <span class="string">&#x27;three&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">function</span> <span class="title function_">main</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#c&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> renderer = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">WebGLRenderer</span>(&#123;<span class="attr">antialias</span>: <span class="literal">true</span>, canvas&#125;);</span></span><br><span class="line"><span class="language-javascript">    ...</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>拿到 canvas 后需要创建一个<code>WebGL渲染器(WebGLRenderer)</code>。渲染器负责将提供的所有数据渲染绘制到 canvas 上。</p>
+<p>拿到 canvas 后需要创建一个 <code>WebGL渲染器(WebGLRenderer)</code> 。渲染器负责将提供的所有数据渲染绘制到 canvas 上。</p>
 <p>注意这里有一些细节。如果没有给 three.js 传 canvas，three.js 会自己创建一个 ，但是必须手动把它添加到文档中。在哪里添加可能会不一样这取决你怎么使用， 我发现给 three.js 传一个 canvas 会更灵活一些。我可以将 canvas 放到任何地方， 代码都会找到它，假如我有一段代码是将 canvas 插入到文档中，那么当需求变化时， 我很可能必须去修改这段代码。</p>
-<p>接下来需要一个<code>透视摄像机(PerspectiveCamera)</code>。</p>
+<p>接下来需要一个 <code>透视摄像机(PerspectiveCamera)</code> 。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const fov = 75; const aspect = 2; // 相机默认值 const near = 0.1; const far = 5;</span><br><span class="line">const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);</span><br></pre></td></tr></table></figure>
-
-<p><code>fov</code>是视野范围(field of view)的缩写。上述代码中是指垂直方向为 75 度。 注意 three.js 中大多数的角用弧度表示，但是因为某些原因透视摄像机使用角度表示。</p>
-<p><code>aspect</code>指画布的宽高比。将在别的文章详细讨论，在默认情况下 画布是 300x150 像素，所以宽高比为 300&#x2F;150 或者说 2。</p>
-<p><code>near</code>和<code>far</code>代表近平面和远平面，它们限制了摄像机面朝方向的可绘区域。 任何距离小于或超过这个范围的物体都将被裁剪掉(不绘制)。</p>
-<p>这四个参数定义了一个 “视椎(frustum)”。 视椎(frustum)是指一个像被削去顶部的金字塔形状。换句话说，可以把”视椎(frustum)”想象成其他三维形状如球体、立方体、棱柱体、截椎体。<br><img data-src="https://s1.ax1x.com/2023/03/09/ppnpYLR.jpg" alt="ppnpYLR.jpg"></p>
+<p><code>fov</code>  是视野范围 (field of view) 的缩写。上述代码中是指垂直方向为 75 度。 注意 three.js 中大多数的角用弧度表示，但是因为某些原因透视摄像机使用角度表示。</p>
+<p><code>aspect</code>  指画布的宽高比。将在别的文章详细讨论，在默认情况下 画布是 300x150 像素，所以宽高比为 300/150 或者说 2。</p>
+<p><code>near</code>  和 <code>far</code>  代表近平面和远平面，它们限制了摄像机面朝方向的可绘区域。 任何距离小于或超过这个范围的物体都将被裁剪掉 (不绘制)。</p>
+<p>这四个参数定义了一个 “视椎 (frustum)”。 视椎 (frustum) 是指一个像被削去顶部的金字塔形状。换句话说，可以把 &quot;视椎 (frustum)&quot; 想象成其他三维形状如球体、立方体、棱柱体、截椎体。<br>
+<img data-src="https://s1.ax1x.com/2023/03/09/ppnpYLR.jpg" alt="ppnpYLR.jpg"></p>
 <p>近平面和远平面的高度由视野范围决定，宽度由视野范围和宽高比决定。</p>
 <p>视椎体内部的物体将被绘制，视椎体外的东西将不会被绘制。</p>
 <p>摄像机默认指向 Z 轴负方向，上方向朝向 Y 轴正方向。将会把立方体放置在坐标原点，所以需要往后移一下摄像机才能显示出物体。</p>
 <figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">camera.position.z = 2;</span><br></pre></td></tr></table></figure>
-
-<p>下图是想要达到的效果。<br><img data-src="https://s1.ax1x.com/2023/03/09/ppn9PmR.jpg" alt="ppn9PmR.jpg"><br>能看到摄像机的位置在<code>z = 2</code>。它朝向 Z 轴负方向。视椎体范围从摄像机前方 0.1 到 5。因为这张图是俯视图，视野范围会受到宽高比的影响。画布的宽度是高度的两倍，所以水平视角会比设置的垂直视角 75 度要大。</p>
-<p>然后创建一个<code>场景(Scene)</code>。<code>场景(Scene)</code>是three.js的基本的组成部分。需要three.js绘制的东西都需要加入到scene中。</p>
+<p>下图是想要达到的效果。<br>
+<img data-src="https://s1.ax1x.com/2023/03/09/ppn9PmR.jpg" alt="ppn9PmR.jpg"><br>
+ 能看到摄像机的位置在 <code>z = 2</code> 。它朝向 Z 轴负方向。视椎体范围从摄像机前方 0.1 到 5。因为这张图是俯视图，视野范围会受到宽高比的影响。画布的宽度是高度的两倍，所以水平视角会比设置的垂直视角 75 度要大。</p>
+<p>然后创建一个 <code>场景(Scene)</code> 。 <code>场景(Scene)</code>  是 three.js 的基本的组成部分。需要 three.js 绘制的东西都需要加入到 scene 中。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const scene = new THREE.Scene();</span><br></pre></td></tr></table></figure>
-
-<p>然后创建一个包含盒子信息的<code>立方几何体(BoxGeometry)</code>。几乎所有希望在three.js中显示的物体都需要一个包含了组成三维物体的顶点信息的几何体。</p>
+<p>然后创建一个包含盒子信息的 <code>立方几何体(BoxGeometry)</code> 。几乎所有希望在 three.js 中显示的物体都需要一个包含了组成三维物体的顶点信息的几何体。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const boxWidth = 1;</span><br><span class="line">const boxHeight = 1;</span><br><span class="line">const boxDepth = 1;</span><br><span class="line">const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);</span><br></pre></td></tr></table></figure>
-
-<p>然后创建一个基本的材质并设置它的颜色. 颜色的值可以用css方式和十六进制来表示。</p>
+<p>然后创建一个基本的材质并设置它的颜色。颜色的值可以用 css 方式和十六进制来表示。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const material = new THREE.MeshBasicMaterial(&#123;color: 0x44aa88&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>再创建一个<code>网格(Mesh)</code>对象，它包含了：</p>
+<p>再创建一个 <code>网格(Mesh)</code>  对象，它包含了：</p>
 <ul>
-<li>1.<code>几何体(Geometry)</code>(物体的形状)</li>
-<li>2.<code>材质(Material)</code>(如何绘制物体，光滑还是平整，什么颜色，什么贴图等等)</li>
-<li>3.对象在场景中相对于他父对象的位置、朝向、和缩放。下面的代码中父对象即为场景对象。<figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const cube = new THREE.Mesh(geometry, material);</span><br></pre></td></tr></table></figure>
-最后将网格添加到场景中。<figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scene.add(cube);</span><br></pre></td></tr></table></figure>
-之后将场景和摄像机传递给渲染器来渲染出整个场景。<figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">renderer.render(scene, camera);</span><br></pre></td></tr></table></figure>
-<strong>实例(<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvZnVuZGFtZW50YWxzLmh0bWw=">https://threejs.org/manual/examples/fundamentals.html</span>)</strong></li>
+<li>1. <code>几何体(Geometry)</code> (物体的形状)</li>
+<li>2. <code>材质(Material)</code> (如何绘制物体，光滑还是平整，什么颜色，什么贴图等等)</li>
+<li>3. 对象在场景中相对于他父对象的位置、朝向、和缩放。下面的代码中父对象即为场景对象。</li>
 </ul>
-<p>很难看出来这是一个三维的立方体，因为直视Z轴的负方向并且立方体和坐标轴是对齐的，所以只能看到一个面。</p>
-<h1 id="three-js-立体之旅"><a href="#three-js-立体之旅" class="headerlink" title="three.js 立体之旅"></a>three.js 立体之旅</h1><p>让立方体旋转起来，以便更好的在三维环境中显示。为了让它动起来需要用到一个渲染循环函数 <code>requestAnimationFram</code>.<br>代码如下：</p>
+<figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const cube = new THREE.Mesh(geometry, material);</span><br></pre></td></tr></table></figure>
+<p>最后将网格添加到场景中。</p>
+<figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scene.add(cube);</span><br></pre></td></tr></table></figure>
+<p>之后将场景和摄像机传递给渲染器来渲染出整个场景。</p>
+<figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">renderer.render(scene, camera);</span><br></pre></td></tr></table></figure>
+<p><strong>实例 (<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvZnVuZGFtZW50YWxzLmh0bWw=">https://threejs.org/manual/examples/fundamentals.html</span>)</strong></p>
+<p>很难看出来这是一个三维的立方体，因为直视 Z 轴的负方向并且立方体和坐标轴是对齐的，所以只能看到一个面。</p>
+<h1 id="threejs-立体之旅"><a class="markdownIt-Anchor" href="#threejs-立体之旅">#</a> three.js 立体之旅</h1>
+<p>让立方体旋转起来，以便更好的在三维环境中显示。为了让它动起来需要用到一个渲染循环函数  <code>requestAnimationFram</code> .<br>
+ 代码如下：</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function render(time) &#123;</span><br><span class="line">  time *= 0.001;  // 将时间单位变为秒</span><br><span class="line"> </span><br><span class="line">  cube.rotation.x = time;</span><br><span class="line">  cube.rotation.y = time;</span><br><span class="line"> </span><br><span class="line">  renderer.render(scene, camera);</span><br><span class="line"> </span><br><span class="line">  requestAnimationFrame(render);</span><br><span class="line">&#125;</span><br><span class="line">requestAnimationFrame(render);</span><br></pre></td></tr></table></figure>
-
-<p><code>requestAnimationFrame</code>函数会告诉浏览器需要显示动画。传入一个函数作为回调函数。本例中的函数是render函数。如果更新了跟页面显示有关的任何东西，浏览器会调用传入的函数来重新渲染页面。这里是调用three.js的renderer.render函数来绘制的场景。</p>
-<p>requestAnimationFrame会将页面开始加载到函数运行所经历的时间当作入参传给回调函数，单位是毫秒数。但我觉得用秒会更简单所以我将它转换成了秒。</p>
-<p>然后把立方体的X轴和Y轴方向的旋转角度设置成这个时间。这些旋转角度是弧度制。一圈的弧度为2Π所以的立方体在每个方向旋转一周的时间为6.28秒。</p>
+<p><code>requestAnimationFrame</code>  函数会告诉浏览器需要显示动画。传入一个函数作为回调函数。本例中的函数是 render 函数。如果更新了跟页面显示有关的任何东西，浏览器会调用传入的函数来重新渲染页面。这里是调用 three.js 的 renderer.render 函数来绘制的场景。</p>
+<p>requestAnimationFrame 会将页面开始加载到函数运行所经历的时间当作入参传给回调函数，单位是毫秒数。但我觉得用秒会更简单所以我将它转换成了秒。</p>
+<p>然后把立方体的 X 轴和 Y 轴方向的旋转角度设置成这个时间。这些旋转角度是弧度制。一圈的弧度为 2Π 所以的立方体在每个方向旋转一周的时间为 6.28 秒。</p>
 <p>最后渲染的场景并调用另一个帧动画函数来继续的循环。</p>
-<p>回调函数之外在主进程中调用一次requestAnimationFrame来开始整个渲染循环。<br><strong>示例(<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvZnVuZGFtZW50YWxzLXdpdGgtYW5pbWF0aW9uLmh0bWw=">https://threejs.org/manual/examples/fundamentals-with-animation.html</span>)</strong></p>
-<p>效果好了一些但还是很难看出是三维的。来添加些光照效果，应该会有点帮助。three.js中有很多种类型的灯光，将在后期文章中详细讨论。现在先创建一盏平行光。</p>
+<p>回调函数之外在主进程中调用一次 requestAnimationFrame 来开始整个渲染循环。<br>
+<strong>示例 (<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvZnVuZGFtZW50YWxzLXdpdGgtYW5pbWF0aW9uLmh0bWw=">https://threejs.org/manual/examples/fundamentals-with-animation.html</span>)</strong></p>
+<p>效果好了一些但还是很难看出是三维的。来添加些光照效果，应该会有点帮助。three.js 中有很多种类型的灯光，将在后期文章中详细讨论。现在先创建一盏平行光。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  const color = 0xFFFFFF;</span><br><span class="line">  const intensity = 1;</span><br><span class="line">  const light = new THREE.DirectionalLight(color, intensity);</span><br><span class="line">  light.position.set(-1, 2, 4);</span><br><span class="line">  scene.add(light);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>平行光有一个位置和目标点。默认值都为(0, 0, 0)。这里将灯光的位置设为(-1, 2, 4)，让它位于摄像机前面稍微左上方一点的地方。目标点还是(0, 0, 0)，让它朝向坐标原点方向。</p>
-<p>还需要改变下立方体的材质。<code>MeshBasicMaterial</code>材质不会受到灯光的影响。将他改成会受灯光影响的<code>MeshPhongMaterial</code>材质。</p>
+<p>平行光有一个位置和目标点。默认值都为 (0, 0, 0)。这里将灯光的位置设为 (-1, 2, 4)，让它位于摄像机前面稍微左上方一点的地方。目标点还是 (0, 0, 0)，让它朝向坐标原点方向。</p>
+<p>还需要改变下立方体的材质。 <code>MeshBasicMaterial</code>  材质不会受到灯光的影响。将他改成会受灯光影响的 <code>MeshPhongMaterial</code>  材质。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const material = new THREE.MeshBasicMaterial(&#123;color: 0x44aa88&#125;);  // 绿蓝色</span><br><span class="line">const material = new THREE.MeshPhongMaterial(&#123;color: 0x44aa88&#125;);  // 绿蓝色</span><br></pre></td></tr></table></figure>
-
-<p>这是新的项目结构:<br><img data-src="https://s1.ax1x.com/2023/03/09/ppn2MMd.md.jpg" alt="ppn2MMd.md.jpg"></p>
-<p><strong>实例(<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvZnVuZGFtZW50YWxzLXdpdGgtbGlnaHQuaHRtbA==">https://threejs.org/manual/examples/fundamentals-with-light.html</span>)</strong></p>
+<p>这是新的项目结构:<br>
+<img data-src="https://s1.ax1x.com/2023/03/09/ppn2MMd.md.jpg" alt="ppn2MMd.md.jpg"></p>
+<p><strong>实例 (<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvZnVuZGFtZW50YWxzLXdpdGgtbGlnaHQuaHRtbA==">https://threejs.org/manual/examples/fundamentals-with-light.html</span>)</strong></p>
 <p>现在应该可以很清楚的看出是三维立方体了。</p>
 <p>再添加两个立方体来增添点趣味性。</p>
 <p>每个立方体会引用同一个几何体和不同的材质，这样每个立方体将会是不同的颜色。</p>
-<p>首先创建一个根据指定的颜色生成新材质的函数。它会根据指定的几何体生成对应网格，然后将网格添加进场景并设置其X轴的位置。</p>
+<p>首先创建一个根据指定的颜色生成新材质的函数。它会根据指定的几何体生成对应网格，然后将网格添加进场景并设置其 X 轴的位置。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function makeInstance(geometry, color, x) &#123;</span><br><span class="line">  const material = new THREE.MeshPhongMaterial(&#123;color&#125;);</span><br><span class="line"> </span><br><span class="line">  const cube = new THREE.Mesh(geometry, material);</span><br><span class="line">  scene.add(cube);</span><br><span class="line"> </span><br><span class="line">  cube.position.x = x;</span><br><span class="line"> </span><br><span class="line">  return cube;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后将用三种不同的颜色和X轴位置调用三次函数，将生成的网格实例存在一个数组中。</p>
+<p>然后将用三种不同的颜色和 X 轴位置调用三次函数，将生成的网格实例存在一个数组中。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const cubes = [</span><br><span class="line">  makeInstance(geometry, 0x44aa88,  0),</span><br><span class="line">  makeInstance(geometry, 0x8844aa, -2),</span><br><span class="line">  makeInstance(geometry, 0xaa8844,  2),</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-
 <p>最后将在渲染函数中旋转三个立方体。给每个立方体设置了稍微不同的旋转角度。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function render(time) &#123;</span><br><span class="line">  time *= 0.001;  // 将时间单位变为秒</span><br><span class="line"> </span><br><span class="line">  cubes.forEach((cube, ndx) =&gt; &#123;</span><br><span class="line">    const speed = 1 + ndx * .1;</span><br><span class="line">    const rot = time * speed;</span><br><span class="line">    cube.rotation.x = rot;</span><br><span class="line">    cube.rotation.y = rot;</span><br><span class="line">  &#125;);</span><br><span class="line"> </span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
-<p>  <strong>实例(<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvZnVuZGFtZW50YWxzLTMtY3ViZXMuaHRtbA==">https://threejs.org/manual/examples/fundamentals-3-cubes.html</span>)</strong></p>
-<p>  如果你对比上面的示意图可以看到此效果符合的预想。位置为X &#x3D; -2 和 X &#x3D; +2的立方体有一部分在的视椎体外面。他们大部分是被包裹的，因为水平方向的视角非常大。</p>
-<p>  项目现在有了这样的结构：<br>  <img data-src="https://s1.ax1x.com/2023/03/09/ppn26iT.jpg" alt="ppn26iT.jpg"></p>
-<p>  正如你看见的那样，有三个<code>网格(Mesh)</code>引用了相同的<code>立方几何体(BoxGeometry)</code>。每个<code>网格(Mesh)</code>引用了一个单独的<code>MeshPhongMaterial</code>材质来显示不同的颜色。</p>
+<p><strong>实例 (<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvZnVuZGFtZW50YWxzLTMtY3ViZXMuaHRtbA==">https://threejs.org/manual/examples/fundamentals-3-cubes.html</span>)</strong></p>
+<p>如果你对比上面的示意图可以看到此效果符合的预想。位置为 X = -2 和 X = +2 的立方体有一部分在的视椎体外面。他们大部分是被包裹的，因为水平方向的视角非常大。</p>
+<p>项目现在有了这样的结构：<br>
+<img data-src="https://s1.ax1x.com/2023/03/09/ppn26iT.jpg" alt="ppn26iT.jpg"></p>
+<p>正如你看见的那样，有三个 <code>网格(Mesh)</code>  引用了相同的 <code>立方几何体(BoxGeometry)</code> 。每个 <code>网格(Mesh)</code>  引用了一个单独的 <code>MeshPhongMaterial</code>  材质来显示不同的颜色。</p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/three-js/" rel="tag"><i class="ic i-tag"></i> three.js</a>
@@ -355,7 +364,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86-three-js"><span class="toc-number">1.</span> <span class="toc-text">认识 three.js</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B-three-js-%E4%B9%8B%E6%97%85"><span class="toc-number">2.</span> <span class="toc-text">开始 three.js 之旅</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#three-js-%E7%AB%8B%E4%BD%93%E4%B9%8B%E6%97%85"><span class="toc-number">3.</span> <span class="toc-text">three.js 立体之旅</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86-threejs"><span class="toc-number">1.</span> <span class="toc-text"> 认识 three.js</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B-threejs-%E4%B9%8B%E6%97%85"><span class="toc-number">2.</span> <span class="toc-text"> 开始 three.js 之旅</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#threejs-%E7%AB%8B%E4%BD%93%E4%B9%8B%E6%97%85"><span class="toc-number">3.</span> <span class="toc-text"> three.js 立体之旅</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -476,62 +485,10 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/1.grasshopper%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" title="1.grasshopper是什么？">1.grasshopper是什么？</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
-</div>
-
-    <span><a href="/2022/03/10/gs-movies/my-movies/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/" title="辛德勒的名单">辛德勒的名单</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/demo-project/" title="分类于 js小工具">js小工具</a>
-</div>
-
-    <span><a href="/2023/03/02/project-summary/demo-project/%E5%9B%BE%E7%89%87%E8%BD%ACbase64/" title="图片转base64">图片转base64</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/revit-dynamo/" title="分类于 Revit与Dynamo">Revit与Dynamo</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/revit-dynamo/Revit/" title="分类于 Revit">Revit</a>
-</div>
-
-    <span><a href="/2022/12/21/arc-study/revit-dynamo/revit%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="Revit下载与安装">Revit下载与安装</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/map-study/gis%E7%90%86%E8%AE%BA/" title="分类于 gis理论">gis理论</a>
-</div>
-
-    <span><a href="/2022/12/21/map-study/gis-theory/%E8%AE%A4%E8%AF%86Geojson/" title="认识Geojson">认识Geojson</a></span>
+    <span><a href="/2022/01/20/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/1.%E4%BB%80%E4%B9%88%E6%98%AF%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%EF%BC%9F/" title="1.智慧城市概述">1.智慧城市概述</a></span>
   </li>
 
       
@@ -550,6 +507,84 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/12/web-study/dockerstudy/2.docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/" title="2.docker容器使用">2.docker容器使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/1.grasshopper%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" title="1.grasshopper是什么？">1.grasshopper是什么？</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/Rhino/" title="分类于 Rhino">Rhino</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/rhino/rhino%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="rhino下载与安装">rhino下载与安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+</div>
+
+    <span><a href="/2022/02/06/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E7%8E%AF%E4%BF%9D/" title="3.具体应用-智慧环保">3.具体应用-智慧环保</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/2022/12/21/web-study/html-/HTML/" title="HTML入门">HTML入门</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
@@ -562,36 +597,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/gs-movies/my-documentary/" title="分类于 纪录片">纪录片</a>
-</div>
-
-    <span><a href="/2022/12/21/gs-movies/my-documentary/%E8%88%AA%E6%8B%8D%E4%B8%AD%E5%9B%BD%EF%BC%88%E7%AC%AC%E4%B8%80%E5%AD%A3%EF%BC%89/" title="航拍中国（第一季）">航拍中国（第一季）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/BIM/" title="分类于 BIM">BIM</a>
-</div>
-
-    <span><a href="/2023/03/02/arc-study/BIM/1.%E4%BB%80%E4%B9%88%E6%98%AFBIM%EF%BC%9F/" title="1.什么是BIM">1.什么是BIM</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2022/02/02/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF/" title="2.关键技术-大数据技术">2.关键技术-大数据技术</a></span>
+    <span><a href="/2022/02/05/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E4%BA%A4%E9%80%9A/" title="3.具体应用-智慧交通">3.具体应用-智慧交通</a></span>
   </li>
 
   </ul>
@@ -616,7 +627,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">144k 字</span>
+    <span title="站点总字数">143k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">

@@ -167,87 +167,87 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <blockquote>
 <p>这个循序渐进的入门指南将会帮助你快速了解 Leaflet 基础知识，包括设置 Leaflet 地图、使用标记、折线和弹出窗口，以及处理事件。</p>
 </blockquote>
-<p><img data-src="https://tva3.sinaimg.cn/large/008uvbSaly8h5lawrrc35j30t90jkgqy.jpg"></p>
-<h1 id="准备一个新的页面"><a href="#准备一个新的页面" class="headerlink" title="准备一个新的页面"></a>准备一个新的页面</h1><p>在为地图编写代码之前，你需要在你的页面上完成以下准备步骤：</p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008uvbSaly8h5lawrrc35j30t90jkgqy.jpg" alt=""></p>
+<h1 id="准备一个新的页面"><a class="markdownIt-Anchor" href="#准备一个新的页面">#</a> 准备一个新的页面</h1>
+<p>在为地图编写代码之前，你需要在你的页面上完成以下准备步骤：</p>
 <ul>
 <li>在文档的 head 部分引入 Leaflet CSS 文件:</li>
 </ul>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span></span></span><br><span class="line"><span class="tag">  <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">href</span>=<span class="string">&quot;https://unpkg.com/leaflet@1.8.0/dist/leaflet.css&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">integrity</span>=<span class="string">&quot;sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">crossorigin</span>=<span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>在引入 Leaflet CSS 文件之后引入 Leaflet JavaScript 文件:</li>
 </ul>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Make sure you put this AFTER Leaflet&#x27;s CSS --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/leaflet@1.8.0/dist/leaflet.js&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">integrity</span>=<span class="string">&quot;sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">crossorigin</span>=<span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>将具有特定 id 的 div 元素放置在你希望地图所在的位置:</li>
 </ul>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;mapid&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>确保地图容器定义了固定高度，例如在 CSS 中设置:</li>
 </ul>
 <figure class="highlight css"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#mapid</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">180px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>现在您已准备好初始化地图并使用它做一些事情。</p>
 </blockquote>
-<h1 id="设置地图"><a href="#设置地图" class="headerlink" title="设置地图"></a>设置地图</h1><p><a target="_blank" rel="noopener" href="https://imgse.com/i/vRomxs"><img data-src="https://s1.ax1x.com/2022/08/27/vRomxs.png" alt="vRomxs.png"></a></p>
+<h1 id="设置地图"><a class="markdownIt-Anchor" href="#设置地图">#</a> 设置地图</h1>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/vRomxs"><img data-src="https://s1.ax1x.com/2022/08/27/vRomxs.png" alt="vRomxs.png"></a></p>
 <p>让我们用漂亮的 Mapbox Streets 瓦片（Tile）底图创建一张伦敦市中心的地图。首先，我们将初始化地图并将其视图设置为我们选择的地理坐标和缩放级别：</p>
 <figure class="highlight javascript"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mymap = L.<span class="title function_">map</span>(<span class="string">&#x27;mapid&#x27;</span>).<span class="title function_">setView</span>([<span class="number">25.042547</span>, <span class="number">102.706312</span>], <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>默认情况下（因为我们在创建地图实例时没有传递任何选项），地图上的所有鼠标和触摸交互都处于启用状态，并且具有缩放和属性控制。</p>
 </blockquote>
 <blockquote>
-<p>🚩 请注意，<code>setView</code> 调用还会返回地图对象——大多数 Leaflet 方法在不返回显式值时的行为都是这样的，这允许你可以很方便的进行类似 jQuery 的链式调用。<br>🔥 此处以昆明五华区坐标为例，<code>setView</code>携带两个参数：<code>[25.042547, 102.706312]</code>为地图中心坐标位置，<code>10</code>为地图加载级别（数字越大地图加载越近）</p>
+<p>🚩 请注意， <code>setView</code>  调用还会返回地图对象 —— 大多数 Leaflet 方法在不返回显式值时的行为都是这样的，这允许你可以很方便的进行类似 jQuery 的链式调用。<br>
+🔥 此处以昆明五华区坐标为例， <code>setView</code>  携带两个参数： <code>[25.042547, 102.706312]</code>  为地图中心坐标位置， <code>10</code>  为地图加载级别（数字越大地图加载越近）</p>
 </blockquote>
-<p>接下来我们将添加一个瓦片（Tile）图层到地图中, 在当前示例中它是一个 Mapbox 街道的瓦片（Tile）图层。创建一个瓦片（Tile）图层通常会涉及为瓦片（Tile）图像设置 URL 模板 、属性文本和图层的最大缩放等级。在这个例子中，我们将使用 mapbox&#x2F;streets-v11 中的 Mapbox’s Static Tiles API（从 Mapbox 中使用 瓦片（Tile），还必须申请一个访问令牌）。由于此 API 默认返回 512x512 图块（而不是 256x256），因此我们还必须明确指定这一点并将缩放值偏移 -1。</p>
+<p>接下来我们将添加一个瓦片（Tile）图层到地图中，在当前示例中它是一个 Mapbox 街道的瓦片（Tile）图层。创建一个瓦片（Tile）图层通常会涉及为瓦片（Tile）图像设置 URL 模板 、属性文本和图层的最大缩放等级。在这个例子中，我们将使用 mapbox/streets-v11 中的 Mapbox’s Static Tiles API（从 Mapbox 中使用 瓦片（Tile），还必须申请一个访问令牌）。由于此 API 默认返回 512x512 图块（而不是 256x256），因此我们还必须明确指定这一点并将缩放值偏移 -1。</p>
 <figure class="highlight javascript"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">L.<span class="title function_">tileLayer</span>(<span class="string">&#x27;https://api.mapbox.com/styles/v1/&#123;id&#125;/tiles/&#123;z&#125;/&#123;x&#125;/&#123;y&#125;?access_token=&#123;accessToken&#125;&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">attribution</span>: <span class="string">&#x27;Map data &amp;copy; &lt;a href=&quot;https://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, Imagery © &lt;a href=&quot;https://www.mapbox.com/&quot;&gt;Mapbox&lt;/a&gt;&#x27;</span>,</span><br><span class="line">    <span class="attr">maxZoom</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">id</span>: <span class="string">&#x27;mapbox/streets-v11&#x27;</span>,</span><br><span class="line">    <span class="attr">tileSize</span>: <span class="number">512</span>,</span><br><span class="line">    <span class="attr">zoomOffset</span>: -<span class="number">1</span>,</span><br><span class="line">    <span class="attr">accessToken</span>: <span class="string">&#x27;your.mapbox.access.token&#x27;</span></span><br><span class="line">&#125;).<span class="title function_">addTo</span>(mymap);</span><br></pre></td></tr></table></figure>
-
 <p>确保引入 leaflet.js 文件并配置好 div 后运行所有代码。就是这样，你现在拥有一个运行正常的 Leaflet 地图。</p>
 <blockquote>
-<p>L.tileLayer(‘mapUrl’,{attribution,maxZoom,id,tileSize,zoomOffset,accessToken})<br><code>attribution</code> 设置版权<br><code>maxZoom</code> 最大缩放比例<br><code>accessToken</code>（地图令牌&#x2F;token）注册 mapbox token 地址：<code>https://docs.mapbox.com/help/glossary/access-token/</code></p>
+<p>L.tileLayer(‘mapUrl’,{attribution,maxZoom,id,tileSize,zoomOffset,accessToken})<br>
+ <code>attribution</code>  设置版权<br>
+ <code>maxZoom</code>  最大缩放比例<br>
+ <code>accessToken</code> （地图令牌 /token）注册 mapbox token 地址： <code>https://docs.mapbox.com/help/glossary/access-token/</code></p>
 </blockquote>
-<h1 id="标记、圆和多边形"><a href="#标记、圆和多边形" class="headerlink" title="标记、圆和多边形"></a>标记、圆和多边形</h1><p>除了瓦片（Tile）图层，您还可以轻松地向地图添加其他内容，包括标记、折线、多边形、圆形和弹出窗口。</p>
-<p>1.让我们添加一个标记：</p>
+<h1 id="标记-圆和多边形"><a class="markdownIt-Anchor" href="#标记-圆和多边形">#</a> 标记、圆和多边形</h1>
+<p>除了瓦片（Tile）图层，您还可以轻松地向地图添加其他内容，包括标记、折线、多边形、圆形和弹出窗口。</p>
+<p>1. 让我们添加一个标记：</p>
 <figure class="highlight javascript"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> marker = L.<span class="title function_">marker</span>([<span class="number">25.042547</span>, <span class="number">102.706312</span>]).<span class="title function_">addTo</span>(mymap);</span><br></pre></td></tr></table></figure>
-
 <p><a target="_blank" rel="noopener" href="https://imgse.com/i/vRo7WQ"><img data-src="https://s1.ax1x.com/2022/08/27/vRo7WQ.png" alt="vRo7WQ.png"></a></p>
-<p>2.可以使用同样的方式添加一个圆（除了指定以米为单位的半径作为第二个参数），但允许您通过在创建对象时将选项作为最后一个参数传递来控制它的外观：</p>
+<p>2. 可以使用同样的方式添加一个圆（除了指定以米为单位的半径作为第二个参数），但允许您通过在创建对象时将选项作为最后一个参数传递来控制它的外观：</p>
 <figure class="highlight javascript"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> circle = L.<span class="title function_">circle</span>([<span class="number">25.042547</span>, <span class="number">102.706312</span>], &#123;</span><br><span class="line">    <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span>,</span><br><span class="line">    <span class="attr">fillColor</span>: <span class="string">&#x27;#f03&#x27;</span>,</span><br><span class="line">    <span class="attr">fillOpacity</span>: <span class="number">0.5</span>,</span><br><span class="line">    <span class="attr">radius</span>: <span class="number">500</span></span><br><span class="line">&#125;).<span class="title function_">addTo</span>(mymap);</span><br></pre></td></tr></table></figure>
-
 <p><a target="_blank" rel="noopener" href="https://imgse.com/i/vRTG0P"><img data-src="https://s1.ax1x.com/2022/08/27/vRTG0P.png" alt="vRTG0P.png"></a></p>
 <blockquote>
-<p>circle([圆中心坐标位置]，{color，fillColor,fillOpacity,radius})<br><code>color</code>:圆边框颜色<br><code>fillColor</code>:圆形填充颜色<br><code>fillOpacity</code>:填充颜色透明度<br><code>radius</code>：圆形半径</p>
+<p>circle ([圆中心坐标位置]，{color，fillColor,fillOpacity,radius})<br>
+ <code>color</code> : 圆边框颜色<br>
+ <code>fillColor</code> : 圆形填充颜色<br>
+ <code>fillOpacity</code> : 填充颜色透明度<br>
+ <code>radius</code> ：圆形半径</p>
 </blockquote>
-<p>3.添加多边形同样简单：</p>
+<p>3. 添加多边形同样简单：</p>
 <figure class="highlight javascript"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> polygon = L.<span class="title function_">polygon</span>([</span><br><span class="line">      [<span class="number">25.001547</span>, <span class="number">102.706312</span>],</span><br><span class="line">      [<span class="number">25.042547</span>, <span class="number">102.656312</span>],</span><br><span class="line">      [<span class="number">25.062547</span>, <span class="number">102.786312</span>],</span><br><span class="line">    ]).<span class="title function_">addTo</span>(mymap);</span><br></pre></td></tr></table></figure>
-
 <p><a target="_blank" rel="noopener" href="https://imgse.com/i/vRTO9e"><img data-src="https://s1.ax1x.com/2022/08/27/vRTO9e.png" alt="vRTO9e.png"></a></p>
 <blockquote>
 <p>L.polygon([x1.y1],[x2,y2],[x3,y3])</p>
 </blockquote>
-<h1 id="使用弹出窗口"><a href="#使用弹出窗口" class="headerlink" title="使用弹出窗口"></a>使用弹出窗口</h1><p>1.当您想将某些信息附加到地图上的特定对象时，通常会使用弹出窗口。Leaflet 有一个非常方便的快捷方式：</p>
+<h1 id="使用弹出窗口"><a class="markdownIt-Anchor" href="#使用弹出窗口">#</a> 使用弹出窗口</h1>
+<p>1. 当您想将某些信息附加到地图上的特定对象时，通常会使用弹出窗口。Leaflet 有一个非常方便的快捷方式：</p>
 <figure class="highlight javascript"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">marker.<span class="title function_">bindPopup</span>(<span class="string">&#x27;我是marker坐标的popup弹窗&#x27;</span>).<span class="title function_">openPopup</span>();</span><br><span class="line">circle.<span class="title function_">bindPopup</span>(<span class="string">&#x27;我是circle的popup弹窗&#x27;</span>);</span><br><span class="line">polygon.<span class="title function_">bindPopup</span>(<span class="string">&#x27;我是polygon的popup弹窗&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
 <p><a target="_blank" rel="noopener" href="https://imgse.com/i/vR7rgH"><img data-src="https://s1.ax1x.com/2022/08/27/vR7rgH.png" alt="vR7rgH.png"></a></p>
 <p>尝试点击我们的对象。该 bindPopup 方法将带有指定 HTML 内容的弹出窗口附加到您的标记，以便在您单击对象时显示弹出窗口，并且该 openPopup 方法（仅适用于标记）立即打开附加的弹出窗口。</p>
-<p>2.您还可以将弹出窗口用作图层（当您需要的不仅仅是将弹出窗口附加到对象时）：</p>
+<p>2. 您还可以将弹出窗口用作图层（当您需要的不仅仅是将弹出窗口附加到对象时）：</p>
 <figure class="highlight javascript"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> popup = L.<span class="title function_">popup</span>()</span><br><span class="line">     .<span class="title function_">setLatLng</span>([<span class="number">25.062547</span>, <span class="number">102.726312</span>])</span><br><span class="line">     .<span class="title function_">setContent</span>(<span class="string">&#x27;I am a standalone popup.&#x27;</span>)</span><br><span class="line">     .<span class="title function_">openOn</span>(mymap);</span><br></pre></td></tr></table></figure>
-
 <p><a target="_blank" rel="noopener" href="https://imgse.com/i/vR7gbt"><img data-src="https://s1.ax1x.com/2022/08/27/vR7gbt.png" alt="vR7gbt.png"></a></p>
 <blockquote>
 <p>🚩 这里我们使用 openOn 而不是 addTo 因为它在打开一个新窗口时，先前打开的弹出窗口会自动关闭。</p>
 </blockquote>
-<h1 id="处理事件"><a href="#处理事件" class="headerlink" title="处理事件"></a>处理事件</h1><p>每次在 Leaflet 中触发某些事件时，例如用户单击标记或地图缩放更改，相应的对象都会发送一个事件，您可以使用函数订阅该事件。它允许您对用户交互做出反应：</p>
+<h1 id="处理事件"><a class="markdownIt-Anchor" href="#处理事件">#</a> 处理事件</h1>
+<p>每次在 Leaflet 中触发某些事件时，例如用户单击标记或地图缩放更改，相应的对象都会发送一个事件，您可以使用函数订阅该事件。它允许您对用户交互做出反应：</p>
 <figure class="highlight javascript"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">onMapClick</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&quot;You clicked the map at &quot;</span> + e.<span class="property">latlng</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mymap.<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, onMapClick);</span><br></pre></td></tr></table></figure>
-
 <p><a target="_blank" rel="noopener" href="https://imgse.com/i/vRHcz4"><img data-src="https://s1.ax1x.com/2022/08/27/vRHcz4.png" alt="vRHcz4.png"></a></p>
-<p>每个对象都有属于自己的一组事件——详情请参阅文档。监听器、函数的第一个参数是一个事件对象——它包含关于发生的事件的有用信息。例如，地图点击事件对象（在上面的例子中的 e）有一个 latlng 属性，它是点击发生的位置。</p>
+<p>每个对象都有属于自己的一组事件 —— 详情请参阅文档。监听器、函数的第一个参数是一个事件对象 —— 它包含关于发生的事件的有用信息。例如，地图点击事件对象（在上面的例子中的 e）有一个 latlng 属性，它是点击发生的位置。</p>
 <p>🚩 让我们通过使用 popup 而不是 alert 来改进我们的示例：</p>
 <figure class="highlight javascript"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> popup = L.<span class="title function_">popup</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">onMapClick</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    popup</span><br><span class="line">        .<span class="title function_">setLatLng</span>(e.<span class="property">latlng</span>)</span><br><span class="line">        .<span class="title function_">setContent</span>(<span class="string">&quot;You clicked the map at &quot;</span> + e.<span class="property">latlng</span>.<span class="title function_">toString</span>())</span><br><span class="line">        .<span class="title function_">openOn</span>(mymap);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mymap.<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, onMapClick);</span><br></pre></td></tr></table></figure>
-
 <p><a target="_blank" rel="noopener" href="https://imgse.com/i/vRH5o6"><img data-src="https://s1.ax1x.com/2022/08/27/vRH5o6.png" alt="vRH5o6.png"></a></p>
 <blockquote>
 <p>现在您已经学习了 Leaflet 的基础知识，可以立即开始构建地图应用程序了！</p>
@@ -306,10 +306,10 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <div class="item left">
       
 
-  <a href="/2022/12/21/web-study/html-/HTML/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2023&#x2F;03&#x2F;02&#x2F;ppFN0Z8.jpg" title="HTML入门">
+  <a href="/2022/12/21/web-study/js-study/JavaScript/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2023&#x2F;03&#x2F;02&#x2F;ppFNasP.jpg" title="JavaScript入门">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> HTML</span>
-  <h3>HTML入门</h3>
+  <span class="category"><i class="ic i-flag"></i> Javascript</span>
+  <h3>JavaScript入门</h3>
   </a>
 
     </div>
@@ -338,7 +338,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E9%A1%B5%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text">准备一个新的页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%9C%B0%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text">设置地图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%87%E8%AE%B0%E3%80%81%E5%9C%86%E5%92%8C%E5%A4%9A%E8%BE%B9%E5%BD%A2"><span class="toc-number">3.</span> <span class="toc-text">标记、圆和多边形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%BC%B9%E5%87%BA%E7%AA%97%E5%8F%A3"><span class="toc-number">4.</span> <span class="toc-text">使用弹出窗口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">处理事件</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E9%A1%B5%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text"> 准备一个新的页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%9C%B0%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text"> 设置地图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%87%E8%AE%B0-%E5%9C%86%E5%92%8C%E5%A4%9A%E8%BE%B9%E5%BD%A2"><span class="toc-number">3.</span> <span class="toc-text"> 标记、圆和多边形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%BC%B9%E5%87%BA%E7%AA%97%E5%8F%A3"><span class="toc-number">4.</span> <span class="toc-text"> 使用弹出窗口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text"> 处理事件</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -430,7 +430,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2022/12/21/web-study/html-/HTML/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/2022/12/21/web-study/js-study/JavaScript/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
@@ -457,30 +457,6 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
-</div>
-
-    <span><a href="/2022/02/05/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E4%BA%A4%E9%80%9A/" title="3.具体应用-智慧交通">3.具体应用-智慧交通</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
-</div>
-
-    <span><a href="/2022/02/02/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF/" title="2.关键技术-大数据技术">2.关键技术-大数据技术</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/project-summary/demo-project/" title="分类于 js小工具">js小工具</a>
@@ -493,12 +469,24 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
+<a href="/categories/%E7%9B%B8%E5%86%8C/" title="分类于 相册">相册</a>
 </div>
 
-    <span><a href="/2022/04/10/gs-movies/my-movies/%E9%9C%B8%E7%8E%8B%E5%88%AB%E5%A7%AC/" title="霸王别姬">霸王别姬</a></span>
+    <span><a href="/2023/03/02/photoAlbum/" title="格桑的破相册">格桑的破相册</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/1.grasshopper%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" title="1.grasshopper是什么？">1.grasshopper是什么？</a></span>
   </li>
 
       
@@ -510,7 +498,19 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
 </div>
 
-    <span><a href="/2023/03/12/web-study/dockerstudy/2.docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/" title="2.docker容器使用">2.docker容器使用</a></span>
+    <span><a href="/2023/03/14/web-study/dockerstudy/4.docker%E9%83%A8%E7%BD%B2%E6%95%B0%E6%8D%AE%E5%BA%93/" title="4.docker部署数据库">4.docker部署数据库</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
+</div>
+
+    <span><a href="/2022/03/10/gs-movies/my-movies/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/" title="辛德勒的名单">辛德勒的名单</a></span>
   </li>
 
       
@@ -519,24 +519,24 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/Rhino/" title="分类于 Rhino">Rhino</a>
+<a href="/categories/arc-study/BIM/" title="分类于 BIM">BIM</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/rhino/rhino%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="rhino下载与安装">rhino下载与安装</a></span>
+    <span><a href="/2023/03/02/arc-study/BIM/1.%E4%BB%80%E4%B9%88%E6%98%AFBIM%EF%BC%9F/" title="1.什么是BIM">1.什么是BIM</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/WebGIS/" title="分类于 WebGIS">WebGIS</a>
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/WebGIS/echarts-map/" title="分类于 echarts-map">echarts-map</a>
+<a href="/categories/3D-study/three-js/" title="分类于 three.js">three.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/three-js/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" title="分类于 入门基础">入门基础</a>
 </div>
 
-    <span><a href="/2022/12/22/map-study/echarts-map/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
+    <span><a href="/2022/06/10/3D-study/threeJs/1.%E5%9F%BA%E7%A1%80/" title="1.three.js基础">1.three.js基础</a></span>
   </li>
 
       
@@ -555,28 +555,24 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<a href="/categories/gs-books/" title="分类于 “阅”过大海">“阅”过大海</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/%E6%95%B0%E5%AD%97%E5%8D%9A%E7%89%A9%E9%A6%86/" title="分类于 数字博物馆">数字博物馆</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/%E6%95%B0%E5%AD%97%E5%8D%9A%E7%89%A9%E9%A6%86/node%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" title="分类于 node后端开发">node后端开发</a>
+<a href="/categories/gs-books/my-history/" title="分类于 历史传记">历史传记</a>
 </div>
 
-    <span><a href="/2023/03/03/project-summary/demo-project/%E6%95%B0%E5%AD%97%E5%8D%9A%E7%89%A9%E9%A6%86/1.%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91-%E7%A1%AE%E5%AE%9A%E9%9C%80%E6%B1%82/" title="1.后端开发-确定需求">1.后端开发-确定需求</a></span>
+    <span><a href="/2022/12/21/gs-books/my-history/%E9%82%93%E5%B0%8F%E5%B9%B3%E6%97%B6%E4%BB%A3/" title="邓小平时代">邓小平时代</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
 </div>
 
-    <span><a href="/2022/04/11/3D-study/Cesium/2.JavaScript%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" title="2.编程语言">2.编程语言</a></span>
+    <span><a href="/2023/03/12/web-study/dockerstudy/2.docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/" title="2.docker容器使用">2.docker容器使用</a></span>
   </li>
 
   </ul>
@@ -601,7 +597,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">144k 字</span>
+    <span title="站点总字数">143k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
