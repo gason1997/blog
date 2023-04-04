@@ -164,34 +164,22 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>Docker 是一种流行的容器化技术，可以使开发人员更轻松地构建、部署和管理应用程序。在这篇文档中，我们将讨论如何使用 Docker 部署一个 PostgreSQL 数据库容器。以下是详细的步骤和说明。</p>
-<h1 id="安装docker"><a class="markdownIt-Anchor" href="#安装docker">#</a> 安装 Docker</h1>
-<p>在开始之前，您需要先安装 Docker。此处可异步文章 <code>docker入门与安装</code> 您可以按照官方文档的说明进行安装。</p>
-<h1 id="下载postgresql镜像"><a class="markdownIt-Anchor" href="#下载postgresql镜像">#</a> 下载 PostgreSQL 镜像</h1>
-<p>要在 Docker 中部署 PostgreSQL，您需要先下载 PostgreSQL 镜像。您可以在 Docker Hub 上找到 PostgreSQL 的官方镜像。在终端中输入以下命令来下载 PostgreSQL 镜像：</p>
+    <p>Docker是一种流行的容器化技术，可以使开发人员更轻松地构建、部署和管理应用程序。在这篇文档中，我们将讨论如何使用Docker部署一个PostgreSQL数据库容器。以下是详细的步骤和说明。</p>
+<h1 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h1><p>在开始之前，您需要先安装Docker。此处可异步文章<code>docker入门与安装</code>您可以按照官方文档的说明进行安装。</p>
+<h1 id="下载PostgreSQL镜像"><a href="#下载PostgreSQL镜像" class="headerlink" title="下载PostgreSQL镜像"></a>下载PostgreSQL镜像</h1><p>要在Docker中部署PostgreSQL，您需要先下载PostgreSQL镜像。您可以在Docker Hub上找到PostgreSQL的官方镜像。在终端中输入以下命令来下载PostgreSQL镜像：</p>
 <figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull postgres</span><br></pre></td></tr></table></figure>
-<p>此命令将下载最新版本的 PostgreSQL 镜像。</p>
-<h1 id="创建postgresql容器"><a class="markdownIt-Anchor" href="#创建postgresql容器">#</a> 创建 PostgreSQL 容器</h1>
-<p>下载镜像后，您可以使用以下命令在 Docker 中创建一个 PostgreSQL 容器：</p>
+<p>此命令将下载最新版本的PostgreSQL镜像。</p>
+<h1 id="创建PostgreSQL容器"><a href="#创建PostgreSQL容器" class="headerlink" title="创建PostgreSQL容器"></a>创建PostgreSQL容器</h1><p>下载镜像后，您可以使用以下命令在Docker中创建一个PostgreSQL容器：</p>
 <figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name postgresql-container -e POSTGRES_PASSWORD=&lt;your_password&gt; -d postgres</span><br></pre></td></tr></table></figure>
-<p>其中， <code>--name</code>  选项用于为容器指定一个名称。 <code>-e</code>  选项用于设置环境变量。在这个例子中，我们使用 POSTGRES_PASSWORD 环境变量来设置 PostgreSQL 管理员密码。您需要将 &lt;your_password&gt; 替换为您自己的密码。</p>
-<p><code>-d</code>  选项用于将容器设置为在后台运行。</p>
-<h1 id="进入postgresql容器"><a class="markdownIt-Anchor" href="#进入postgresql容器">#</a> 进入 PostgreSQL 容器</h1>
-<p>要在 Docker 中运行 PostgreSQL 命令，您需要进入 PostgreSQL 容器。可以使用以下命令进入 PostgreSQL 容器：</p>
+<p>其中，<code>--name</code>选项用于为容器指定一个名称。<code>-e</code>选项用于设置环境变量。在这个例子中，我们使用POSTGRES_PASSWORD环境变量来设置PostgreSQL管理员密码。您需要将<your_password>替换为您自己的密码。</p>
+<p><code>-d</code>选项用于将容器设置为在后台运行。</p>
+<h1 id="进入PostgreSQL容器"><a href="#进入PostgreSQL容器" class="headerlink" title="进入PostgreSQL容器"></a>进入PostgreSQL容器</h1><p>要在Docker中运行PostgreSQL命令，您需要进入PostgreSQL容器。可以使用以下命令进入PostgreSQL容器：</p>
 <figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it postgresql-container bash</span><br></pre></td></tr></table></figure>
-<p>此命令将在当前终端中打开一个新的终端会话，并将您连接到 PostgreSQL 容器。<br>
-<img data-src="https://s1.ax1x.com/2023/03/15/pp1X228.jpg" alt="pp1X228.jpg"></p>
-<h1 id="运行postgresql命令"><a class="markdownIt-Anchor" href="#运行postgresql命令">#</a> 运行 PostgreSQL 命令</h1>
-<figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">psql -h &lt;host&gt; -p &lt;port&gt; -U postgres -d &lt;table-name&gt;</span><br></pre></td></tr></table></figure>
-<p>此命令将连接到 PostgreSQL 数据库，并将您作为管理员用户 postgres 连接到该数据库。其中  <code>-h</code>  应填写主机服务地址，可在终端通过 <code>ipconfig</code>  进行查看， <code>-p</code>  处写入数据库端口号，默认为 5432， <code>-d</code>  写入数据库库名。<br>
-当数据库连接成功时，会要求你填写之前设置的密码，之后如下图所示提示版本号与服务<br>
-<img data-src="https://s1.ax1x.com/2023/03/15/pp1XfKg.jpg" alt="pp1XfKg.jpg"><br>
- 接下来就可以用 <code>\dt</code>  查看数据库内的表集合，如下图所示<br>
-<img data-src="https://s1.ax1x.com/2023/03/15/pp1XRxS.jpg" alt="pp1XRxS.jpg"></p>
-<h1 id="退出postgresql容器"><a class="markdownIt-Anchor" href="#退出postgresql容器">#</a> 退出 PostgreSQL 容器</h1>
-<p>快捷键 ctrl + D 或者在终端输入 exit。</p>
-<h1 id="结论"><a class="markdownIt-Anchor" href="#结论">#</a> 结论</h1>
-<p>在本文中，我们讨论了如何使用 Docker 部署一个 PostgreSQL 数据库容器。我们学习了如何下载 PostgreSQL 镜像，创建、进入和退出 PostgreSQL 容器，以及如何停止和删除 PostgreSQL 容器。通过遵循这些步骤，您可以快速轻松地创建一个 PostgreSQL 数据库容器，使您的应用程序更容易地进行开发、测试和部署。但是，请注意，这只是一个简单的入门教程，实际上可能会涉及更多的配置和调整以满足您的实际需求。</p>
+<p>此命令将在当前终端中打开一个新的终端会话，并将您连接到PostgreSQL容器。<br><img data-src="https://s1.ax1x.com/2023/03/15/pp1X228.jpg" alt="pp1X228.jpg"></p>
+<h1 id="运行PostgreSQL命令"><a href="#运行PostgreSQL命令" class="headerlink" title="运行PostgreSQL命令"></a>运行PostgreSQL命令</h1><figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">psql -h &lt;host&gt; -p &lt;port&gt; -U postgres -d &lt;table-name&gt;</span><br></pre></td></tr></table></figure>
+<p>此命令将连接到PostgreSQL数据库，并将您作为管理员用户postgres连接到该数据库。其中 <code>-h</code>应填写主机服务地址，可在终端通过<code>ipconfig</code>进行查看，<code>-p</code>处写入数据库端口号，默认为5432，<code>-d</code>写入数据库库名。<br>当数据库连接成功时，会要求你填写之前设置的密码，之后如下图所示提示版本号与服务<br><img data-src="https://s1.ax1x.com/2023/03/15/pp1XfKg.jpg" alt="pp1XfKg.jpg"><br>接下来就可以用<code>\dt</code>查看数据库内的表集合，如下图所示<br><img data-src="https://s1.ax1x.com/2023/03/15/pp1XRxS.jpg" alt="pp1XRxS.jpg"></p>
+<h1 id="退出PostgreSQL容器"><a href="#退出PostgreSQL容器" class="headerlink" title="退出PostgreSQL容器"></a>退出PostgreSQL容器</h1><p>快捷键ctrl + D 或者在终端输入exit。</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>在本文中，我们讨论了如何使用Docker部署一个PostgreSQL数据库容器。我们学习了如何下载PostgreSQL镜像，创建、进入和退出PostgreSQL容器，以及如何停止和删除PostgreSQL容器。通过遵循这些步骤，您可以快速轻松地创建一个PostgreSQL数据库容器，使您的应用程序更容易地进行开发、测试和部署。但是，请注意，这只是一个简单的入门教程，实际上可能会涉及更多的配置和调整以满足您的实际需求。</p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/docker/" rel="tag"><i class="ic i-tag"></i> docker</a>
@@ -279,7 +267,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85docker"><span class="toc-number">1.</span> <span class="toc-text"> 安装 Docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDpostgresql%E9%95%9C%E5%83%8F"><span class="toc-number">2.</span> <span class="toc-text"> 下载 PostgreSQL 镜像</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BApostgresql%E5%AE%B9%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text"> 创建 PostgreSQL 容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5postgresql%E5%AE%B9%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text"> 进入 PostgreSQL 容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E8%A1%8Cpostgresql%E5%91%BD%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text"> 运行 PostgreSQL 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%80%E5%87%BApostgresql%E5%AE%B9%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text"> 退出 PostgreSQL 容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">7.</span> <span class="toc-text"> 结论</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Docker"><span class="toc-number">1.</span> <span class="toc-text">安装Docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDPostgreSQL%E9%95%9C%E5%83%8F"><span class="toc-number">2.</span> <span class="toc-text">下载PostgreSQL镜像</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAPostgreSQL%E5%AE%B9%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">创建PostgreSQL容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5PostgreSQL%E5%AE%B9%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">进入PostgreSQL容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E8%A1%8CPostgreSQL%E5%91%BD%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text">运行PostgreSQL命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%80%E5%87%BAPostgreSQL%E5%AE%B9%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">退出PostgreSQL容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">7.</span> <span class="toc-text">结论</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -297,13 +285,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">51</span>
+        <span class="count">52</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">40</span>
+        <span class="count">41</span>
         <span class="name">分类</span>
       </a>
     </div>
@@ -398,12 +386,48 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/gs-movies/my-documentary/" title="分类于 纪录片">纪录片</a>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
 </div>
 
-    <span><a href="/2022/12/21/gs-movies/my-documentary/%E8%88%AA%E6%8B%8D%E4%B8%AD%E5%9B%BD%EF%BC%88%E7%AC%AC%E4%B8%80%E5%AD%A3%EF%BC%89/" title="航拍中国（第一季）">航拍中国（第一季）</a></span>
+    <span><a href="/2023/03/12/web-study/dockerstudy/2.docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/" title="2.docker容器使用">2.docker容器使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/14/web-study/dockerstudy/4.docker%E9%83%A8%E7%BD%B2%E6%95%B0%E6%8D%AE%E5%BA%93/" title="4.docker部署数据库">4.docker部署数据库</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+</div>
+
+    <span><a href="/2022/02/03/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%8A%80%E6%9C%AF/" title="2.关键技术-人工智能技术">2.关键技术-人工智能技术</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+</div>
+
+    <span><a href="/2022/02/06/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E7%8E%AF%E4%BF%9D/" title="3.具体应用-智慧环保">3.具体应用-智慧环保</a></span>
   </li>
 
       
@@ -420,14 +444,24 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
+<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
 </div>
 
-    <span><a href="/2022/04/15/3D-study/Cesium/3.cesium%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/" title="3.cesium入门介绍">3.cesium入门介绍</a></span>
+    <span><a href="/2022/04/10/gs-movies/my-movies/%E9%9C%B8%E7%8E%8B%E5%88%AB%E5%A7%AC/" title="霸王别姬">霸王别姬</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/WebGIS/" title="分类于 WebGIS">WebGIS</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/WebGIS/echarts-map/" title="分类于 echarts-map">echarts-map</a>
+</div>
+
+    <span><a href="/2022/12/22/map-study/echarts-map/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
   </li>
 
       
@@ -438,74 +472,10 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <i class="ic i-angle-right"></i>
 <a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/Rhino/" title="分类于 Rhino">Rhino</a>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/rhino/rhino%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="rhino下载与安装">rhino下载与安装</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/webGL-study/" title="分类于 webGL">webGL</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/webGL-study/%E8%B6%85%E5%9B%BEwebGL/" title="分类于 超图webGL">超图webGL</a>
-</div>
-
-    <span><a href="/2022/12/21/3D-study/webGL/supermap-webGL/" title="超图webGL开发指南">超图webGL开发指南</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
-</div>
-
-    <span><a href="/2023/03/17/web-study/dockerstudy/5.linux%E4%B9%8B%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" title="5.linux之部署环境安装">5.linux之部署环境安装</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
-</div>
-
-    <span><a href="/2022/01/28/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/" title="2.关键技术-物联网技术">2.关键技术-物联网技术</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/gs-books/" title="分类于 “阅”过大海">“阅”过大海</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/gs-books/my-history/" title="分类于 历史传记">历史传记</a>
-</div>
-
-    <span><a href="/2022/12/21/gs-books/my-history/%E9%82%93%E5%B0%8F%E5%B9%B3%E6%97%B6%E4%BB%A3/" title="邓小平时代">邓小平时代</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/revit-dynamo/" title="分类于 Revit与Dynamo">Revit与Dynamo</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/revit-dynamo/Revit/" title="分类于 Revit">Revit</a>
-</div>
-
-    <span><a href="/2022/12/21/arc-study/revit-dynamo/revit%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="Revit下载与安装">Revit下载与安装</a></span>
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/1.grasshopper%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" title="1.grasshopper是什么？">1.grasshopper是什么？</a></span>
   </li>
 
       
@@ -518,6 +488,20 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 </div>
 
     <span><a href="/2023/03/02/arc-study/BIM/1.%E4%BB%80%E4%B9%88%E6%98%AFBIM%EF%BC%9F/" title="1.什么是BIM">1.什么是BIM</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
   </li>
 
   </ul>
@@ -542,13 +526,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">167k 字</span>
+    <span title="站点总字数">168k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:32</span>
+    <span title="站点阅读时长">2:33</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
