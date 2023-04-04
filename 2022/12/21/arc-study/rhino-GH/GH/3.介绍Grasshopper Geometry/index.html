@@ -167,26 +167,29 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="NURBS：简介"><a href="#NURBS：简介" class="headerlink" title="NURBS：简介"></a>NURBS：简介</h1><p>To be able to effectively use Grasshopper you will have to know with what the properties of the geometry are which you use during the design process. This basic knowledge is necessary because component editing form the basis for editing and manipulation of the design geometry.</p>
+    <h1 id="nurbs简介"><a class="markdownIt-Anchor" href="#nurbs简介">#</a> NURBS：简介</h1>
+<p>To be able to effectively use Grasshopper you will have to know with what the properties of the geometry are which you use during the design process. This basic knowledge is necessary because component editing form the basis for editing and manipulation of the design geometry.</p>
 <blockquote>
 <p>为了能够有效地使用 Grasshopper，您必须了解您在设计过程中使用的几何属性。这些基本知识是必要的，因为组件编辑构成了设计几何图形编辑和操作的基础。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/16/fad38252a195ec49.png"></p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/16/fad38252a195ec49.png" alt=""></p>
 <p>In Grasshopper we use primarily NURBS geometry. Certain properties of NURBS geometry make the NURBS perfectly suitable for accurately designing Cartesian and free form geometries. NURBS geometry enables the designer to accurately describe Cartesian and curved surfaces because the whole surface can mathematically be defined. The resulting accuracy of the digital geometry makes it a standard for design software. To be able to make the right decision a designer will need a basic understanding of the topology of the geometry which will be used in the design process. NURBS geometry is widely used in computer aided design CAD, computer aided manufacturing CAM and computer aided engineering CAE software. It supports industry standards like IGES, STEP and ACIS. The ability to intuitively and predictable adjust the curves and surfaces make it an power full geometry suitable for design. The NURBS are a generalized derivative of the Bezier curve. (Pierre Bezier worked as engineer for Renault, development started in the 1960’s to find a method to represent accurately mathematical defined curved lines and surfaces for car design).</p>
 <blockquote>
 <p>在 Grasshopper 中，我们主要使用 NURBS 几何体。NURBS 几何的某些特性使 NURBS 非常适合精确设计笛卡尔和自由形式的几何。NURBS 几何使设计人员能够准确地描述笛卡尔曲面和曲面，因为可以通过数学方式定义整个曲面。由此产生的数字几何精度使其成为设计软件的标准。为了能够做出正确的决定，设计师需要对将在设计过程中使用的几何拓扑有基本的了解。NURBS 几何广泛应用于计算机辅助设计 CAD、计算机辅助制造 CAM 和计算机辅助工程 CAE 软件。它支持 IGES、STEP 和 ACIS 等行业标准。直观且可预测地调整曲线和曲面的能力使其成为适合设计的强大几何形状。NURBS 是贝塞尔曲线的广义导数。（Pierre Bezier 曾在雷诺担任工程师，开发始于 1960 年代，旨在寻找一种方法来表示精确的数学定义的汽车设计曲线和曲面）。</p>
 </blockquote>
-<p>Grasshopper 的 NURBS 曲面<br><img data-src="https://s3.bmp.ovh/imgs/2022/08/16/258e36adf2445e71.png"></p>
+<p>Grasshopper 的 NURBS 曲面<br>
+<img data-src="https://s3.bmp.ovh/imgs/2022/08/16/258e36adf2445e71.png" alt=""></p>
 <p>There are similarities between the properties of the Bezier curve and the NURBS geometry. Lines created are called CURVES, that are based on Bezier Curves and are used as the basis for NURBS modeling. The way the lines are defined make is possible to draw rectangular and smooth curves. The concept of the structure of the lines where inspired on techniques used in the shipbuilding industry at the beginning of the 19th century. The wooden planks of the ship hull where bend by adding weights at different points on the plank. The amount of bend of shape of the bend could be adjusted by increasing the weight or the position of the weights.</p>
 <p>Curves themselves are often used as a basis for geometry.</p>
 <blockquote>
 <p>Bezier 曲线和 NURBS 几何的属性之间存在相似之处。创建的线称为曲线，它基于贝塞尔曲线并用作 NURBS 建模的基础。线条的定义方式使得绘制矩形和平滑曲线成为可能。线条结构的概念受到 19 世纪初造船业使用的技术的启发。船体的木板通过在木板上的不同点增加重量而弯曲。可以通过增加重量或重量的位置来调整弯曲形状的弯曲量。</p>
 </blockquote>
 <blockquote>
-<p>🔥 <code>曲线本身通常用作几何的基础。</code></p>
+<p>🔥  <code>曲线本身通常用作几何的基础。</code></p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/16/e37f395914e08f85.png"></p>
-<h2 id="NURBS-curves-NURBS-曲线"><a href="#NURBS-curves-NURBS-曲线" class="headerlink" title="NURBS curves (NURBS 曲线)"></a>NURBS curves (NURBS 曲线)</h2><p>This concept of deformation was digitally implemented in to the Bezier curves definition. With the result that the curve in not only defined by the start and end point of the line but also by the control vertices and their weights between the two. These weights and the location of the control vertices will determine the amount of bending of the curve. The amount of weights between the start and end point are defined by the Degree .</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/16/e37f395914e08f85.png" alt=""></p>
+<h2 id="nurbs-curves-nurbs-曲线"><a class="markdownIt-Anchor" href="#nurbs-curves-nurbs-曲线">#</a> NURBS curves (NURBS 曲线)</h2>
+<p>This concept of deformation was digitally implemented in to the Bezier curves definition. With the result that the curve in not only defined by the start and end point of the line but also by the control vertices and their weights between the two. These weights and the location of the control vertices will determine the amount of bending of the curve. The amount of weights between the start and end point are defined by the Degree .</p>
 <ul>
 <li>A degree 1 curve will create a curve that is defined by the start and the end point. This will generate a straight line.</li>
 <li>A degree 3 curve differs from the degree 1 by the two additional points which are added between the start and end point. These two additional points are called control vertices, they give the control over the curvature of the curve. By moving the control vertices the curve is deformed by the “pulling force” or weight of the control vertices.</li>
@@ -198,74 +201,84 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <blockquote>
 <ul>
 <li>1 阶曲线将创建由起点和终点定义的曲线。这将生成一条直线。</li>
-<li>3 阶曲线与 1 阶曲线的不同之处在于在起点和终点之间添加了两个附加点。这两个附加点称为控制顶点，它们控制曲线的曲率。通过移动控制顶点，曲线会因控制顶点的“拉力”或重量而变形。</li>
+<li>3 阶曲线与 1 阶曲线的不同之处在于在起点和终点之间添加了两个附加点。这两个附加点称为控制顶点，它们控制曲线的曲率。通过移动控制顶点，曲线会因控制顶点的 “拉力” 或重量而变形。</li>
 </ul>
 </blockquote>
 <blockquote>
 <p>还有其他度数可用于生成曲线，例如 2 度曲线，其行为类似于悬链线。度数高于 3 将在开始和结束顶点之间添加更多控制顶点。对于曲线，我们使用 3 阶曲线，对于直线，我们将使用 1 阶曲线。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/16/63479deeca2fdf52.png"></p>
-<h2 id="控制顶点-Control-Vertices"><a href="#控制顶点-Control-Vertices" class="headerlink" title="控制顶点 (Control Vertices)"></a>控制顶点 (Control Vertices)</h2><p>The curve contains Control Vertices. Except for the start and end vertices these Control Vertices don’t have to be situated on the line itself. This makes drawing a curve with Control Vertices less intuitive as the curvature is defined by the offset of the Control Vertices and their weight from the curve itself.</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/16/63479deeca2fdf52.png" alt=""></p>
+<h2 id="控制顶点-control-vertices"><a class="markdownIt-Anchor" href="#控制顶点-control-vertices">#</a> 控制顶点 (Control Vertices)</h2>
+<p>The curve contains Control Vertices. Except for the start and end vertices these Control Vertices don’t have to be situated on the line itself. This makes drawing a curve with Control Vertices less intuitive as the curvature is defined by the offset of the Control Vertices and their weight from the curve itself.</p>
 <blockquote>
 <p>曲线包含控制顶点。除了开始和结束顶点之外，这些控制顶点不必位于线本身上。这使得使用控制顶点绘制曲线不太直观，因为曲率是由控制顶点的偏移量及其与曲线本身的权重定义的。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/16/4d4b794fdd0be15d.png"></p>
-<h2 id="Edit-Points-编辑点"><a href="#Edit-Points-编辑点" class="headerlink" title="Edit Points(编辑点)"></a>Edit Points(编辑点)</h2><p>Edit Point are points on the curve itself and can be used for generating a curve. The Edit Point give control on where the curve will intersect with the points. The Control Vertices will be automatically generated based on the position of the Edit Points and the resulting curve.</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/16/4d4b794fdd0be15d.png" alt=""></p>
+<h2 id="edit-points编辑点"><a class="markdownIt-Anchor" href="#edit-points编辑点">#</a> Edit Points (编辑点)</h2>
+<p>Edit Point are points on the curve itself and can be used for generating a curve. The Edit Point give control on where the curve will intersect with the points. The Control Vertices will be automatically generated based on the position of the Edit Points and the resulting curve.</p>
 <blockquote>
 <p>编辑点是曲线本身上的点，可用于生成曲线。编辑点控制曲线与点相交的位置。控制顶点将根据编辑点的位置和生成的曲线自动生成。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/4364767067d20383.png"></p>
-<h2 id="Dimension-尺寸"><a href="#Dimension-尺寸" class="headerlink" title="Dimension(尺寸)"></a>Dimension(尺寸)</h2><p>The curve itself is defined as a 1 dimensional object with a length in the U direction. This information can be important for division of the line or defining positions on the line. The length of the curve can represent the actual length of the curve or it can be re parameterized to a length of 1. This will mean that the actual length of the curve is replaced by the value 1. This re parameterized will make the definition of relative positions along the length of the curve possible. The middle position of a point of the curve can in this case be defined as 0,5.</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/4364767067d20383.png" alt=""></p>
+<h2 id="dimension尺寸"><a class="markdownIt-Anchor" href="#dimension尺寸">#</a> Dimension (尺寸)</h2>
+<p>The curve itself is defined as a 1 dimensional object with a length in the U direction. This information can be important for division of the line or defining positions on the line. The length of the curve can represent the actual length of the curve or it can be re parameterized to a length of 1. This will mean that the actual length of the curve is replaced by the value 1. This re parameterized will make the definition of relative positions along the length of the curve possible. The middle position of a point of the curve can in this case be defined as 0,5.</p>
 <blockquote>
 <p>曲线本身被定义为在 U 方向上具有长度的一维对象。该信息对于线的划分或定义线上的位置可能很重要。曲线的长度可以表示曲线的实际长度，也可以将其重新参数化为长度 1。这将意味着曲线的实际长度被值 1 替换。这个重新参数化将使定义可能沿曲线长度的相对位置。在这种情况下，曲线点的中间位置可以定义为 0,5。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/033d873439fd662e.png"></p>
-<h2 id="Tangency-相切-x2F-切点"><a href="#Tangency-相切-x2F-切点" class="headerlink" title="Tangency (相切&#x2F;切点)"></a>Tangency (相切&#x2F;切点)</h2><p>When the Control Vertices or the weights are adjusted the curve will change its curvature. At the ends of the curve the tangency will therefore also change. This tangency of the endpoints are of special interest when a curve is attached. If the lines have to be aligned the tangency of both ends can be aligned to create a smooth connection. This option is called a C1 alignment. C0 is a hard connect with no change in tangency. C2 is an alignment based of the curvature of the curve. These alignments will be discussed later.</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/033d873439fd662e.png" alt=""></p>
+<h2 id="tangency-相切切点"><a class="markdownIt-Anchor" href="#tangency-相切切点">#</a> Tangency (相切 / 切点)</h2>
+<p>When the Control Vertices or the weights are adjusted the curve will change its curvature. At the ends of the curve the tangency will therefore also change. This tangency of the endpoints are of special interest when a curve is attached. If the lines have to be aligned the tangency of both ends can be aligned to create a smooth connection. This option is called a C1 alignment. C0 is a hard connect with no change in tangency. C2 is an alignment based of the curvature of the curve. These alignments will be discussed later.</p>
 <blockquote>
 <p>调整控制顶点或权重时，曲线将改变其曲率。因此，在曲线的末端，相切也会发生变化。当附加曲线时，端点的这种相切是特别重要的。如果必须对齐线，则可以对齐两端的切线以创建平滑连接。此选项称为 C1 比对。C0 是硬连接，切线没有变化。C2 是基于曲线曲率的对齐方式。这些对齐将在后面讨论。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/f33641281f39322e.png"></p>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/81264ce652bc2a7c.png"></p>
-<h2 id="Plane-平面"><a href="#Plane-平面" class="headerlink" title="Plane (平面)"></a>Plane (平面)</h2><p>When we create a curve in Rhino we will use one of the viewports. The curve will be created on a plane perpendicular to the view and positioned on the centre axis of the digital space. The grid is positioned on this plane. In Grasshopper and Rhino these planes can be transformed to re orient the plane on which you will construct your geometry. The curve will be generated on this re oriented plane. This ability to reorient the plane in Grasshopper can be a very powerful tool in creating an array of different oriented curves.</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/f33641281f39322e.png" alt=""></p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/81264ce652bc2a7c.png" alt=""></p>
+<h2 id="plane-平面"><a class="markdownIt-Anchor" href="#plane-平面">#</a> Plane (平面)</h2>
+<p>When we create a curve in Rhino we will use one of the viewports. The curve will be created on a plane perpendicular to the view and positioned on the centre axis of the digital space. The grid is positioned on this plane. In Grasshopper and Rhino these planes can be transformed to re orient the plane on which you will construct your geometry. The curve will be generated on this re oriented plane. This ability to reorient the plane in Grasshopper can be a very powerful tool in creating an array of different oriented curves.</p>
 <blockquote>
 <p>当我们在 Rhino 中创建曲线时，我们将使用其中一个视口。曲线将在垂直于视图的平面上创建，并位于数字空间的中心轴上。网格位于该平面上。在 Grasshopper 和 Rhino 中，这些平面可以被转换以重新定位您将在其上构建几何的平面。曲线将在这个重新定向的平面上生成。这种在 Grasshopper 中重新定向平面的能力可以成为创建一系列不同方向曲线的非常强大的工具。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/d49539a504371eae.png"></p>
-<h1 id="NURBS-曲面"><a href="#NURBS-曲面" class="headerlink" title="NURBS 曲面"></a>NURBS 曲面</h1><p>The structure of a NURBS surface is comparable with the NURBS curve. The surface supports the same use of weighted vertices to define the curvature and shape of the geometry. The geometry itself can be seen as a combination of two sets of an infinite amount of “parallel” curves placed at a crosswise angle. Unlike a Polygon a single NURBS surface can never define a closed object. NURBS surfaces always have a “rectangular” topology. This can be illustrated with the analogy of the two sets of curves which define the geometry.</p>
-<p>The organization of vertices and the parameterization of the geometry are basically crosswise organized to each other to create basically a surface with four edges. Forms like spheres and tubes are basically deformed rectangular surfaces. By welding (closing) the connection of one of the directions of the iso curves the surface can be closed in one direction creating a tube like structure.. However the other direction can’s be welded or closed. The surface remains open.</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/d49539a504371eae.png" alt=""></p>
+<h1 id="nurbs-曲面"><a class="markdownIt-Anchor" href="#nurbs-曲面">#</a> NURBS 曲面</h1>
+<p>The structure of a NURBS surface is comparable with the NURBS curve. The surface supports the same use of weighted vertices to define the curvature and shape of the geometry. The geometry itself can be seen as a combination of two sets of an infinite amount of “parallel” curves placed at a crosswise angle. Unlike a Polygon a single NURBS surface can never define a closed object. NURBS surfaces always have a “rectangular” topology. This can be illustrated with the analogy of the two sets of curves which define the geometry.</p>
+<p>The organization of vertices and the parameterization of the geometry are basically crosswise organized to each other to create basically a surface with four edges. Forms like spheres and tubes are basically deformed rectangular surfaces. By welding (closing) the connection of one of the directions of the iso curves the surface can be closed in one direction creating a tube like structure… However the other direction can’s be welded or closed. The surface remains open.</p>
 <blockquote>
-<p>NURBS 曲面的结构与 NURBS 曲线相当。曲面支持同样使用加权顶点来定义几何体的曲率和形状。几何本身可以看作是两组无限数量的“平行”曲线的组合，这些曲线以横向角度放置。与多边形不同，单个 NURBS 曲面永远不能定义闭合对象。NURBS 曲面始终具有“矩形”拓扑。这可以用定义几何形状的两组曲线的类比来说明。</p>
+<p>NURBS 曲面的结构与 NURBS 曲线相当。曲面支持同样使用加权顶点来定义几何体的曲率和形状。几何本身可以看作是两组无限数量的 “平行” 曲线的组合，这些曲线以横向角度放置。与多边形不同，单个 NURBS 曲面永远不能定义闭合对象。NURBS 曲面始终具有 “矩形” 拓扑。这可以用定义几何形状的两组曲线的类比来说明。</p>
 </blockquote>
 <blockquote>
 <p>顶点的组织和几何的参数化基本上是相互交叉组织的，基本上创建了一个具有四个边的表面。像球体和管子这样的形状基本上是变形的矩形表面。通过焊接（闭合）等值曲线的一个方向的连接，表面可以在一个方向上闭合，从而形成管状结构。但是，可以焊接或闭合另一个方向。表面保持开放。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/89fc21ee0029d182.png"></p>
-<h2 id="2-Dimensional-geometry-二维几何"><a href="#2-Dimensional-geometry-二维几何" class="headerlink" title="2 Dimensional geometry(二维几何)"></a>2 Dimensional geometry(二维几何)</h2><p>The NURBS surface has a 2 dimensional structure defined by the U and V direction. The U and V direction can be defined in the actual length of the surface in the U and V direction or it can be similar to the NURBS curve be re parameterized. In that case the U and the V direction will have a maximum value of 1. The U V parameter space differs from world coordinate system which is the virtual space you work in. World coordinate system has 3 dimensions. A point on the surface of the plane can therefore be defined in parameter space p(u,v)and by the world coordinate system w(x,y,z)</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/89fc21ee0029d182.png" alt=""></p>
+<h2 id="2-dimensional-geometry二维几何"><a class="markdownIt-Anchor" href="#2-dimensional-geometry二维几何">#</a> 2 Dimensional geometry (二维几何)</h2>
+<p>The NURBS surface has a 2 dimensional structure defined by the U and V direction. The U and V direction can be defined in the actual length of the surface in the U and V direction or it can be similar to the NURBS curve be re parameterized. In that case the U and the V direction will have a maximum value of 1. The U V parameter space differs from world coordinate system which is the virtual space you work in. World coordinate system has 3 dimensions. A point on the surface of the plane can therefore be defined in parameter space p(u,v)and by the world coordinate system w(x,y,z)</p>
 <blockquote>
-<p>NURBS 曲面具有由 U 和 V 方向定义的二维结构。U 和 V 方向可以定义为 U 和 V 方向曲面的实际长度，也可以类似于 NURBS 曲线重新参数化。在这种情况下，U 和 V 方向的最大值为 1。UV 参数空间与世界坐标系不同，世界坐标系是您工作的虚拟空间。世界坐标系有 3 个维度。因此，可以在参数空间 p(u,v) 和世界坐标系 w(x,y,z) 中定义平面表面上的点</p>
+<p>NURBS 曲面具有由 U 和 V 方向定义的二维结构。U 和 V 方向可以定义为 U 和 V 方向曲面的实际长度，也可以类似于 NURBS 曲线重新参数化。在这种情况下，U 和 V 方向的最大值为 1。UV 参数空间与世界坐标系不同，世界坐标系是您工作的虚拟空间。世界坐标系有 3 个维度。因此，可以在参数空间 p (u,v) 和世界坐标系 w (x,y,z) 中定义平面表面上的点</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/269712b3db6692b1.png"></p>
-<h2 id="Iso-curves-等值曲线"><a href="#Iso-curves-等值曲线" class="headerlink" title="Iso curves (等值曲线)"></a>Iso curves (等值曲线)</h2><p>Resulting effect is that the surface can support two different degrees, one in each direction. These curves on the surface are called ISO curves. The ISO curve will behave the same as a NURBS curve. Selecting and moving a Control Vertex on a surface will basically deform the ISO curve causing the surface to deform.</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/269712b3db6692b1.png" alt=""></p>
+<h2 id="iso-curves-等值曲线"><a class="markdownIt-Anchor" href="#iso-curves-等值曲线">#</a> Iso curves (等值曲线)</h2>
+<p>Resulting effect is that the surface can support two different degrees, one in each direction. These curves on the surface are called ISO curves. The ISO curve will behave the same as a NURBS curve. Selecting and moving a Control Vertex on a surface will basically deform the ISO curve causing the surface to deform.</p>
 <blockquote>
 <p>产生的效果是表面可以支持两个不同的度数，每个方向一个。曲面上的这些曲线称为 ISO 曲线。ISO 曲线的行为与 NURBS 曲线相同。选择和移动曲面上的控制顶点基本上会使 ISO 曲线变形，从而导致曲面变形。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/2f693b753d96f90e.png"></p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/2f693b753d96f90e.png" alt=""></p>
 <p>The more ISO curves on a surface, the more vertices are generated to deform the surface OR the higher the degree of the curves, the more vertices will be generated per ISO curve and surface as a whole. The Iso curves can be extracted and converted to a curve. These curves in turn can be the basis of new geometry.</p>
 <blockquote>
 <p>曲面上的 ISO 曲线越多，生成的顶点就越多以使曲面变形，或者曲线的阶数越高，每条 ISO 曲线和整个曲面生成的顶点就越多。可以提取 Iso 曲线并将其转换为曲线。这些曲线又可以成为新几何的基础。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/94b8012bbffd3524.png"></p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/94b8012bbffd3524.png" alt=""></p>
 <p>Because the NURBS surface is mathematically defined any ISO curve in the U or V direction can be extracted. That also implies that every point on the surface can be defined.</p>
 <blockquote>
 <p>因为 NURBS 曲面是在数学上定义的，所以可以提取 U 或 V 方向上的任何 ISO 曲线。这也意味着可以定义表面上的每个点。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/b747a1de882ed6b9.png"></p>
-<h2 id="The-edge-边界"><a href="#The-edge-边界" class="headerlink" title="The edge(边界)"></a>The edge(边界)</h2><p>The edges of the surface can be defined and for example used for making additional geometry. These edges are the outer Iso curves of the surface.</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/b747a1de882ed6b9.png" alt=""></p>
+<h2 id="the-edge边界"><a class="markdownIt-Anchor" href="#the-edge边界">#</a> The edge (边界)</h2>
+<p>The edges of the surface can be defined and for example used for making additional geometry. These edges are the outer Iso curves of the surface.</p>
 <blockquote>
 <p>可以定义表面的边缘，例如用于制作附加几何图形。这些边是曲面的外部 Iso 曲线。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/ec93e728ee9369b9.png"></p>
-<h2 id="The-normal-vectors-法线向量"><a href="#The-normal-vectors-法线向量" class="headerlink" title="The normal vectors(法线向量)"></a>The normal vectors(法线向量)</h2><p>When a surface is generated the surface will be defined with a top and bottom direction. This definition will help to define the inside and outside of an enclosed surface or poly surface. The top or outside is defined by the normal of the surface. The normal is perpendicular to the surface.</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/ec93e728ee9369b9.png" alt=""></p>
+<h2 id="the-normal-vectors法线向量"><a class="markdownIt-Anchor" href="#the-normal-vectors法线向量">#</a> The normal vectors (法线向量)</h2>
+<p>When a surface is generated the surface will be defined with a top and bottom direction. This definition will help to define the inside and outside of an enclosed surface or poly surface. The top or outside is defined by the normal of the surface. The normal is perpendicular to the surface.</p>
 <p>All these components of the NURBS surface can be used or edited in Grasshopper in support of the design process. It is therefore necessary that if you want to effectively use software like Grasshopper you need to know what these components of the curve and surface are. These components can form a basis for manipulation of generation of new curves or surfaces.</p>
 <blockquote>
 <p>生成表面时，将使用顶部和底部方向定义该表面。此定义将有助于定义封闭曲面或多边形曲面的内部和外部。顶部或外部由表面的法线定义。法线垂直于表面。</p>
@@ -273,7 +286,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <blockquote>
 <p>NURBS 曲面的所有这些组件都可以在 Grasshopper 中使用或编辑，以支持设计过程。因此，如果您想有效地使用像 Grasshopper 这样的软件，您需要了解曲线和曲面的这些组件是什么。这些组件可以形成操作新曲线或曲面的生成的基础。</p>
 </blockquote>
-<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/76ff1e7fc98db046.png"></p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/08/17/76ff1e7fc98db046.png" alt=""></p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/grasshopper/" rel="tag"><i class="ic i-tag"></i> grasshopper</a>
@@ -328,20 +341,20 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <div class="item left">
       
 
-  <a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.bmp.ovh&#x2F;imgs&#x2F;2022&#x2F;08&#x2F;17&#x2F;8bfbe2afd115ca21.png" title="2.开始使用Grasshopper">
+  <a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.bmp.ovh&#x2F;imgs&#x2F;2022&#x2F;08&#x2F;17&#x2F;a6e210580afcfc6d.png" title="4.初识Grasshopper界面">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> grasshopper入门</span>
-  <h3>2.开始使用Grasshopper</h3>
+  <h3>4.初识Grasshopper界面</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2022/12/21/arc-study/rhino-GH/rhino/rhino%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2023&#x2F;03&#x2F;02&#x2F;ppFYQQx.jpg" title="rhino下载与安装">
+  <a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s3.bmp.ovh&#x2F;imgs&#x2F;2022&#x2F;08&#x2F;17&#x2F;8bfbe2afd115ca21.png" title="2.开始使用Grasshopper">
   <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> Rhino</span>
-  <h3>rhino下载与安装</h3>
+  <span class="category"><i class="ic i-flag"></i> grasshopper入门</span>
+  <h3>2.开始使用Grasshopper</h3>
   </a>
 
     </div>
@@ -360,11 +373,11 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NURBS%EF%BC%9A%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">NURBS：简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#NURBS-curves-NURBS-%E6%9B%B2%E7%BA%BF"><span class="toc-number">1.1.</span> <span class="toc-text">NURBS curves (NURBS 曲线)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E9%A1%B6%E7%82%B9-Control-Vertices"><span class="toc-number">1.2.</span> <span class="toc-text">控制顶点 (Control Vertices)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Edit-Points-%E7%BC%96%E8%BE%91%E7%82%B9"><span class="toc-number">1.3.</span> <span class="toc-text">Edit Points(编辑点)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dimension-%E5%B0%BA%E5%AF%B8"><span class="toc-number">1.4.</span> <span class="toc-text">Dimension(尺寸)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tangency-%E7%9B%B8%E5%88%87-x2F-%E5%88%87%E7%82%B9"><span class="toc-number">1.5.</span> <span class="toc-text">Tangency (相切&#x2F;切点)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plane-%E5%B9%B3%E9%9D%A2"><span class="toc-number">1.6.</span> <span class="toc-text">Plane (平面)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NURBS-%E6%9B%B2%E9%9D%A2"><span class="toc-number">2.</span> <span class="toc-text">NURBS 曲面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Dimensional-geometry-%E4%BA%8C%E7%BB%B4%E5%87%A0%E4%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text">2 Dimensional geometry(二维几何)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Iso-curves-%E7%AD%89%E5%80%BC%E6%9B%B2%E7%BA%BF"><span class="toc-number">2.2.</span> <span class="toc-text">Iso curves (等值曲线)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-edge-%E8%BE%B9%E7%95%8C"><span class="toc-number">2.3.</span> <span class="toc-text">The edge(边界)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-normal-vectors-%E6%B3%95%E7%BA%BF%E5%90%91%E9%87%8F"><span class="toc-number">2.4.</span> <span class="toc-text">The normal vectors(法线向量)</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#nurbs%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text"> NURBS：简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#nurbs-curves-nurbs-%E6%9B%B2%E7%BA%BF"><span class="toc-number">1.1.</span> <span class="toc-text"> NURBS curves (NURBS 曲线)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E9%A1%B6%E7%82%B9-control-vertices"><span class="toc-number">1.2.</span> <span class="toc-text"> 控制顶点 (Control Vertices)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#edit-points%E7%BC%96%E8%BE%91%E7%82%B9"><span class="toc-number">1.3.</span> <span class="toc-text"> Edit Points (编辑点)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dimension%E5%B0%BA%E5%AF%B8"><span class="toc-number">1.4.</span> <span class="toc-text"> Dimension (尺寸)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tangency-%E7%9B%B8%E5%88%87%E5%88%87%E7%82%B9"><span class="toc-number">1.5.</span> <span class="toc-text"> Tangency (相切 &#x2F; 切点)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#plane-%E5%B9%B3%E9%9D%A2"><span class="toc-number">1.6.</span> <span class="toc-text"> Plane (平面)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#nurbs-%E6%9B%B2%E9%9D%A2"><span class="toc-number">2.</span> <span class="toc-text"> NURBS 曲面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-dimensional-geometry%E4%BA%8C%E7%BB%B4%E5%87%A0%E4%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text"> 2 Dimensional geometry (二维几何)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iso-curves-%E7%AD%89%E5%80%BC%E6%9B%B2%E7%BA%BF"><span class="toc-number">2.2.</span> <span class="toc-text"> Iso curves (等值曲线)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-edge%E8%BE%B9%E7%95%8C"><span class="toc-number">2.3.</span> <span class="toc-text"> The edge (边界)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-normal-vectors%E6%B3%95%E7%BA%BF%E5%90%91%E9%87%8F"><span class="toc-number">2.4.</span> <span class="toc-text"> The normal vectors (法线向量)</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2022/12/21/arc-study/rhino-GH/GH/0.gh%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" rel="bookmark" title="0.grasshopper下载与安装">0.grasshopper下载与安装</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/1.grasshopper%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" rel="bookmark" title="1.grasshopper是什么？">1.grasshopper是什么？</a></li><li class="active"><a href="/2022/12/21/arc-study/rhino-GH/GH/3.%E4%BB%8B%E7%BB%8DGrasshopper%20Geometry/" rel="bookmark" title="3.介绍Grasshopper Geometry（GH几何）">3.介绍Grasshopper Geometry（GH几何）</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" rel="bookmark" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" rel="bookmark" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></li>
+          <li><a href="/2022/12/21/arc-study/rhino-GH/GH/0.gh%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" rel="bookmark" title="0.grasshopper下载与安装">0.grasshopper下载与安装</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/1.grasshopper%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" rel="bookmark" title="1.grasshopper是什么？">1.grasshopper是什么？</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" rel="bookmark" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></li><li class="active"><a href="/2022/12/21/arc-study/rhino-GH/GH/3.%E4%BB%8B%E7%BB%8DGrasshopper%20Geometry/" rel="bookmark" title="3.介绍Grasshopper Geometry（GH几何）">3.介绍Grasshopper Geometry（GH几何）</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" rel="bookmark" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -452,12 +465,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2022/12/21/arc-study/rhino-GH/rhino/rhino%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -479,6 +492,42 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
+</div>
+
+    <span><a href="/2022/02/15/map-study/gis-theory/1.gis%E5%9F%BA%E7%A1%80-%E5%9C%B0%E7%90%86%E6%8A%95%E5%BD%B1/" title="1.GIS中的地图投影">1.GIS中的地图投影</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
+</div>
+
+    <span><a href="/2022/02/16/map-study/gis-theory/2.gis%E5%9F%BA%E7%A1%80-%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F/" title="2.GIS中的坐标系统">2.GIS中的坐标系统</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
+</div>
+
+    <span><a href="/2022/02/18/map-study/gis-theory/3.gis%E5%9F%BA%E7%A1%80-%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="3.GIS中的空间数据类型">3.GIS中的空间数据类型</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
@@ -491,78 +540,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
+<a href="/categories/web-study/vue-study/" title="分类于 Vue">Vue</a>
 </div>
 
-    <span><a href="/2022/04/11/3D-study/Cesium/2.JavaScript%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" title="2.编程语言">2.编程语言</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/BIM/" title="分类于 BIM">BIM</a>
-</div>
-
-    <span><a href="/2023/03/02/arc-study/BIM/1.%E4%BB%80%E4%B9%88%E6%98%AFBIM%EF%BC%9F/" title="1.什么是BIM">1.什么是BIM</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
-</div>
-
-    <span><a href="/2022/02/12/map-study/gis-theory/%E8%AE%A4%E8%AF%86Geojson/" title="认识Geojson">认识Geojson</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
-</div>
-
-    <span><a href="/2022/02/02/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF/" title="2.关键技术-大数据技术">2.关键技术-大数据技术</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
-</div>
-
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/3.%E4%BB%8B%E7%BB%8DGrasshopper%20Geometry/" title="3.介绍Grasshopper Geometry（GH几何）">3.介绍Grasshopper Geometry（GH几何）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
-</div>
-
-    <span><a href="/2022/04/10/3D-study/Cesium/1.3D%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/" title="1.3D图形学基础">1.3D图形学基础</a></span>
+    <span><a href="/2022/12/21/web-study/vue-study/1.vue%E6%A0%B8%E5%BF%83/" title="1.vue核心">1.vue核心</a></span>
   </li>
 
       
@@ -581,26 +564,48 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/WebGIS/" title="分类于 WebGIS">WebGIS</a>
+<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/WebGIS/echarts-map/" title="分类于 echarts-map">echarts-map</a>
+<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
 </div>
 
-    <span><a href="/2022/12/22/map-study/echarts-map/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
+    <span><a href="/2022/03/10/gs-movies/my-movies/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/" title="辛德勒的名单">辛德勒的名单</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/three-js/" title="分类于 three.js">three.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/three-js/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" title="分类于 入门基础">入门基础</a>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
 </div>
 
-    <span><a href="/2022/06/15/3D-study/threeJs/2.%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="2.响应式设计">2.响应式设计</a></span>
+    <span><a href="/2022/02/20/map-study/gis-theory/5.gis%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/" title="5.GIS中的数据获取">5.GIS中的数据获取</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/gs-books/" title="分类于 “阅”过大海">“阅”过大海</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/gs-books/my-history/" title="分类于 历史传记">历史传记</a>
+</div>
+
+    <span><a href="/2022/12/21/gs-books/my-history/%E9%82%93%E5%B0%8F%E5%B9%B3%E6%97%B6%E4%BB%A3/" title="邓小平时代">邓小平时代</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/CSS/" title="分类于 CSS">CSS</a>
+</div>
+
+    <span><a href="/2022/12/21/web-study/css-/CSS/" title="CSS入门">CSS入门</a></span>
   </li>
 
   </ul>
@@ -625,13 +630,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">168k 字</span>
+    <span title="站点总字数">167k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:33</span>
+    <span title="站点阅读时长">2:32</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
