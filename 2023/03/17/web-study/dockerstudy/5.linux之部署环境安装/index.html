@@ -165,49 +165,78 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     
 
     <blockquote>
-<p>本教程以centOS7为主</p>
+<p>本教程以 centOS7 为主</p>
 </blockquote>
-<h1 id="环境检查"><a href="#环境检查" class="headerlink" title="环境检查"></a>环境检查</h1><ul>
-<li>1.<code>ip addr</code>指令查看ens33的ip地址等信息<br><img data-src="https://s1.ax1x.com/2023/03/23/ppw4I2t.jpg" alt="ppw4I2t.jpg"></li>
-<li>2.<code>ping</code>或者<code>curl</code>百度网址检查网络是否连接成功，确保虚拟机网络可用<br><img data-src="https://s1.ax1x.com/2023/03/23/ppw47Kf.jpg" alt="ppw47Kf.jpg"><br><img data-src="https://s1.ax1x.com/2023/03/23/ppw4bqS.jpg" alt="ppw4bqS.jpg"></li>
+<h1 id="环境检查"><a class="markdownIt-Anchor" href="#环境检查">#</a> 环境检查</h1>
+<ul>
+<li>1. <code>ip addr</code>  指令查看 ens33 的 ip 地址等信息<br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw4I2t.jpg" alt="ppw4I2t.jpg"></li>
+<li>2. <code>ping</code>  或者 <code>curl</code>  百度网址检查网络是否连接成功，确保虚拟机网络可用<br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw47Kf.jpg" alt="ppw47Kf.jpg"><br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw4bqS.jpg" alt="ppw4bqS.jpg"></li>
 </ul>
-<h1 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h1><ul>
-<li>1.更新系统<code>sudo yum update</code></li>
-<li>2.安装 Docker 软件包<code>sudo yum install docker</code></li>
-<li>3.启动 Docker 服务<code>sudo systemctl start docker</code></li>
-<li>4.确认 Docker 服务已启动<code>sudo systemctl status docker</code>,如果 Docker 服务已经启动，那么您应该会看到一条<code>active (running)</code>的消息。</li>
-<li>5.配置 Docker 开机自启<code>sudo systemctl enable docker</code></li>
-<li>6.验证 Docker 是否正常工作<code>sudo docker run hello-world</code></li>
+<h1 id="安装docker"><a class="markdownIt-Anchor" href="#安装docker">#</a> 安装 docker</h1>
+<ul>
+<li>1. 更新系统 <code>sudo yum update</code></li>
+<li>2. 安装 Docker 软件包 <code>sudo yum install docker</code></li>
+<li>3. 启动 Docker 服务 <code>sudo systemctl start docker</code></li>
+<li>4. 确认 Docker 服务已启动 <code>sudo systemctl status docker</code> , 如果 Docker 服务已经启动，那么您应该会看到一条 <code>active (running)</code>  的消息。</li>
+<li>5. 配置 Docker 开机自启 <code>sudo systemctl enable docker</code></li>
+<li>6. 验证 Docker 是否正常工作 <code>sudo docker run hello-world</code></li>
 </ul>
 <blockquote>
 <p>获取最新版方法</p>
 </blockquote>
 <ul>
-<li>1.添加 Docker 官方 yum 仓库的 GPG 密钥：<code>sudo rpm --import https://download.docker.com/linux/centos/gpg</code></li>
-<li>2.添加 Docker 官方 yum 仓库:<code>sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</code></li>
-<li>3.更新 yum 软件包索引：<code>sudo yum update</code></li>
-<li>4.安装 Docker CE：<code>sudo yum install docker-ce</code></li>
-<li>5.启动 Docker 服务</li>
+<li>1. 添加 Docker 官方 yum 仓库的 GPG 密钥： <code>sudo rpm --import https://download.docker.com/linux/centos/gpg</code></li>
+<li>2. 添加 Docker 官方 yum 仓库: <code>sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</code></li>
+<li>3. 更新 yum 软件包索引： <code>sudo yum update</code></li>
+<li>4. 安装 Docker CE： <code>sudo yum install docker-ce</code></li>
+<li>5. 启动 Docker 服务</li>
 </ul>
-<h1 id="拉取数据库（pgsql为例）"><a href="#拉取数据库（pgsql为例）" class="headerlink" title="拉取数据库（pgsql为例）"></a>拉取数据库（pgsql为例）</h1><ul>
-<li>1.在确保docker已成功安装的情况下，可以在docker拉取postgresql的镜像。</li>
-<li>2.复制根据官网提供的版本号在linux终端输入<code>docker pull postgres:xxx</code><br><img data-src="https://s1.ax1x.com/2023/03/23/ppw4oxP.jpg" alt="ppw4oxP.jpg"><br><img data-src="https://s1.ax1x.com/2023/03/23/ppw4Hr8.jpg" alt="ppw4Hr8.jpg"></li>
-<li>3.运行pgsql，输入<code>docker run --name &lt;为容器命名&gt; -h 5432:5432 -e POSTGRES_PASSWORD=&lt;设置密码&gt; -d &lt;拉取镜像版本号&gt;</code></li>
-<li>4.linux终端输入<code>docker ps -a</code>查看该容器的状态<br><img data-src="https://s1.ax1x.com/2023/03/23/ppw458I.jpg" alt="ppw458I.jpg"></li>
-<li>5.连接数据库，同步数据库数据<br><img data-src="https://s1.ax1x.com/2023/03/23/ppw5ka4.jpg" alt="ppw5ka4.jpg"><br><img data-src="https://s1.ax1x.com/2023/03/23/ppw5PqU.jpg" alt="ppw5PqU.jpg"><br><img data-src="https://s1.ax1x.com/2023/03/23/ppw5AIJ.jpg" alt="ppw5AIJ.jpg"><br><img data-src="https://s1.ax1x.com/2023/03/23/ppw5ZGR.jpg" alt="ppw5ZGR.jpg"><br><img data-src="https://s1.ax1x.com/2023/03/23/ppw5FZF.jpg" alt="ppw5FZF.jpg"><br><img data-src="https://s1.ax1x.com/2023/03/23/ppw5Vi9.jpg" alt="ppw5Vi9.jpg"><br>到此应该可以正常连接数据库，可以正常访问数据</li>
+<h1 id="拉取数据库pgsql为例"><a class="markdownIt-Anchor" href="#拉取数据库pgsql为例">#</a> 拉取数据库（pgsql 为例）</h1>
+<ul>
+<li>1. 在确保 docker 已成功安装的情况下，可以在 docker 拉取 postgresql 的镜像。</li>
+<li>2. 复制根据官网提供的版本号在 linux 终端输入 <code>docker pull postgres:xxx</code> <br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw4oxP.jpg" alt="ppw4oxP.jpg"><br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw4Hr8.jpg" alt="ppw4Hr8.jpg"></li>
+<li>3. 运行 pgsql，输入 <code>docker run --name &lt;为容器命名&gt; -h 5432:5432 -e POSTGRES_PASSWORD=&lt;设置密码&gt; -d &lt;拉取镜像版本号&gt;</code></li>
+<li>4.linux 终端输入 <code>docker ps -a</code>  查看该容器的状态<br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw458I.jpg" alt="ppw458I.jpg"></li>
+<li>5. 连接数据库，同步数据库数据<br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw5ka4.jpg" alt="ppw5ka4.jpg"><br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw5PqU.jpg" alt="ppw5PqU.jpg"><br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw5AIJ.jpg" alt="ppw5AIJ.jpg"><br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw5ZGR.jpg" alt="ppw5ZGR.jpg"><br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw5FZF.jpg" alt="ppw5FZF.jpg"><br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppw5Vi9.jpg" alt="ppw5Vi9.jpg"><br>
+ 到此应该可以正常连接数据库，可以正常访问数据</li>
 </ul>
-<h1 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h1><ul>
-<li><p>1.在linux终端输入rpm地址<code>rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</code></p>
+<h1 id="安装nginx"><a class="markdownIt-Anchor" href="#安装nginx">#</a> 安装 nginx</h1>
+<ul>
+<li>
+<p>1. 在 linux 终端输入 rpm 地址 <code>rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</code></p>
 </li>
-<li><p>2.终端输入<code>yum -y install nginx</code>安装指令，等待安装完毕</p>
+<li>
+<p>2. 终端输入 <code>yum -y install nginx</code>  安装指令，等待安装完毕</p>
 </li>
-<li><p>3.输入<code>systemctl start nginx</code>启动nginx、<code>systemctl enable nginx</code>设置开机自启、<code>systemctl status nginx</code>查看状态<br><img data-src="https://s1.ax1x.com/2023/03/23/ppwIZTg.jpg" alt="ppwIZTg.jpg"></p>
+<li>
+<p>3. 输入 <code>systemctl start nginx</code>  启动 nginx、 <code>systemctl enable nginx</code>  设置开机自启、 <code>systemctl status nginx</code>  查看状态<br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppwIZTg.jpg" alt="ppwIZTg.jpg"></p>
 </li>
-<li><p>4.docker运行目标容器</p>
-<figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 80:80 --name nginx \</span><br><span class="line">&gt; -v /mydata/nginx/html:/usr/share/nginx/html \</span><br><span class="line">&gt; -v /mydata/nginx/logs:/var/log/nginx \</span><br><span class="line">&gt; -v /mydata/nginx/conf:/etc/nginx \</span><br><span class="line">&gt; -d nginx:1.10</span><br></pre></td></tr></table></figure></li>
-<li><p>5.将vue前端打包的dist文件夹内容粘贴到<code>/usr/share/nginx/html</code>路径下<br><img data-src="https://s1.ax1x.com/2023/03/23/ppwIEm8.jpg" alt="ppwIEm8.jpg"></p>
+<li>
+<p>4.docker 运行目标容器</p>
 </li>
-<li><p>6.访问默认端口即可访问项目<br><img data-src="https://s1.ax1x.com/2023/03/23/ppwIV0S.jpg" alt="ppwIV0S.jpg"></p>
+</ul>
+<figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 80:80 --name nginx \</span><br><span class="line">&gt; -v /mydata/nginx/html:/usr/share/nginx/html \</span><br><span class="line">&gt; -v /mydata/nginx/logs:/var/log/nginx \</span><br><span class="line">&gt; -v /mydata/nginx/conf:/etc/nginx \</span><br><span class="line">&gt; -d nginx:1.10</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>5. 将 vue 前端打包的 dist 文件夹内容粘贴到 <code>/usr/share/nginx/html</code>  路径下<br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppwIEm8.jpg" alt="ppwIEm8.jpg"></p>
+</li>
+<li>
+<p>6. 访问默认端口即可访问项目<br>
+<img data-src="https://s1.ax1x.com/2023/03/23/ppwIV0S.jpg" alt="ppwIV0S.jpg"></p>
 </li>
 </ul>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
@@ -297,7 +326,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%A3%80%E6%9F%A5"><span class="toc-number">1.</span> <span class="toc-text">环境检查</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85docker"><span class="toc-number">2.</span> <span class="toc-text">安装docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8B%89%E5%8F%96%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88pgsql%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">拉取数据库（pgsql为例）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85nginx"><span class="toc-number">4.</span> <span class="toc-text">安装nginx</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%A3%80%E6%9F%A5"><span class="toc-number">1.</span> <span class="toc-text"> 环境检查</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85docker"><span class="toc-number">2.</span> <span class="toc-text"> 安装 docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8B%89%E5%8F%96%E6%95%B0%E6%8D%AE%E5%BA%93pgsql%E4%B8%BA%E4%BE%8B"><span class="toc-number">3.</span> <span class="toc-text"> 拉取数据库（pgsql 为例）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85nginx"><span class="toc-number">4.</span> <span class="toc-text"> 安装 nginx</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -315,13 +344,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">52</span>
+        <span class="count">53</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">41</span>
+        <span class="count">43</span>
         <span class="name">分类</span>
       </a>
     </div>
@@ -416,26 +445,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
-</div>
-
-    <span><a href="/2022/02/21/map-study/gis-theory/6.gis%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="6.GIS中的数据处理">6.GIS中的数据处理</a></span>
+    <span><a href="/2023/03/14/web-study/dockerstudy/4.docker%E9%83%A8%E7%BD%B2%E6%95%B0%E6%8D%AE%E5%BA%93/" title="4.docker部署数据库">4.docker部署数据库</a></span>
   </li>
 
       
@@ -454,14 +469,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></span>
+    <span><a href="/2022/02/21/map-study/gis-theory/6.gis%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="6.GIS中的数据处理">6.GIS中的数据处理</a></span>
   </li>
 
       
@@ -480,36 +493,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/gs-movies/my-documentary/" title="分类于 纪录片">纪录片</a>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2022/12/21/gs-movies/my-documentary/%E8%88%AA%E6%8B%8D%E4%B8%AD%E5%9B%BD%EF%BC%88%E7%AC%AC%E4%B8%80%E5%AD%A3%EF%BC%89/" title="航拍中国（第一季）">航拍中国（第一季）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
-</div>
-
-    <span><a href="/2022/02/20/map-study/gis-theory/5.gis%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/" title="5.GIS中的数据获取">5.GIS中的数据获取</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/map-study/QGIS/" title="分类于 QGIS">QGIS</a>
-</div>
-
-    <span><a href="/2022/02/21/map-study/QGIS/1.QGIS-%E5%AE%89%E8%A3%85%E6%95%99%E5%AD%A6/" title="1.QGIS-安装教学">1.QGIS-安装教学</a></span>
+    <span><a href="/2022/02/10/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E5%8C%BB%E7%96%97/" title="3.具体应用-智慧医疗">3.具体应用-智慧医疗</a></span>
   </li>
 
       
@@ -535,7 +524,43 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2022/02/03/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%8A%80%E6%9C%AF/" title="2.关键技术-人工智能技术">2.关键技术-人工智能技术</a></span>
+    <span><a href="/2022/01/20/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/1.%E4%BB%80%E4%B9%88%E6%98%AF%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%EF%BC%9F/" title="1.智慧城市概述">1.智慧城市概述</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E7%B1%BB/" title="分类于 运维部署类">运维部署类</a>
+</div>
+
+    <span><a href="/2022/12/21/deploy-study/tomcat+nginx%E9%83%A8%E7%BD%B2%EF%BC%88windows%EF%BC%89/" title="tomcat+nginx 部署（windows）">tomcat+nginx 部署（windows）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/17/web-study/dockerstudy/5.linux%E4%B9%8B%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" title="5.linux之部署环境安装">5.linux之部署环境安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/0.gh%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="0.grasshopper下载与安装">0.grasshopper下载与安装</a></span>
   </li>
 
   </ul>
@@ -566,7 +591,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:46</span>
+    <span title="站点阅读时长">2:47</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
