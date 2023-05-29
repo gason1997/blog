@@ -1,0 +1,713 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Nichts ist wahr, alles ist erlaubt." href="https://gason1997.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Nichts ist wahr, alles ist erlaubt." href="https://gason1997.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Nichts ist wahr, alles ist erlaubt." href="https://gason1997.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Cesium.js" />
+
+
+<link rel="canonical" href="https://gason1997.github.io/2022/04/16/3D-study/Cesium/%E5%85%A5%E9%97%A8/3.cesium%E5%85%A5%E9%97%A8-cesium%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">
+
+
+
+  <title>
+3.cesium入门-cesium是什么？ - 基础知识 - Cesium.js - 三维开发 |
+Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">3.cesium入门-cesium是什么？
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-04-16 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-16T00:00:00+08:00">2022-04-16</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>9.4k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>9 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Sang`s Homepage</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s1.ax1x.com/2023/03/10/ppnOEdO.png">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/3D-study/" itemprop="item" rel="index" title="分类于 三维开发"><span itemprop="name">三维开发</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/3D-study/Cesium-js/" itemprop="item" rel="index" title="分类于 Cesium.js"><span itemprop="name">Cesium.js</span></a>
+<meta itemprop="position" content="2" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="item" rel="index" title="分类于 基础知识"><span itemprop="name">基础知识</span></a>
+<meta itemprop="position" content="3" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://gason1997.github.io/2022/04/16/3D-study/Cesium/%E5%85%A5%E9%97%A8/3.cesium%E5%85%A5%E9%97%A8-cesium%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="小矮人gason">
+    <meta itemprop="description" content=", 大丈夫之志应如长江东奔大海">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Nichts ist wahr, alles ist erlaubt.">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="1-cesium介绍"><a class="markdownIt-Anchor" href="#1-cesium介绍">#</a> 1. <strong>Cesium 介绍</strong></h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6L2ljYm52WVhnNkVlWnJqWlJMZGJuOGp1NHdCY2UxMmN6dkVGSTZha3UwcWplR24yeGZTdnlRRFVkcTBlSVNvanA2eWFWRXpOaWMwYmliM1Z4RjVjcWlhTVJCZy82NDA/d3hfZm10PW90aGVyJmFtcDt3eGZyb209NSZhbXA7d3hfbGF6eT0xJmFtcDt3eF9jbz0x">https://mmbiz.qpic.cn/mmbiz/icbnvYXg6EeZrjZRLdbn8ju4wBce12czvEFI6aku0qjeGn2xfSvyQDUdq0eISojp6yaVEzNic0bib3VxF5cqiaMRBg/640?wx_fmt=other&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<h3 id="1cesium是什么"><a class="markdownIt-Anchor" href="#1cesium是什么">#</a> <strong>1.Cesium 是什么</strong></h3>
+<p>我们打开 Cesium (<span class="exturl" data-url="aHR0cHM6Ly9jZXNpdW0uY29t">https://cesium.com</span>) 官网，能够很清晰的看到官方赋予 Cesium 的使命，即构建世界一流的 3D 地理空间应用程序。那 Cesium 到底是个什么东东呢？</p>
+<ul>
+<li>Cesium 是一个跨平台、跨浏览器的展示三维地球和地图的 javascript 库</li>
+<li>Cesium 使用 WebGL 来进行硬件加速图形，使用时不需要任何插件支持，但是浏览器必须支持 WebGL</li>
+<li>Cesium 是基于 Apache2.0 许可的开源程序，它可以免费的用于商业和非商业用途</li>
+</ul>
+<h3 id="2cesium支持的数据格式"><a class="markdownIt-Anchor" href="#2cesium支持的数据格式">#</a> <strong>2.Cesium 支持的数据格式</strong></h3>
+<ul>
+<li>影像数据：Bing、天地图、ArcGIS、OSM、WMTS、WMS 等</li>
+<li>地形数据：ArcGIS、谷歌、STK 等</li>
+<li>矢量数据：KML、KMZ、GeoJSON、TopoJSON、CZML</li>
+<li>三维模型：GLTF、GLB（二进制 glTF 文件）</li>
+<li>三维瓦片：3D Tiles（倾斜摄影、人工模型、 三维建筑物、CAD、BIM，点云数据等）</li>
+</ul>
+<h3 id="3cesium能做什么"><a class="markdownIt-Anchor" href="#3cesium能做什么">#</a> <strong>3.Cesium 能做什么</strong></h3>
+<ul>
+<li>支持 2D,2.5D,3D 形式的地理（地图）数据展示</li>
+<li>可以绘制各种几何图形、高亮区域，支持导入图片，甚至三维模型等多种数据可视化展示</li>
+<li>可用于动态数据可视化并提供良好的触摸支持，支持绝大多数的浏览器和移动端浏览器</li>
+<li>支持基于时间轴的动态流式数据展示</li>
+</ul>
+<h3 id="4cesium在项目中的定位"><a class="markdownIt-Anchor" href="#4cesium在项目中的定位">#</a> <strong>4.Cesium 在项目中的定位</strong></h3>
+<p>在数据、服务、应用三层架构中，Cesium 属于 B/S 架构下的客户端应用层面的三维开发框架。如下图所示：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6L2ljYm52WVhnNkVlWnJqWlJMZGJuOGp1NHdCY2UxMmN6dmdRWTVsVzJMSUlTOXhhSHRuTEhWb1J2bDFKRmJZREwyaWJpYUx0N1V0T21QQUR5NWdRQ29YTFZ3LzY0MD93eF9mbXQ9b3RoZXImYW1wO3d4ZnJvbT01JmFtcDt3eF9sYXp5PTEmYW1wO3d4X2NvPTE=">https://mmbiz.qpic.cn/mmbiz/icbnvYXg6EeZrjZRLdbn8ju4wBce12czvgQY5lW2LIIS9xaHtnLHVoRvl1JFbYDL2ibiaLt7UtOmPADy5gQCoXLVw/640?wx_fmt=other&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<h3 id="5cesium知识体系"><a class="markdownIt-Anchor" href="#5cesium知识体系">#</a> <strong>5.Cesium 知识体系</strong></h3>
+<p>Cesium 是一个跨界的 SDK，涉及三个知识领域 : Web 前端、计算机图形学、地理信息系统（GIS）。所以想要学好 Cesium，并能够利用 Cesium 进行二次开发，必须对 Web 前端、计算机图形学、GIS 相关的基础知识有所掌握，当然阅读 Cesum 源码也是非常有必要的。计算机图形学方面建议学习《WebGL 编程指南》书籍。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6L2ljYm52WVhnNkVlWnJqWlJMZGJuOGp1NHdCY2UxMmN6dkFib1JyQnVzQkhMazExYkNQeFFnaFFjYnZVczRuQ2hUOVRsQ244eVNGaElxSWlibWNZYlJvS3cvNjQwP3d4X2ZtdD1vdGhlciZhbXA7d3hmcm9tPTUmYW1wO3d4X2xhenk9MSZhbXA7d3hfY289MQ==">https://mmbiz.qpic.cn/mmbiz/icbnvYXg6EeZrjZRLdbn8ju4wBce12czvAboRrBusBHLk11bCPxQghQcbvUs4nChT9TlCn8ySFhIqIibmcYbRoKw/640?wx_fmt=other&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<h3 id="6cesium学习路线"><a class="markdownIt-Anchor" href="#6cesium学习路线">#</a> <strong>6.Cesium 学习路线</strong></h3>
+<p>Cesium API 学习由浅入深的学习路线如下图所示：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6L2ljYm52WVhnNkVlWnJqWlJMZGJuOGp1NHdCY2UxMmN6dnZTT3RaS0VaaWNreWN2VUppY0Zsc0N3VFpNb2FKSUNNWXM3OWhoWGlhZUZyamRnTHdEMUlsR0l5Zy82NDA/d3hfZm10PW90aGVyJmFtcDt3eGZyb209NSZhbXA7d3hfbGF6eT0xJmFtcDt3eF9jbz0x">https://mmbiz.qpic.cn/mmbiz/icbnvYXg6EeZrjZRLdbn8ju4wBce12czvvSOtZKEZickycvUJicFlsCwTZMoaJICMYs79hhXiaeFrjdgLwD1IlGIyg/640?wx_fmt=other&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<h3 id="7cesium进阶之路"><a class="markdownIt-Anchor" href="#7cesium进阶之路">#</a> <strong>7.Cesium 进阶之路</strong></h3>
+<ul>
+<li>**Web 前端方向：**Cesium 与 webpack（裁剪以及压缩），Cesium 与 vue（框架设计， 嵌入复杂业务系统），Cesium 的 UI（UI 设计，定制可复用的 Cesium 交互界面）</li>
+<li>** 计算机图形学方向：**WebGL 深入，基于 Cesium 的可视化定制（视阈、水淹、水面、热力图，流场图、飞线图、扫描图）</li>
+<li>** 数据预处理方向：** 投影变换，空间索引，LOD ，3dtile 生成，数据存储，数据分发服务，解决超大空间数据如何在 Cesium 上流畅可视化的问题。</li>
+</ul>
+<h1 id="2cesium开发环境搭建及第一个示例"><a class="markdownIt-Anchor" href="#2cesium开发环境搭建及第一个示例">#</a> 2.<strong><strong>Cesium 开发环境搭建及第一个示例</strong></strong></h1>
+<h3 id="1开发环境准备"><a class="markdownIt-Anchor" href="#1开发环境准备">#</a> <strong>1. 开发环境准备</strong></h3>
+<p>利用 Cesium API 进行二次开发属于 Web 前端开发范畴，目前比较火的 Web 三剑客包括 React、Vue、AngularJS，每个 js 库的详细介绍可转至官网查看，在此不做详细介绍。本次开发环境是基于 Vue 搭建的，需要安装（部署）的软件主要包括以下几种：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvL2E3OWYxNWIyM2IwNDQyZTJhNzVmM2EzOGU4NDUzOWQ3">Untitled</span></p>
+<p>前两个下载后安装即可，注意 VS Code 需要安装 Live Server 扩展；nginx 下载后的压缩包解压到电脑磁盘路径下（比如 E 盘跟路径下），配置好 conf 文件夹下的 nginx.conf 文件，双击 nginx 跟路径下的 nginx.exe 程序启动服务；同样 node 下载后的压缩包也解压到某个路径下，不同的是需要配置 node 系统环境变量，配置流程如下：<em>我的电脑→右击属性→点击左侧的高级系统设置→点击环境变量→在系统变量中选中 Path 点击编辑→点新建将 node 的存储目录复制过去（比如 E:\node-v12.16.2-win-x64\）</em>。配置好之后打开 cmd 命令窗口输入 node -v，显示版本则表示安装成功。</p>
+<h3 id="2cesium源码下载"><a class="markdownIt-Anchor" href="#2cesium源码下载">#</a> <strong>2.Cesium 源码下载</strong></h3>
+<p>Cesium 最新版本下载地址：<span class="exturl" data-url="aHR0cHM6Ly9jZXNpdW0uY29tL2Rvd25sb2Fkcy8lRUYlQkMlOEMlRTYlOUMlQUMlRTYlQUMlQTElRTYlOTUlOTklRTclQTglOEIlRTclOTQlQTglRTclOUElODQxLjc1JUU3JTg5JTg4JUU2JTlDJUFDJUU3JTlBJTg0Q2VzaXVtJUVGJUJDJThDJUU1JUE2JTgyJUU2JTlFJTlDJUU1JUJEJTkzJUU1JTg5JThEJUU3JTg5JTg4JUU2JTlDJUFDJUU4JUJFJTgzJUU5JUFCJTk4JUVGJUJDJThDJUU1JThGJUFGJUU3JTgyJUI5JUU1JTg3JUJCUHJldmlvdXM=">https://cesium.com/downloads/，本次教程用的 1.75 版本的 Cesium，如果当前版本较高，可点击 Previous</span> releases 找到 1.75 版本的 Cesium 下载，下载界面如下图所示：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pY2JudllYZzZFZVpPczRhaWFYS0VpY2ZxcHBORVhMQkZ2dkhUcXJ2bVpDVk02cEpDU3pTblJ6WHNpYWRjaWJ0REpVQ252ZXlLMHJjZjZzZGRmcTk0M1hTTVdBLzY0MD93eF9mbXQ9cG5nJmFtcDt3eGZyb209NSZhbXA7d3hfbGF6eT0xJmFtcDt3eF9jbz0x">https://mmbiz.qpic.cn/mmbiz_png/icbnvYXg6EeZOs4aiaXKEicfqppNEXLBFvvHTqrvmZCVM6pJCSzSnRzXsiadcibtDJUCnveyK0rcf6sddfq943XSMWA/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<p>下载完之后进行解压，压缩包主要内容如下图所示。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pY2JudllYZzZFZVpPczRhaWFYS0VpY2ZxcHBORVhMQkZ2dnF3Nm80ZmlhMTJpYXdFOE1tREtuY1puQW5PazJKN21MVkVHRkRxSFVjbmZTcGJzNkRFb2xabmlhdy82NDA/d3hfZm10PXBuZyZhbXA7d3hmcm9tPTUmYW1wO3d4X2xhenk9MSZhbXA7d3hfY289MQ==">https://mmbiz.qpic.cn/mmbiz_png/icbnvYXg6EeZOs4aiaXKEicfqppNEXLBFvvqw6o4fia12iawE8MmDKncZnAnOk2J7mLVEGFDqHUcnfSpbs6DEolZniaw/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<p>用 VS Code 打开解压后的文件夹，右击跟路径下的 index.html，选 “Open with Live Server”，运行界面如下：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pY2JudllYZzZFZVpPczRhaWFYS0VpY2ZxcHBORVhMQkZ2dmhPNnU4b2lhZnlhMGNNUzFLaWN6UTM4UUg5REljdUljUVdpYzdvR1Z0aWFpYjlJc1ZCMXN1TXNEbVpBLzY0MD93eF9mbXQ9cG5nJmFtcDt3eGZyb209NSZhbXA7d3hfbGF6eT0xJmFtcDt3eF9jbz0x">https://mmbiz.qpic.cn/mmbiz_png/icbnvYXg6EeZOs4aiaXKEicfqppNEXLBFvvhO6u8oiafya0cMS1KiczQ38QH9DIcuIcQWic7oGVtiaib9IsVB1suMsDmZA/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<p>**Cesium ion：**Cesium 在线资源 - 地形 (createWorldTerrain)、影像 (createWorldImagery/IonImageryProvider)、OSM (createOsmBuildings)、点云 (IonResource.fromAssetId)、3DTiles 等</p>
+<p>**Local links：**Cesium 本地资源链接，文档、示例、单元测试等</p>
+<p>**External links：**Cesium 外部资源链接，社区、博客、GitHub 等</p>
+<h3 id="3环境搭建纯html"><a class="markdownIt-Anchor" href="#3环境搭建纯html">#</a> <strong>3. 环境搭建（纯 HTML）</strong></h3>
+<p>通过在 html 文件中引用 cesium 比较简单，新建文件夹（cesium_traning），将上面的 Build 文件夹（只拷贝里面的 Cesium）拷贝到 cesium_traning 中，在 cesium_traning 根路径下创建 examples 文件夹，在 examples 文件夹下创建 html 文件，代码如下：（<span class="exturl" data-url="aHR0cDovL3huLS1naXRodWItMmI2ajQxNmZjaG85dzlhNDZ6Yy5jb20vbHM4NzAwNjEwMTElRUYlQkMlODk=">详情可查看 github.com/ls870061011）</span></p>
+<figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../Build/Cesium/Cesium.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;../Build/Cesium/Widgets/widgets.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">html</span>,</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">body</span>,</span></span><br><span class="line"><span class="language-css">    <span class="selector-id">#cesiumContainer</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100%</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100%</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;cesiumContainer&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&quot;cesiumContainer&quot;</span>);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="4环境搭建vue-cli"><a class="markdownIt-Anchor" href="#4环境搭建vue-cli">#</a> <strong>4. 环境搭建（Vue CLI）</strong></h3>
+<p><strong>创建 Vue 工程</strong></p>
+<p>建 Vue 工程，需要提前安装 Vue 脚手架，可在 cmd 命令窗口通过 npm install -g @vue/cli 命令安装，安装成功后输入 vue --version 命令检查安装版本。</p>
+<p>当然如果你喜欢用 yarn 的话，可通过以下命令安装 yarn 和 vue 脚手架。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i yarnyarn global add @vue/cli</span><br></pre></td></tr></table></figure>
+<p>到此，你的电脑环境中已经具备创建 vue 工程的能力，下面就是通过在某个路径下打开 cmd 命令窗口执行 vue create vue_cesium_js 命令一步一步创建 vue 工程了，具体每一步选项的具体意义这里就不详细解释了，想了解的可查询相关资料。每一步的选项及部分截图如下：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pY2JudllYZzZFZVpPczRhaWFYS0VpY2ZxcHBORVhMQkZ2dnF2UUV4SUNYaGFRYU4xd2FUQldEREk4QWtDT1lVS0g5SUs4Qks5MjN2cDhrZ0VpYUpROWliZ3ZnLzY0MD93eF9mbXQ9cG5nJmFtcDt3eGZyb209NSZhbXA7d3hfbGF6eT0xJmFtcDt3eF9jbz0x">https://mmbiz.qpic.cn/mmbiz_png/icbnvYXg6EeZOs4aiaXKEicfqppNEXLBFvvqvQExICXhaQaN1waTBWDDI8AkCOYUKH9IK8BK923vp8kgEiaJQ9ibgvg/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<p>剩下的就是等待了，工程创建好之后，用 VS Code 打开此工程，在终端输入 yarn add cesium@1.75 等待 cesium 包安装完成即可。</p>
+<p><strong>配置 vue.config.js</strong></p>
+<p>首先执行 yarn add webpack copy-webpack-plugin --dev，在 vue.config.js 中的 configureWebpack 配置如下代码：详情可查看本人 GitHub 地址中的工程 https://github.com/ls870061011/vue_cesium。</p>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">config.<span class="property">plugins</span> = [</span><br><span class="line">      ...config.<span class="property">plugins</span>,</span><br><span class="line">      <span class="keyword">new</span> <span class="title class_">CopyWebpackPlugin</span>(&#123;</span><br><span class="line">        <span class="attr">patterns</span>: [</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">from</span>: <span class="string">&#x27;node_modules/cesium/Build/Cesium&#x27;</span>,</span><br><span class="line">            <span class="attr">to</span>: <span class="string">&#x27;cesium&#x27;</span>,</span><br><span class="line">          &#125;,</span><br><span class="line">        ],</span><br><span class="line">      &#125;),</span><br><span class="line">      <span class="keyword">new</span> webpack.<span class="title class_">DefinePlugin</span>(&#123;</span><br><span class="line">        <span class="comment">// Define relative base path in cesium for loading assets</span></span><br><span class="line">        <span class="attr">CESIUM_BASE_URL</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(<span class="string">&#x27;./cesium&#x27;</span>),</span><br><span class="line">      &#125;),</span><br><span class="line">    ];</span><br></pre></td></tr></table></figure>
+<p>到目前为止，所有环境都已搭建好，下一步就是见证奇迹的时刻了。</p>
+<h3 id="4第一个示例"><a class="markdownIt-Anchor" href="#4第一个示例">#</a> <strong>4. 第一个示例</strong></h3>
+<p>如果是纯 html 的页面，可在 VS Code 中选中 html 文件右击 Open with Live Server；如果是 vue 工程，在 VS Code 终端输入 yarn serve 按回车。不管是哪种方式，最终显示的结果都是一样的，大功告成，如下图所示。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pY2JudllYZzZFZVpPczRhaWFYS0VpY2ZxcHBORVhMQkZ2dk5Mbjg0cmc3ZUVLZUNBWGRWSWljZEg0VXR3Y2pKOUVTcHdaNkFFRnlQTDlLeHlSeHo0eWljU21BLzY0MD93eF9mbXQ9cG5nJmFtcDt3eGZyb209NSZhbXA7d3hfbGF6eT0xJmFtcDt3eF9jbz0x">https://mmbiz.qpic.cn/mmbiz_png/icbnvYXg6EeZOs4aiaXKEicfqppNEXLBFvvNLn84rg7eEKeCAXdVIicdH4UtwcjJ9ESpwZ6AEFyPL9KxyRxz4yicSmA/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<h1 id="3cesium目录结构介绍"><a class="markdownIt-Anchor" href="#3cesium目录结构介绍">#</a> <strong><strong>3.Cesium 目录结构介绍</strong></strong></h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pY2JudllYZzZFZWJMSUxraWFnUTZLOEczMGM2aWJocTI5YlRRbXRRdEtyaWNXaWNZV1AxeGtZUHhDdHpsRmJnWVc5MG9SRk9tNFBxR3RTNUFJcHYxaFdzR2liUS82NDA/d3hfZm10PXBuZyZhbXA7d3hmcm9tPTUmYW1wO3d4X2xhenk9MSZhbXA7d3hfY289MQ==">https://mmbiz.qpic.cn/mmbiz_png/icbnvYXg6EebLILkiagQ6K8G30c6ibhq29bTQmtQtKricWicYWP1xkYPxCtzlFbgYW90oRFOm4PqGtS5AIpv1hWsGibQ/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<p><strong>1. 根路径文件</strong></p>
+<p>**<span class="exturl" data-url="aHR0cDovL0NIQU5HRVMubWQ=">CHANGES.md</span>：**Cesium 每个版本的变更记录以及每个版本修复了哪些功能。**gulpfile.cjs：** 记录了 cesium 的所有打包流程，包括 GLSL 语法的转义、压缩和未压缩库文件的打包、API 文档的生成以及自动化单元测试等。**index.html：** 这个就不用多说了，Web 导航首页。**package.json：** 一个用于包的依赖管理文件，包括包的名称、版本号、描述、官网 url、作者、程序的主入口文件、开发环境和生产环境依赖包列表以及执行执行脚本等。**<span class="exturl" data-url="aHR0cDovL1JFQURNRS5tZA==">README.md</span>：** 项目的入门手册，里面介绍了整个项目的使用、功能等等。**server.cjs：**Cesium 内置的 Node 服务器文件，命令 npm run start 以及 npm run startPublic 实际上执行的文件。</p>
+<p><strong>2.Apps 文件夹</strong></p>
+<p>**CesiumViewer：<strong>一个简单的 Cesium 初始化示例</strong> SampleData：** 所有示例代码所用到的数据，包括 json、geoJson、topojson、kml、czml、gltf、3dtiles 以及图片等。**Sandcastle：**Ceisum 的示例程序代码就存储在此文件夹里，有兴趣的童鞋可以查阅每一个示例代码，一定会有新的收获。**TimelineDemo：** 时间轴示例代码。</p>
+<p><strong>3.Build 文件夹</strong></p>
+<p>**Cesium：** 打包之后的 Cesium 库文件（压缩）。**CesiumUnminified：** 打包之后的 Cesium 库文件（未压缩），引用该文件可方便开发人员进行调试，找到程序异常或报错的具体代码位置。**Documentation：** 打包之后的 API 文档。</p>
+<p><strong>4.Source 文件夹</strong></p>
+<p>Source 文件夹是 Cesium 整个项目工程的重中之重，涉及到的所有类的源码和自定义 shader（渲染）源码都存储在此文件夹里，有兴趣的童鞋可以通过阅读源码研究每个类、属性、方法及事件的实现原理。</p>
+<p><strong>5.Specs 文件夹</strong></p>
+<p>自动化单元测试，Cesium 采用了单元测试 Jasmine 框架 ，可以实现接口的自动化测试以及接口覆盖率等统计效果。</p>
+<p><strong>6.ThirdParty 文件夹</strong></p>
+<p>Cesium 中接口实现和单元测试所依赖的外部第三方库，比如代码编辑器 codemirror、单元测试框架库 jasmine、javascript 语法和风格的检查工具 jshint 等。</p>
+<h1 id="4cesium-api-结构介绍"><a class="markdownIt-Anchor" href="#4cesium-api-结构介绍">#</a> 4****.Cesium API 结构介绍 ****</h1>
+<p><img data-src="1%20Cesium%E5%85%A5%E9%97%A8%E7%AF%87%202d08fbba5c0a4256a48e9dc944bdcca4/Cesium_API%E7%BB%93%E6%9E%84.png" alt="Cesium API结构.png"></p>
+<h2 id="viewer类属性"><a class="markdownIt-Anchor" href="#viewer类属性">#</a> <strong>Viewer 类属性</strong></h2>
+<p>imageryLayers 影像数据</p>
+<p>terrainProvider 地形数据</p>
+<p>dataSources 矢量数据</p>
+<p>entities 几何实体集合（用于空间数据可视化）</p>
+<p>Widgets 组件，即 Viewer 初始化界面上的组件</p>
+<p>Camera 相机 Event 事件，鼠标事件、实体选中事件等</p>
+<h2 id="scene类属性"><a class="markdownIt-Anchor" href="#scene类属性">#</a> <strong>Scene 类属性</strong></h2>
+<p>primitives 图元集合（几何体和外观）</p>
+<p>postProcessStages 场景后期处理环境对象，大气圈、天空盒、太阳、月亮等</p>
+<p>Event 事件，更新、渲染事件等</p>
+<p>Camera 类属性位置、方位角、俯仰角、翻滚角</p>
+<h2 id="空间计算"><a class="markdownIt-Anchor" href="#空间计算">#</a> <strong>空间计算</strong></h2>
+<p>三维矩阵、四元数、四维矩阵、转换等</p>
+<h1 id="5坐标系及坐标变换"><a class="markdownIt-Anchor" href="#5坐标系及坐标变换">#</a> 5****. 坐标系及坐标变换 ****</h1>
+<h3 id="1cesium中常用的坐标"><a class="markdownIt-Anchor" href="#1cesium中常用的坐标">#</a> <strong>1.Cesium 中常用的坐标</strong></h3>
+<p><strong>1. 屏幕坐标（像素）</strong></p>
+<p>即二维笛卡尔平面坐标，我们通过鼠标点击直接获取的坐标就是屏幕坐标了，单位是像素值，也可以通过 new Cesium.Cartesian2 (x, y) 创建。</p>
+<p>笛卡尔空间直角坐标</p>
+<p>笛卡尔空间直角坐标又称为世界坐标，Cesium 中用 Cartesian3 变量表示，可通过 new Cesium.Cartesian3 (x, y, z) 创建，主要是用来做空间位置的变化如平移、旋转和缩放等等，它的坐标原点在椭球的中心，如下图所示：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pY2JudllYZzZFZWFMdHJFMFJXVmRXRU9mb2pSeGljdm5pYjg1aWNZR3RCUHlZUGdVVEloTHB3UWVYdmFJZ2dOMkt5a2liQVZpYWVvVWVqaE5jVUppYXJpYVdsWG5BLzY0MD93eF9mbXQ9cG5nJmFtcDt3eGZyb209NSZhbXA7d3hfbGF6eT0xJmFtcDt3eF9jbz0x">https://mmbiz.qpic.cn/mmbiz_png/icbnvYXg6EeaLtrE0RWVdWEOfojRxicvnib85icYGtBPyYPgUTIhLpwQeXvaIggN2KykibAViaeoUejhNcUJiariaWlXnA/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<p><strong>2. 地理坐标（弧度）</strong></p>
+<p>Cesium 中的地理坐标单位默认是弧度制，用 Cartographic 变量表示，可通过 new Cesium.Cartographic (longitude, latitude, height) 创建，其中这里的参数是用弧度表示的经纬度，即经度和纬度。弧度即角度对应弧长是半径的倍数。</p>
+<p><em>角度转弧度 π/180× 角度</em></p>
+<p><em>弧度变角度 180/π× 弧度</em></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pY2JudllYZzZFZWFMdHJFMFJXVmRXRU9mb2pSeGljdm5pYjl5NktnaGpVeDB1MkVMazJyR2NjRWFLZTA5Z1p5ZUYwNVJjNmQ2NUh0N0xMcGZHZ2xsdDVZQS82NDA/d3hfZm10PXBuZyZhbXA7d3hmcm9tPTUmYW1wO3d4X2xhenk9MSZhbXA7d3hfY289MQ==">https://mmbiz.qpic.cn/mmbiz_png/icbnvYXg6EeaLtrE0RWVdWEOfojRxicvnib9y6KghjUx0u2ELk2rGccEaKe09gZyeF05Rc6d65Ht7LLpfGgllt5YA/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<p><strong>3. 经纬度坐标</strong></p>
+<p>即测绘中的地理经纬度坐标，默认是 WGS84 坐标系，坐标原点在椭球的质心。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pY2JudllYZzZFZWFMdHJFMFJXVmRXRU9mb2pSeGljdm5pYnNyMEdLbmNkdHZXaFBaV1g5RFVTanYzdWxyRjdEVU83U0tiN2VNMUsxQWljNGw4V1hvUHVaTkEvNjQwP3d4X2ZtdD1wbmcmYW1wO3d4ZnJvbT01JmFtcDt3eF9sYXp5PTEmYW1wO3d4X2NvPTE=">https://mmbiz.qpic.cn/mmbiz_png/icbnvYXg6EeaLtrE0RWVdWEOfojRxicvnibsr0GKncdtvWhPZWX9DUSjv3ulrF7DUO7SKb7eM1K1Aic4l8WXoPuZNA/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1</span></p>
+<p>经度：参考椭球面上某点的大地子午面与本初子午面间的两面角，东正西负。</p>
+<p>纬度 ：参考椭球面上某点的法线与赤道平面的夹角，北正南负。</p>
+<p>Cesuim 中没有具体的经纬度对象，要得到经纬度首先需要计算为弧度，再进行转换。Cesium 提供了如下对应的转换方法：</p>
+<figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 经纬度转弧度</span><br><span class="line">Cesium.Math.toRadians(degrees)</span><br><span class="line">// 弧度转经纬度</span><br><span class="line">Cesium.Math.toDegrees(radians)</span><br></pre></td></tr></table></figure>
+<h3 id="2cesium中常用的坐标变换"><a class="markdownIt-Anchor" href="#2cesium中常用的坐标变换">#</a> <strong>2.Cesium 中常用的坐标变换</strong></h3>
+<p><strong>1. 经纬度坐标转世界坐标</strong></p>
+<p>Cesium 提供了两种方式将经纬度坐标转成世界坐标。</p>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 方法1：直接转换</span></span><br><span class="line"> <span class="comment">// var cartesian3 = Cesium.Cartesian3.fromDegrees(lng, lat, height);</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">// 方法2：借助ellipsoid对象，先转换成弧度再转换</span></span><br><span class="line"> <span class="keyword">var</span> cartographic = <span class="title class_">Cesium</span>.<span class="property">Cartographic</span>.<span class="title function_">fromDegrees</span>(lng, lat, height); <span class="comment">//单位：度，度，米</span></span><br><span class="line"> <span class="keyword">var</span> cartesian3 = ellipsoid.<span class="title function_">cartographicToCartesian</span>(cartographic);</span><br></pre></td></tr></table></figure>
+<p><strong>2. 世界坐标转经纬度</strong></p>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 3.笛卡尔空间直角坐标系转为地理坐标（弧度制）</span></span><br><span class="line"> <span class="comment">// var cartographic = Cesium.Cartographic.fromCartesian(cartesian3); // 方法1</span></span><br><span class="line"> <span class="keyword">var</span> cartographic = ellipsoid.<span class="title function_">cartesianToCartographic</span>(cartesian3); <span class="comment">// 方法2</span></span><br><span class="line"> <span class="comment">// 4.地理坐标（弧度制）转为经纬度坐标</span></span><br><span class="line"> <span class="keyword">var</span> lat = <span class="title class_">Cesium</span>.<span class="property">Math</span>.<span class="title function_">toDegrees</span>(cartographic.<span class="property">latitude</span>);</span><br><span class="line"> <span class="keyword">var</span> lng = <span class="title class_">Cesium</span>.<span class="property">Math</span>.<span class="title function_">toDegrees</span>(cartographic.<span class="property">longitude</span>);</span><br><span class="line"> <span class="keyword">var</span> height = cartographic.<span class="property">height</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>3. 弧度和经纬度互转</strong></p>
+<p>经纬度转弧度：</p>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Cesium</span>.<span class="property">Math</span>.<span class="title function_">toRadians</span>(degrees)</span><br></pre></td></tr></table></figure>
+<p>弧度转经纬度：</p>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Cesium</span>.<span class="property">Math</span>.<span class="title function_">toDegrees</span>(radians)</span><br></pre></td></tr></table></figure>
+<p><strong>4. 屏幕坐标和世界坐标互转</strong></p>
+<p>屏幕转世界坐标：</p>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2.二维屏幕坐标转为三维笛卡尔空间直角坐标（世界坐标）</span></span><br><span class="line">      <span class="keyword">var</span> cartesian3 = scene.<span class="property">globe</span>.<span class="title function_">pick</span>(</span><br><span class="line">        viewer.<span class="property">camera</span>.<span class="title function_">getPickRay</span>(windowPostion),</span><br><span class="line">        scene</span><br><span class="line">      );</span><br></pre></td></tr></table></figure>
+<p>注意这里屏幕坐标一定要在球上，否则生成出的 cartesian 对象是 undefined。</p>
+<p>世界坐标转屏幕坐标：</p>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 三维笛卡尔空间直角坐标（世界坐标）转为二维屏幕坐标</span></span><br><span class="line"> <span class="comment">// 结果是Cartesian2对象，取出X,Y即为屏幕坐标。</span></span><br><span class="line"> windowPostion = <span class="title class_">Cesium</span>.<span class="property">SceneTransforms</span>.<span class="title function_">wgs84ToWindowCoordinates</span>(</span><br><span class="line">   scene,</span><br><span class="line">   cartesian3</span><br><span class="line"> );</span><br></pre></td></tr></table></figure>
+<h3 id="3坐标变换工具"><a class="markdownIt-Anchor" href="#3坐标变换工具">#</a> <strong>3. 坐标变换工具</strong></h3>
+<p>只有转换到笛卡尔坐标系后才能运用计算机图形学中的仿射变换知识进行空间位置变换如平移旋转缩放。Cesium 为我们提供了如下几种很有用的变换工具类：</p>
+<ul>
+<li>Cesium.Cartesian3（相当于 Point3D）</li>
+<li>Cesium.Matrix3（3x3 矩阵，用于描述旋转变换）</li>
+<li>Cesium.Matrix4（4x4 矩阵，用于描述旋转加平移变换）</li>
+<li>Cesium.Quaternion（四元数，用于描述围绕某个向量旋转一定角度的变换）</li>
+<li>Cesium.Transforms (包含将位置转换为各种参考系的功能)</li>
+</ul>
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+      <div class="tags">
+          <a href="/tags/Cesium-js/" rel="tag"><i class="ic i-tag"></i> Cesium.js</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-05-29 09:54:28" itemprop="dateModified" datetime="2023-05-29T09:54:28+08:00">2023-05-29</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>我移除了点赞打赏功能....别点了</p>
+  <div id="qr">
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>小矮人gason <i class="ic i-at"><em>@</em></i>Nichts ist wahr, alles ist erlaubt.
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://gason1997.github.io/2022/04/16/3D-study/Cesium/%E5%85%A5%E9%97%A8/3.cesium%E5%85%A5%E9%97%A8-cesium%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" title="3.cesium入门-cesium是什么？">https://gason1997.github.io/2022/04/16/3D-study/Cesium/入门/3.cesium入门-cesium是什么？/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/04/15/3D-study/Cesium/%E5%85%A5%E9%97%A8/5.cesium%E5%85%A5%E9%97%A8-cesium%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2023&#x2F;03&#x2F;10&#x2F;ppnOEdO.png" title="5.cesium入门-cesium基础概念">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 基础知识</span>
+  <h3>5.cesium入门-cesium基础概念</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/04/17/3D-study/Cesium/%E5%85%A5%E9%97%A8/4.cesium%E5%85%A5%E9%97%A8-%E8%AE%A4%E8%AF%86cesium/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2023&#x2F;03&#x2F;10&#x2F;ppnOEdO.png" title="4.cesium入门-cesium地图数据加载">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 基础知识</span>
+  <h3>4.cesium入门-cesium地图数据加载</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-cesium%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text"> 1. Cesium 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1cesium%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 1.Cesium 是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2cesium%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 2.Cesium 支持的数据格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3cesium%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 3.Cesium 能做什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4cesium%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 4.Cesium 在项目中的定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5cesium%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB"><span class="toc-number">1.0.5.</span> <span class="toc-text"> 5.Cesium 知识体系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6cesium%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF"><span class="toc-number">1.0.6.</span> <span class="toc-text"> 6.Cesium 学习路线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7cesium%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF"><span class="toc-number">1.0.7.</span> <span class="toc-text"> 7.Cesium 进阶之路</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2cesium%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text"> 2.Cesium 开发环境搭建及第一个示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 1. 开发环境准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2cesium%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 2.Cesium 源码下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%BA%AFhtml"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 3. 环境搭建（纯 HTML）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAvue-cli"><span class="toc-number">2.0.4.</span> <span class="toc-text"> 4. 环境搭建（Vue CLI）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.0.5.</span> <span class="toc-text"> 4. 第一个示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3cesium%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.</span> <span class="toc-text"> 3.Cesium 目录结构介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4cesium-api-%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.</span> <span class="toc-text"> 4****.Cesium API 结构介绍 ****</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#viewer%E7%B1%BB%E5%B1%9E%E6%80%A7"><span class="toc-number">4.1.</span> <span class="toc-text"> Viewer 类属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scene%E7%B1%BB%E5%B1%9E%E6%80%A7"><span class="toc-number">4.2.</span> <span class="toc-text"> Scene 类属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E8%AE%A1%E7%AE%97"><span class="toc-number">4.3.</span> <span class="toc-text"> 空间计算</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E5%9D%90%E6%A0%87%E7%B3%BB%E5%8F%8A%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="toc-number">5.</span> <span class="toc-text"> 5****. 坐标系及坐标变换 ****</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1cesium%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9D%90%E6%A0%87"><span class="toc-number">5.0.1.</span> <span class="toc-text"> 1.Cesium 中常用的坐标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2cesium%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="toc-number">5.0.2.</span> <span class="toc-text"> 2.Cesium 中常用的坐标变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2%E5%B7%A5%E5%85%B7"><span class="toc-number">5.0.3.</span> <span class="toc-text"> 3. 坐标变换工具</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2022/04/10/3D-study/Cesium/%E5%85%A5%E9%97%A8/1.3D%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/" rel="bookmark" title="1.cesium入门-3D图形学基础">1.cesium入门-3D图形学基础</a></li><li><a href="/2022/04/11/3D-study/Cesium/%E5%85%A5%E9%97%A8/2.JavaScript%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="bookmark" title="2.cesium入门-编程语言">2.cesium入门-编程语言</a></li><li><a href="/2022/04/15/3D-study/Cesium/%E5%85%A5%E9%97%A8/5.cesium%E5%85%A5%E9%97%A8-cesium%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" rel="bookmark" title="5.cesium入门-cesium基础概念">5.cesium入门-cesium基础概念</a></li><li class="active"><a href="/2022/04/16/3D-study/Cesium/%E5%85%A5%E9%97%A8/3.cesium%E5%85%A5%E9%97%A8-cesium%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" rel="bookmark" title="3.cesium入门-cesium是什么？">3.cesium入门-cesium是什么？</a></li><li><a href="/2022/04/17/3D-study/Cesium/%E5%85%A5%E9%97%A8/4.cesium%E5%85%A5%E9%97%A8-%E8%AE%A4%E8%AF%86cesium/" rel="bookmark" title="4.cesium入门-cesium地图数据加载">4.cesium入门-cesium地图数据加载</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="小矮人gason"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">小矮人gason</p>
+  <div class="description" itemprop="description">大丈夫之志应如长江东奔大海</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">73</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">44</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">30</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhc29uMTk5Nw==" title="https:&#x2F;&#x2F;github.com&#x2F;gason1997"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS94aWFvLWFpLXJlbi01NS01Ng==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;xiao-ai-ren-55-56"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTI4ODYzNzQ4MA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;288637480"><i class="ic i-cloud-music"></i></span>
+      <a href="/about/" title="&#x2F;about&#x2F;" class="item about"><i class="ic i-address-card"></i></a>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9zYW5nZ2UyMjIxMjk0NQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;sangge22212945"><i class="ic i-twitter"></i></span>
+      <span class="exturl item youtube" data-url="aHR0cHM6Ly93d3cueW91dHViZS5jb20v" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;"><i class="ic i-youtube"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归纳</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/about" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>相关链接</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/04/15/3D-study/Cesium/%E5%85%A5%E9%97%A8/5.cesium%E5%85%A5%E9%97%A8-cesium%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/04/17/3D-study/Cesium/%E5%85%A5%E9%97%A8/4.cesium%E5%85%A5%E9%97%A8-%E8%AE%A4%E8%AF%86cesium/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/mysql/" title="分类于 mysql">mysql</a>
+</div>
+
+    <span><a href="/2023/05/26/web-study/mysql%E5%85%A5%E9%97%A8/" title="MySql入门学习">MySql入门学习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
+</div>
+
+    <span><a href="/2022/04/15/3D-study/Cesium/%E5%85%A5%E9%97%A8/5.cesium%E5%85%A5%E9%97%A8-cesium%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" title="5.cesium入门-cesium基础概念">5.cesium入门-cesium基础概念</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/2022/12/21/web-study/html-/HTML/" title="HTML入门">HTML入门</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
+</div>
+
+    <span><a href="/2022/02/19/map-study/gis-theory/4.gis%E5%9F%BA%E7%A1%80-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" title="4.GIS中的空间分析">4.GIS中的空间分析</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E7%B1%BB/" title="分类于 运维部署类">运维部署类</a>
+</div>
+
+    <span><a href="/2022/12/21/deploy-study/tomcat+nginx%E9%83%A8%E7%BD%B2%EF%BC%88windows%EF%BC%89/" title="tomcat+nginx 部署（windows）">tomcat+nginx 部署（windows）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/BIM/" title="分类于 BIM">BIM</a>
+</div>
+
+    <span><a href="/2023/03/02/arc-study/BIM/1.%E4%BB%80%E4%B9%88%E6%98%AFBIM%EF%BC%9F/" title="1.什么是BIM">1.什么是BIM</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
+</div>
+
+    <span><a href="/2022/10/09/project-summary/%E5%AE%9E%E6%99%AF%E4%B8%89%E7%BB%B4demo/" title="实景三维demo">实景三维demo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+</div>
+
+    <span><a href="/2022/01/20/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/1.%E4%BB%80%E4%B9%88%E6%98%AF%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%EF%BC%9F/" title="1.智慧城市概述">1.智慧城市概述</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/14/web-study/dockerstudy/4.docker%E9%83%A8%E7%BD%B2%E6%95%B0%E6%8D%AE%E5%BA%93/" title="4.docker部署数据库">4.docker部署数据库</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2022 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">小矮人gason @ Sang`s Homepage</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">281k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4:15</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/04/16/3D-study/Cesium/入门/3.cesium入门-cesium是什么？/',
+    favicon: {
+      show: "点开格桑的网页了....",
+      hide: "离开格桑的网页了...."
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

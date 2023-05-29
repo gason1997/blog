@@ -1,0 +1,594 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Nichts ist wahr, alles ist erlaubt." href="https://gason1997.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Nichts ist wahr, alles ist erlaubt." href="https://gason1997.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Nichts ist wahr, alles ist erlaubt." href="https://gason1997.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Cesium.js" />
+
+
+<link rel="canonical" href="https://gason1997.github.io/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/9.cesium%E4%B8%AD%E7%9A%84viewer/">
+
+
+
+  <title>
+9.cesium基础-cesium中的viewer - 入门 - Cesium.js - 三维开发 |
+Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">9.cesium基础-cesium中的viewer
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-05-14 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-05-14T00:00:00+08:00">2022-05-14</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>2.6k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Sang`s Homepage</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s1.ax1x.com/2023/03/10/ppnOEdO.png">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/3D-study/" itemprop="item" rel="index" title="分类于 三维开发"><span itemprop="name">三维开发</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/3D-study/Cesium-js/" itemprop="item" rel="index" title="分类于 Cesium.js"><span itemprop="name">Cesium.js</span></a>
+<meta itemprop="position" content="2" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" itemprop="item" rel="index" title="分类于 入门"><span itemprop="name">入门</span></a>
+<meta itemprop="position" content="3" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://gason1997.github.io/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/9.cesium%E4%B8%AD%E7%9A%84viewer/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="小矮人gason">
+    <meta itemprop="description" content=", 大丈夫之志应如长江东奔大海">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Nichts ist wahr, alles ist erlaubt.">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="创建实例"><a class="markdownIt-Anchor" href="#创建实例">#</a> 创建实例</h1>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Viewer实例</span></span><br><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&#x27;cesiumContainer&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><code>上述代码创建了一个Viewer实例，并将其绑定到一个具有id为'cesiumContainer'的HTML元素上。这将在该元素中呈现Cesium的三维场景。</code></p>
+<h1 id="设置背景地图"><a class="markdownIt-Anchor" href="#设置背景地图">#</a> 设置背景地图</h1>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置默认的ImageryProvider</span></span><br><span class="line">viewer.<span class="property">imageryLayers</span>.<span class="title function_">add</span>(<span class="title class_">Cesium</span>.<span class="title function_">createDefaultImageryProvider</span>());</span><br></pre></td></tr></table></figure>
+<p><code>在Viewer中，可以通过添加ImageryLayer来设置背景地图。Cesium.createDefaultImageryProvider()方法创建了一个默认的ImageryProvider，它使用Cesium World Imagery作为背景地图，并将其添加到Viewer的imageryLayers中。</code></p>
+<h1 id="设置相机视图"><a class="markdownIt-Anchor" href="#设置相机视图">#</a> 设置相机视图</h1>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Camera视图</span></span><br><span class="line"><span class="keyword">var</span> initialPosition = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(-<span class="number">75.59777</span>, <span class="number">40.03883</span>, <span class="number">1000.0</span>);</span><br><span class="line"><span class="keyword">var</span> initialOrientation = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="property">HeadingPitchRoll</span>.<span class="title function_">fromDegrees</span>(<span class="number">0.0</span>, -<span class="number">20.0</span>, <span class="number">0.0</span>);</span><br><span class="line"><span class="keyword">var</span> homeCameraView = &#123;</span><br><span class="line">    <span class="attr">destination</span>: initialPosition,</span><br><span class="line">    <span class="attr">orientation</span>: &#123;</span><br><span class="line">        <span class="attr">heading</span>: initialOrientation.<span class="property">heading</span>,</span><br><span class="line">        <span class="attr">pitch</span>: initialOrientation.<span class="property">pitch</span>,</span><br><span class="line">        <span class="attr">roll</span>: initialOrientation.<span class="property">roll</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">viewer.<span class="property">scene</span>.<span class="property">camera</span>.<span class="title function_">setView</span>(homeCameraView);</span><br></pre></td></tr></table></figure>
+<p><code>以上代码创建了一个相机视图，即设置了初始的相机位置和方向。使用Cesium.Cartesian3.fromDegrees方法设置初始位置的经度、纬度和高度。使用Cesium.HeadingPitchRoll.fromDegrees方法设置初始方向的航向、俯仰和翻滚角度。然后，通过viewer.scene.camera.setView方法将初始视图应用于Viewer的相机。</code></p>
+<h1 id="加载显示3d瓦片"><a class="markdownIt-Anchor" href="#加载显示3d瓦片">#</a> 加载显示 3D 瓦片</h1>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加一个默认的Cesium3DTileset</span></span><br><span class="line"><span class="keyword">var</span> tileset = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Cesium3DTileset</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="title class_">Cesium</span>.<span class="property">IonResource</span>.<span class="title function_">fromAssetId</span>(<span class="number">72178</span>)</span><br><span class="line">&#125;);</span><br><span class="line">viewer.<span class="property">scene</span>.<span class="property">primitives</span>.<span class="title function_">add</span>(tileset);</span><br></pre></td></tr></table></figure>
+<p><code>以上代码创建了一个Cesium3DTileset对象，用于加载和显示3D瓦片数据。通过Cesium.IonResource.fromAssetId方法，指定了要加载的3D瓦片数据的资源URL。然后，将该Cesium3DTileset对象添加到Viewer的scene.primitives中，使其在场景中显示出来。</code></p>
+<h1 id="管理实体"><a class="markdownIt-Anchor" href="#管理实体">#</a> 管理实体</h1>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加一个默认的EntityCollection</span></span><br><span class="line"><span class="keyword">var</span> entityCollection = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">EntityCollection</span>();</span><br><span class="line">viewer.<span class="property">scene</span>.<span class="property">primitives</span>.<span class="title function_">add</span>(entityCollection);</span><br></pre></td></tr></table></figure>
+<p><code>上述代码创建了一个EntityCollection对象，用于管理实体（Entity）。将EntityCollection对象添加到Viewer的scene.primitives中，以便能够在场景中显示实体。</code></p>
+<h1 id="创建entity对象"><a class="markdownIt-Anchor" href="#创建entity对象">#</a> 创建 Entity 对象</h1>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Cesium.Entity</span></span><br><span class="line"><span class="keyword">var</span> entity = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Entity</span>(&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Example Entity&#x27;</span>,</span><br><span class="line">    <span class="attr">position</span>: <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(-<span class="number">74.0707383</span>, <span class="number">40.7117244</span>),</span><br><span class="line">    <span class="attr">point</span>: &#123;</span><br><span class="line">        <span class="attr">pixelSize</span>: <span class="number">10</span>,</span><br><span class="line">        <span class="attr">color</span>: <span class="title class_">Cesium</span>.<span class="property">Color</span>.<span class="property">RED</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">entityCollection.<span class="title function_">add</span>(entity);</span><br></pre></td></tr></table></figure>
+<p><code>以上代码创建了一个Entity对象，并设置了一些属性，例如名称、位置和点的样式。通过Cesium.Cartesian3.fromDegrees方法设置实体的位置，使用经度和纬度坐标。然后，通过entityCollection.add方法将该实体添加到EntityCollection中，使其在场景中显示出来。</code></p>
+<h1 id="加载显示czml数据"><a class="markdownIt-Anchor" href="#加载显示czml数据">#</a> 加载显示 CZML 数据</h1>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Cesium.DataSource</span></span><br><span class="line"><span class="keyword">var</span> dataSource = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">CzmlDataSource</span>();</span><br><span class="line">viewer.<span class="property">dataSources</span>.<span class="title function_">add</span>(dataSource);</span><br></pre></td></tr></table></figure>
+<p><code>上述代码创建了一个CzmlDataSource对象，用于加载和显示CZML数据。通过viewer.dataSources.add方法将该数据源添加到Viewer的dataSources中。</code></p>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载并显示CZML数据</span></span><br><span class="line"><span class="keyword">var</span> czmlUrl = <span class="string">&#x27;path/to/czmlFile.czml&#x27;</span>;</span><br><span class="line">dataSource.<span class="title function_">load</span>(czmlUrl);</span><br></pre></td></tr></table></figure>
+<p><code>上述代码使用load方法加载指定路径的CZML文件。通过指定CZML文件的URL，可以加载并显示CZML数据。</code></p>
+<h1 id="添加监听器"><a class="markdownIt-Anchor" href="#添加监听器">#</a> 添加监听器</h1>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 监听Viewer的帧更新事件</span></span><br><span class="line">viewer.<span class="property">scene</span>.<span class="property">postRender</span>.<span class="title function_">addEventListener</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 在每帧渲染之后执行的代码</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>以上代码通过viewer.scene.postRender.addEventListener方法添加了一个监听器，用于在每帧渲染之后执行特定的代码。可以在该监听器中编写自定义逻辑，以响应每帧渲染完成后的事件。</code></p>
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+      <div class="tags">
+          <a href="/tags/Cesium-js/" rel="tag"><i class="ic i-tag"></i> Cesium.js</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-05-29 10:11:52" itemprop="dateModified" datetime="2023-05-29T10:11:52+08:00">2023-05-29</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>我移除了点赞打赏功能....别点了</p>
+  <div id="qr">
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>小矮人gason <i class="ic i-at"><em>@</em></i>Nichts ist wahr, alles ist erlaubt.
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://gason1997.github.io/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/9.cesium%E4%B8%AD%E7%9A%84viewer/" title="9.cesium基础-cesium中的viewer">https://gason1997.github.io/2022/05/14/3D-study/Cesium/基础/9.cesium中的viewer/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/05/12/3D-study/Cesium/%E5%9F%BA%E7%A1%80/8.cesium%E8%87%AA%E5%AE%9A%E4%B9%89popup/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2023&#x2F;03&#x2F;10&#x2F;ppnOEdO.png" title="8.cesium基础-自定义popup">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 入门</span>
+  <h3>8.cesium基础-自定义popup</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/10.cesium%E4%B8%AD%E7%9A%84scene/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2023&#x2F;03&#x2F;10&#x2F;ppnOEdO.png" title="10.cesium基础-cesium中的scene">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 入门</span>
+  <h3>10.cesium基础-cesium中的scene</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.</span> <span class="toc-text"> 创建实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9C%B0%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text"> 设置背景地图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%9B%B8%E6%9C%BA%E8%A7%86%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text"> 设置相机视图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E6%98%BE%E7%A4%BA3d%E7%93%A6%E7%89%87"><span class="toc-number">4.</span> <span class="toc-text"> 加载显示 3D 瓦片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E5%AE%9E%E4%BD%93"><span class="toc-number">5.</span> <span class="toc-text"> 管理实体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAentity%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.</span> <span class="toc-text"> 创建 Entity 对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E6%98%BE%E7%A4%BAczml%E6%95%B0%E6%8D%AE"><span class="toc-number">7.</span> <span class="toc-text"> 加载显示 CZML 数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%9B%91%E5%90%AC%E5%99%A8"><span class="toc-number">8.</span> <span class="toc-text"> 添加监听器</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2022/04/20/3D-study/Cesium/%E5%9F%BA%E7%A1%80/1.%E7%AC%AC%E4%B8%80%E4%B8%AAcesium/" rel="bookmark" title="1.cesium基础-第一个Cesium.js应用程序">1.cesium基础-第一个Cesium.js应用程序</a></li><li><a href="/2022/04/25/3D-study/Cesium/%E5%9F%BA%E7%A1%80/2.cesium%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/" rel="bookmark" title="2.cesium基础-坐标转换">2.cesium基础-坐标转换</a></li><li><a href="/2022/04/26/3D-study/Cesium/%E5%9F%BA%E7%A1%80/3.cesium%E7%9B%B8%E6%9C%BA%E4%B8%8E%E8%A7%86%E8%A7%92/" rel="bookmark" title="3.cesium基础-相机与视角">3.cesium基础-相机与视角</a></li><li><a href="/2022/04/27/3D-study/Cesium/%E5%9F%BA%E7%A1%80/4.cesium%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6/" rel="bookmark" title="4.cesium基础-点击事件">4.cesium基础-点击事件</a></li><li><a href="/2022/05/02/3D-study/Cesium/%E5%9F%BA%E7%A1%80/5.cesium%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%8A%A0%E8%BD%BD/" rel="bookmark" title="5.cesium基础-中多种模型的加载">5.cesium基础-中多种模型的加载</a></li><li><a href="/2022/05/05/3D-study/Cesium/%E5%9F%BA%E7%A1%80/6.cesium%E4%B8%8Eczml/" rel="bookmark" title="6.cesium基础-cesium与czml">6.cesium基础-cesium与czml</a></li><li><a href="/2022/05/10/3D-study/Cesium/%E5%9F%BA%E7%A1%80/7.cesium%E4%BC%98%E5%8C%96%E5%8A%A0%E8%BD%BD%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE/" rel="bookmark" title="7.cesium基础-优化加载海量数据">7.cesium基础-优化加载海量数据</a></li><li><a href="/2022/05/12/3D-study/Cesium/%E5%9F%BA%E7%A1%80/8.cesium%E8%87%AA%E5%AE%9A%E4%B9%89popup/" rel="bookmark" title="8.cesium基础-自定义popup">8.cesium基础-自定义popup</a></li><li><a href="/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/10.cesium%E4%B8%AD%E7%9A%84scene/" rel="bookmark" title="10.cesium基础-cesium中的scene">10.cesium基础-cesium中的scene</a></li><li class="active"><a href="/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/9.cesium%E4%B8%AD%E7%9A%84viewer/" rel="bookmark" title="9.cesium基础-cesium中的viewer">9.cesium基础-cesium中的viewer</a></li><li><a href="/2022/05/15/3D-study/Cesium/%E5%9F%BA%E7%A1%80/11.cesium%E4%B8%AD%E7%9A%84entity/" rel="bookmark" title="11.cesium基础-cesium中的entity">11.cesium基础-cesium中的entity</a></li><li><a href="/2022/05/16/3D-study/Cesium/%E5%9F%BA%E7%A1%80/12.cesium%E4%B8%AD%E7%9A%84primitive/" rel="bookmark" title="12.cesium基础-cesium中的primitive">12.cesium基础-cesium中的primitive</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="小矮人gason"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">小矮人gason</p>
+  <div class="description" itemprop="description">大丈夫之志应如长江东奔大海</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">73</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">44</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">30</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhc29uMTk5Nw==" title="https:&#x2F;&#x2F;github.com&#x2F;gason1997"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS94aWFvLWFpLXJlbi01NS01Ng==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;xiao-ai-ren-55-56"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTI4ODYzNzQ4MA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;288637480"><i class="ic i-cloud-music"></i></span>
+      <a href="/about/" title="&#x2F;about&#x2F;" class="item about"><i class="ic i-address-card"></i></a>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9zYW5nZ2UyMjIxMjk0NQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;sangge22212945"><i class="ic i-twitter"></i></span>
+      <span class="exturl item youtube" data-url="aHR0cHM6Ly93d3cueW91dHViZS5jb20v" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;"><i class="ic i-youtube"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归纳</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/about" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>相关链接</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/05/12/3D-study/Cesium/%E5%9F%BA%E7%A1%80/8.cesium%E8%87%AA%E5%AE%9A%E4%B9%89popup/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/10.cesium%E4%B8%AD%E7%9A%84scene/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+</div>
+
+    <span><a href="/2022/02/10/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E5%8C%BB%E7%96%97/" title="3.具体应用-智慧医疗">3.具体应用-智慧医疗</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
+</div>
+
+    <span><a href="/2022/04/11/3D-study/Cesium/%E5%85%A5%E9%97%A8/2.JavaScript%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" title="2.cesium入门-编程语言">2.cesium入门-编程语言</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/vue-study/" title="分类于 Vue">Vue</a>
+</div>
+
+    <span><a href="/2022/12/21/web-study/vue-study/1.vue%E6%A0%B8%E5%BF%83/" title="1.vue核心">1.vue核心</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/js%E5%B0%8F%E5%B8%AE%E6%89%8B/" title="分类于 js小帮手">js小帮手</a>
+</div>
+
+    <span><a href="/2023/03/03/project-summary/demo-project/%E6%89%AB%E9%9B%B7%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="扫雷小游戏">扫雷小游戏</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/11/web-study/dockerstudy/1.docker%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%89%E8%A3%85/" title="1.docker入门与安装">1.docker入门与安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+</div>
+
+    <span><a href="/2022/01/28/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/" title="2.关键技术-物联网技术">2.关键技术-物联网技术</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/17/web-study/dockerstudy/5.linux%E4%B9%8B%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" title="5.linux之部署环境安装">5.linux之部署环境安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
+</div>
+
+    <span><a href="/2022/11/10/project-summary/%E6%B9%96%E5%8D%97%E5%A4%A7%E5%B1%8F%E4%B8%80%E5%BC%A0%E5%9B%BE/" title="湖南大屏一张图">湖南大屏一张图</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
+</div>
+
+    <span><a href="/2022/10/09/project-summary/%E5%AE%9E%E6%99%AF%E4%B8%89%E7%BB%B4demo/" title="实景三维demo">实景三维demo</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2022 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">小矮人gason @ Sang`s Homepage</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">281k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4:15</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/05/14/3D-study/Cesium/基础/9.cesium中的viewer/',
+    favicon: {
+      show: "点开格桑的网页了....",
+      hide: "离开格桑的网页了...."
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
