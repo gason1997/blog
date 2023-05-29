@@ -168,24 +168,21 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     
 
     <p><strong>Cesium 与 CZML 进行交互时，你可以创建动态的地理可视化效果</strong></p>
-<h1 id="czml是什么"><a class="markdownIt-Anchor" href="#czml是什么">#</a> CZML 是什么？</h1>
-<ul>
+<h1 id="CZML是什么？"><a href="#CZML是什么？" class="headerlink" title="CZML是什么？"></a>CZML是什么？</h1><ul>
 <li><code>CZML（Cesium Language）是一种特定于Cesium的JSON格式，用于描述地理空间和时间相关的数据。它是一种用于创建动态的、交互式的地理可视化效果的数据格式。</code></li>
-<li><code>CZML文件由一系列JSON对象组成，每个对象代表一个实体或者场景的属性和状态。这些属性可以包括位置、姿态、样式、时间等。CZML提供了灵活的方式来定义和控制各种地理数据和动画效果。</code> <br>
-<strong>CZML 文件的结构通常包含以下几个重要部分：</strong></li>
-<li><code>id</code> ：每个对象都需要一个唯一的 &quot;id&quot; 属性来标识该对象。</li>
-<li><code>version</code> ：指定 CZML 规范的版本，当前为 &quot;1.0&quot;。</li>
-<li><code>clock</code> ：指定场景的时间和动画参数，例如起始时间、终止时间、当前时间、动画速度等。</li>
-<li><code>document</code> ：描述整个 CZML 文档的全局属性和设置。</li>
-<li><code>packet</code> ：描述具体的实体或场景的属性和状态。</li>
+<li><code>CZML文件由一系列JSON对象组成，每个对象代表一个实体或者场景的属性和状态。这些属性可以包括位置、姿态、样式、时间等。CZML提供了灵活的方式来定义和控制各种地理数据和动画效果。</code><br><strong>CZML文件的结构通常包含以下几个重要部分：</strong></li>
+<li><code>id</code>：每个对象都需要一个唯一的”id”属性来标识该对象。</li>
+<li><code>version</code>：指定CZML规范的版本，当前为”1.0”。</li>
+<li><code>clock</code>：指定场景的时间和动画参数，例如起始时间、终止时间、当前时间、动画速度等。</li>
+<li><code>document</code>：描述整个CZML文档的全局属性和设置。</li>
+<li><code>packet</code>：描述具体的实体或场景的属性和状态。</li>
 </ul>
-<h1 id="创建czml并加载"><a class="markdownIt-Anchor" href="#创建czml并加载">#</a> 创建 CZML 并加载</h1>
-<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Viewer实例</span></span><br><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&#x27;cesiumContainer&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个CzmlDataSource对象，用于加载和管理CZML数据</span></span><br><span class="line"><span class="keyword">var</span> dataSource = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">CzmlDataSource</span>();</span><br><span class="line">viewer.<span class="property">dataSources</span>.<span class="title function_">add</span>(dataSource);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个CZML文档对象</span></span><br><span class="line"><span class="keyword">var</span> czml = [&#123;</span><br><span class="line">  <span class="attr">id</span>: <span class="string">&#x27;document&#x27;</span>,</span><br><span class="line">  <span class="attr">version</span>: <span class="string">&#x27;1.0&#x27;</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">  <span class="attr">id</span>: <span class="string">&#x27;path&#x27;</span>,</span><br><span class="line">  <span class="attr">availability</span>: <span class="string">&#x27;2012-08-04T16:00:00Z/2012-08-04T16:05:00Z&#x27;</span>,</span><br><span class="line">  <span class="attr">path</span>: &#123;</span><br><span class="line">    <span class="attr">material</span>: &#123;</span><br><span class="line">      <span class="attr">solidColor</span>: &#123;</span><br><span class="line">        <span class="attr">color</span>: &#123;</span><br><span class="line">          <span class="attr">rgba</span>: [<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>] <span class="comment">// 轨迹颜色为红色</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">width</span>: <span class="number">3</span>, <span class="comment">// 轨迹宽度为3个像素</span></span><br><span class="line">    <span class="attr">show</span>: <span class="literal">true</span>, <span class="comment">// 显示轨迹</span></span><br><span class="line">    <span class="attr">leadTime</span>: <span class="number">10</span>, <span class="comment">// 开始飞行之前的预告时间</span></span><br><span class="line">    <span class="attr">trailTime</span>: <span class="number">180</span>, <span class="comment">// 飞行结束后的持续时间</span></span><br><span class="line">    <span class="attr">resolution</span>: <span class="number">5</span>, <span class="comment">// 轨迹插值的时间间隔</span></span><br><span class="line">    <span class="attr">material</span>: &#123;</span><br><span class="line">      <span class="attr">polylineOutline</span>: &#123;</span><br><span class="line">        <span class="attr">color</span>: &#123;</span><br><span class="line">          <span class="attr">rgba</span>: [<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>] <span class="comment">// 轨迹描边颜色为绿色</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">outlineColor</span>: &#123;</span><br><span class="line">          <span class="attr">rgba</span>: [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>] <span class="comment">// 轨迹描边的边界颜色为黑色</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">outlineWidth</span>: <span class="number">1</span> <span class="comment">// 轨迹描边的宽度为1个像素</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">positions</span>: &#123;</span><br><span class="line">      <span class="attr">epoch</span>: <span class="string">&#x27;2012-08-04T16:00:00Z&#x27;</span>,</span><br><span class="line">      <span class="attr">cartographicDegrees</span>: [</span><br><span class="line">        <span class="number">0</span>, <span class="number">45</span>, <span class="number">10000</span>,</span><br><span class="line">        <span class="number">10</span>, <span class="number">45</span>, <span class="number">10000</span>,</span><br><span class="line">        <span class="number">20</span>, <span class="number">45</span>, <span class="number">10000</span>,</span><br><span class="line">        <span class="number">30</span>, <span class="number">45</span>, <span class="number">10000</span>,</span><br><span class="line">        <span class="number">40</span>, <span class="number">45</span>, <span class="number">10000</span></span><br><span class="line">      ] <span class="comment">// 飞行轨迹的经纬度和高度数据</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载CZML数据</span></span><br><span class="line">dataSource.<span class="title function_">load</span>(czml).<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 获取路径实体对象</span></span><br><span class="line">  <span class="keyword">var</span> pathEntity = dataSource.<span class="property">entities</span>.<span class="title function_">getById</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 设置相机视角以查看整个飞行轨迹</span></span><br><span class="line">  viewer.<span class="property">camera</span>.<span class="title function_">viewBoundingSphere</span>(pathEntity.<span class="property">boundingSphere</span>, <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">HeadingPitchRange</span>(<span class="number">0</span>, -<span class="number">0.5</span>, <span class="number">0</span>));</span><br><span class="line">  viewer.<span class="property">camera</span>.<span class="title function_">lookAtTransform</span>(<span class="title class_">Cesium</span>.<span class="property">Matrix4</span>.<span class="property">IDENTITY</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 播放飞行轨迹动画</span></span><br><span class="line">  viewer.<span class="property">timeline</span>.<span class="title function_">zoomTo</span>(dataSource);</span><br><span class="line">  viewer.<span class="property">clock</span>.<span class="property">startTime</span> = <span class="title class_">Cesium</span>.<span class="property">JulianDate</span>.<span class="title function_">fromIso8601</span>(<span class="string">&#x27;2012-08-04T16:00:00Z&#x27;</span>);</span><br><span class="line">  viewer.<span class="property">clock</span>.<span class="property">stopTime</span> = <span class="title class_">Cesium</span>.<span class="property">JulianDate</span>.<span class="title function_">fromIso8601</span>(<span class="string">&#x27;2012-08-04T16:05:00Z&#x27;</span>);</span><br><span class="line">  viewer.<span class="property">clock</span>.<span class="property">currentTime</span> = viewer.<span class="property">clock</span>.<span class="property">startTime</span>; <span class="comment">// 设置当前时间为动画的起始时间</span></span><br><span class="line">  <span class="comment">// 设置动画速度</span></span><br><span class="line">  viewer.<span class="property">clock</span>.<span class="property">multiplier</span> = <span class="number">10</span>;</span><br><span class="line">  <span class="comment">// 开始动画</span></span><br><span class="line">  viewer.<span class="property">clock</span>.<span class="property">shouldAnimate</span> = <span class="literal">true</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h1 id="代码详解"><a class="markdownIt-Anchor" href="#代码详解">#</a> 代码详解</h1>
-<ul>
-<li>创建了一个 Cesium 的 Viewer 实例，并添加了一个 <code>CzmlDataSource</code>  数据源来加载和管理 CZML 数据。然后，创建了一个 CZML 文档对象，该文档描述了飞行轨迹的属性和参数。其中，path 部分定义了飞行轨迹的样式、位置和时间信息。</li>
-<li>通过 <code>dataSource.load(czml)</code>  方法加载 CZML 数据，并在加载完成后设置相机视角以查看整个飞行轨迹。 <code>viewer.camera.viewBoundingSphere</code>  和 <code>viewer.camera.lookAtTransform</code>  方法用于设置相机的位置和视角。</li>
-<li>通过设置动画的起始时间、终止时间、当前时间和速度，启动飞行轨迹动画。 <code>viewer.clock.startTime</code>  和 <code>viewer.clock.stopTime</code>  设置了动画的起始时间和终止时间， <code>viewer.clock.currentTime</code>  设置了动画的当前时间， <code>viewer.clock.multiplier</code>  设置了动画的速度。通过将 <code>viewer.clock.shouldAnimate</code>  属性设置为 <code>true</code> ，开始播放动画。</li>
+<h1 id="创建CZML并加载"><a href="#创建CZML并加载" class="headerlink" title="创建CZML并加载"></a>创建CZML并加载</h1><figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Viewer实例</span></span><br><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&#x27;cesiumContainer&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个CzmlDataSource对象，用于加载和管理CZML数据</span></span><br><span class="line"><span class="keyword">var</span> dataSource = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">CzmlDataSource</span>();</span><br><span class="line">viewer.<span class="property">dataSources</span>.<span class="title function_">add</span>(dataSource);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个CZML文档对象</span></span><br><span class="line"><span class="keyword">var</span> czml = [&#123;</span><br><span class="line">  <span class="attr">id</span>: <span class="string">&#x27;document&#x27;</span>,</span><br><span class="line">  <span class="attr">version</span>: <span class="string">&#x27;1.0&#x27;</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">  <span class="attr">id</span>: <span class="string">&#x27;path&#x27;</span>,</span><br><span class="line">  <span class="attr">availability</span>: <span class="string">&#x27;2012-08-04T16:00:00Z/2012-08-04T16:05:00Z&#x27;</span>,</span><br><span class="line">  <span class="attr">path</span>: &#123;</span><br><span class="line">    <span class="attr">material</span>: &#123;</span><br><span class="line">      <span class="attr">solidColor</span>: &#123;</span><br><span class="line">        <span class="attr">color</span>: &#123;</span><br><span class="line">          <span class="attr">rgba</span>: [<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>] <span class="comment">// 轨迹颜色为红色</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">width</span>: <span class="number">3</span>, <span class="comment">// 轨迹宽度为3个像素</span></span><br><span class="line">    <span class="attr">show</span>: <span class="literal">true</span>, <span class="comment">// 显示轨迹</span></span><br><span class="line">    <span class="attr">leadTime</span>: <span class="number">10</span>, <span class="comment">// 开始飞行之前的预告时间</span></span><br><span class="line">    <span class="attr">trailTime</span>: <span class="number">180</span>, <span class="comment">// 飞行结束后的持续时间</span></span><br><span class="line">    <span class="attr">resolution</span>: <span class="number">5</span>, <span class="comment">// 轨迹插值的时间间隔</span></span><br><span class="line">    <span class="attr">material</span>: &#123;</span><br><span class="line">      <span class="attr">polylineOutline</span>: &#123;</span><br><span class="line">        <span class="attr">color</span>: &#123;</span><br><span class="line">          <span class="attr">rgba</span>: [<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>] <span class="comment">// 轨迹描边颜色为绿色</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">outlineColor</span>: &#123;</span><br><span class="line">          <span class="attr">rgba</span>: [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>] <span class="comment">// 轨迹描边的边界颜色为黑色</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">outlineWidth</span>: <span class="number">1</span> <span class="comment">// 轨迹描边的宽度为1个像素</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">positions</span>: &#123;</span><br><span class="line">      <span class="attr">epoch</span>: <span class="string">&#x27;2012-08-04T16:00:00Z&#x27;</span>,</span><br><span class="line">      <span class="attr">cartographicDegrees</span>: [</span><br><span class="line">        <span class="number">0</span>, <span class="number">45</span>, <span class="number">10000</span>,</span><br><span class="line">        <span class="number">10</span>, <span class="number">45</span>, <span class="number">10000</span>,</span><br><span class="line">        <span class="number">20</span>, <span class="number">45</span>, <span class="number">10000</span>,</span><br><span class="line">        <span class="number">30</span>, <span class="number">45</span>, <span class="number">10000</span>,</span><br><span class="line">        <span class="number">40</span>, <span class="number">45</span>, <span class="number">10000</span></span><br><span class="line">      ] <span class="comment">// 飞行轨迹的经纬度和高度数据</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载CZML数据</span></span><br><span class="line">dataSource.<span class="title function_">load</span>(czml).<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 获取路径实体对象</span></span><br><span class="line">  <span class="keyword">var</span> pathEntity = dataSource.<span class="property">entities</span>.<span class="title function_">getById</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 设置相机视角以查看整个飞行轨迹</span></span><br><span class="line">  viewer.<span class="property">camera</span>.<span class="title function_">viewBoundingSphere</span>(pathEntity.<span class="property">boundingSphere</span>, <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">HeadingPitchRange</span>(<span class="number">0</span>, -<span class="number">0.5</span>, <span class="number">0</span>));</span><br><span class="line">  viewer.<span class="property">camera</span>.<span class="title function_">lookAtTransform</span>(<span class="title class_">Cesium</span>.<span class="property">Matrix4</span>.<span class="property">IDENTITY</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 播放飞行轨迹动画</span></span><br><span class="line">  viewer.<span class="property">timeline</span>.<span class="title function_">zoomTo</span>(dataSource);</span><br><span class="line">  viewer.<span class="property">clock</span>.<span class="property">startTime</span> = <span class="title class_">Cesium</span>.<span class="property">JulianDate</span>.<span class="title function_">fromIso8601</span>(<span class="string">&#x27;2012-08-04T16:00:00Z&#x27;</span>);</span><br><span class="line">  viewer.<span class="property">clock</span>.<span class="property">stopTime</span> = <span class="title class_">Cesium</span>.<span class="property">JulianDate</span>.<span class="title function_">fromIso8601</span>(<span class="string">&#x27;2012-08-04T16:05:00Z&#x27;</span>);</span><br><span class="line">  viewer.<span class="property">clock</span>.<span class="property">currentTime</span> = viewer.<span class="property">clock</span>.<span class="property">startTime</span>; <span class="comment">// 设置当前时间为动画的起始时间</span></span><br><span class="line">  <span class="comment">// 设置动画速度</span></span><br><span class="line">  viewer.<span class="property">clock</span>.<span class="property">multiplier</span> = <span class="number">10</span>;</span><br><span class="line">  <span class="comment">// 开始动画</span></span><br><span class="line">  viewer.<span class="property">clock</span>.<span class="property">shouldAnimate</span> = <span class="literal">true</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="代码详解"><a href="#代码详解" class="headerlink" title="代码详解"></a>代码详解</h1><ul>
+<li>创建了一个Cesium的Viewer实例，并添加了一个<code>CzmlDataSource</code>数据源来加载和管理CZML数据。然后，创建了一个CZML文档对象，该文档描述了飞行轨迹的属性和参数。其中，path部分定义了飞行轨迹的样式、位置和时间信息。</li>
+<li>通过<code>dataSource.load(czml)</code>方法加载CZML数据，并在加载完成后设置相机视角以查看整个飞行轨迹。<code>viewer.camera.viewBoundingSphere</code>和<code>viewer.camera.lookAtTransform</code>方法用于设置相机的位置和视角。</li>
+<li>通过设置动画的起始时间、终止时间、当前时间和速度，启动飞行轨迹动画。<code>viewer.clock.startTime</code>和<code>viewer.clock.stopTime</code>设置了动画的起始时间和终止时间，<code>viewer.clock.currentTime</code>设置了动画的当前时间，<code>viewer.clock.multiplier</code>设置了动画的速度。通过将<code>viewer.clock.shouldAnimate</code>属性设置为<code>true</code>，开始播放动画。</li>
 </ul>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
@@ -273,7 +270,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#czml%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text"> CZML 是什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAczml%E5%B9%B6%E5%8A%A0%E8%BD%BD"><span class="toc-number">2.</span> <span class="toc-text"> 创建 CZML 并加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3"><span class="toc-number">3.</span> <span class="toc-text"> 代码详解</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CZML%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">CZML是什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BACZML%E5%B9%B6%E5%8A%A0%E8%BD%BD"><span class="toc-number">2.</span> <span class="toc-text">创建CZML并加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3"><span class="toc-number">3.</span> <span class="toc-text">代码详解</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -303,7 +300,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">30</span>
+        <span class="count">32</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -396,70 +393,10 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <i class="ic i-angle-right"></i>
 <a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
+<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
 </div>
 
-    <span><a href="/2022/04/10/3D-study/Cesium/%E5%85%A5%E9%97%A8/1.3D%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/" title="1.cesium入门-3D图形学基础">1.cesium入门-3D图形学基础</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
-</div>
-
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
-</div>
-
-    <span><a href="/2022/04/10/gs-movies/my-movies/%E9%9C%B8%E7%8E%8B%E5%88%AB%E5%A7%AC/" title="霸王别姬">霸王别姬</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/js%E5%B0%8F%E5%B8%AE%E6%89%8B/" title="分类于 js小帮手">js小帮手</a>
-</div>
-
-    <span><a href="/2023/03/02/project-summary/demo-project/%E5%9B%BE%E7%89%87%E8%BD%ACbase64/" title="图片转base64">图片转base64</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
-</div>
-
-    <span><a href="/2022/10/08/project-summary/%E6%99%BA%E6%85%A7%E5%9B%AD%E5%8C%BAdemo/" title="智慧园区demo">智慧园区demo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E7%B1%BB/" title="分类于 运维部署类">运维部署类</a>
-</div>
-
-    <span><a href="/2022/12/21/deploy-study/tomcat+nginx%E9%83%A8%E7%BD%B2%EF%BC%88windows%EF%BC%89/" title="tomcat+nginx 部署（windows）">tomcat+nginx 部署（windows）</a></span>
+    <span><a href="/2022/05/05/3D-study/Cesium/%E5%9F%BA%E7%A1%80/6.cesium%E4%B8%8Eczml/" title="6.cesium基础-cesium与czml">6.cesium基础-cesium与czml</a></span>
   </li>
 
       
@@ -471,7 +408,91 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
 </div>
 
-    <span><a href="/2022/02/20/map-study/gis-theory/5.gis%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/" title="5.GIS中的数据获取">5.GIS中的数据获取</a></span>
+    <span><a href="/2022/02/16/map-study/gis-theory/2.gis%E5%9F%BA%E7%A1%80-%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F/" title="2.GIS中的坐标系统">2.GIS中的坐标系统</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+</div>
+
+    <span><a href="/2022/01/28/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/" title="2.关键技术-物联网技术">2.关键技术-物联网技术</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/BIM-GIS/" title="分类于 BIM+GIS">BIM+GIS</a>
+</div>
+
+    <span><a href="/2022/04/20/project-summary/cesiumjs%E5%B1%95%E7%A4%BABIM%E6%A8%A1%E5%9E%8B/" title="cesium+BIM（展示）">cesium+BIM（展示）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/gs-movies/my-documentary/" title="分类于 纪录片">纪录片</a>
+</div>
+
+    <span><a href="/2022/12/21/gs-movies/my-documentary/%E8%88%AA%E6%8B%8D%E4%B8%AD%E5%9B%BD%EF%BC%88%E7%AC%AC%E4%B8%80%E5%AD%A3%EF%BC%89/" title="航拍中国（第一季）">航拍中国（第一季）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/web%E5%85%A8%E6%A0%88/" title="分类于 web全栈">web全栈</a>
+</div>
+
+    <span><a href="/2023/05/20/project-summary/%E4%BC%A0%E7%BB%9F%E4%BD%93%E8%82%B2%E5%9F%BA%E5%9B%A0%E5%BA%93/" title="传统体育基因库">传统体育基因库</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
+</div>
+
+    <span><a href="/2022/03/10/gs-movies/my-movies/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/" title="辛德勒的名单">辛德勒的名单</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
+</div>
+
+    <span><a href="/2022/02/21/map-study/gis-theory/6.gis%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="6.GIS中的数据处理">6.GIS中的数据处理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/js%E5%B0%8F%E5%B8%AE%E6%89%8B/" title="分类于 js小帮手">js小帮手</a>
+</div>
+
+    <span><a href="/2023/03/03/project-summary/demo-project/%E6%89%AB%E9%9B%B7%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="扫雷小游戏">扫雷小游戏</a></span>
   </li>
 
       
@@ -480,36 +501,10 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+<a href="/categories/web-study/HTML/" title="分类于 HTML">HTML</a>
 </div>
 
-    <span><a href="/2023/03/13/web-study/dockerstudy/3.docker+vue%E9%83%A8%E7%BD%B2%E5%B0%8F%E7%BB%83%E4%B9%A0/" title="3.docker+vue部署小练习">3.docker+vue部署小练习</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
-</div>
-
-    <span><a href="/2022/04/20/3D-study/Cesium/%E5%9F%BA%E7%A1%80/1.%E7%AC%AC%E4%B8%80%E4%B8%AAcesium/" title="1.cesium基础-第一个Cesium.js应用程序">1.cesium基础-第一个Cesium.js应用程序</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
-</div>
-
-    <span><a href="/2023/03/18/web-study/dockerstudy/6.docker%E9%83%A8%E7%BD%B2/" title="6.linux之docker部署vue项目">6.linux之docker部署vue项目</a></span>
+    <span><a href="/2022/12/21/web-study/html-/HTML/" title="HTML入门">HTML入门</a></span>
   </li>
 
   </ul>
@@ -534,13 +529,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">282k 字</span>
+    <span title="站点总字数">283k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:16</span>
+    <span title="站点阅读时长">4:17</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
