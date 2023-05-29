@@ -167,18 +167,20 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="什么是entity？"><a href="#什么是entity？" class="headerlink" title="什么是entity？"></a>什么是entity？</h1><blockquote>
-<p>Entity是Cesium中的高级图元对象，用于描述场景中的实体，例如点、线、面等。Entity对象是一种高级抽象，可以设置位置、姿态、几何形状、样式等属性，以及附加的标签和描述信息。Entity提供了更高级的功能，例如与时间相关的动画、属性插值和事件处理。Entity可以直接添加到Viewer或EntityCollection中，并通过属性设置其外观、行为和其他属性。</p>
+    <h1 id="什么是entity"><a class="markdownIt-Anchor" href="#什么是entity">#</a> 什么是 entity？</h1>
+<blockquote>
+<p>Entity 是 Cesium 中的高级图元对象，用于描述场景中的实体，例如点、线、面等。Entity 对象是一种高级抽象，可以设置位置、姿态、几何形状、样式等属性，以及附加的标签和描述信息。Entity 提供了更高级的功能，例如与时间相关的动画、属性插值和事件处理。Entity 可以直接添加到 Viewer 或 EntityCollection 中，并通过属性设置其外观、行为和其他属性。</p>
 </blockquote>
 <ul>
-<li>Entity是高级图元对象，提供了更高级的抽象和功能，例如属性插值、时间动画和事件处理。</li>
-<li>Entity提供了更丰富的功能，例如与时间相关的动画效果、属性插值、图元间的关联关系等。</li>
-<li>Entity适用于描述和管理复杂的实体对象，例如车辆、飞机、建筑物等，可以轻松地设置其属性和外观，以及处理与实体相关的行为。</li>
+<li>Entity 是高级图元对象，提供了更高级的抽象和功能，例如属性插值、时间动画和事件处理。</li>
+<li>Entity 提供了更丰富的功能，例如与时间相关的动画效果、属性插值、图元间的关联关系等。</li>
+<li>Entity 适用于描述和管理复杂的实体对象，例如车辆、飞机、建筑物等，可以轻松地设置其属性和外观，以及处理与实体相关的行为。</li>
 </ul>
-<h1 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h1><figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Viewer实例</span></span><br><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&#x27;cesiumContainer&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> entityCollection = viewer.<span class="property">entities</span>;</span><br></pre></td></tr></table></figure>
-
+<h1 id="创建实例"><a class="markdownIt-Anchor" href="#创建实例">#</a> 创建实例</h1>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Viewer实例</span></span><br><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&#x27;cesiumContainer&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> entityCollection = viewer.<span class="property">entities</span>;</span><br></pre></td></tr></table></figure>
 <p><code>上述代码创建了一个Viewer实例，并获取其EntityCollection对象。通过viewer.entities属性可以访问Viewer的EntityCollection对象。</code></p>
-<h1 id="创建一个entity"><a href="#创建一个entity" class="headerlink" title="创建一个entity"></a>创建一个entity</h1><figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Entity</span></span><br><span class="line"><span class="keyword">var</span> entity = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Entity</span>(&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Example Entity&#x27;</span>,</span><br><span class="line">    <span class="attr">position</span>: <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(-<span class="number">75.59777</span>, <span class="number">40.03883</span>),</span><br><span class="line">    <span class="attr">billboard</span>: &#123;</span><br><span class="line">        <span class="attr">image</span>: <span class="string">&#x27;path/to/image.png&#x27;</span>,</span><br><span class="line">        <span class="attr">scale</span>: <span class="number">0.5</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="创建一个entity"><a class="markdownIt-Anchor" href="#创建一个entity">#</a> 创建一个 entity</h1>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Entity</span></span><br><span class="line"><span class="keyword">var</span> entity = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Entity</span>(&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Example Entity&#x27;</span>,</span><br><span class="line">    <span class="attr">position</span>: <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(-<span class="number">75.59777</span>, <span class="number">40.03883</span>),</span><br><span class="line">    <span class="attr">billboard</span>: &#123;</span><br><span class="line">        <span class="attr">image</span>: <span class="string">&#x27;path/to/image.png&#x27;</span>,</span><br><span class="line">        <span class="attr">scale</span>: <span class="number">0.5</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p><code>以上代码创建了一个Entity对象，并设置了一些属性，如名称、位置和图标。通过Cesium.Cartesian3.fromDegrees方法设置实体的位置，使用经度和纬度坐标。通过billboard属性设置实体的图标样式，使用image属性指定图标的路径，使用scale属性设置图标的缩放比例。</code></p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加Entity到EntityCollection</span></span><br><span class="line">entityCollection.<span class="title function_">add</span>(entity);</span><br></pre></td></tr></table></figure>
 <p><code>以上代码通过entityCollection.add方法将该实体添加到EntityCollection中，使其在场景中显示出来。</code></p>
@@ -186,7 +188,8 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <p><code>以上代码通过entity.position.getValue()方法获取实体的位置。位置以Cartesian3坐标表示。</code></p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置Entity的属性</span></span><br><span class="line">entity.<span class="property">name</span> = <span class="string">&#x27;Updated Name&#x27;</span>;</span><br><span class="line">entity.<span class="property">billboard</span>.<span class="property">scale</span> = <span class="number">1.0</span>;</span><br></pre></td></tr></table></figure>
 <p><code>以上代码直接通过赋值的方式修改实体的属性。可以通过直接访问实体的属性来修改其值。</code></p>
-<h1 id="移出entity"><a href="#移出entity" class="headerlink" title="移出entity"></a>移出entity</h1><figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 移除Entity</span></span><br><span class="line">entityCollection.<span class="title function_">remove</span>(entity);</span><br></pre></td></tr></table></figure>
+<h1 id="移出entity"><a class="markdownIt-Anchor" href="#移出entity">#</a> 移出 entity</h1>
+<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 移除Entity</span></span><br><span class="line">entityCollection.<span class="title function_">remove</span>(entity);</span><br></pre></td></tr></table></figure>
 <p><code>以上代码通过entityCollection.remove方法将实体从EntityCollection中移除，使其在场景中不再显示。</code></p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
@@ -274,7 +277,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFentity%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是entity？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">创建实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAentity"><span class="toc-number">3.</span> <span class="toc-text">创建一个entity</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%BB%E5%87%BAentity"><span class="toc-number">4.</span> <span class="toc-text">移出entity</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFentity"><span class="toc-number">1.</span> <span class="toc-text"> 什么是 entity？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text"> 创建实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAentity"><span class="toc-number">3.</span> <span class="toc-text"> 创建一个 entity</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%BB%E5%87%BAentity"><span class="toc-number">4.</span> <span class="toc-text"> 移出 entity</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -393,14 +396,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
+    <span><a href="/2022/02/19/map-study/gis-theory/4.gis%E5%9F%BA%E7%A1%80-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" title="4.GIS中的空间分析">4.GIS中的空间分析</a></span>
   </li>
 
       
@@ -409,26 +410,36 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/three-js/" title="分类于 three.js">three.js</a>
+<a href="/categories/3D-study/webGL-study/" title="分类于 webGL">webGL</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/three-js/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" title="分类于 入门基础">入门基础</a>
+<a href="/categories/3D-study/webGL-study/%E8%B6%85%E5%9B%BEwebGL/" title="分类于 超图webGL">超图webGL</a>
 </div>
 
-    <span><a href="/2022/06/15/3D-study/threeJs/2.%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="2.响应式设计">2.响应式设计</a></span>
+    <span><a href="/2022/12/21/3D-study/webGL/supermap-webGL/" title="超图webGL开发指南">超图webGL开发指南</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/Rhino/" title="分类于 Rhino">Rhino</a>
+<a href="/categories/map-study/QGIS/" title="分类于 QGIS">QGIS</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/rhino/rhino%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="rhino下载与安装">rhino下载与安装</a></span>
+    <span><a href="/2022/02/21/map-study/QGIS/1.QGIS-%E5%AE%89%E8%A3%85%E6%95%99%E5%AD%A6/" title="1.QGIS-安装教学">1.QGIS-安装教学</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
+</div>
+
+    <span><a href="/2022/02/18/map-study/gis-theory/3.gis%E5%9F%BA%E7%A1%80-%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="3.GIS中的空间数据类型">3.GIS中的空间数据类型</a></span>
   </li>
 
       
@@ -437,22 +448,34 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/BIM-GIS/" title="分类于 BIM+GIS">BIM+GIS</a>
+<a href="/categories/project-summary/js%E5%B0%8F%E5%B8%AE%E6%89%8B/" title="分类于 js小帮手">js小帮手</a>
 </div>
 
-    <span><a href="/2022/04/07/project-summary/cesium+bim/" title="cesium展示BIM模型">cesium展示BIM模型</a></span>
+    <span><a href="/2023/03/03/project-summary/demo-project/%E6%89%AB%E9%9B%B7%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="扫雷小游戏">扫雷小游戏</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/gs-books/" title="分类于 “阅”过大海">“阅”过大海</a>
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/gs-books/my-history/" title="分类于 历史传记">历史传记</a>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
 </div>
 
-    <span><a href="/2022/12/21/gs-books/my-history/%E9%82%93%E5%B0%8F%E5%B9%B3%E6%97%B6%E4%BB%A3/" title="邓小平时代">邓小平时代</a></span>
+    <span><a href="/2022/02/21/map-study/gis-theory/6.gis%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="6.GIS中的数据处理">6.GIS中的数据处理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/WebGIS/" title="分类于 WebGIS">WebGIS</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/WebGIS/echarts-map/" title="分类于 echarts-map">echarts-map</a>
+</div>
+
+    <span><a href="/2022/12/22/map-study/echarts-map/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
   </li>
 
       
@@ -464,7 +487,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
 </div>
 
-    <span><a href="/2022/05/08/project-summary/%E5%85%89%E8%B0%B7%E6%99%BA%E6%85%A7%E4%BA%A4%E9%80%9A/" title="光谷智慧交通">光谷智慧交通</a></span>
+    <span><a href="/2022/10/08/project-summary/%E6%99%BA%E6%85%A7%E5%9B%AD%E5%8C%BAdemo/" title="智慧园区demo">智慧园区demo</a></span>
   </li>
 
       
@@ -478,45 +501,19 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
 </div>
 
-    <span><a href="/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/9.cesium%E4%B8%AD%E7%9A%84viewer/" title="9.cesium基础-cesium中的viewer">9.cesium基础-cesium中的viewer</a></span>
+    <span><a href="/2022/05/02/3D-study/Cesium/%E5%9F%BA%E7%A1%80/5.cesium%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%8A%A0%E8%BD%BD/" title="5.cesium基础-中多种模型的加载">5.cesium基础-中多种模型的加载</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/web-study/mysql/" title="分类于 mysql">mysql</a>
+<a href="/categories/arc-study/BIM/" title="分类于 BIM">BIM</a>
 </div>
 
-    <span><a href="/2023/05/26/web-study/mysql%E5%85%A5%E9%97%A8/" title="MySql入门学习">MySql入门学习</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
-</div>
-
-    <span><a href="/2022/05/15/3D-study/Cesium/%E5%9F%BA%E7%A1%80/11.cesium%E4%B8%AD%E7%9A%84entity/" title="11.cesium基础-cesium中的entity">11.cesium基础-cesium中的entity</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
-</div>
-
-    <span><a href="/2022/11/10/project-summary/%E6%B9%96%E5%8D%97%E5%A4%A7%E5%B1%8F%E4%B8%80%E5%BC%A0%E5%9B%BE/" title="湖南大屏一张图">湖南大屏一张图</a></span>
+    <span><a href="/2023/03/02/arc-study/BIM/1.%E4%BB%80%E4%B9%88%E6%98%AFBIM%EF%BC%9F/" title="1.什么是BIM">1.什么是BIM</a></span>
   </li>
 
   </ul>
@@ -541,13 +538,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">283k 字</span>
+    <span title="站点总字数">282k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:17</span>
+    <span title="站点阅读时长">4:16</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

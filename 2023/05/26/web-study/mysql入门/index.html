@@ -164,131 +164,156 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="前言-数据库"><a href="#前言-数据库" class="headerlink" title="前言. 数据库"></a>前言. 数据库</h1><h2 id="1-数据库的意义"><a href="#1-数据库的意义" class="headerlink" title="1.数据库的意义"></a>1.数据库的意义</h2><blockquote>
+    <h1 id="前言-数据库"><a class="markdownIt-Anchor" href="#前言-数据库">#</a> 前言。数据库</h1>
+<h2 id="1数据库的意义"><a class="markdownIt-Anchor" href="#1数据库的意义">#</a> 1. 数据库的意义</h2>
+<blockquote>
 <p>数据库就是存放数据的仓库</p>
 </blockquote>
-<p>想像一下, 在没有计算机之前, 我们如何统计人口数据的, 通常都是用纸和笔登记, 填写像这样的一张表格.</p>
+<p>想像一下，在没有计算机之前，我们如何统计人口数据的，通常都是用纸和笔登记，填写像这样的一张表格.</p>
 <p><img data-src="http://image.brojie.cn/%E4%BA%BA%E5%8F%A3%E7%BB%9F%E8%AE%A1%E8%A1%A8.jpg" alt="http://image.brojie.cn/%E4%BA%BA%E5%8F%A3%E7%BB%9F%E8%AE%A1%E8%A1%A8.jpg"></p>
 <p>再将这些表格按照一定的顺序整理</p>
 <p><img data-src="http://image.brojie.cn/%E4%B8%80%E5%A0%86%E8%A1%A8.jpg" alt="http://image.brojie.cn/%E4%B8%80%E5%A0%86%E8%A1%A8.jpg"></p>
 <p>最后放到一个档案室里集中管理</p>
 <p><img data-src="http://image.brojie.cn/%E6%95%B0%E6%8D%AE%E6%A1%A3%E6%A1%88.jpg" alt="http://image.brojie.cn/%E6%95%B0%E6%8D%AE%E6%A1%A3%E6%A1%88.jpg"></p>
 <p>这个档案室实际上就是<strong>一个存放数据的仓库</strong>.</p>
-<p>但是这种管理方式是非常低效的, 如果要从100万人中找出某一个人的信息, 是非常慢的.</p>
-<p>数据库的产生实际上就是利用计算机, 方便高效的管理数据.</p>
+<p>但是这种管理方式是非常低效的，如果要从 100 万人中找出某一个人的信息，是非常慢的.</p>
+<p>数据库的产生实际上就是利用计算机，方便高效的管理数据.</p>
 <blockquote>
 <p>数据库是信息系统的重要组成部分</p>
 </blockquote>
 <p>任何信息系统都离不开对数据的处理.</p>
 <p>比如</p>
 <ul>
-<li>新闻系统最核心的是一篇一篇的文章, 文章也就是数据</li>
-<li>电商系统最核心的是商品, 商品也可以用数据来描述, 比如价格, 颜色, 重量…</li>
+<li>新闻系统最核心的是一篇一篇的文章，文章也就是数据</li>
+<li>电商系统最核心的是商品，商品也可以用数据来描述，比如价格，颜色，重量…</li>
 </ul>
-<h2 id="2-数据库的基本概念"><a href="#2-数据库的基本概念" class="headerlink" title="2.数据库的基本概念"></a>2.数据库的基本概念</h2><p>数据库最基本的组成单元就是一条一条数据记录, 这个就是<strong>数据行</strong></p>
-<p>为了让数据更加方便管理, 通常我们会使用表格来描述, 这个就是<strong>数据表</strong></p>
+<h2 id="2数据库的基本概念"><a class="markdownIt-Anchor" href="#2数据库的基本概念">#</a> 2. 数据库的基本概念</h2>
+<p>数据库最基本的组成单元就是一条一条数据记录，这个就是<strong>数据行</strong></p>
+<p>为了让数据更加方便管理，通常我们会使用表格来描述，这个就是<strong>数据表</strong></p>
 <p>很多数据表放在一起就形成<strong>数据库</strong></p>
-<h2 id="3-数据库的基本操作"><a href="#3-数据库的基本操作" class="headerlink" title="3.数据库的基本操作"></a>3.数据库的基本操作</h2><blockquote>
+<h2 id="3数据库的基本操作"><a class="markdownIt-Anchor" href="#3数据库的基本操作">#</a> 3. 数据库的基本操作</h2>
+<blockquote>
 <p>添加操作</p>
 </blockquote>
 <p>我们还是以人口统计为例.</p>
-<p>比如, 一个小孩出生了, 我们需要给小孩上户口.</p>
+<p>比如，一个小孩出生了，我们需要给小孩上户口.</p>
 <p>从数据库的角度就是将小孩的信息添加到数据库中保存起来.</p>
-<p>可能是保存在某一张表里(假设叫人口表)</p>
-<p>一般都有哪些信息呢? 姓名, 性别, 籍贯, 身份证, 户口所在地…这些就是字段, 也就是表头</p>
+<p>可能是保存在某一张表里 (假设叫人口表)</p>
+<p>一般都有哪些信息呢？姓名，性别，籍贯，身份证，户口所在地… 这些就是字段，也就是表头</p>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvLzU4MDI3ZjAxNDc0YjQyZmY5YjVmZGI4YTgxMWZkZTRh">Untitled</span></p>
 <blockquote>
 <p>更新操作</p>
 </blockquote>
-<p>又有一天, 小孩上大学了, 户口要迁移到学校, 需要修改户口所在地信息.</p>
-<p>从数据库的角度就是找到对应的小孩的信息, 更新户口所在地</p>
+<p>又有一天，小孩上大学了，户口要迁移到学校，需要修改户口所在地信息.</p>
+<p>从数据库的角度就是找到对应的小孩的信息，更新户口所在地</p>
 <blockquote>
 <p>删除操作</p>
 </blockquote>
-<p>比如, 某个老人过世了, 需要删除这个老人的信息.</p>
-<p>从数据库的角度就是找到对应的信息, 删除</p>
+<p>比如，某个老人过世了，需要删除这个老人的信息.</p>
+<p>从数据库的角度就是找到对应的信息，删除</p>
 <blockquote>
 <p>查询操作</p>
 </blockquote>
-<p>有的时候, 需要查询张三这个人的具体的信息, 怎么办?</p>
-<p>每个人都有身份证号, 身份证号是唯一的. 每个人都不同, 可以根据身份证号做为查询条件, 查找张三的全部信息</p>
-<h1 id="一-MySQL概述"><a href="#一-MySQL概述" class="headerlink" title="一. MySQL概述"></a>一. MySQL概述</h1><h2 id="1-什么是MySQL"><a href="#1-什么是MySQL" class="headerlink" title="1.什么是MySQL"></a>1.什么是MySQL</h2><blockquote>
+<p>有的时候，需要查询张三这个人的具体的信息，怎么办？</p>
+<p>每个人都有身份证号，身份证号是唯一的。每个人都不同，可以根据身份证号做为查询条件，查找张三的全部信息</p>
+<h1 id="一-mysql概述"><a class="markdownIt-Anchor" href="#一-mysql概述">#</a> 一. MySQL 概述</h1>
+<h2 id="1什么是mysql"><a class="markdownIt-Anchor" href="#1什么是mysql">#</a> 1. 什么是 MySQL</h2>
+<blockquote>
 <p>定义</p>
 </blockquote>
-<p>MySQL是一种关系型数据库软件, 基于C&#x2F;S架构</p>
+<p>MySQL 是一种关系型数据库软件，基于 C/S 架构</p>
 <ul>
-<li>数据库: 存储数据的仓库</li>
-<li>关系型: 数据与数据之间存在关系</li>
-<li>C&#x2F;S架构: Client(客户端)和Server(服务端)</li>
+<li>数据库：存储数据的仓库</li>
+<li>关系型：数据与数据之间存在关系</li>
+<li>C/S 架构: Client (客户端) 和 Server (服务端)</li>
 </ul>
-<h2 id="2-为什么学MySQL"><a href="#2-为什么学MySQL" class="headerlink" title="2.为什么学MySQL"></a>2.为什么学MySQL</h2><p>对于后端工程师, 数据库是必备技能.</p>
-<p>对于前端工程师, 会一些数据库方面的知识</p>
+<h2 id="2为什么学mysql"><a class="markdownIt-Anchor" href="#2为什么学mysql">#</a> 2. 为什么学 MySQL</h2>
+<p>对于后端工程师，数据库是必备技能.</p>
+<p>对于前端工程师，会一些数据库方面的知识</p>
 <ul>
 <li>可以在接口联调的时候占主动</li>
 <li>可以向全栈发展</li>
 </ul>
-<p>MySQL是数据库中使用最广范的, 学了MySQL后再学其他的数据库也是非常容易的</p>
+<p>MySQL 是数据库中使用最广范的，学了 MySQL 后再学其他的数据库也是非常容易的</p>
 <p><img data-src="http://image.brojie.cn/images/MySQL.jpg" alt="http://image.brojie.cn/images/MySQL.jpg"></p>
-<p>数据来源于: <span class="exturl" data-url="aHR0cHM6Ly9pbnNpZ2h0cy5zdGFja292ZXJmbG93LmNvbS9zdXJ2ZXkvMjAyMA==">StackOverflow2020调查报告</span></p>
-<h2 id="3-如何理解关系型"><a href="#3-如何理解关系型" class="headerlink" title="3.如何理解关系型"></a>3.如何理解关系型</h2><blockquote>
-<p>关系型数据库有明确的库&#x2F;表&#x2F;行的关系</p>
+<p>数据来源于: <span class="exturl" data-url="aHR0cHM6Ly9pbnNpZ2h0cy5zdGFja292ZXJmbG93LmNvbS9zdXJ2ZXkvMjAyMA==">StackOverflow2020 调查报告</span></p>
+<h2 id="3如何理解关系型"><a class="markdownIt-Anchor" href="#3如何理解关系型">#</a> 3. 如何理解关系型</h2>
+<blockquote>
+<p>关系型数据库有明确的库 / 表 / 行的关系</p>
 </blockquote>
 <p>数据库由数据表组成</p>
-<p>数据表由数据行(记录)组成</p>
+<p>数据表由数据行 (记录) 组成</p>
 <p><img data-src="http://image.brojie.cn/images/1548489109447.png" alt="http://image.brojie.cn/images/1548489109447.png"></p>
-<h2 id="4-MySQL的安装"><a href="#4-MySQL的安装" class="headerlink" title="4.MySQL的安装"></a>4.MySQL的安装</h2><h3 id="1-安装MySQL服务端"><a href="#1-安装MySQL服务端" class="headerlink" title="1) 安装MySQL服务端"></a><em>1) 安装MySQL服务端</em></h3><blockquote>
+<h2 id="4mysql的安装"><a class="markdownIt-Anchor" href="#4mysql的安装">#</a> 4.MySQL 的安装</h2>
+<h3 id="1-安装mysql服务端"><a class="markdownIt-Anchor" href="#1-安装mysql服务端">#</a> <em>1) 安装 MySQL 服务端</em></h3>
+<blockquote>
 <p>演示</p>
 </blockquote>
-<h3 id="2-安装MySQL客户端"><a href="#2-安装MySQL客户端" class="headerlink" title="2) 安装MySQL客户端"></a><em>2) 安装MySQL客户端</em></h3><p>MySQL的客户端有很多种. 这里, 我主要使用的是Navicate</p>
-<h2 id="5-如何理解C-x2F-S架构"><a href="#5-如何理解C-x2F-S架构" class="headerlink" title="5.如何理解C&#x2F;S架构"></a>5.如何理解C&#x2F;S架构</h2><p>MySQL分为MySQL客户端和MySQL服务端</p>
-<p>不管是客户端还是服务端, 本质上依然是一个程序</p>
-<p><strong>服务端</strong>: 提供服务的<strong>程序</strong></p>
-<p><strong>客户端</strong>: 连接服务端执行操作的<strong>程序</strong></p>
+<h3 id="2-安装mysql客户端"><a class="markdownIt-Anchor" href="#2-安装mysql客户端">#</a> <em>2) 安装 MySQL 客户端</em></h3>
+<p>MySQL 的客户端有很多种。这里，我主要使用的是 Navicate</p>
+<h2 id="5如何理解cs架构"><a class="markdownIt-Anchor" href="#5如何理解cs架构">#</a> 5. 如何理解 C/S 架构</h2>
+<p>MySQL 分为 MySQL 客户端和 MySQL 服务端</p>
+<p>不管是客户端还是服务端，本质上依然是一个程序</p>
+<p><strong>服务端</strong>：提供服务的<strong>程序</strong></p>
+<p><strong>客户端</strong>：连接服务端执行操作的<strong>程序</strong></p>
 <blockquote>
 <p>演示</p>
 </blockquote>
 <p><img data-src="http://image.brojie.cn/images/1550452268907.png" alt="http://image.brojie.cn/images/1550452268907.png"></p>
 <p><img data-src="http://image.brojie.cn/images/1550452347476.png" alt="http://image.brojie.cn/images/1550452347476.png"></p>
-<p>在命令行中输入<code>mysql -uroot -p</code>, 连接服务端, 因此, 当前的这个窗口就是一个MySQL的客户端</p>
+<p>在命令行中输入 <code>mysql -uroot -p</code> , 连接服务端，因此，当前的这个窗口就是一个 MySQL 的客户端</p>
 <blockquote>
 <p>思考</p>
 </blockquote>
-<p>MySQL主要操作是在哪些完成的? 客户端!</p>
-<h1 id="二-MySQL基本操作"><a href="#二-MySQL基本操作" class="headerlink" title="二. MySQL基本操作"></a>二. MySQL基本操作</h1><p>一般MySQL操作都是在操作MySQL客户端</p>
-<p>这里, 我们可以使用一些图形化的软件, 如Navicate&#x2F;MySQL-Front.</p>
-<p>如果需要操作MySQL, 需要先使用MySQL客户端连接到服务端</p>
+<p>MySQL 主要操作是在哪些完成的？客户端！</p>
+<h1 id="二-mysql基本操作"><a class="markdownIt-Anchor" href="#二-mysql基本操作">#</a> 二. MySQL 基本操作</h1>
+<p>一般 MySQL 操作都是在操作 MySQL 客户端</p>
+<p>这里，我们可以使用一些图形化的软件，如 Navicate/MySQL-Front.</p>
+<p>如果需要操作 MySQL, 需要先使用 MySQL 客户端连接到服务端</p>
 <p><img data-src="http://image.brojie.cn/images/1548497143947.png" alt="http://image.brojie.cn/images/1548497143947.png"></p>
-<h2 id="1-客户端连接与基本操作"><a href="#1-客户端连接与基本操作" class="headerlink" title="1.客户端连接与基本操作"></a>1.客户端连接与基本操作</h2><h3 id="1-连接数据库"><a href="#1-连接数据库" class="headerlink" title="1) 连接数据库"></a><em>1) 连接数据库</em></h3><p><img data-src="http://image.brojie.cn/images/1550700902461.png" alt="http://image.brojie.cn/images/1550700902461.png"></p>
+<h2 id="1客户端连接与基本操作"><a class="markdownIt-Anchor" href="#1客户端连接与基本操作">#</a> 1. 客户端连接与基本操作</h2>
+<h3 id="1-连接数据库"><a class="markdownIt-Anchor" href="#1-连接数据库">#</a> <em>1) 连接数据库</em></h3>
+<p><img data-src="http://image.brojie.cn/images/1550700902461.png" alt="http://image.brojie.cn/images/1550700902461.png"></p>
 <p>点击后弹出如下窗口</p>
 <p><img data-src="http://image.brojie.cn/images/1550701001417.png" alt="http://image.brojie.cn/images/1550701001417.png"></p>
-<h3 id="2-创建数据库"><a href="#2-创建数据库" class="headerlink" title="2) 创建数据库"></a><em>2) 创建数据库</em></h3><h3 id="3-选择数据库"><a href="#3-选择数据库" class="headerlink" title="3) 选择数据库"></a><em>3) 选择数据库</em></h3><p><img data-src="http://image.brojie.cn/images/1550701067184.png" alt="http://image.brojie.cn/images/1550701067184.png"></p>
+<h3 id="2-创建数据库"><a class="markdownIt-Anchor" href="#2-创建数据库">#</a> <em>2) 创建数据库</em></h3>
+<h3 id="3-选择数据库"><a class="markdownIt-Anchor" href="#3-选择数据库">#</a> <em>3) 选择数据库</em></h3>
+<p><img data-src="http://image.brojie.cn/images/1550701067184.png" alt="http://image.brojie.cn/images/1550701067184.png"></p>
 <p>两种操作</p>
 <ul>
 <li>双击</li>
-<li>右键-&gt;打开数据库</li>
+<li>右键 -&gt; 打开数据库</li>
 </ul>
-<h3 id="3-建库建表"><a href="#3-建库建表" class="headerlink" title="3) 建库建表"></a><em>3) 建库建表</em></h3><p>看演示</p>
-<h2 id="2-SQL概念-了解"><a href="#2-SQL概念-了解" class="headerlink" title="2.SQL概念(了解)"></a>2.SQL概念(了解)</h2><h3 id="1-什么是SQL"><a href="#1-什么是SQL" class="headerlink" title="1) 什么是SQL"></a><em>1) 什么是SQL</em></h3><p>Structured Query Language 结构化查询语言</p>
-<h3 id="2-SQL的作用"><a href="#2-SQL的作用" class="headerlink" title="2) SQL的作用"></a><em>2) SQL的作用</em></h3><ul>
-<li>是一种所有关系型数据库的查询规范, 不同的数据库都支持</li>
-<li>通用的数据库操作语言, 可以用在不同的数据库中</li>
+<h3 id="3-建库建表"><a class="markdownIt-Anchor" href="#3-建库建表">#</a> <em>3) 建库建表</em></h3>
+<p>看演示</p>
+<h2 id="2sql概念了解"><a class="markdownIt-Anchor" href="#2sql概念了解">#</a> 2.SQL 概念 (了解)</h2>
+<h3 id="1-什么是sql"><a class="markdownIt-Anchor" href="#1-什么是sql">#</a> <em>1) 什么是 SQL</em></h3>
+<p>Structured Query Language 结构化查询语言</p>
+<h3 id="2-sql的作用"><a class="markdownIt-Anchor" href="#2-sql的作用">#</a> <em>2) SQL 的作用</em></h3>
+<ul>
+<li>是一种所有关系型数据库的查询规范，不同的数据库都支持</li>
+<li>通用的数据库操作语言，可以用在不同的数据库中</li>
 </ul>
-<h3 id="3-SQL语句分类"><a href="#3-SQL语句分类" class="headerlink" title="3) SQL语句分类"></a><em>3) SQL语句分类</em></h3><ul>
-<li>Data Definition Language(DDL数据定义语言) 如: 建库, 建表</li>
-<li>Data Manipulation Language(DML 数据操纵语言) 如: 对表记录的增&#x2F;删&#x2F;改</li>
-<li>Data Query Language(DQL 数据查询语言) 如: 对表的查询操作</li>
-<li>Data Control Language(DCL 数据控制语言) 如: 对用户权限的设置</li>
+<h3 id="3-sql语句分类"><a class="markdownIt-Anchor" href="#3-sql语句分类">#</a> <em>3) SQL 语句分类</em></h3>
+<ul>
+<li>Data Definition Language (DDL 数据定义语言) 如：建库，建表</li>
+<li>Data Manipulation Language (DML 数据操纵语言) 如：对表记录的增 / 删 / 改</li>
+<li>Data Query Language (DQL 数据查询语言) 如：对表的查询操作</li>
+<li>Data Control Language (DCL 数据控制语言) 如：对用户权限的设置</li>
 </ul>
 <p>使用频率</p>
-<p>CURD(增删改查)占到了数据库操作80%</p>
-<p>查询占到CURD的80%</p>
-<h3 id="4-MySQL的语法"><a href="#4-MySQL的语法" class="headerlink" title="4) MySQL的语法"></a><em>4) MySQL的语法</em></h3><ul>
+<p>CURD (增删改查) 占到了数据库操作 80%</p>
+<p>查询占到 CURD 的 80%</p>
+<h3 id="4-mysql的语法"><a class="markdownIt-Anchor" href="#4-mysql的语法">#</a> <em>4) MySQL 的语法</em></h3>
+<ul>
 <li>每条语句以分号结尾</li>
-<li>SQL中不区分大小写, 推荐关键字大写以区分</li>
+<li>SQL 中不区分大小写，推荐关键字大写以区分</li>
 </ul>
-<h1 id="三-数据类型"><a href="#三-数据类型" class="headerlink" title="三. 数据类型"></a>三. 数据类型</h1><h2 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h2><p>在现实世界中, 数据的种类有很多,</p>
-<p>比如, 人的姓名(字符), 人的年龄(整型), 人的身高(小数), 出生日期(日期)</p>
-<p>而MySQL就是用来保存这些数据的, 所以在 MySQL中, 将数据分为三大类:</p>
+<h1 id="三-数据类型"><a class="markdownIt-Anchor" href="#三-数据类型">#</a> 三。数据类型</h1>
+<h2 id="0前言"><a class="markdownIt-Anchor" href="#0前言">#</a> 0. 前言</h2>
+<p>在现实世界中，数据的种类有很多，</p>
+<p>比如，人的姓名 (字符), 人的年龄 (整型), 人的身高 (小数), 出生日期 (日期)</p>
+<p>而 MySQL 就是用来保存这些数据的，所以在 MySQL 中，将数据分为三大类:</p>
 <ul>
 <li>数值型</li>
 <li>字符串</li>
@@ -297,100 +322,102 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <blockquote>
 <p>学习目的</p>
 </blockquote>
-<p>通过学习, 大概了解怎么选择合适的数据类型</p>
+<p>通过学习，大概了解怎么选择合适的数据类型</p>
 <p><img data-src="http://image.brojie.cn/wpsFC64.tmp.jpg" alt="http://image.brojie.cn/wpsFC64.tmp.jpg"></p>
-<h2 id="1-数值–整型"><a href="#1-数值–整型" class="headerlink" title="1.数值–整型"></a>1.数值–整型</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvLzRkMDZiOGI3NmI4NTRiNGRhMjA2NTNlMWM4ZTkyYjY5">Untitled</span></p>
+<h2 id="1数值整型"><a class="markdownIt-Anchor" href="#1数值整型">#</a> 1. 数值–整型</h2>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvLzRkMDZiOGI3NmI4NTRiNGRhMjA2NTNlMWM4ZTkyYjY5">Untitled</span></p>
 <blockquote>
 <p>选型</p>
 </blockquote>
 <p>一个人的年龄:  tinyint</p>
-<p>小型blog的序号: smallint</p>
+<p>小型 blog 的序号: smallint</p>
 <p>大学一个学校的学生序号: int</p>
 <p>大型电商网站的商品表的序号: int</p>
 <p>马云的资产: bigint</p>
 <blockquote>
 <p>说明</p>
 </blockquote>
-<p>在mysql中, 默认的整型是带符号的, 如果要定义无符号整型, 需要加上<code>unsigned</code></p>
+<p>在 mysql 中，默认的整型是带符号的，如果要定义无符号整型，需要加上 <code>unsigned</code></p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `t_int` (</span><br><span class="line">    age tinyint unsigned,</span><br><span class="line">    stu_sn smallint unsigned,</span><br><span class="line">    goods_sn int unsigned,</span><br><span class="line">    mayun bigint</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-数值–小数"><a href="#2-数值–小数" class="headerlink" title="2.数值–小数"></a>2.数值–小数</h2><p>小数分为</p>
+<h2 id="2数值小数"><a class="markdownIt-Anchor" href="#2数值小数">#</a> 2. 数值–小数</h2>
+<p>小数分为</p>
 <ul>
-<li>浮点<ul>
+<li>浮点
+<ul>
 <li>单精度</li>
 <li>双精度</li>
 </ul>
 </li>
 <li>定点</li>
 </ul>
-<p>浮点型的数据不精确, 所以一般表示价格, 我们使用定点型</p>
+<p>浮点型的数据不精确，所以一般表示价格，我们使用定点型</p>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvLzNkODE5OGU2MTBjNzQwNDFiMzk0NmRhNzlmOWNlOThl">Untitled</span></p>
 <blockquote>
 <p>选型</p>
 </blockquote>
-<p>距离: 3.4 km float(10,2)</p>
-<p>人的体重: 80.5kg  float(5,2)</p>
-<p>价格: 9.9 RMB decimal(10,2)</p>
+<p>距离: 3.4 km float (10,2)</p>
+<p>人的体重: 80.5kg  float (5,2)</p>
+<p>价格: 9.9 RMB decimal (10,2)</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `t_float` (</span><br><span class="line">    distance float(10,2),</span><br><span class="line">    weight float(5,2),</span><br><span class="line">    price decimal(10,2)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-字符串"><a href="#3-字符串" class="headerlink" title="3.字符串"></a>3.字符串</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvLzRiMDNjNTIyNjlhODRiMDM5ZWFiMjk2NGU5ZTM3MGZj">Untitled</span></p>
+<h2 id="3字符串"><a class="markdownIt-Anchor" href="#3字符串">#</a> 3. 字符串</h2>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvLzRiMDNjNTIyNjlhODRiMDM5ZWFiMjk2NGU5ZTM3MGZj">Untitled</span></p>
 <blockquote>
 <p>选型</p>
 </blockquote>
-<p>char类型: 固定长度, 一般用于存储固定长度的字符串, 如</p>
+<p>char 类型：固定长度，一般用于存储固定长度的字符串，如</p>
 <ul>
-<li>手机号 char(11)</li>
-<li>通过md5加密后的密码值char(32)</li>
+<li>手机号 char (11)</li>
+<li>通过 md5 加密后的密码值 char (32)</li>
 </ul>
-<p>varchar类型: 可变长度, 存储长度不确定的字符字符串, 如</p>
+<p>varchar 类型：可变长度，存储长度不确定的字符字符串，如</p>
 <ul>
-<li>姓名 varchar(16)</li>
-<li>邮箱 varchar(255)</li>
+<li>姓名 varchar (16)</li>
+<li>邮箱 varchar (255)</li>
 </ul>
-<p>text类型: 存储大段内容, 如</p>
+<p>text 类型：存储大段内容，如</p>
 <ul>
 <li>文章内容 text</li>
 </ul>
-<p>enum类型: 单选, 如</p>
+<p>enum 类型：单选，如</p>
 <ul>
 <li>性别</li>
 </ul>
 <blockquote>
 <p>说明</p>
 </blockquote>
-<p>char与varchar的区别</p>
+<p>char 与 varchar 的区别</p>
 <ul>
-<li>char是固定的长度 char(5) 保存 abc, 实际占用的空间5个</li>
-<li>varchar最大长度 varchar(5)保存abc, 实际占用的空间3个</li>
+<li>char 是固定的长度 char (5) 保存 abc, 实际占用的空间 5 个</li>
+<li>varchar 最大长度 varchar (5) 保存 abc, 实际占用的空间 3 个</li>
 </ul>
-<p>varchar用多少就占多少</p>
+<p>varchar 用多少就占多少</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `t_char` (</span><br><span class="line">    phone char(11),</span><br><span class="line">    password char(32),</span><br><span class="line">    name varchar(16),</span><br><span class="line">    email varchar(255),</span><br><span class="line">    content text,</span><br><span class="line">    sex enum(&#x27;男&#x27;,&#x27;女&#x27;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>说明</p>
 </blockquote>
-<p>char(M)与varchar(M)中的M表示的字符数</p>
-<h2 id="4-日期与时间"><a href="#4-日期与时间" class="headerlink" title="4.日期与时间"></a>4.日期与时间</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvLzU5Y2FiMTIyNmQ4ZjQ2MzM4Zjc5MzliOTc5N2U0Yjhj">Untitled</span></p>
+<p>char (M) 与 varchar (M) 中的 M 表示的字符数</p>
+<h2 id="4日期与时间"><a class="markdownIt-Anchor" href="#4日期与时间">#</a> 4. 日期与时间</h2>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvLzU5Y2FiMTIyNmQ4ZjQ2MzM4Zjc5MzliOTc5N2U0Yjhj">Untitled</span></p>
 <blockquote>
 <p>选型</p>
 </blockquote>
 <p>出生日期: date</p>
 <p>商品抢购的开始结束时间: datetime</p>
-<p>文章的创建更新时间: timestamp(时间戳)</p>
+<p>文章的创建更新时间: timestamp (时间戳)</p>
 <blockquote>
 <p>说明</p>
 </blockquote>
-<p>时间戳: 从1970年1月1日0时0分0秒到当前时间的秒数(整数)</p>
-<p>一般时间类型更常见的是保存时间戳, 时间戳就是一个整型数, 为什么保存时间戳呢?</p>
+<p>时间戳：从 1970 年 1 月 1 日 0 时 0 分 0 秒到当前时间的秒数 (整数)</p>
+<p>一般时间类型更常见的是保存时间戳，时间戳就是一个整型数，为什么保存时间戳呢？</p>
 <ol>
 <li>效率更高</li>
 <li>方便处理</li>
@@ -399,13 +426,14 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `t_time` (</span><br><span class="line">    birthday date,</span><br><span class="line">    start_time datetime,</span><br><span class="line">    end_time datetime,</span><br><span class="line">    created_time timestamp</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h1 id="六-字段属性"><a href="#六-字段属性" class="headerlink" title="六. 字段属性"></a>六. 字段属性</h1><p>字段属性又叫字段约束, 通常用来限定(约束)当前列</p>
+<h1 id="六-字段属性"><a class="markdownIt-Anchor" href="#六-字段属性">#</a> 六。字段属性</h1>
+<p>字段属性又叫字段约束，通常用来限定 (约束) 当前列</p>
 <ul>
 <li>能否为空</li>
 <li>默认值</li>
 </ul>
-<h2 id="1-能否为空"><a href="#1-能否为空" class="headerlink" title="1.能否为空"></a>1.能否为空</h2><p>如果需要当前字段不能为空, 默认情况下是可以为空的</p>
+<h2 id="1能否为空"><a class="markdownIt-Anchor" href="#1能否为空">#</a> 1. 能否为空</h2>
+<p>如果需要当前字段不能为空，默认情况下是可以为空的</p>
 <blockquote>
 <p>关键词</p>
 </blockquote>
@@ -414,16 +442,15 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <p>语法</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `表名` (</span><br><span class="line">    字段 字段类型 not null</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `t_null` (</span><br><span class="line">    id int,</span><br><span class="line">    name varchar(16) not null</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-默认值"><a href="#2-默认值" class="headerlink" title="2.默认值"></a>2.默认值</h2><p>有些情况下，我们希望某个字段拥有默认值，比如</p>
+<h2 id="2默认值"><a class="markdownIt-Anchor" href="#2默认值">#</a> 2. 默认值</h2>
+<p>有些情况下，我们希望某个字段拥有默认值，比如</p>
 <ul>
-<li>性别的字段，拥有默认值为“男”</li>
-<li>籍贯的字段，拥有默认值为“汉”</li>
+<li>性别的字段，拥有默认值为 “男”</li>
+<li>籍贯的字段，拥有默认值为 “汉”</li>
 </ul>
 <blockquote>
 <p>关键词</p>
@@ -433,13 +460,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <p>语法</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `表名` (</span><br><span class="line">    字段 字段类型 default 默认值</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `t_default` (</span><br><span class="line">    name varchar(16),</span><br><span class="line">    sex enum(&#x27;男&#x27;,&#x27;女&#x27;) default &#x27;男&#x27;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-主键"><a href="#3-主键" class="headerlink" title="3.主键"></a>3.主键</h2><p>如果我们可以通过某一列进行唯一的标识每一条记录，我们就可以把这个字段当做主键</p>
+<h2 id="3主键"><a class="markdownIt-Anchor" href="#3主键">#</a> 3. 主键</h2>
+<p>如果我们可以通过某一列进行唯一的标识每一条记录，我们就可以把这个字段当做主键</p>
 <blockquote>
 <p>关键词</p>
 </blockquote>
@@ -448,8 +474,8 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <p>语法</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `表名` (</span><br><span class="line">    字段 字段类型 primary key</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-自增"><a href="#4-自增" class="headerlink" title="4.自增"></a>4.自增</h2><p>如果数据表中的某个字段，需要进行自动增长，我们可以将其定义为自动增长, <strong>一般自增跟主键连用</strong></p>
+<h2 id="4自增"><a class="markdownIt-Anchor" href="#4自增">#</a> 4. 自增</h2>
+<p>如果数据表中的某个字段，需要进行自动增长，我们可以将其定义为自动增长，<strong>一般自增跟主键连用</strong></p>
 <blockquote>
 <p>关键词</p>
 </blockquote>
@@ -458,13 +484,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <p>语法</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `表名` (</span><br><span class="line">    字段 字段类型 primary key auto_increment</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `t_primary` (</span><br><span class="line">    id int primary key auto_increment</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-备注"><a href="#5-备注" class="headerlink" title="5.备注"></a>5.备注</h2><p>在创建字段时, 一般需要给一定的说明</p>
+<h2 id="5备注"><a class="markdownIt-Anchor" href="#5备注">#</a> 5. 备注</h2>
+<p>在创建字段时，一般需要给一定的说明</p>
 <blockquote>
 <p>关键词</p>
 </blockquote>
@@ -473,319 +498,298 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <p>语法</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `表名` (</span><br><span class="line">    字段 字段类型 字段属性 comment &#x27;备注&#x27;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `t_comment` (</span><br><span class="line">    id int primary key auto_increment comment &#x27;主键&#x27;,</span><br><span class="line">    name varchar(16) not null comment &#x27;姓名&#x27;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>完整的建表语句</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `表名` (</span><br><span class="line">    字段1 字段类型1 字段属性1 字段属性2 字段属性3,</span><br><span class="line">    ...</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h1 id="七-综合建表案例"><a href="#七-综合建表案例" class="headerlink" title="七. 综合建表案例"></a>七. 综合建表案例</h1><h2 id="1-文章表blog"><a href="#1-文章表blog" class="headerlink" title="1.文章表blog"></a>1.文章表blog</h2><blockquote>
+<h1 id="七-综合建表案例"><a class="markdownIt-Anchor" href="#七-综合建表案例">#</a> 七。综合建表案例</h1>
+<h2 id="1文章表blog"><a class="markdownIt-Anchor" href="#1文章表blog">#</a> 1. 文章表 blog</h2>
+<blockquote>
 <p>分析</p>
 </blockquote>
-<p>blog表需要哪些字段</p>
+<p>blog 表需要哪些字段</p>
 <ul>
-<li>主键id</li>
-<li>作者(author)</li>
-<li>标题(title)</li>
-<li>内容(content)</li>
-<li>浏览数(click)</li>
-<li>评论数(comment)</li>
-<li>发布时间(publish_time)</li>
+<li>主键 id</li>
+<li>作者 (author)</li>
+<li>标题 (title)</li>
+<li>内容 (content)</li>
+<li>浏览数 (click)</li>
+<li>评论数 (comment)</li>
+<li>发布时间 (publish_time)</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `blog` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT &#x27;主键&#x27;,</span><br><span class="line">  `title` varchar(255) NOT NULL DEFAULT &#x27;&#x27; COMMENT &#x27;标题&#x27;,</span><br><span class="line">  `content` text NOT NULL COMMENT &#x27;内容&#x27;,</span><br><span class="line">  `author` varchar(32) NOT NULL DEFAULT &#x27;&#x27; COMMENT &#x27;作者&#x27;,</span><br><span class="line">  `click` int(11) NOT NULL DEFAULT &#x27;0&#x27; COMMENT &#x27;浏览数&#x27;,</span><br><span class="line">  `comment` smallint(6) NOT NULL DEFAULT &#x27;0&#x27; COMMENT &#x27;评论数&#x27;,</span><br><span class="line">  `publish_time` date DEFAULT NULL COMMENT &#x27;发布日期&#x27;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-商品表goods"><a href="#2-商品表goods" class="headerlink" title="2.商品表goods"></a>2.商品表goods</h2><blockquote>
+<h2 id="2商品表goods"><a class="markdownIt-Anchor" href="#2商品表goods">#</a> 2. 商品表 goods</h2>
+<blockquote>
 <p>分析</p>
 </blockquote>
-<p>goods表需要哪些字段</p>
+<p>goods 表需要哪些字段</p>
 <ul>
-<li>主键id</li>
-<li>分类id(cate_id)</li>
-<li>商品名称(goods_name)</li>
-<li>本店价格(shop_price)</li>
-<li>市场价格(market_price)</li>
-<li>商品数量(goods_number)</li>
-<li>点击数(click)</li>
+<li>主键 id</li>
+<li>分类 id (cate_id)</li>
+<li>商品名称 (goods_name)</li>
+<li>本店价格 (shop_price)</li>
+<li>市场价格 (market_price)</li>
+<li>商品数量 (goods_number)</li>
+<li>点击数 (click)</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `goods` (</span><br><span class="line">    id int unsigned primary key auto_increment comment &#x27;主键&#x27;,</span><br><span class="line">    cate_id int not null comment &#x27;所属分类&#x27;,</span><br><span class="line">    goods_name varchar(255) not null comment &#x27;商品品称&#x27;,</span><br><span class="line">    shop_price decimal(10,2) not null default 0 comment &#x27;本店价格&#x27;,</span><br><span class="line">    market_price decimal(10,2) not null default 0 comment &#x27;市场价格&#x27;,</span><br><span class="line">    goods_number int not null comment &#x27;商品数量&#x27;,</span><br><span class="line">    click int not null default 0 comment &#x27;点击数&#x27;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-学生表stu"><a href="#3-学生表stu" class="headerlink" title="3.学生表stu"></a>3.学生表stu</h2><blockquote>
+<h2 id="3学生表stu"><a class="markdownIt-Anchor" href="#3学生表stu">#</a> 3. 学生表 stu</h2>
+<blockquote>
 <p>分析</p>
 </blockquote>
-<p>stu表需要哪些字段</p>
+<p>stu 表需要哪些字段</p>
 <ul>
-<li>主键id</li>
-<li>学号(sn)</li>
-<li>姓名(name)</li>
-<li>性别(sex) enum</li>
-<li>学科(subject)</li>
-<li>身高(height) float</li>
+<li>主键 id</li>
+<li>学号 (sn)</li>
+<li>姓名 (name)</li>
+<li>性别 (sex) enum</li>
+<li>学科 (subject)</li>
+<li>身高 (height) float</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `stu` (</span><br><span class="line">    id int unsigned primary key auto_increment comment &#x27;主键&#x27;,</span><br><span class="line">    sn char(8) unique not null comment &#x27;学号&#x27;,</span><br><span class="line">    name varchar(32) not null comment &#x27;姓名&#x27;,</span><br><span class="line">    sex enum(&#x27;男&#x27;, &#x27;女&#x27;) not null default &#x27;男&#x27; comment &#x27;性别&#x27;,</span><br><span class="line">    subject varchar(16) not null comment &#x27;学科&#x27;,</span><br><span class="line">    height float(3,2) not null comment &#x27;身高&#x27;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h1 id="八-数据的写操作-重点"><a href="#八-数据的写操作-重点" class="headerlink" title="八. 数据的写操作(重点)"></a>八. 数据的写操作(重点)</h1><h2 id="0-前言-1"><a href="#0-前言-1" class="headerlink" title="0.前言"></a>0.前言</h2><p>MySQL最主要的功能是<strong>管理数据</strong>, 也就是<code>增/删/改/查</code>, 也叫<code>CURD</code>, 从大的方面划分就是<strong>写操作</strong>和<strong>读操作</strong></p>
-<p>首先, 我们来学习<strong>写操作</strong></p>
-<h2 id="1-添加操作"><a href="#1-添加操作" class="headerlink" title="1.添加操作"></a>1.添加操作</h2><h3 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1) 基本用法"></a><em>1) 基本用法</em></h3><p>把握3点</p>
+<h1 id="八-数据的写操作重点"><a class="markdownIt-Anchor" href="#八-数据的写操作重点">#</a> 八。数据的写操作 (重点)</h1>
+<h2 id="0前言-2"><a class="markdownIt-Anchor" href="#0前言-2">#</a> 0. 前言</h2>
+<p>MySQL 最主要的功能是<strong>管理数据</strong>，也就是 <code>增/删/改/查</code> ，也叫 <code>CURD</code> , 从大的方面划分就是<strong>写操作</strong>和<strong>读操作</strong></p>
+<p>首先，我们来学习<strong>写操作</strong></p>
+<h2 id="1添加操作"><a class="markdownIt-Anchor" href="#1添加操作">#</a> 1. 添加操作</h2>
+<h3 id="1-基本用法"><a class="markdownIt-Anchor" href="#1-基本用法">#</a> <em>1) 基本用法</em></h3>
+<p>把握 3 点</p>
 <ol>
-<li>插入哪张<strong>表</strong>?</li>
-<li>插入表的哪些<strong>列</strong>(字段)?</li>
-<li>这些列的<strong>值</strong>?</li>
+<li>插入哪张<strong>表</strong>？</li>
+<li>插入表的哪些<strong>列</strong> (字段)?</li>
+<li>这些列的<strong>值</strong>？</li>
 </ol>
 <blockquote>
 <p>语法</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `表名`</span><br><span class="line">(`字段1`, ... `字段n`)</span><br><span class="line">VALUES</span><br><span class="line">(值1, 值2, 值n)</span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>示例一. 插入单条记录</p>
+<p>示例一。插入单条记录</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 先选择db1数据库</span><br><span class="line">USE `db1`;</span><br><span class="line"># 向t1表中添加一条数据</span><br><span class="line">INSERT INTO `t1`</span><br><span class="line">(`id`, `name`, `age`)</span><br><span class="line">VALUES</span><br><span class="line">(1, &#x27;xiaoming&#x27;, 20);</span><br></pre></td></tr></table></figure>
-
-<p>如何查看数据是否添加成功?</p>
+<p>如何查看数据是否添加成功？</p>
 <p>先了解一个基本的查询操作</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查询表中的所有记录</span><br><span class="line">select * from `表名`;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>示例二. 一次插入多条记录</p>
+<p>示例二。一次插入多条记录</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 向t1表中一次添加多条记录</span><br><span class="line">INSERT INTO `t1`</span><br><span class="line">(`id`, `name`, `age`)</span><br><span class="line">VALUES</span><br><span class="line">(2, &#x27;xiaomei&#x27;, 18),</span><br><span class="line">(3, &#x27;xiaoqiang&#x27;, 22);</span><br></pre></td></tr></table></figure>
-
-<p>一个() : 代表一条记录</p>
-<p>多个()使用,隔开</p>
+<p>一个 () : 代表一条记录</p>
+<p>多个 () 使用，隔开</p>
 <blockquote>
 <p>扩展</p>
 </blockquote>
-<p>如果已经在db1数据库下, 不用执行<code>USE命令</code>, 也可以显式的指定库名, 如</p>
+<p>如果已经在 db1 数据库下，不用执行 <code>USE命令</code> ，也可以显式的指定库名，如</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO db1.t1</span><br><span class="line">(`id`, `name`, `age`)</span><br><span class="line">VALUES</span><br><span class="line">(1, &#x27;xiaoming&#x27;, 20);</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-允不允许只插入部分字段和值"><a href="#2-允不允许只插入部分字段和值" class="headerlink" title="2) 允不允许只插入部分字段和值?"></a><em>2) 允不允许只插入部分字段和值?</em></h3><blockquote>
+<h3 id="2-允不允许只插入部分字段和值"><a class="markdownIt-Anchor" href="#2-允不允许只插入部分字段和值">#</a> <em>2) 允不允许只插入部分字段和值？</em></h3>
+<blockquote>
 <p>尝试</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `student`</span><br><span class="line">(`name`, `age`)</span><br><span class="line">VALUES</span><br><span class="line">(&#x27;xiaomei&#x27;, 18);</span><br></pre></td></tr></table></figure>
-
 <p>结论: <strong>____</strong>_</p>
-<h3 id="3-允不允许不写字段"><a href="#3-允不允许不写字段" class="headerlink" title="3) 允不允许不写字段?"></a><em>3) 允不允许不写字段?</em></h3><blockquote>
+<h3 id="3-允不允许不写字段"><a class="markdownIt-Anchor" href="#3-允不允许不写字段">#</a> <em>3) 允不允许不写字段？</em></h3>
+<blockquote>
 <p>尝试</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `student`</span><br><span class="line">VALUES</span><br><span class="line">(&#x27;laowang&#x27;, 30);</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>尝试</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `student`</span><br><span class="line">VALUES</span><br><span class="line">(null, &#x27;laowang&#x27;, 30);</span><br></pre></td></tr></table></figure>
-
 <p>结论: <strong>__</strong>___</p>
-<h3 id="4-添加案例"><a href="#4-添加案例" class="headerlink" title="4) 添加案例"></a><em>4) 添加案例</em></h3><ul>
+<h3 id="4-添加案例"><a class="markdownIt-Anchor" href="#4-添加案例">#</a> <em>4) 添加案例</em></h3>
+<ul>
 <li>超出整型范围</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `t_int` (age) VALUES (300);</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>浮点型精度丢失问题</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `t_float` VALUES (12345678.12, 123.12, 12345678.12);</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>插入中文数据</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `t_char` (name) VALUES (&#x27;小明&#x27;);</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>如果插入的字符串超过长度, 会怎样?</li>
+<li>如果插入的字符串超过长度，会怎样？</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `t_char` (phone) VALUES (&#x27;130123456789&#x27;);</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>如果插入的值不在enum的选型类, 会怎样?</li>
+<li>如果插入的值不在 enum 的选型类，会怎样？</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `t_char` (sex) VALUES (&#x27;女博士&#x27;);</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>如果字段类型是字符型, 插入的数据是整型或者小数型会怎样?</li>
+<li>如果字段类型是字符型，插入的数据是整型或者小数型会怎样？</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `t_char` (phone) VALUES (13012345678);</span><br><span class="line">INSERT INTO `t_char` (phone) VALUES (123456789.1);</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>如果字段不能为null, 但是添加的时候没有指定会怎样?</li>
+<li>如果字段不能为 null, 但是添加的时候没有指定会怎样？</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `t_null` (id) VALUES (1);</span><br></pre></td></tr></table></figure>
-
-<p>设置了not null的字段, 在插入数据时必须出现在字段列表中</p>
+<p>设置了 not null 的字段，在插入数据时必须出现在字段列表中</p>
 <ul>
-<li>如果设置了默认值, 但是添加的时候没有指定会怎样?</li>
+<li>如果设置了默认值，但是添加的时候没有指定会怎样？</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `t_default` (name) VALUES (&#x27;xiaoming&#x27;);</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>添加案例小结</p>
 </blockquote>
 <ul>
 <li>插入数据的类型最好与要求的类型一致</li>
 <li>插入的数据必须在有效范围内</li>
-<li>插入的数据为null时给默认值</li>
-<li>自增会在原来的基础上+1</li>
+<li>插入的数据为 null 时给默认值</li>
+<li>自增会在原来的基础上 + 1</li>
 </ul>
-<h2 id="2-修改操作"><a href="#2-修改操作" class="headerlink" title="2.修改操作"></a>2.修改操作</h2><p>4点</p>
+<h2 id="2修改操作"><a class="markdownIt-Anchor" href="#2修改操作">#</a> 2. 修改操作</h2>
+<p>4 点</p>
 <ol>
-<li>修改哪张<strong>表</strong>?</li>
-<li>修改表的哪些<strong>列</strong>(字段)?</li>
-<li>这些列的<strong>值</strong>?</li>
+<li>修改哪张<strong>表</strong>？</li>
+<li>修改表的哪些<strong>列</strong> (字段)?</li>
+<li>这些列的<strong>值</strong>？</li>
 <li>条件</li>
 </ol>
 <blockquote>
 <p>语法</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">UPDATE `表名`</span><br><span class="line">SET</span><br><span class="line">`字段1`=值1,</span><br><span class="line">`字段2`=值2,</span><br><span class="line">...</span><br><span class="line">WHERE 条件</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UPDATE `student`</span><br><span class="line">SET</span><br><span class="line">`name`=&#x27;xiaoming-new&#x27;</span><br><span class="line">WHERE `id`=1;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>演示</p>
 </blockquote>
-<h2 id="3-删除操作"><a href="#3-删除操作" class="headerlink" title="3.删除操作"></a>3.删除操作</h2><p>2点</p>
+<h2 id="3删除操作"><a class="markdownIt-Anchor" href="#3删除操作">#</a> 3. 删除操作</h2>
+<p>2 点</p>
 <ol>
-<li>删除哪张表?</li>
-<li>删除哪些行?</li>
+<li>删除哪张表？</li>
+<li>删除哪些行？</li>
 </ol>
 <blockquote>
 <p>语法</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM `表名` WHERE 条件</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM `student` WHERE `id`=3;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>演示</p>
 </blockquote>
-<h1 id="九-查询–基本查询"><a href="#九-查询–基本查询" class="headerlink" title="九. 查询–基本查询"></a>九. 查询–基本查询</h1><p>相对于写操作, 读操作(查询操作)使用的更为频繁, 大部分的业务都体现在读操作上, 内容比较多</p>
+<h1 id="九-查询基本查询"><a class="markdownIt-Anchor" href="#九-查询基本查询">#</a> 九。查询–基本查询</h1>
+<p>相对于写操作，读操作 (查询操作) 使用的更为频繁，大部分的业务都体现在读操作上，内容比较多</p>
 <p>我们先学习基本查询</p>
-<h2 id="1-基本用法-1"><a href="#1-基本用法-1" class="headerlink" title="1.基本用法"></a>1.基本用法</h2><h3 id="1-基本查询"><a href="#1-基本查询" class="headerlink" title="1) 基本查询"></a><em>1) 基本查询</em></h3><p>3点:</p>
+<h2 id="1基本用法"><a class="markdownIt-Anchor" href="#1基本用法">#</a> 1. 基本用法</h2>
+<h3 id="1-基本查询"><a class="markdownIt-Anchor" href="#1-基本查询">#</a> <em>1) 基本查询</em></h3>
+<p>3 点:</p>
 <ol>
-<li>查哪张<strong>表</strong>的数据?</li>
-<li>查哪些<strong>列</strong>的数据?</li>
+<li>查哪张<strong>表</strong>的数据？</li>
+<li>查哪些<strong>列</strong>的数据？</li>
 <li>条件</li>
 </ol>
 <blockquote>
 <p>语法</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 字段1, 字段2, ...字段n</span><br><span class="line">FROM 表名</span><br><span class="line">[WHERE 条件]</span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>示例1–查询指定的列</p>
+<p>示例 1–查询指定的列</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查询t1表中的name和age字段</span><br><span class="line">SELECT `name`, `age` FROM `t1`;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>演示</p>
 </blockquote>
 <blockquote>
-<p>示例2–查询所有的列</p>
+<p>示例 2–查询所有的列</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查询t1表中的所有数据</span><br><span class="line">SELECT * FROM `t1`;</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>&#96;&#96; : 表示所有字段</li>
+<li>`` : 表示所有字段</li>
 </ul>
 <blockquote>
 <p>演示</p>
 </blockquote>
 <blockquote>
-<p>示例3–根据条件查询</p>
+<p>示例 3–根据条件查询</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查询xiaomei的年龄</span><br><span class="line">SELECT `age` FROM `t1` WHERE `name`=&#x27;xiaomei&#x27;;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>演示</p>
 </blockquote>
-<h3 id="2-别名"><a href="#2-别名" class="headerlink" title="2) 别名"></a><em>2) 别名</em></h3><p>可以给指定的列取一个别名, 一般用于多表查询中</p>
+<h3 id="2-别名"><a class="markdownIt-Anchor" href="#2-别名">#</a> <em>2) 别名</em></h3>
+<p>可以给指定的列取一个别名，一般用于多表查询中</p>
 <blockquote>
 <p>语法</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 字段1 as 别名1, 字段2 as 别名2 FROM 表名 as 表别名</span><br></pre></td></tr></table></figure>
-
-<p>其中, as关键字可以省略</p>
+<p>其中，as 关键字可以省略</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT `name` as `username` FROM `t1` as stu;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>演示</p>
 </blockquote>
-<h2 id="2-查询模型"><a href="#2-查询模型" class="headerlink" title="2.查询模型"></a>2.查询模型</h2><h3 id="1-基本点"><a href="#1-基本点" class="headerlink" title="1) 基本点"></a><em>1) 基本点</em></h3><p>3个点</p>
+<h2 id="2查询模型"><a class="markdownIt-Anchor" href="#2查询模型">#</a> 2. 查询模型</h2>
+<h3 id="1-基本点"><a class="markdownIt-Anchor" href="#1-基本点">#</a> <em>1) 基本点</em></h3>
+<p>3 个点</p>
 <ol>
 <li>列当作变量</li>
 <li>列可以参与计算</li>
-<li>where条件判断真假</li>
+<li>where 条件判断真假</li>
 </ol>
 <blockquote>
 <p>如何理解</p>
 </blockquote>
-<p>逐行比较, 当where条件为真的时候, 把列(变量)的值取出来</p>
+<p>逐行比较，当 where 条件为真的时候，把列 (变量) 的值取出来</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT name, age FROM `student`;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>演示</p>
 </blockquote>
 <blockquote>
-<p>示例2</p>
+<p>示例 2</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查询本店价比市场价低多少(计算差价)</span><br><span class="line">SELECT market_price - shop_price FROM `goods`;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>演示</p>
 </blockquote>
-<h3 id="3-where条件"><a href="#3-where条件" class="headerlink" title="3) where条件"></a><em>3) where条件</em></h3><p>MySQL中常用的运算符如下表:</p>
+<h3 id="3-where条件"><a class="markdownIt-Anchor" href="#3-where条件">#</a> <em>3) where 条件</em></h3>
+<p>MySQL 中常用的运算符如下表:</p>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvL2U0NjlhODY0NGMzOTRjNzk5N2Q1NzhlNmY3NzI4NGJh">Untitled</span></p>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvL2FkZDAzZDBjNzU0ODRlMmNiODRhM2U5MDhmMDVjYTRh">Untitled</span></p>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvLzdhNGNhM2RiZDIzMjQ4ZTA4NjM2MzAzMzQ0ZGM0ZWVl">Untitled</span></p>
-<h2 id="3-查询案例"><a href="#3-查询案例" class="headerlink" title="3.查询案例"></a>3.查询案例</h2><p>以商品表为例, 做如下查询练习</p>
-<p>1.1 查询主键id为32的商品</p>
+<h2 id="3查询案例"><a class="markdownIt-Anchor" href="#3查询案例">#</a> 3. 查询案例</h2>
+<p>以商品表为例，做如下查询练习</p>
+<p>1.1 查询主键 id 为 32 的商品</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM `goods` WHERE `id`=32;</span><br></pre></td></tr></table></figure>
-
-<p>1.2 不属第3栏目的所有商品id和名称</p>
+<p>1.2 不属第 3 栏目的所有商品 id 和名称</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `id`, `goods_name`, `cate_id`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `cate_id` != 3;</span><br></pre></td></tr></table></figure>
-
-<p>1.3 本店价格高于3000元的商品</p>
+<p>1.3 本店价格高于 3000 元的商品</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `goods_name`, `shop_price`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `shop_price` &gt; 3000;</span><br></pre></td></tr></table></figure>
-
-<p>1.4 本店价格低于或等于100元的商品</p>
+<p>1.4 本店价格低于或等于 100 元的商品</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `goods_name`, `shop_price`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `shop_price` &lt;= 100;</span><br></pre></td></tr></table></figure>
-
-<p>1.5 取出第4栏目或第11栏目的商品(使用or或者使用in)</p>
+<p>1.5 取出第 4 栏目或第 11 栏目的商品 (使用 or 或者使用 in)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 使用or</span><br><span class="line">SELECT `goods_name`, `cate_id`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `cate_id`=4 or `cate_id`=11;</span><br><span class="line"></span><br><span class="line"># 不使用or</span><br><span class="line">SELECT `goods_name`, `cate_id`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `cate_id` in (4, 11);</span><br></pre></td></tr></table></figure>
-
-<p>1.6 取出100&lt;&#x3D;本店价格&lt;&#x3D;500的商品(使用and或者between)</p>
+<p>1.6 取出 100&lt;= 本店价格 &lt;=500 的商品 (使用 and 或者 between)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 使用and</span><br><span class="line">SELECT `goods_name`, `shop_price`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `shop_price` &gt;= 100 and `shop_price` &lt;= 500;</span><br><span class="line"></span><br><span class="line"># 不使用and</span><br><span class="line">SELECT `goods_name`, `shop_price`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `shop_price` between 100 and 500;</span><br></pre></td></tr></table></figure>
-
-<p>1.7 取出不属于第3栏目且不属于第11栏目的商品(使用and或使用not in分别实现)</p>
+<p>1.7 取出不属于第 3 栏目且不属于第 11 栏目的商品 (使用 and 或使用 not in 分别实现)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 使用and</span><br><span class="line">SELECT `goods_name`, `cate_id`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `cate_id` != 3 and `cate_id` != 11;</span><br><span class="line"></span><br><span class="line"># 使用 not in</span><br><span class="line">SELECT `goods_name`, `cate_id`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `cate_id` not in (3, 11);</span><br></pre></td></tr></table></figure>
-
-<p>1.8 取出第3个栏目下面价格&lt;1000或&gt;3000,并且点击量&gt;5的商品</p>
+<p>1.8 取出第 3 个栏目下面价格 &lt;1000 或&gt; 3000, 并且点击量 &gt; 5 的商品</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT `goods_name`, `cate_id`, `shop_price`, `click_count`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `cate_id`=3</span><br><span class="line">and (`shop_price` &lt; 1000 or `shop_price` &gt; 3000)</span><br><span class="line">and `click_count` &gt; 5;</span><br></pre></td></tr></table></figure>
-
-<p>1.9 取出名字以”诺基亚”开头的商品</p>
+<p>1.9 取出名字以 &quot;诺基亚&quot; 开头的商品</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `goods_name`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `goods_name` LIKE &#x27;诺基亚%&#x27;;</span><br></pre></td></tr></table></figure>
-
-<p>1.10 取出名字为”诺基亚Nxx”的手机</p>
+<p>1.10 取出名字为 &quot;诺基亚 Nxx&quot; 的手机</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `goods_name`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE `goods_name` LIKE &#x27;诺基亚N__&#x27;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="十-进阶查询操作-select子句"><a href="#十-进阶查询操作-select子句" class="headerlink" title="十. 进阶查询操作(select子句)"></a>十. 进阶查询操作(select子句)</h1><h2 id="0-前言-2"><a href="#0-前言-2" class="headerlink" title="0.前言"></a>0.前言</h2><p>MySQL除了能做基本的条件查询操作外, 还可以用来过滤数据, 比如分组统计, 排序等</p>
-<p>通过, SELECT的子句, 可以完成复杂的操作, 除了where子句, 还有如下4个, 一般称select 子句</p>
+<h1 id="十-进阶查询操作select子句"><a class="markdownIt-Anchor" href="#十-进阶查询操作select子句">#</a> 十。进阶查询操作 (select 子句)</h1>
+<h2 id="0前言-3"><a class="markdownIt-Anchor" href="#0前言-3">#</a> 0. 前言</h2>
+<p>MySQL 除了能做基本的条件查询操作外，还可以用来过滤数据，比如分组统计，排序等</p>
+<p>通过，SELECT 的子句，可以完成复杂的操作，除了 where 子句，还有如下 4 个，一般称 select 子句</p>
 <ul>
 <li>group by</li>
 <li>having</li>
@@ -795,10 +799,10 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <blockquote>
 <p>注意</p>
 </blockquote>
-<p>子句的顺序不能颠倒, 如下</p>
+<p>子句的顺序不能颠倒，如下</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT 字段 FROM 数据表</span><br><span class="line">where子句</span><br><span class="line">group by子句</span><br><span class="line">having子句</span><br><span class="line">order by 子句</span><br><span class="line">limit 子句;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-group-by子句"><a href="#1-group-by子句" class="headerlink" title="1.group by子句"></a>1.group by子句</h2><p>分组的目的是为了统计, 因此分组通常和聚合函数连用</p>
+<h2 id="1group-by子句"><a class="markdownIt-Anchor" href="#1group-by子句">#</a> 1.group by 子句</h2>
+<p>分组的目的是为了统计，因此分组通常和聚合函数连用</p>
 <blockquote>
 <p>聚合函数</p>
 </blockquote>
@@ -814,150 +818,142 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 </blockquote>
 <p>查出最贵的商品价格</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT max(shop_price) FROM `goods`;</span><br></pre></td></tr></table></figure>
-
 <p>查出最便宜的商品的价格</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT min(shop_price) FROM `goods`;</span><br></pre></td></tr></table></figure>
-
 <p>查询该店所有商品的库存总量</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT sum(goods_number) FROM `goods`;</span><br></pre></td></tr></table></figure>
-
 <p>查询所有商品的平均价</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT avg(shop_price) FROM `goods`;</span><br></pre></td></tr></table></figure>
-
 <p>查询该店一共有多少种商品</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT count(*) FROM `goods`;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT sex, count(*) FROM `stu` GROUP BY `sex`; // 更推荐</span><br><span class="line">SELECT sex, count(sex) FROM `stu` GROUP BY `sex`;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>练习</p>
 </blockquote>
-<p>需求: 统计每个栏目下最贵的商品</p>
+<p>需求：统计每个栏目下最贵的商品</p>
 <p>思路:</p>
 <ul>
-<li>第一步: 按照栏目(cate_id)对所有的数据进行分组</li>
-<li>第二步: 使用聚合函数求最大值</li>
+<li>第一步：按照栏目 (cate_id) 对所有的数据进行分组</li>
+<li>第二步：使用聚合函数求最大值</li>
 </ul>
 <blockquote>
 <p>分组统计</p>
 </blockquote>
-<p>第一步: 分组</p>
+<p>第一步：分组</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT cate_id FROM goods group by cate_id;</span><br></pre></td></tr></table></figure>
-
-<p>第二步: 统计</p>
+<p>第二步：统计</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `cate_id`, max(shop_price)</span><br><span class="line">FROM `goods`</span><br><span class="line">GROUP BY `cate_id`;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-having子句"><a href="#2-having子句" class="headerlink" title="2.having子句"></a>2.having子句</h2><p>having跟where一样, 用来做<strong>条件的判断</strong>和<strong>数据的筛选过滤</strong></p>
-<p>在MySQL中，我们可以使用where进行条件的过滤, 也可以使用having.</p>
+<h2 id="2having子句"><a class="markdownIt-Anchor" href="#2having子句">#</a> 2.having 子句</h2>
+<p>having 跟 where 一样，用来做<strong>条件的判断</strong>和<strong>数据的筛选过滤</strong></p>
+<p>在 MySQL 中，我们可以使用 where 进行条件的过滤，也可以使用 having.</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 可以用where也可以用having</span><br><span class="line">SELECT * FROM `t1` WHERE `age` &gt; 18;</span><br><span class="line">SELECT * FROM `t1` HAVING `age` &gt; 18;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>演示</p>
 </blockquote>
-<p>where和having的区别</p>
+<p>where 和 having 的区别</p>
 <ul>
-<li>where中的条件是<code>表字段</code></li>
-<li>having中的条件是<code>结果集</code></li>
+<li>where 中的条件是 <code>表字段</code></li>
+<li>having 中的条件是 <code>结果集</code></li>
 </ul>
 <blockquote>
 <p>示例</p>
 </blockquote>
-<p>查询差价&gt;200的商品信息</p>
+<p>查询差价 &gt; 200 的商品信息</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 使用where</span><br><span class="line">SELECT `goods_name`,  market_price-shop_price as `chajia`</span><br><span class="line">FROM `goods`</span><br><span class="line">WHERE market_price-shop_price &gt; 200;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 使用having</span><br><span class="line">SELECT `goods_name`,  market_price-shop_price as `chajia`</span><br><span class="line">FROM `goods`</span><br><span class="line">HAVING chajia &gt; 200;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>group和having综合示例</p>
+<p>group 和 having 综合示例</p>
 </blockquote>
 <p>查询该店每个栏目下面积压的总货款</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `cate_id`, sum(goods_number*shop_price) as `jiya`</span><br><span class="line">FROM `goods`</span><br><span class="line">GROUP BY `cate_id`;</span><br></pre></td></tr></table></figure>
-
-<p>查询积压货款&gt;1000的栏目</p>
+<p>查询积压货款 &gt; 1000 的栏目</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT `cate_id`, sum(goods_number*shop_price) as `jiya`</span><br><span class="line">FROM `goods`</span><br><span class="line">GROUP BY `cate_id`</span><br><span class="line">HAVING `jiya`&gt;1000;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>结论</p>
 </blockquote>
 <ol>
-<li>having通常和group by连用</li>
-<li>having的判断条件是结果集</li>
+<li>having 通常和 group by 连用</li>
+<li>having 的判断条件是结果集</li>
 </ol>
-<h2 id="3-order-by子句"><a href="#3-order-by子句" class="headerlink" title="3.order by子句"></a>3.order by子句</h2><p>order by就是实现对数据的排序操作. 一共有两种情况:</p>
+<h2 id="3order-by子句"><a class="markdownIt-Anchor" href="#3order-by子句">#</a> 3.order by 子句</h2>
+<p>order by 就是实现对数据的排序操作。一共有两种情况:</p>
 <ul>
-<li>一种是<strong>升序</strong>排列(asc)</li>
-<li>一种是<strong>降序</strong>排列(desc)</li>
+<li>一种是<strong>升序</strong>排列 (asc)</li>
+<li>一种是<strong>降序</strong>排列 (desc)</li>
 </ul>
 <p>应用场景:</p>
-<p>各种排序场合,如新闻按点击量排序, 商品按价格排序, 文章按更新时间排序等</p>
+<p>各种排序场合，如新闻按点击量排序，商品按价格排序，文章按更新时间排序等</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <p>按价格由高到低排序</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `goods_name`, `shop_price`</span><br><span class="line">FROM `goods`</span><br><span class="line">ORDER BY `shop_price` desc;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>多个字段同时排序</p>
 </blockquote>
-<p>按栏目由低到高排序,栏目内部按价格由高到低排序</p>
+<p>按栏目由低到高排序，栏目内部按价格由高到低排序</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `cate_id`, `goods_name`, `shop_price`</span><br><span class="line">FROM `goods`</span><br><span class="line">ORDER BY `cate_id` asc, `shop_price` desc;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-limit-子句"><a href="#4-limit-子句" class="headerlink" title="4.limit 子句"></a>4.limit 子句</h2><p>limit子句用于限定数目</p>
+<h2 id="4limit-子句"><a class="markdownIt-Anchor" href="#4limit-子句">#</a> 4.limit 子句</h2>
+<p>limit 子句用于限定数目</p>
 <p>应用场景:</p>
-<p>最新的5遍文章, 成绩倒数3名的学生, 点击量最高的10件商品</p>
-<p>分页!!!</p>
-<p>limit子句有两种语法</p>
+<p>最新的 5 遍文章，成绩倒数 3 名的学生，点击量最高的 10 件商品</p>
+<p>分页！！！</p>
+<p>limit 子句有两种语法</p>
 <blockquote>
 <p>语法</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 带一个参数, 表示显示多少条</span><br><span class="line">limit N</span><br><span class="line"># 带二个参数, 表示从N条(偏移量)开始, 显示M条</span><br><span class="line">limit N,M</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>示例</p>
 </blockquote>
 <p>查询价格最高的前三的商品</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT `goods_name`, `shop_price`</span><br><span class="line">FROM `goods`</span><br><span class="line">ORDER BY `shop_price` DESC</span><br><span class="line">LIMIT 3;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>分页示例</p>
 </blockquote>
-<p>每页5件商品, 显示第2页的数据</p>
+<p>每页 5 件商品，显示第 2 页的数据</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `id`, `goods_name`</span><br><span class="line">FROM `goods`</span><br><span class="line">LIMIT 5,5;</span><br></pre></td></tr></table></figure>
-
-<p>分页公式: 偏移量 &#x3D; (当前页码-1) * 每页显示数</p>
+<p>分页公式：偏移量 = (当前页码 - 1) * 每页显示数</p>
 <blockquote>
 <p>尝试</p>
 </blockquote>
-<p>每页3件商品, 显示第4页的数据</p>
+<p>每页 3 件商品，显示第 4 页的数据</p>
 <p>SQL: <strong>__</strong>___</p>
-<h1 id="十一-E-R实体关系模型"><a href="#十一-E-R实体关系模型" class="headerlink" title="十一. E-R实体关系模型"></a>十一. E-R实体关系模型</h1><h2 id="1-什么是实体"><a href="#1-什么是实体" class="headerlink" title="1.什么是实体"></a>1.什么是实体</h2><p>E: entity(实体)</p>
-<p>R: relation(关系)</p>
-<h3 id="1-实体"><a href="#1-实体" class="headerlink" title="1) 实体"></a><em>1) 实体</em></h3><blockquote>
+<h1 id="十一-e-r实体关系模型"><a class="markdownIt-Anchor" href="#十一-e-r实体关系模型">#</a> 十一. E-R 实体关系模型</h1>
+<h2 id="1什么是实体"><a class="markdownIt-Anchor" href="#1什么是实体">#</a> 1. 什么是实体</h2>
+<p>E: entity (实体)</p>
+<p>R: relation (关系)</p>
+<h3 id="1-实体"><a class="markdownIt-Anchor" href="#1-实体">#</a> <em>1) 实体</em></h3>
+<blockquote>
 <p>实体的定义</p>
 <p>客观存在并相互区别的一个事物称为实体（Entity）</p>
 </blockquote>
-<p>举例: 如一个学生、一件商品、一个部门、一个课程, <strong>相当于数据表中一条记录</strong></p>
-<h3 id="2-实体属性"><a href="#2-实体属性" class="headerlink" title="2) 实体属性"></a><em>2) 实体属性</em></h3><blockquote>
+<p>举例：如一个学生、一件商品、一个部门、一个课程，<strong>相当于数据表中一条记录</strong></p>
+<h3 id="2-实体属性"><a class="markdownIt-Anchor" href="#2-实体属性">#</a> <em>2) 实体属性</em></h3>
+<blockquote>
 <p>属性的定义</p>
 <p>实体的某些特性称为实体的属性（Attribute），一个实体可以拥有多个属性</p>
 </blockquote>
-<p>举例: 如学生有学号、姓名、性别、出生日期等, <strong>相当于字段</strong></p>
+<p>举例：如学生有学号、姓名、性别、出生日期等，<strong>相当于字段</strong></p>
 <p><img data-src="http://image.brojie.cn/image-20210127133809634.png" alt="http://image.brojie.cn/image-20210127133809634.png"></p>
-<h3 id="3-实体集"><a href="#3-实体集" class="headerlink" title="3) 实体集"></a><em>3) 实体集</em></h3><blockquote>
+<h3 id="3-实体集"><a class="markdownIt-Anchor" href="#3-实体集">#</a> <em>3) 实体集</em></h3>
+<blockquote>
 <p>定义</p>
-<p>实体的集合, 相当于一张表</p>
+<p>实体的集合，相当于一张表</p>
 </blockquote>
-<h2 id="2-关系"><a href="#2-关系" class="headerlink" title="2.关系"></a>2.关系</h2><p>表与表之间的关系一共有4种</p>
+<h2 id="2关系"><a class="markdownIt-Anchor" href="#2关系">#</a> 2. 关系</h2>
+<p>表与表之间的关系一共有 4 种</p>
 <ul>
 <li>一对一</li>
 <li>一对多</li>
 <li>多对一</li>
 <li>多对多</li>
 </ul>
-<h3 id="1-一对一关系"><a href="#1-一对一关系" class="headerlink" title="1) 一对一关系"></a><em>1) 一对一关系</em></h3><blockquote>
+<h3 id="1-一对一关系"><a class="markdownIt-Anchor" href="#1-一对一关系">#</a> <em>1) 一对一关系</em></h3>
+<blockquote>
 <p>定义</p>
 </blockquote>
 <p>一张表的<strong>一条记录</strong>对应另一张表的<strong>一条记录</strong></p>
@@ -965,13 +961,14 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <p>举例</p>
 </blockquote>
 <p>看如下两张表</p>
-<p>用户表(user)和用户详情表(user_info)</p>
-<p>user表中的一条记录, 比如xiaoming, 对应的user_info的一条记录</p>
+<p>用户表 (user) 和用户详情表 (user_info)</p>
+<p>user 表中的一条记录，比如 xiaoming, 对应的 user_info 的一条记录</p>
 <blockquote>
 <p>关联条件</p>
 </blockquote>
-<p>user.id&#x3D;user_info.user_id</p>
-<h3 id="2-一对多关系"><a href="#2-一对多关系" class="headerlink" title="2) 一对多关系"></a><em>2) 一对多关系</em></h3><blockquote>
+<p>user.id=user_info.user_id</p>
+<h3 id="2-一对多关系"><a class="markdownIt-Anchor" href="#2-一对多关系">#</a> <em>2) 一对多关系</em></h3>
+<blockquote>
 <p>定义</p>
 </blockquote>
 <p>一张表的<strong>一条记录</strong>对应另一张表的<strong>多条记录</strong></p>
@@ -979,14 +976,15 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <p>举例</p>
 </blockquote>
 <p>看如下两张表</p>
-<p>用户表(user)和文章表(article)</p>
-<p>user表中的一条记录, 比如xiaoming, 对应的article中的多条记录</p>
-<p>说明: 一个用户可以<strong>拥有</strong>(has)多篇文章 hasMany</p>
+<p>用户表 (user) 和文章表 (article)</p>
+<p>user 表中的一条记录，比如 xiaoming, 对应的 article 中的多条记录</p>
+<p>说明：一个用户可以<strong>拥有</strong> (has) 多篇文章 hasMany</p>
 <blockquote>
 <p>关联条件</p>
 </blockquote>
-<p>user.id&#x3D;article.user_id</p>
-<h3 id="3-多对一关系"><a href="#3-多对一关系" class="headerlink" title="3) 多对一关系"></a><em>3) 多对一关系</em></h3><blockquote>
+<p>user.id=article.user_id</p>
+<h3 id="3-多对一关系"><a class="markdownIt-Anchor" href="#3-多对一关系">#</a> <em>3) 多对一关系</em></h3>
+<blockquote>
 <p>定义</p>
 </blockquote>
 <p>一张表的<strong>多条记录</strong>对应另一张表的<strong>一条记录</strong></p>
@@ -994,31 +992,32 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <p>举例</p>
 </blockquote>
 <p>看如下两张表</p>
-<p>用户表(user)和国家表(country)</p>
-<p>user表中的多条记录, 对应的country中的一条记录</p>
-<p>说明: 多个用户<strong>属于</strong>(belongsto)一个国家</p>
+<p>用户表 (user) 和国家表 (country)</p>
+<p>user 表中的多条记录，对应的 country 中的一条记录</p>
+<p>说明：多个用户<strong>属于</strong> (belongsto) 一个国家</p>
 <blockquote>
 <p>关联条件</p>
 </blockquote>
-<p>user.country&#x3D;country.id</p>
-<h3 id="4-多对多关系"><a href="#4-多对多关系" class="headerlink" title="4) 多对多关系"></a><em>4) 多对多关系</em></h3><blockquote>
+<p><span class="exturl" data-url="aHR0cDovL3VzZXIuY291bnRyeT1jb3VudHJ5Lmlk">user.country=country.id</span></p>
+<h3 id="4-多对多关系"><a class="markdownIt-Anchor" href="#4-多对多关系">#</a> <em>4) 多对多关系</em></h3>
+<blockquote>
 <p>定义</p>
 </blockquote>
-<p>表A的<strong>一条记录</strong>对应表B的<strong>多条记录</strong></p>
-<p>同时, 表B的<strong>一条记录</strong>也对应表A的<strong>多条记录</strong></p>
+<p>表 A 的<strong>一条记录</strong>对应表 B 的<strong>多条记录</strong></p>
+<p>同时，表 B 的<strong>一条记录</strong>也对应表 A 的<strong>多条记录</strong></p>
 <blockquote>
 <p>举例</p>
 </blockquote>
 <p>看如下两张表</p>
-<p>用户表(user)和角色表(role)</p>
-<p>说明: 一个用户拥有多个角色, 一个角色也拥有多个用户</p>
+<p>用户表 (user) 和角色表 (role)</p>
+<p>说明：一个用户拥有多个角色，一个角色也拥有多个用户</p>
 <blockquote>
 <p>关联条件</p>
 </blockquote>
-<p>建立中间表, 将多对多转换成两个一对多处理</p>
-<p>父表: 一的那方叫做父表</p>
-<p>子表: 多的那方叫做子表</p>
-<p>在子表中建立一个字段, 让这个字段&#x3D;父表的id, 那么在子表中建立的这个字段就叫做外键</p>
+<p>建立中间表，将多对多转换成两个一对多处理</p>
+<p>父表：一的那方叫做父表</p>
+<p>子表：多的那方叫做子表</p>
+<p>在子表中建立一个字段，让这个字段 = 父表的 id, 那么在子表中建立的这个字段就叫做外键</p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"><i class="ic i-tag"></i> 数据库</a>
@@ -1097,7 +1096,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">前言. 数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">1.数据库的意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.</span> <span class="toc-text">2.数据库的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">3.数据库的基本操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-MySQL%E6%A6%82%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">一. MySQL概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFMySQL"><span class="toc-number">2.1.</span> <span class="toc-text">1.什么是MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6MySQL"><span class="toc-number">2.2.</span> <span class="toc-text">2.为什么学MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E5%85%B3%E7%B3%BB%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">3.如何理解关系型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-MySQL%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">2.4.</span> <span class="toc-text">4.MySQL的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-number">2.4.1.</span> <span class="toc-text">1) 安装MySQL服务端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85MySQL%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">2.4.2.</span> <span class="toc-text">2) 安装MySQL客户端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3C-x2F-S%E6%9E%B6%E6%9E%84"><span class="toc-number">2.5.</span> <span class="toc-text">5.如何理解C&#x2F;S架构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-MySQL%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">二. MySQL基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9E%E6%8E%A5%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.1.</span> <span class="toc-text">1.客户端连接与基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.1.1.</span> <span class="toc-text">1) 连接数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.1.2.</span> <span class="toc-text">2) 创建数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.1.3.</span> <span class="toc-text">3) 选择数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BB%BA%E5%BA%93%E5%BB%BA%E8%A1%A8"><span class="toc-number">3.1.4.</span> <span class="toc-text">3) 建库建表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-SQL%E6%A6%82%E5%BF%B5-%E4%BA%86%E8%A7%A3"><span class="toc-number">3.2.</span> <span class="toc-text">2.SQL概念(了解)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFSQL"><span class="toc-number">3.2.1.</span> <span class="toc-text">1) 什么是SQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SQL%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">3.2.2.</span> <span class="toc-text">2) SQL的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-SQL%E8%AF%AD%E5%8F%A5%E5%88%86%E7%B1%BB"><span class="toc-number">3.2.3.</span> <span class="toc-text">3) SQL语句分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-MySQL%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="toc-number">3.2.4.</span> <span class="toc-text">4) MySQL的语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">三. 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E5%89%8D%E8%A8%80"><span class="toc-number">4.1.</span> <span class="toc-text">0.前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E5%80%BC%E2%80%93%E6%95%B4%E5%9E%8B"><span class="toc-number">4.2.</span> <span class="toc-text">1.数值–整型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E5%80%BC%E2%80%93%E5%B0%8F%E6%95%B0"><span class="toc-number">4.3.</span> <span class="toc-text">2.数值–小数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">4.4.</span> <span class="toc-text">3.字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%97%A5%E6%9C%9F%E4%B8%8E%E6%97%B6%E9%97%B4"><span class="toc-number">4.5.</span> <span class="toc-text">4.日期与时间</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD-%E5%AD%97%E6%AE%B5%E5%B1%9E%E6%80%A7"><span class="toc-number">5.</span> <span class="toc-text">六. 字段属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%83%BD%E5%90%A6%E4%B8%BA%E7%A9%BA"><span class="toc-number">5.1.</span> <span class="toc-text">1.能否为空</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">5.2.</span> <span class="toc-text">2.默认值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%BB%E9%94%AE"><span class="toc-number">5.3.</span> <span class="toc-text">3.主键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%87%AA%E5%A2%9E"><span class="toc-number">5.4.</span> <span class="toc-text">4.自增</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A4%87%E6%B3%A8"><span class="toc-number">5.5.</span> <span class="toc-text">5.备注</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83-%E7%BB%BC%E5%90%88%E5%BB%BA%E8%A1%A8%E6%A1%88%E4%BE%8B"><span class="toc-number">6.</span> <span class="toc-text">七. 综合建表案例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%96%87%E7%AB%A0%E8%A1%A8blog"><span class="toc-number">6.1.</span> <span class="toc-text">1.文章表blog</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%95%86%E5%93%81%E8%A1%A8goods"><span class="toc-number">6.2.</span> <span class="toc-text">2.商品表goods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AD%A6%E7%94%9F%E8%A1%A8stu"><span class="toc-number">6.3.</span> <span class="toc-text">3.学生表stu</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB-%E6%95%B0%E6%8D%AE%E7%9A%84%E5%86%99%E6%93%8D%E4%BD%9C-%E9%87%8D%E7%82%B9"><span class="toc-number">7.</span> <span class="toc-text">八. 数据的写操作(重点)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E5%89%8D%E8%A8%80-1"><span class="toc-number">7.1.</span> <span class="toc-text">0.前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%B7%BB%E5%8A%A0%E6%93%8D%E4%BD%9C"><span class="toc-number">7.2.</span> <span class="toc-text">1.添加操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">7.2.1.</span> <span class="toc-text">1) 基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%85%81%E4%B8%8D%E5%85%81%E8%AE%B8%E5%8F%AA%E6%8F%92%E5%85%A5%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E5%92%8C%E5%80%BC"><span class="toc-number">7.2.2.</span> <span class="toc-text">2) 允不允许只插入部分字段和值?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%81%E4%B8%8D%E5%85%81%E8%AE%B8%E4%B8%8D%E5%86%99%E5%AD%97%E6%AE%B5"><span class="toc-number">7.2.3.</span> <span class="toc-text">3) 允不允许不写字段?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B7%BB%E5%8A%A0%E6%A1%88%E4%BE%8B"><span class="toc-number">7.2.4.</span> <span class="toc-text">4) 添加案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E6%93%8D%E4%BD%9C"><span class="toc-number">7.3.</span> <span class="toc-text">2.修改操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="toc-number">7.4.</span> <span class="toc-text">3.删除操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9D-%E6%9F%A5%E8%AF%A2%E2%80%93%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2"><span class="toc-number">8.</span> <span class="toc-text">九. 查询–基本查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-1"><span class="toc-number">8.1.</span> <span class="toc-text">1.基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2"><span class="toc-number">8.1.1.</span> <span class="toc-text">1) 基本查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%AB%E5%90%8D"><span class="toc-number">8.1.2.</span> <span class="toc-text">2) 别名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9F%A5%E8%AF%A2%E6%A8%A1%E5%9E%8B"><span class="toc-number">8.2.</span> <span class="toc-text">2.查询模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E7%82%B9"><span class="toc-number">8.2.1.</span> <span class="toc-text">1) 基本点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-where%E6%9D%A1%E4%BB%B6"><span class="toc-number">8.2.2.</span> <span class="toc-text">3) where条件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%9F%A5%E8%AF%A2%E6%A1%88%E4%BE%8B"><span class="toc-number">8.3.</span> <span class="toc-text">3.查询案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81-%E8%BF%9B%E9%98%B6%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C-select%E5%AD%90%E5%8F%A5"><span class="toc-number">9.</span> <span class="toc-text">十. 进阶查询操作(select子句)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E5%89%8D%E8%A8%80-2"><span class="toc-number">9.1.</span> <span class="toc-text">0.前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-group-by%E5%AD%90%E5%8F%A5"><span class="toc-number">9.2.</span> <span class="toc-text">1.group by子句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-having%E5%AD%90%E5%8F%A5"><span class="toc-number">9.3.</span> <span class="toc-text">2.having子句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-order-by%E5%AD%90%E5%8F%A5"><span class="toc-number">9.4.</span> <span class="toc-text">3.order by子句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-limit-%E5%AD%90%E5%8F%A5"><span class="toc-number">9.5.</span> <span class="toc-text">4.limit 子句</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%80-E-R%E5%AE%9E%E4%BD%93%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="toc-number">10.</span> <span class="toc-text">十一. E-R实体关系模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%9E%E4%BD%93"><span class="toc-number">10.1.</span> <span class="toc-text">1.什么是实体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%9E%E4%BD%93"><span class="toc-number">10.1.1.</span> <span class="toc-text">1) 实体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%9E%E4%BD%93%E5%B1%9E%E6%80%A7"><span class="toc-number">10.1.2.</span> <span class="toc-text">2) 实体属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%9E%E4%BD%93%E9%9B%86"><span class="toc-number">10.1.3.</span> <span class="toc-text">3) 实体集</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%85%B3%E7%B3%BB"><span class="toc-number">10.2.</span> <span class="toc-text">2.关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%80%E5%AF%B9%E4%B8%80%E5%85%B3%E7%B3%BB"><span class="toc-number">10.2.1.</span> <span class="toc-text">1) 一对一关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%85%B3%E7%B3%BB"><span class="toc-number">10.2.2.</span> <span class="toc-text">2) 一对多关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%85%B3%E7%B3%BB"><span class="toc-number">10.2.3.</span> <span class="toc-text">3) 多对一关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E7%B3%BB"><span class="toc-number">10.2.4.</span> <span class="toc-text">4) 多对多关系</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text"> 前言。数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 数据库的意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 数据库的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. 数据库的基本操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-mysql%E6%A6%82%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text"> 一. MySQL 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E4%BB%80%E4%B9%88%E6%98%AFmysql"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 什么是 MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6mysql"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. 为什么学 MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E5%85%B3%E7%B3%BB%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text"> 3. 如何理解关系型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4mysql%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">2.4.</span> <span class="toc-text"> 4.MySQL 的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85mysql%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-number">2.4.1.</span> <span class="toc-text"> 1) 安装 MySQL 服务端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85mysql%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">2.4.2.</span> <span class="toc-text"> 2) 安装 MySQL 客户端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3cs%E6%9E%B6%E6%9E%84"><span class="toc-number">2.5.</span> <span class="toc-text"> 5. 如何理解 C&#x2F;S 架构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text"> 二. MySQL 基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9E%E6%8E%A5%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.1.</span> <span class="toc-text"> 1. 客户端连接与基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 1) 连接数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.1.2.</span> <span class="toc-text"> 2) 创建数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.1.3.</span> <span class="toc-text"> 3) 选择数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BB%BA%E5%BA%93%E5%BB%BA%E8%A1%A8"><span class="toc-number">3.1.4.</span> <span class="toc-text"> 3) 建库建表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2sql%E6%A6%82%E5%BF%B5%E4%BA%86%E8%A7%A3"><span class="toc-number">3.2.</span> <span class="toc-text"> 2.SQL 概念 (了解)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFsql"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 1) 什么是 SQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-sql%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 2) SQL 的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-sql%E8%AF%AD%E5%8F%A5%E5%88%86%E7%B1%BB"><span class="toc-number">3.2.3.</span> <span class="toc-text"> 3) SQL 语句分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-mysql%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="toc-number">3.2.4.</span> <span class="toc-text"> 4) MySQL 的语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text"> 三。数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0%E5%89%8D%E8%A8%80"><span class="toc-number">4.1.</span> <span class="toc-text"> 0. 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E6%95%B0%E5%80%BC%E6%95%B4%E5%9E%8B"><span class="toc-number">4.2.</span> <span class="toc-text"> 1. 数值–整型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E6%95%B0%E5%80%BC%E5%B0%8F%E6%95%B0"><span class="toc-number">4.3.</span> <span class="toc-text"> 2. 数值–小数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">4.4.</span> <span class="toc-text"> 3. 字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E6%97%A5%E6%9C%9F%E4%B8%8E%E6%97%B6%E9%97%B4"><span class="toc-number">4.5.</span> <span class="toc-text"> 4. 日期与时间</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD-%E5%AD%97%E6%AE%B5%E5%B1%9E%E6%80%A7"><span class="toc-number">5.</span> <span class="toc-text"> 六。字段属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E8%83%BD%E5%90%A6%E4%B8%BA%E7%A9%BA"><span class="toc-number">5.1.</span> <span class="toc-text"> 1. 能否为空</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">5.2.</span> <span class="toc-text"> 2. 默认值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E4%B8%BB%E9%94%AE"><span class="toc-number">5.3.</span> <span class="toc-text"> 3. 主键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E8%87%AA%E5%A2%9E"><span class="toc-number">5.4.</span> <span class="toc-text"> 4. 自增</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E5%A4%87%E6%B3%A8"><span class="toc-number">5.5.</span> <span class="toc-text"> 5. 备注</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83-%E7%BB%BC%E5%90%88%E5%BB%BA%E8%A1%A8%E6%A1%88%E4%BE%8B"><span class="toc-number">6.</span> <span class="toc-text"> 七。综合建表案例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E6%96%87%E7%AB%A0%E8%A1%A8blog"><span class="toc-number">6.1.</span> <span class="toc-text"> 1. 文章表 blog</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E5%95%86%E5%93%81%E8%A1%A8goods"><span class="toc-number">6.2.</span> <span class="toc-text"> 2. 商品表 goods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E5%AD%A6%E7%94%9F%E8%A1%A8stu"><span class="toc-number">6.3.</span> <span class="toc-text"> 3. 学生表 stu</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB-%E6%95%B0%E6%8D%AE%E7%9A%84%E5%86%99%E6%93%8D%E4%BD%9C%E9%87%8D%E7%82%B9"><span class="toc-number">7.</span> <span class="toc-text"> 八。数据的写操作 (重点)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0%E5%89%8D%E8%A8%80-2"><span class="toc-number">7.1.</span> <span class="toc-text"> 0. 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E6%B7%BB%E5%8A%A0%E6%93%8D%E4%BD%9C"><span class="toc-number">7.2.</span> <span class="toc-text"> 1. 添加操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">7.2.1.</span> <span class="toc-text"> 1) 基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%85%81%E4%B8%8D%E5%85%81%E8%AE%B8%E5%8F%AA%E6%8F%92%E5%85%A5%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E5%92%8C%E5%80%BC"><span class="toc-number">7.2.2.</span> <span class="toc-text"> 2) 允不允许只插入部分字段和值？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%81%E4%B8%8D%E5%85%81%E8%AE%B8%E4%B8%8D%E5%86%99%E5%AD%97%E6%AE%B5"><span class="toc-number">7.2.3.</span> <span class="toc-text"> 3) 允不允许不写字段？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B7%BB%E5%8A%A0%E6%A1%88%E4%BE%8B"><span class="toc-number">7.2.4.</span> <span class="toc-text"> 4) 添加案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E4%BF%AE%E6%94%B9%E6%93%8D%E4%BD%9C"><span class="toc-number">7.3.</span> <span class="toc-text"> 2. 修改操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="toc-number">7.4.</span> <span class="toc-text"> 3. 删除操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9D-%E6%9F%A5%E8%AF%A2%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2"><span class="toc-number">8.</span> <span class="toc-text"> 九。查询–基本查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">8.1.</span> <span class="toc-text"> 1. 基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2"><span class="toc-number">8.1.1.</span> <span class="toc-text"> 1) 基本查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%AB%E5%90%8D"><span class="toc-number">8.1.2.</span> <span class="toc-text"> 2) 别名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E6%9F%A5%E8%AF%A2%E6%A8%A1%E5%9E%8B"><span class="toc-number">8.2.</span> <span class="toc-text"> 2. 查询模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E7%82%B9"><span class="toc-number">8.2.1.</span> <span class="toc-text"> 1) 基本点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-where%E6%9D%A1%E4%BB%B6"><span class="toc-number">8.2.2.</span> <span class="toc-text"> 3) where 条件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E6%9F%A5%E8%AF%A2%E6%A1%88%E4%BE%8B"><span class="toc-number">8.3.</span> <span class="toc-text"> 3. 查询案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81-%E8%BF%9B%E9%98%B6%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9Cselect%E5%AD%90%E5%8F%A5"><span class="toc-number">9.</span> <span class="toc-text"> 十。进阶查询操作 (select 子句)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0%E5%89%8D%E8%A8%80-3"><span class="toc-number">9.1.</span> <span class="toc-text"> 0. 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1group-by%E5%AD%90%E5%8F%A5"><span class="toc-number">9.2.</span> <span class="toc-text"> 1.group by 子句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2having%E5%AD%90%E5%8F%A5"><span class="toc-number">9.3.</span> <span class="toc-text"> 2.having 子句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3order-by%E5%AD%90%E5%8F%A5"><span class="toc-number">9.4.</span> <span class="toc-text"> 3.order by 子句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4limit-%E5%AD%90%E5%8F%A5"><span class="toc-number">9.5.</span> <span class="toc-text"> 4.limit 子句</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%80-e-r%E5%AE%9E%E4%BD%93%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="toc-number">10.</span> <span class="toc-text"> 十一. E-R 实体关系模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%9E%E4%BD%93"><span class="toc-number">10.1.</span> <span class="toc-text"> 1. 什么是实体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%9E%E4%BD%93"><span class="toc-number">10.1.1.</span> <span class="toc-text"> 1) 实体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%9E%E4%BD%93%E5%B1%9E%E6%80%A7"><span class="toc-number">10.1.2.</span> <span class="toc-text"> 2) 实体属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%9E%E4%BD%93%E9%9B%86"><span class="toc-number">10.1.3.</span> <span class="toc-text"> 3) 实体集</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E5%85%B3%E7%B3%BB"><span class="toc-number">10.2.</span> <span class="toc-text"> 2. 关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%80%E5%AF%B9%E4%B8%80%E5%85%B3%E7%B3%BB"><span class="toc-number">10.2.1.</span> <span class="toc-text"> 1) 一对一关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%85%B3%E7%B3%BB"><span class="toc-number">10.2.2.</span> <span class="toc-text"> 2) 一对多关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%85%B3%E7%B3%BB"><span class="toc-number">10.2.3.</span> <span class="toc-text"> 3) 多对一关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E7%B3%BB"><span class="toc-number">10.2.4.</span> <span class="toc-text"> 4) 多对多关系</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -1214,54 +1213,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/three-js/" title="分类于 three.js">three.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/three-js/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" title="分类于 入门基础">入门基础</a>
+<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
 </div>
 
-    <span><a href="/2022/06/10/3D-study/threeJs/1.%E5%9F%BA%E7%A1%80/" title="1.three.js基础">1.three.js基础</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
-</div>
-
-    <span><a href="/2022/04/20/3D-study/Cesium/%E5%9F%BA%E7%A1%80/1.%E7%AC%AC%E4%B8%80%E4%B8%AAcesium/" title="1.cesium基础-第一个Cesium.js应用程序">1.cesium基础-第一个Cesium.js应用程序</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
-</div>
-
-    <span><a href="/2022/04/26/3D-study/Cesium/%E5%9F%BA%E7%A1%80/3.cesium%E7%9B%B8%E6%9C%BA%E4%B8%8E%E8%A7%86%E8%A7%92/" title="3.cesium基础-相机与视角">3.cesium基础-相机与视角</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/BIM/" title="分类于 BIM">BIM</a>
-</div>
-
-    <span><a href="/2023/03/02/arc-study/BIM/1.%E4%BB%80%E4%B9%88%E6%98%AFBIM%EF%BC%9F/" title="1.什么是BIM">1.什么是BIM</a></span>
+    <span><a href="/2022/10/08/project-summary/%E6%99%BA%E6%85%A7%E5%9B%AD%E5%8C%BAdemo/" title="智慧园区demo">智慧园区demo</a></span>
   </li>
 
       
@@ -1273,19 +1230,19 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
 </div>
 
-    <span><a href="/2023/03/11/web-study/dockerstudy/1.docker%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%89%E8%A3%85/" title="1.docker入门与安装">1.docker入门与安装</a></span>
+    <span><a href="/2023/03/17/web-study/dockerstudy/5.linux%E4%B9%8B%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" title="5.linux之部署环境安装">5.linux之部署环境安装</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+<a href="/categories/project-summary/BIM-GIS/" title="分类于 BIM+GIS">BIM+GIS</a>
 </div>
 
-    <span><a href="/2022/02/06/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E7%8E%AF%E4%BF%9D/" title="3.具体应用-智慧环保">3.具体应用-智慧环保</a></span>
+    <span><a href="/2022/04/07/project-summary/cesium+bim/" title="cesium展示BIM模型">cesium展示BIM模型</a></span>
   </li>
 
       
@@ -1296,22 +1253,22 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <i class="ic i-angle-right"></i>
 <a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
+<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
 </div>
 
-    <span><a href="/2022/04/16/3D-study/Cesium/%E5%85%A5%E9%97%A8/3.cesium%E5%85%A5%E9%97%A8-cesium%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" title="3.cesium入门-cesium是什么？">3.cesium入门-cesium是什么？</a></span>
+    <span><a href="/2022/04/27/3D-study/Cesium/%E5%9F%BA%E7%A1%80/4.cesium%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6/" title="4.cesium基础-点击事件">4.cesium基础-点击事件</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
 </div>
 
-    <span><a href="/2022/11/10/project-summary/%E6%B9%96%E5%8D%97%E5%A4%A7%E5%B1%8F%E4%B8%80%E5%BC%A0%E5%9B%BE/" title="湖南大屏一张图">湖南大屏一张图</a></span>
+    <span><a href="/2023/03/18/web-study/dockerstudy/6.docker%E9%83%A8%E7%BD%B2/" title="6.linux之docker部署vue项目">6.linux之docker部署vue项目</a></span>
   </li>
 
       
@@ -1323,19 +1280,59 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
 </div>
 
-    <span><a href="/2022/02/15/map-study/gis-theory/1.gis%E5%9F%BA%E7%A1%80-%E5%9C%B0%E7%90%86%E6%8A%95%E5%BD%B1/" title="1.GIS中的地图投影">1.GIS中的地图投影</a></span>
+    <span><a href="/2022/02/12/map-study/gis-theory/%E8%AE%A4%E8%AF%86Geojson/" title="认识Geojson">认识Geojson</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/web-study/CSS/" title="分类于 CSS">CSS</a>
+<a href="/categories/3D-study/three-js/" title="分类于 three.js">three.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/three-js/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" title="分类于 入门基础">入门基础</a>
 </div>
 
-    <span><a href="/2022/12/21/web-study/css-/CSS/" title="CSS入门">CSS入门</a></span>
+    <span><a href="/2022/06/15/3D-study/threeJs/2.%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="2.响应式设计">2.响应式设计</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/web%E5%85%A8%E6%A0%88/" title="分类于 web全栈">web全栈</a>
+</div>
+
+    <span><a href="/2023/05/20/project-summary/%E4%BC%A0%E7%BB%9F%E4%BD%93%E8%82%B2%E5%9F%BA%E5%9B%A0%E5%BA%93/" title="传统体育基因库">传统体育基因库</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
+</div>
+
+    <span><a href="/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/9.cesium%E4%B8%AD%E7%9A%84viewer/" title="9.cesium基础-cesium中的viewer">9.cesium基础-cesium中的viewer</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
+</div>
+
+    <span><a href="/2022/05/08/project-summary/%E5%85%89%E8%B0%B7%E6%99%BA%E6%85%A7%E4%BA%A4%E9%80%9A/" title="光谷智慧交通">光谷智慧交通</a></span>
   </li>
 
   </ul>
@@ -1360,13 +1357,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">283k 字</span>
+    <span title="站点总字数">282k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:17</span>
+    <span title="站点阅读时长">4:16</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

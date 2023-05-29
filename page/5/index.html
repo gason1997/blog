@@ -147,10 +147,11 @@
 
     <h3><a href="/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/9.cesium%E4%B8%AD%E7%9A%84viewer/" itemprop="url" title="9.cesium基础-cesium中的viewer">9.cesium基础-cesium中的viewer</a></h3>
     <div class="excerpt">
-        创建实例scanner12// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);
-
-上述代码创建了一个Viewer实例，并将其绑定到一个具有id为&amp;#39;cesiumContainer&amp;#39;的HTML元素上。这将在该元素中呈现Cesium的三维场景。
-设置背景地图scanner12//...
+        # 创建实例
+scanner12// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);
+上述代码创建了一个Viewer实例，并将其绑定到一个具有id为&#39;cesiumContainer&#39;的HTML元素上。这将在该元素中呈现Cesium的三维场景。
+# 设置背景地图
+scanner12//...
     </div>
     <div class="meta footer">
       <span>
@@ -192,8 +193,9 @@
 
     <h3><a href="/2022/05/12/3D-study/Cesium/%E5%9F%BA%E7%A1%80/8.cesium%E8%87%AA%E5%AE%9A%E4%B9%89popup/" itemprop="url" title="8.cesium基础-自定义popup">8.cesium基础-自定义popup</a></h3>
     <div class="excerpt">
-        在Cesium中，可以通过自定义HTML元素和Cesium的弹出框(Cesium.Popup)来实现自定义的弹出框（Popup）
-代码演示scanner123456789101112131415161718192021222324252627282930313233343536373839404142434445// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);// 创建一个自定义Popup元素var popupElement =...
+        在 Cesium 中，可以通过自定义 HTML 元素和 Cesium 的弹出框 (Cesium.Popup) 来实现自定义的弹出框（Popup）
+# 代码演示
+scanner123456789101112131415161718192021222324252627282930313233343536373839404142434445// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);// 创建一个自定义Popup元素var popupElement =...
     </div>
     <div class="meta footer">
       <span>
@@ -236,10 +238,11 @@
     <h3><a href="/2022/05/10/3D-study/Cesium/%E5%9F%BA%E7%A1%80/7.cesium%E4%BC%98%E5%8C%96%E5%8A%A0%E8%BD%BD%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE/" itemprop="url" title="7.cesium基础-优化加载海量数据">7.cesium基础-优化加载海量数据</a></h3>
     <div class="excerpt">
         当加载海量模型或点位数据时，为了保持性能和流畅性，以下是一些优化技巧：
-优化技巧
+# 优化技巧
+
 数据分块加载：将数据分为多个块，按需加载。例如，将模型分为多个瓦片，只在需要显示的区域加载当前可见的瓦片，而不是一次性加载所有模型数据。这样可以降低内存和网络资源的使用，并提高加载速度。
 
-级别-of-Detail（LOD）：对于模型或点位数据，可以使用不同的细节级别。在远处或缩小的情况下，使用低细节级别，而在近处或放大的情况下，使用高细节级别。这样可以根据观察者的视角动态调整细节级别，提高性能。
+级别 - of-Detail（LOD）：对于模型或点位数据，可以使用不同的细节级别。在远处或缩小的情况下，使用低细节级别，而在近处或放大的情况下，使用高细节级别。这样可以根据观察者的视角动态调整细节级别，提高性能。
 
 空间剔除（Frustum...
     </div>
@@ -270,7 +273,7 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>516</span>
+    <span>529</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -283,7 +286,9 @@
 
     <h3><a href="/2022/05/08/project-summary/%E5%85%89%E8%B0%B7%E6%99%BA%E6%85%A7%E4%BA%A4%E9%80%9A/" itemprop="url" title="光谷智慧交通">光谷智慧交通</a></h3>
     <div class="excerpt">
-        项目概述光谷智慧交通系统主要内容分为三部分，第一部分是基于Mapgis...
+        # 项目概述
+光谷智慧交通系统主要内容分为三部分，第一部分是基于 Mapgis openlayer 框架实现的地图应用，包括地图底图瓦片加载及切换，矢量图层加载与操作，如折线、多边形、矩形、圆形等，地图标注与 popup，地图的动画操作；第二部分是前端数据与后台服务的交互处理，前端通过 vue 的 axios 提交数据到后台，后台与数据库建立连接并操作数据，将处理好的数据返回前端，采用 json 格式做数据交互；第三部分是前端界面搭建以及 UI 设计，前端使用 vue 框架解决操作 html、css 问题，采用 element 框架提升交互体验。
+#...
     </div>
     <div class="meta footer">
       <span>
@@ -326,8 +331,12 @@
     <h3><a href="/2022/05/05/3D-study/Cesium/%E5%9F%BA%E7%A1%80/6.cesium%E4%B8%8Eczml/" itemprop="url" title="6.cesium基础-cesium与czml">6.cesium基础-cesium与czml</a></h3>
     <div class="excerpt">
         Cesium 与 CZML 进行交互时，你可以创建动态的地理可视化效果
-CZML是什么？
-CZML（Cesium...
+# CZML 是什么？
+
+CZML（Cesium Language）是一种特定于Cesium的JSON格式，用于描述地理空间和时间相关的数据。它是一种用于创建动态的、交互式的地理可视化效果的数据格式。
+CZML文件由一系列JSON对象组成，每个对象代表一个实体或者场景的属性和状态。这些属性可以包括位置、姿态、样式、时间等。CZML提供了灵活的方式来定义和控制各种地理数据和动画效果。
+CZML 文件的结构通常包含以下几个重要部分：
+id ：每个对象都需要一个唯一的 &amp;quot;id&amp;quot;...
     </div>
     <div class="meta footer">
       <span>
@@ -369,8 +378,9 @@ CZML（Cesium...
 
     <h3><a href="/2022/05/02/3D-study/Cesium/%E5%9F%BA%E7%A1%80/5.cesium%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%8A%A0%E8%BD%BD/" itemprop="url" title="5.cesium基础-中多种模型的加载">5.cesium基础-中多种模型的加载</a></h3>
     <div class="excerpt">
-        在Cesium中，可以使用多种模型格式加载三维模型，包括glTF、3D Tiles等格式。以下是一个示例代码，演示如何在Cesium中加载模型，以及加载不同格式模型的方式
-加载gltf格式模型scanner1234567891011// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);// 创建一个Entity对象来添加模型var modelEntity = viewer.entities.add(&amp;#123; position:...
+        在 Cesium 中，可以使用多种模型格式加载三维模型，包括 glTF、3D Tiles 等格式。以下是一个示例代码，演示如何在 Cesium 中加载模型，以及加载不同格式模型的方式
+# 加载 gltf 格式模型
+scanner1234567891011// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);// 创建一个Entity对象来添加模型var modelEntity = viewer.entities.add(&amp;#123; position:...
     </div>
     <div class="meta footer">
       <span>
@@ -412,8 +422,9 @@ CZML（Cesium...
 
     <h3><a href="/2022/04/27/3D-study/Cesium/%E5%9F%BA%E7%A1%80/4.cesium%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6/" itemprop="url" title="4.cesium基础-点击事件">4.cesium基础-点击事件</a></h3>
     <div class="excerpt">
-        在Cesium中，你可以通过监听鼠标点击事件来实现与地图交互。以下是一个示例代码，演示如何在Cesium中添加点击事件：
-操作代码scanner1234567891011121314151617181920212223242526272829// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);// 创建一个ScreenSpaceEventHandler对象来处理鼠标事件var handler = new...
+        在 Cesium 中，你可以通过监听鼠标点击事件来实现与地图交互。以下是一个示例代码，演示如何在 Cesium 中添加点击事件：
+# 操作代码
+scanner1234567891011121314151617181920212223242526272829// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);// 创建一个ScreenSpaceEventHandler对象来处理鼠标事件var handler = new...
     </div>
     <div class="meta footer">
       <span>
@@ -455,8 +466,9 @@ CZML（Cesium...
 
     <h3><a href="/2022/04/26/3D-study/Cesium/%E5%9F%BA%E7%A1%80/3.cesium%E7%9B%B8%E6%9C%BA%E4%B8%8E%E8%A7%86%E8%A7%92/" itemprop="url" title="3.cesium基础-相机与视角">3.cesium基础-相机与视角</a></h3>
     <div class="excerpt">
-        在Cesium中，相机的视角可以通过调整相机的各种参数来控制，包括视角的纵横比、水平视角角度、垂直视角角度等。以下是一个示例代码，演示如何在Cesium中设置相机的视角：
-操作代码scanner123456789101112131415161718192021222324// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);// 获取当前相机对象var camera = viewer.camera;// 设置纵横比（宽高比）camera.frustum.aspectRatio =...
+        在 Cesium 中，相机的视角可以通过调整相机的各种参数来控制，包括视角的纵横比、水平视角角度、垂直视角角度等。以下是一个示例代码，演示如何在 Cesium 中设置相机的视角：
+# 操作代码
+scanner123456789101112131415161718192021222324// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);// 获取当前相机对象var camera = viewer.camera;//...
     </div>
     <div class="meta footer">
       <span>
@@ -498,8 +510,9 @@ CZML（Cesium...
 
     <h3><a href="/2022/04/25/3D-study/Cesium/%E5%9F%BA%E7%A1%80/2.cesium%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/" itemprop="url" title="2.cesium基础-坐标转换">2.cesium基础-坐标转换</a></h3>
     <div class="excerpt">
-        在Cesium中进行坐标转换涉及将不同坐标系统之间的地理坐标进行转换，例如经纬度坐标与笛卡尔坐标（X、Y、Z）之间的转换。以下是一个示例代码，演示如何在Cesium中执行坐标转换：
-操作代码sanner1234567891011121314151617181920212223242526272829// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);// 获取Cartographic坐标（经纬度）var longitude = -75.59777;var latitude =...
+        在 Cesium 中进行坐标转换涉及将不同坐标系统之间的地理坐标进行转换，例如经纬度坐标与笛卡尔坐标（X、Y、Z）之间的转换。以下是一个示例代码，演示如何在 Cesium 中执行坐标转换：
+# 操作代码
+sanner1234567891011121314151617181920212223242526272829// 创建一个Viewer实例var viewer = new Cesium.Viewer(&amp;#x27;cesiumContainer&amp;#x27;);// 获取Cartographic坐标（经纬度）var longitude = -75.59777;var...
     </div>
     <div class="meta footer">
       <span>
@@ -542,13 +555,15 @@ CZML（Cesium...
     <h3><a href="/2022/04/20/3D-study/Cesium/%E5%9F%BA%E7%A1%80/1.%E7%AC%AC%E4%B8%80%E4%B8%AAcesium/" itemprop="url" title="1.cesium基础-第一个Cesium.js应用程序">1.cesium基础-第一个Cesium.js应用程序</a></h3>
     <div class="excerpt">
         下面是一个创建第一个 Cesium.js 应用程序的简单步骤。
-准备开发环境在开始使用 Cesium.js 之前，需要准备开发环境。需要确保你已经安装了以下软件：
+# 准备开发环境
+在开始使用 Cesium.js 之前，需要准备开发环境。需要确保你已经安装了以下软件：
 
 一个 Web 服务器（如 Apache 或 Nginx）；
 最新版本的 Cesium.js 库；
 一个文本编辑器（如 Sublime Text 或 Visual Studio Code）。
 
-创建 HTML 页面在文本编辑器中创建一个新的 HTML 文件，并将以下内容复制到文件中：
+# 创建 HTML 页面
+在文本编辑器中创建一个新的 HTML 文件，并将以下内容复制到文件中：
 scanner1234567891011121314151617181920&amp;lt;!DOCTYPE...
     </div>
     <div class="meta footer">
@@ -695,12 +710,26 @@ scanner1234567891011121314151617181920&amp;lt;!DOCTYPE...
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
+<a href="/categories/project-summary/BIM-GIS/" title="分类于 BIM+GIS">BIM+GIS</a>
 </div>
 
-    <span><a href="/2022/02/19/map-study/gis-theory/4.gis%E5%9F%BA%E7%A1%80-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" title="4.GIS中的空间分析">4.GIS中的空间分析</a></span>
+    <span><a href="/2022/04/07/project-summary/cesium+bim/" title="cesium展示BIM模型">cesium展示BIM模型</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/revit-dynamo/" title="分类于 Revit与Dynamo">Revit与Dynamo</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/revit-dynamo/Revit/" title="分类于 Revit">Revit</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/revit-dynamo/revit%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="Revit下载与安装">Revit下载与安装</a></span>
   </li>
 
       
@@ -711,24 +740,10 @@ scanner1234567891011121314151617181920&amp;lt;!DOCTYPE...
 <i class="ic i-angle-right"></i>
 <a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+<a href="/categories/arc-study/rhino-GH/Rhino/" title="分类于 Rhino">Rhino</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/0.gh%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="0.grasshopper下载与安装">0.grasshopper下载与安装</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/webGL-study/" title="分类于 webGL">webGL</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/webGL-study/%E8%B6%85%E5%9B%BEwebGL/" title="分类于 超图webGL">超图webGL</a>
-</div>
-
-    <span><a href="/2022/12/21/3D-study/webGL/supermap-webGL/" title="超图webGL开发指南">超图webGL开发指南</a></span>
+    <span><a href="/2022/12/21/arc-study/rhino-GH/rhino/rhino%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="rhino下载与安装">rhino下载与安装</a></span>
   </li>
 
       
@@ -737,36 +752,10 @@ scanner1234567891011121314151617181920&amp;lt;!DOCTYPE...
 <div class="breadcrumb">
 <a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/map-study/leaflet-js/" title="分类于 leaflet.js">leaflet.js</a>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
 </div>
 
-    <span><a href="/2022/12/21/map-study/leaflet-js/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
-</div>
-
-    <span><a href="/2023/03/17/web-study/dockerstudy/5.linux%E4%B9%8B%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" title="5.linux之部署环境安装">5.linux之部署环境安装</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
-</div>
-
-    <span><a href="/2022/05/15/3D-study/Cesium/%E5%9F%BA%E7%A1%80/11.cesium%E4%B8%AD%E7%9A%84entity/" title="11.cesium基础-cesium中的entity">11.cesium基础-cesium中的entity</a></span>
+    <span><a href="/2022/02/16/map-study/gis-theory/2.gis%E5%9F%BA%E7%A1%80-%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F/" title="2.GIS中的坐标系统">2.GIS中的坐标系统</a></span>
   </li>
 
       
@@ -797,12 +786,28 @@ scanner1234567891011121314151617181920&amp;lt;!DOCTYPE...
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/cim-study/" title="分类于 CIM">CIM</a>
+<a href="/categories/3D-study/three-js/" title="分类于 three.js">three.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/three-js/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" title="分类于 入门基础">入门基础</a>
 </div>
 
-    <span><a href="/2023/03/03/arc-study/CIM/1.%E4%BB%80%E4%B9%88%E6%98%AFCIM%EF%BC%9F/" title="1.什么是CIM">1.什么是CIM</a></span>
+    <span><a href="/2022/06/15/3D-study/threeJs/2.%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="2.响应式设计">2.响应式设计</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
+</div>
+
+    <span><a href="/2022/05/02/3D-study/Cesium/%E5%9F%BA%E7%A1%80/5.cesium%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%8A%A0%E8%BD%BD/" title="5.cesium基础-中多种模型的加载">5.cesium基础-中多种模型的加载</a></span>
   </li>
 
       
@@ -815,6 +820,20 @@ scanner1234567891011121314151617181920&amp;lt;!DOCTYPE...
 </div>
 
     <span><a href="/2022/01/28/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/" title="2.关键技术-物联网技术">2.关键技术-物联网技术</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
+</div>
+
+    <span><a href="/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/9.cesium%E4%B8%AD%E7%9A%84viewer/" title="9.cesium基础-cesium中的viewer">9.cesium基础-cesium中的viewer</a></span>
   </li>
 
   </ul>
@@ -839,13 +858,13 @@ scanner1234567891011121314151617181920&amp;lt;!DOCTYPE...
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">283k 字</span>
+    <span title="站点总字数">282k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:17</span>
+    <span title="站点阅读时长">4:16</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
