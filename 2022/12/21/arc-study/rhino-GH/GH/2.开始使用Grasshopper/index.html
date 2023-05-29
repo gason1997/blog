@@ -167,7 +167,9 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="Starting-Grasshopper（启动-grasshopper）"><a href="#Starting-Grasshopper（启动-grasshopper）" class="headerlink" title="Starting Grasshopper（启动 grasshopper）"></a>Starting Grasshopper（启动 grasshopper）</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>Grasshopper is an add-on or plugin for Rhino. It is part of the default Rhino 6+ installation. This is a link to the official Grasshopper website. This site offers a lot of tutorials, forums and links to other websites.</p>
+    <h1 id="starting-grasshopper启动-grasshopper"><a class="markdownIt-Anchor" href="#starting-grasshopper启动-grasshopper">#</a> Starting Grasshopper（启动 grasshopper）</h1>
+<h2 id="启动"><a class="markdownIt-Anchor" href="#启动">#</a> 启动</h2>
+<p>Grasshopper is an add-on or plugin for Rhino. It is part of the default Rhino 6+ installation. This is a link to the official Grasshopper website. This site offers a lot of tutorials, forums and links to other websites.</p>
 <p>Starting Grashopper can be done by typing grasshopper in the Rhino command line. Grasshopper will open on top of Rhino. You can also click on the Grasshopper icon in the toolbar.</p>
 <blockquote>
 <p>Grasshopper 是 Rhino 的附加组件或插件。它是默认 Rhino 6+ 安装的一部分。这是官方 Grasshopper 网站的链接。该站点提供了许多教程、论坛和其他网站的链接。</p>
@@ -175,22 +177,29 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <blockquote>
 <p>可以通过在 Rhino 命令行中输入 Grasshopper 来启动 Grasshopper。Grasshopper 将在 Rhino 顶部打开。您也可以单击工具栏中的 Grasshopper 图标。</p>
 </blockquote>
-<p>使用命令行启动 Grasshopper<br><img data-src="https://tva1.sinaimg.cn/large/008uvbSaly8h58kljri0ij30jg0bpgn4.jpg"></p>
-<h1 id="Introduction（介绍）"><a href="#Introduction（介绍）" class="headerlink" title="Introduction（介绍）"></a>Introduction（介绍）</h1><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><p>Grasshopper is an add-on for Rhino which offers explicit history modeling. This term requires some explanation:</p>
+<p>使用命令行启动 Grasshopper<br>
+<img data-src="https://tva1.sinaimg.cn/large/008uvbSaly8h58kljri0ij30jg0bpgn4.jpg" alt=""></p>
+<h1 id="introduction介绍"><a class="markdownIt-Anchor" href="#introduction介绍">#</a> Introduction（介绍）</h1>
+<h2 id="脚本"><a class="markdownIt-Anchor" href="#脚本">#</a> 脚本</h2>
+<p>Grasshopper is an add-on for Rhino which offers explicit history modeling. This term requires some explanation:</p>
 <p>Rhino doesn’t always keep track on how the model was constructed. Some other 3D modeling applications ‘remember’ for example from which set of curves a surface was created. When you change these curves, the surface will change accordingly as if it was newly created. This is called a history. Software such as Maya and 3DS Max implement the concept of history. It supports the design process by enabling you to go back to earlier steps of the modeling process and change them, thereby changing the end result. Rhino is limited in its support for history.</p>
 <blockquote>
 <p>Grasshopper 是 Rhino 的一个附加组件，它提供了明确的历史建模。这个术语需要一些解释：</p>
 </blockquote>
 <blockquote>
-<p>Rhino 并不总是跟踪模型的构建方式。其他一些 3D 建模应用程序“记住”例如从哪组曲线创建曲面。当您更改这些曲线时，曲面将相应更改，就好像它是新创建的一样。这叫做历史。Maya 和 3DS Max 等软件实现了历史的概念。它通过使您能够返回到建模过程的早期步骤并更改它们来支持设计过程，从而改变最终结果。Rhino 对历史的支持有限。</p>
+<p>Rhino 并不总是跟踪模型的构建方式。其他一些 3D 建模应用程序 “记住” 例如从哪组曲线创建曲面。当您更改这些曲线时，曲面将相应更改，就好像它是新创建的一样。这叫做历史。Maya 和 3DS Max 等软件实现了历史的概念。它通过使您能够返回到建模过程的早期步骤并更改它们来支持设计过程，从而改变最终结果。Rhino 对历史的支持有限。</p>
 </blockquote>
-<p>Grasshopper 脚本<br><img data-src="https://tva1.sinaimg.cn/large/008uvbSaly8h58kl5lambj30jg09jt96.jpg"></p>
-<h2 id="显式历史"><a href="#显式历史" class="headerlink" title="显式历史"></a>显式历史</h2><p>To address this, the concept of Explicit History was developed for Rhino. This formed the basis of what is now the Grasshopper plug-in. Explicit history is clearly visible in Grasshopper. As you may notice when you start building your scripts, the steps you take to get the final result are saved intermediately, and can be re-used for other goals.</p>
+<p>Grasshopper 脚本<br>
+<img data-src="https://tva1.sinaimg.cn/large/008uvbSaly8h58kl5lambj30jg09jt96.jpg" alt=""></p>
+<h2 id="显式历史"><a class="markdownIt-Anchor" href="#显式历史">#</a> 显式历史</h2>
+<p>To address this, the concept of Explicit History was developed for Rhino. This formed the basis of what is now the Grasshopper plug-in. Explicit history is clearly visible in Grasshopper. As you may notice when you start building your scripts, the steps you take to get the final result are saved intermediately, and can be re-used for other goals.</p>
 <blockquote>
 <p>为了解决这个问题，为 Rhino 开发了显式历史的概念。这构成了现在的 Grasshopper 插件的基础。明确的历史在 Grasshopper 中清晰可见。当您开始构建脚本时，您可能会注意到，您为获得最终结果所采取的步骤会在中间保存，并且可以重新用于其他目标。</p>
 </blockquote>
-<p>一个盒子被移到右边，但原来的盒子仍然可见：显式历史<br><img data-src="https://tva4.sinaimg.cn/large/008uvbSaly8h58kl9chvpj30jg09imxr.jpg"></p>
-<h2 id="脚本的结果"><a href="#脚本的结果" class="headerlink" title="脚本的结果"></a>脚本的结果</h2><p>Explicit History differs from the traditional modeling history in that you explicitly construct the History and thereby the object instead of being the result of a set of commands generating an object. This can be effective in the design process as it enables you to specify complex relationships between components.</p>
+<p>一个盒子被移到右边，但原来的盒子仍然可见：显式历史<br>
+<img data-src="https://tva4.sinaimg.cn/large/008uvbSaly8h58kl9chvpj30jg09imxr.jpg" alt=""></p>
+<h2 id="脚本的结果"><a class="markdownIt-Anchor" href="#脚本的结果">#</a> 脚本的结果</h2>
+<p>Explicit History differs from the traditional modeling history in that you explicitly construct the History and thereby the object instead of being the result of a set of commands generating an object. This can be effective in the design process as it enables you to specify complex relationships between components.</p>
 <p>Each Grasshopper definition consists of a network of components connected using connections and with sliders as input. Grasshopper uses the Rhino viewport to display the result of the definition.</p>
 <p>It is recommended to now take a look at the Introduction Grasshopper Geometry and Grasshopper Interface.</p>
 <blockquote>
@@ -200,10 +209,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <p>每个 Grasshopper 定义都由一个组件网络组成，这些组件使用连接和滑块作为输入进行连接。Grasshopper 使用 Rhino 视口来显示定义的结果。</p>
 </blockquote>
 <blockquote>
-<p>建议现在看一下 <span class="exturl" data-url="aHR0cDovL3dpa2kuYmsudHVkZWxmdC5ubC90b2ktcGVkaWEvSW50cm9kdWN0aW9uX0dyYXNzaG9wcGVyX0dlb21ldHJ5">Grasshopper Geometry</span> 和 <span class="exturl" data-url="aHR0cDovL3dpa2kuYmsudHVkZWxmdC5ubC90b2ktcGVkaWEvR3Jhc3Nob3BwZXJfSW50ZXJmYWNl">Grasshopper Interface</span>介绍。</p>
+<p>建议现在看一下 <span class="exturl" data-url="aHR0cDovL3dpa2kuYmsudHVkZWxmdC5ubC90b2ktcGVkaWEvSW50cm9kdWN0aW9uX0dyYXNzaG9wcGVyX0dlb21ldHJ5">Grasshopper Geometry</span> 和 <span class="exturl" data-url="aHR0cDovL3dpa2kuYmsudHVkZWxmdC5ubC90b2ktcGVkaWEvR3Jhc3Nob3BwZXJfSW50ZXJmYWNl">Grasshopper Interface</span> 介绍。</p>
 </blockquote>
-<p>Grasshopper 脚本的结果<br><img data-src="https://tva4.sinaimg.cn/large/008uvbSaly8h58kld32x6j30jg0d3wf9.jpg"></p>
-<h1 id="List-of-important-terminology-重要术语列表"><a href="#List-of-important-terminology-重要术语列表" class="headerlink" title="List of important terminology(重要术语列表)"></a>List of important terminology(重要术语列表)</h1><p>The Grasshopper Toipedia uses some specific terminology. Here is a brief explanation of the most important terms that are used throughout this article:</p>
+<p>Grasshopper 脚本的结果<br>
+<img data-src="https://tva4.sinaimg.cn/large/008uvbSaly8h58kld32x6j30jg0d3wf9.jpg" alt=""></p>
+<h1 id="list-of-important-terminology重要术语列表"><a class="markdownIt-Anchor" href="#list-of-important-terminology重要术语列表">#</a> List of important terminology (重要术语列表)</h1>
+<p>The Grasshopper Toipedia uses some specific terminology. Here is a brief explanation of the most important terms that are used throughout this article:</p>
 <ul>
 <li>Component: a building-block that performs a specific action</li>
 <li>Parameter: a special component that contains data (values) - instead of performing an action</li>
@@ -218,10 +229,11 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <li>参数：包含数据（值）而不是执行动作的特殊组件</li>
 <li>Number Slider：允许用户使用滑块选择数值的实用程序</li>
 <li>面板：允许用户定义或显示数值或文本的实用程序</li>
-<li>定义：蚱蜢组件网络 - 您的蚱蜢“模型”</li>
+<li>定义：蚱蜢组件网络 - 您的蚱蜢 “模型”</li>
 </ul>
 </blockquote>
-<p>术语<br><img data-src="https://tva3.sinaimg.cn/large/008uvbSaly8h58kmkfnanj30jg0cbwf8.jpg"></p>
+<p>术语<br>
+<img data-src="https://tva3.sinaimg.cn/large/008uvbSaly8h58kmkfnanj30jg0cbwf8.jpg" alt=""></p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/grasshopper/" rel="tag"><i class="ic i-tag"></i> grasshopper</a>
@@ -276,10 +288,10 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <div class="item left">
       
 
-  <a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.bmp.ovh&#x2F;imgs&#x2F;2022&#x2F;08&#x2F;17&#x2F;a6e210580afcfc6d.png" title="4.初识Grasshopper界面">
+  <a href="/2022/12/21/arc-study/rhino-GH/GH/3.%E4%BB%8B%E7%BB%8DGrasshopper%20Geometry/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.bmp.ovh&#x2F;imgs&#x2F;2022&#x2F;08&#x2F;16&#x2F;4f4da1f670b2c999.png" title="3.介绍Grasshopper Geometry（GH几何）">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> grasshopper入门</span>
-  <h3>4.初识Grasshopper界面</h3>
+  <h3>3.介绍Grasshopper Geometry（GH几何）</h3>
   </a>
 
     </div>
@@ -308,11 +320,11 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Starting-Grasshopper%EF%BC%88%E5%90%AF%E5%8A%A8-grasshopper%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">Starting Grasshopper（启动 grasshopper）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-number">1.1.</span> <span class="toc-text">启动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction%EF%BC%88%E4%BB%8B%E7%BB%8D%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">Introduction（介绍）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-number">2.1.</span> <span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E5%8E%86%E5%8F%B2"><span class="toc-number">2.2.</span> <span class="toc-text">显式历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="toc-number">2.3.</span> <span class="toc-text">脚本的结果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#List-of-important-terminology-%E9%87%8D%E8%A6%81%E6%9C%AF%E8%AF%AD%E5%88%97%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text">List of important terminology(重要术语列表)</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#starting-grasshopper%E5%90%AF%E5%8A%A8-grasshopper"><span class="toc-number">1.</span> <span class="toc-text"> Starting Grasshopper（启动 grasshopper）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 启动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#introduction%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text"> Introduction（介绍）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-number">2.1.</span> <span class="toc-text"> 脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E5%8E%86%E5%8F%B2"><span class="toc-number">2.2.</span> <span class="toc-text"> 显式历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="toc-number">2.3.</span> <span class="toc-text"> 脚本的结果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#list-of-important-terminology%E9%87%8D%E8%A6%81%E6%9C%AF%E8%AF%AD%E5%88%97%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text"> List of important terminology (重要术语列表)</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2022/12/21/arc-study/rhino-GH/GH/0.gh%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" rel="bookmark" title="0.grasshopper下载与安装">0.grasshopper下载与安装</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/1.grasshopper%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" rel="bookmark" title="1.grasshopper是什么？">1.grasshopper是什么？</a></li><li class="active"><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" rel="bookmark" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" rel="bookmark" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/3.%E4%BB%8B%E7%BB%8DGrasshopper%20Geometry/" rel="bookmark" title="3.介绍Grasshopper Geometry（GH几何）">3.介绍Grasshopper Geometry（GH几何）</a></li>
+          <li><a href="/2022/12/21/arc-study/rhino-GH/GH/0.gh%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" rel="bookmark" title="0.grasshopper下载与安装">0.grasshopper下载与安装</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/1.grasshopper%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" rel="bookmark" title="1.grasshopper是什么？">1.grasshopper是什么？</a></li><li class="active"><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" rel="bookmark" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/3.%E4%BB%8B%E7%BB%8DGrasshopper%20Geometry/" rel="bookmark" title="3.介绍Grasshopper Geometry（GH几何）">3.介绍Grasshopper Geometry（GH几何）</a></li><li><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" rel="bookmark" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -400,7 +412,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/2022/12/21/arc-study/rhino-GH/GH/3.%E4%BB%8B%E7%BB%8DGrasshopper%20Geometry/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
@@ -427,12 +439,52 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
+</div>
+
+    <span><a href="/2022/04/25/3D-study/Cesium/%E5%9F%BA%E7%A1%80/2.cesium%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/" title="2.cesium基础-坐标转换">2.cesium基础-坐标转换</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/vue-study/" title="分类于 Vue">Vue</a>
+</div>
+
+    <span><a href="/2022/12/21/web-study/vue-study/1.vue%E6%A0%B8%E5%BF%83/" title="1.vue核心">1.vue核心</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/three-js/" title="分类于 three.js">three.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/three-js/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" title="分类于 入门基础">入门基础</a>
+</div>
+
+    <span><a href="/2022/06/15/3D-study/threeJs/2.%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="2.响应式设计">2.响应式设计</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2022/01/20/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/1.%E4%BB%80%E4%B9%88%E6%98%AF%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%EF%BC%9F/" title="1.智慧城市概述">1.智慧城市概述</a></span>
+    <span><a href="/2022/02/02/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF/" title="2.关键技术-大数据技术">2.关键技术-大数据技术</a></span>
   </li>
 
       
@@ -446,81 +498,19 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
 </div>
 
-    <span><a href="/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/10.cesium%E4%B8%AD%E7%9A%84scene/" title="10.cesium基础-cesium中的scene">10.cesium基础-cesium中的scene</a></span>
+    <span><a href="/2022/05/15/3D-study/Cesium/%E5%9F%BA%E7%A1%80/11.cesium%E4%B8%AD%E7%9A%84entity/" title="11.cesium基础-cesium中的entity">11.cesium基础-cesium中的entity</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/WebGIS/" title="分类于 WebGIS">WebGIS</a>
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/WebGIS/echarts-map/" title="分类于 echarts-map">echarts-map</a>
+<a href="/categories/project-summary/web%E5%85%A8%E6%A0%88/" title="分类于 web全栈">web全栈</a>
 </div>
 
-    <span><a href="/2022/12/22/map-study/echarts-map/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
-</div>
-
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
-</div>
-
-    <span><a href="/2023/03/17/web-study/dockerstudy/5.linux%E4%B9%8B%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" title="5.linux之部署环境安装">5.linux之部署环境安装</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/BIM/" title="分类于 BIM">BIM</a>
-</div>
-
-    <span><a href="/2023/03/02/arc-study/BIM/1.%E4%BB%80%E4%B9%88%E6%98%AFBIM%EF%BC%9F/" title="1.什么是BIM">1.什么是BIM</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/mysql/" title="分类于 mysql">mysql</a>
-</div>
-
-    <span><a href="/2023/05/26/web-study/mysql%E5%85%A5%E9%97%A8/" title="MySql入门学习">MySql入门学习</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
-</div>
-
-    <span><a href="/2022/03/10/gs-movies/my-movies/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/" title="辛德勒的名单">辛德勒的名单</a></span>
+    <span><a href="/2023/04/10/project-summary/%E6%95%B0%E5%AD%97%E5%8D%9A%E7%89%A9%E9%A6%86/" title="数字博物馆">数字博物馆</a></span>
   </li>
 
       
@@ -543,12 +533,34 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
+    <span><a href="/2022/02/05/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E4%BA%A4%E9%80%9A/" title="3.具体应用-智慧交通">3.具体应用-智慧交通</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
+</div>
+
+    <span><a href="/2022/02/16/map-study/gis-theory/2.gis%E5%9F%BA%E7%A1%80-%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F/" title="2.GIS中的坐标系统">2.GIS中的坐标系统</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
+</div>
+
+    <span><a href="/2022/02/21/map-study/gis-theory/6.gis%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="6.GIS中的数据处理">6.GIS中的数据处理</a></span>
   </li>
 
   </ul>
@@ -573,13 +585,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">283k 字</span>
+    <span title="站点总字数">282k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:17</span>
+    <span title="站点阅读时长">4:16</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
