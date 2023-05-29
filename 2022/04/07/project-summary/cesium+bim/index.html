@@ -171,12 +171,9 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="概述"><a class="markdownIt-Anchor" href="#概述">#</a> 概述</h1>
-<p>cesium 展示 BIM 模型的 demo 软件是学习 cesium 时结合 bim 的练手项目，该项目主要运用 cesium 与 echarts 以及 BIM 模型。实现了大屏的图表与模型展示，支持点击模型查看模型的构件信息。</p>
-<h1 id="展示效果"><a class="markdownIt-Anchor" href="#展示效果">#</a> 展示效果</h1>
-<p><img data-src="https://s1.ax1x.com/2023/05/29/p9X9Ubt.jpg" alt="p9X9Ubt.jpg"></p>
-<h1 id="核心代码"><a class="markdownIt-Anchor" href="#核心代码">#</a> 核心代码</h1>
-<figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;GlobeView&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">const</span> esri = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">ArcGisMapServerImageryProvider</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">url</span>: <span class="string">&#x27;https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">const</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&#x27;GlobeView&#x27;</span>, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">imageryProvider</span>: esri,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//terrainProvider: Cesium.createWorldTerrain(),</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">const</span> position = <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(<span class="number">102.8603</span>, <span class="number">24.8735</span>, <span class="number">0</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">//以提供的原点为中心,根据航向-俯仰-横滚角计算的轴</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">/* 第一个参数是位置信息,第二个参数是选中角度信息 */</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">const</span> orientation = <span class="title class_">Cesium</span>.<span class="property">Transforms</span>.<span class="title function_">headingPitchRollQuaternion</span>(</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        position,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="property">HeadingPitchRoll</span>.<span class="title function_">fromDegrees</span>(<span class="number">71.5</span>, <span class="number">0</span>, <span class="number">0</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      );</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">var</span> entity = viewer.<span class="property">entities</span>.<span class="title function_">add</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">position</span>: position,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">orientation</span>: orientation,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">model</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">uri</span>: <span class="string">&#x27;./data/tain.gltf&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">show</span>: <span class="literal">true</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">scale</span>: <span class="number">1.3</span>, <span class="comment">//放大倍数</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">//需要对物体进行多角度观察 使用viewBoundingSphere方法</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">//第一个参数传递观察的位置，及距离 第二参数传观察的角度</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      viewer.<span class="property">camera</span>.<span class="title function_">flyTo</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">destination</span>: <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="number">102.858205</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="number">24.873613</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="number">1000.0</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        ),</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+    <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>cesium 展示 BIM 模型的 demo 软件是学习 cesium 时结合 bim 的练手项目，该项目主要运用 cesium 与 echarts 以及 BIM 模型。实现了大屏的图表与模型展示，支持点击模型查看模型的构件信息。</p>
+<h1 id="展示效果"><a href="#展示效果" class="headerlink" title="展示效果"></a>展示效果</h1><p><img data-src="https://s1.ax1x.com/2023/05/29/p9X9Ubt.jpg" alt="p9X9Ubt.jpg"></p>
+<h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;GlobeView&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">const</span> esri = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">ArcGisMapServerImageryProvider</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">url</span>: <span class="string">&#x27;https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">const</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&#x27;GlobeView&#x27;</span>, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">imageryProvider</span>: esri,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//terrainProvider: Cesium.createWorldTerrain(),</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">const</span> position = <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(<span class="number">102.8603</span>, <span class="number">24.8735</span>, <span class="number">0</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">//以提供的原点为中心,根据航向-俯仰-横滚角计算的轴</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">/* 第一个参数是位置信息,第二个参数是选中角度信息 */</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">const</span> orientation = <span class="title class_">Cesium</span>.<span class="property">Transforms</span>.<span class="title function_">headingPitchRollQuaternion</span>(</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        position,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="property">HeadingPitchRoll</span>.<span class="title function_">fromDegrees</span>(<span class="number">71.5</span>, <span class="number">0</span>, <span class="number">0</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      );</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">var</span> entity = viewer.<span class="property">entities</span>.<span class="title function_">add</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">position</span>: position,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">orientation</span>: orientation,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">model</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">uri</span>: <span class="string">&#x27;./data/tain.gltf&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">show</span>: <span class="literal">true</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">scale</span>: <span class="number">1.3</span>, <span class="comment">//放大倍数</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">//需要对物体进行多角度观察 使用viewBoundingSphere方法</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">//第一个参数传递观察的位置，及距离 第二参数传观察的角度</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      viewer.<span class="property">camera</span>.<span class="title function_">flyTo</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">destination</span>: <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="number">102.858205</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="number">24.873613</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="number">1000.0</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        ),</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/cesium/" rel="tag"><i class="ic i-tag"></i> cesium</a>
@@ -263,7 +260,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%95%E7%A4%BA%E6%95%88%E6%9E%9C"><span class="toc-number">2.</span> <span class="toc-text"> 展示效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 核心代码</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%95%E7%A4%BA%E6%95%88%E6%9E%9C"><span class="toc-number">2.</span> <span class="toc-text">展示效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">核心代码</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -382,56 +379,6 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
-</div>
-
-    <span><a href="/2023/03/13/web-study/dockerstudy/3.docker+vue%E9%83%A8%E7%BD%B2%E5%B0%8F%E7%BB%83%E4%B9%A0/" title="3.docker+vue部署小练习">3.docker+vue部署小练习</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/vue-study/" title="分类于 Vue">Vue</a>
-</div>
-
-    <span><a href="/2022/12/21/web-study/vue-study/1.vue%E6%A0%B8%E5%BF%83/" title="1.vue核心">1.vue核心</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
-</div>
-
-    <span><a href="/2023/03/18/web-study/dockerstudy/6.docker%E9%83%A8%E7%BD%B2/" title="6.linux之docker部署vue项目">6.linux之docker部署vue项目</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/three-js/" title="分类于 three.js">three.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/three-js/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" title="分类于 入门基础">入门基础</a>
-</div>
-
-    <span><a href="/2022/06/15/3D-study/threeJs/2.%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="2.响应式设计">2.响应式设计</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
@@ -439,7 +386,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
 </div>
 
-    <span><a href="/2022/04/17/3D-study/Cesium/%E5%85%A5%E9%97%A8/4.cesium%E5%85%A5%E9%97%A8-%E8%AE%A4%E8%AF%86cesium/" title="4.cesium入门-cesium地图数据加载">4.cesium入门-cesium地图数据加载</a></span>
+    <span><a href="/2022/04/10/3D-study/Cesium/%E5%85%A5%E9%97%A8/1.3D%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/" title="1.cesium入门-3D图形学基础">1.cesium入门-3D图形学基础</a></span>
   </li>
 
       
@@ -453,31 +400,19 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
 </div>
 
-    <span><a href="/2022/05/14/3D-study/Cesium/%E5%9F%BA%E7%A1%80/10.cesium%E4%B8%AD%E7%9A%84scene/" title="10.cesium基础-cesium中的scene">10.cesium基础-cesium中的scene</a></span>
+    <span><a href="/2022/05/15/3D-study/Cesium/%E5%9F%BA%E7%A1%80/11.cesium%E4%B8%AD%E7%9A%84entity/" title="11.cesium基础-cesium中的entity">11.cesium基础-cesium中的entity</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/js%E5%B0%8F%E5%B8%AE%E6%89%8B/" title="分类于 js小帮手">js小帮手</a>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2023/03/03/project-summary/demo-project/%E6%89%AB%E9%9B%B7%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="扫雷小游戏">扫雷小游戏</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/js%E5%B0%8F%E5%B8%AE%E6%89%8B/" title="分类于 js小帮手">js小帮手</a>
-</div>
-
-    <span><a href="/2023/03/02/project-summary/demo-project/%E5%9B%BE%E7%89%87%E8%BD%ACbase64/" title="图片转base64">图片转base64</a></span>
+    <span><a href="/2022/02/03/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%8A%80%E6%9C%AF/" title="2.关键技术-人工智能技术">2.关键技术-人工智能技术</a></span>
   </li>
 
       
@@ -489,7 +424,33 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
 </div>
 
-    <span><a href="/2023/03/17/web-study/dockerstudy/5.linux%E4%B9%8B%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" title="5.linux之部署环境安装">5.linux之部署环境安装</a></span>
+    <span><a href="/2023/03/14/web-study/dockerstudy/4.docker%E9%83%A8%E7%BD%B2%E6%95%B0%E6%8D%AE%E5%BA%93/" title="4.docker部署数据库">4.docker部署数据库</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
+</div>
+
+    <span><a href="/2022/02/12/map-study/gis-theory/%E8%AE%A4%E8%AF%86Geojson/" title="认识Geojson">认识Geojson</a></span>
   </li>
 
       
@@ -498,10 +459,50 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
+<a href="/categories/project-summary/web%E5%85%A8%E6%A0%88/" title="分类于 web全栈">web全栈</a>
 </div>
 
-    <span><a href="/2022/10/08/project-summary/%E6%99%BA%E6%85%A7%E5%9B%AD%E5%8C%BAdemo/" title="智慧园区demo">智慧园区demo</a></span>
+    <span><a href="/2023/04/10/project-summary/%E6%95%B0%E5%AD%97%E5%8D%9A%E7%89%A9%E9%A6%86/" title="数字博物馆">数字博物馆</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
+</div>
+
+    <span><a href="/2022/04/15/3D-study/Cesium/%E5%85%A5%E9%97%A8/5.cesium%E5%85%A5%E9%97%A8-cesium%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" title="5.cesium入门-cesium基础概念">5.cesium入门-cesium基础概念</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/gs-movies/my-documentary/" title="分类于 纪录片">纪录片</a>
+</div>
+
+    <span><a href="/2022/12/21/gs-movies/my-documentary/%E8%88%AA%E6%8B%8D%E4%B8%AD%E5%9B%BD%EF%BC%88%E7%AC%AC%E4%B8%80%E5%AD%A3%EF%BC%89/" title="航拍中国（第一季）">航拍中国（第一季）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
+</div>
+
+    <span><a href="/2022/05/02/3D-study/Cesium/%E5%9F%BA%E7%A1%80/5.cesium%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%8A%A0%E8%BD%BD/" title="5.cesium基础-中多种模型的加载">5.cesium基础-中多种模型的加载</a></span>
   </li>
 
   </ul>
@@ -526,13 +527,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">282k 字</span>
+    <span title="站点总字数">283k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:16</span>
+    <span title="站点阅读时长">4:17</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

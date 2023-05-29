@@ -76,7 +76,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>3.7k</span>
+    <span>3.6k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -171,25 +171,21 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="概述"><a class="markdownIt-Anchor" href="#概述">#</a> 概述</h1>
-<p>该实景三维软件 demo 主要功能为加载海量模型，加载 BIM、倾斜投影、三维白膜数据等，支持用户自定义上传和加载模型，自带测量、可视化分析等功能；</p>
-<h1 id="主要职责"><a class="markdownIt-Anchor" href="#主要职责">#</a> 主要职责</h1>
-<ul>
-<li>实现用户在后台自定义配置模型数据后加载到 cesium</li>
-<li>基于超图平台实现 cesium 基础模块（测量、可视化分析、淹没分析、动态标绘）</li>
-<li>基于 vue 实现后台管理系统用户对数据的增删改查</li>
-<li>基于 nodeJs+express+mysql 实现后端服务的编写工作</li>
+    <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>该实景三维软件demo主要功能为加载海量模型，加载BIM、倾斜投影、三维白膜数据等，支持用户自定义上传和加载模型，自带测量、可视化分析等功能；</p>
+<h1 id="主要职责"><a href="#主要职责" class="headerlink" title="主要职责"></a>主要职责</h1><ul>
+<li>实现用户在后台自定义配置模型数据后加载到cesium</li>
+<li>基于超图平台实现cesium基础模块（测量、可视化分析、淹没分析、动态标绘）</li>
+<li>基于vue实现后台管理系统用户对数据的增删改查</li>
+<li>基于nodeJs+express+mysql实现后端服务的编写工作</li>
 </ul>
-<h1 id="自定义配置加载白膜数据"><a class="markdownIt-Anchor" href="#自定义配置加载白膜数据">#</a> 自定义配置加载白膜数据</h1>
-<p><img data-src="https://s1.ax1x.com/2023/05/28/p9OV2on.jpg" alt="p9OV2on.jpg"></p>
+<h1 id="自定义配置加载白膜数据"><a href="#自定义配置加载白膜数据" class="headerlink" title="自定义配置加载白膜数据"></a>自定义配置加载白膜数据</h1><p><img data-src="https://s1.ax1x.com/2023/05/28/p9OV2on.jpg" alt="p9OV2on.jpg"></p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">      <span class="string">&quot;id&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">      <span class="string">&quot;label&quot;</span>: <span class="string">&quot;城市级&quot;</span>,</span><br><span class="line">      <span class="string">&quot;className&quot;</span>: <span class="string">&quot;fa fa-cube&quot;</span>,</span><br><span class="line">      <span class="string">&quot;pid&quot;</span>: <span class="string">&quot;0&quot;</span>,</span><br><span class="line">      <span class="string">&quot;children&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;id&quot;</span>: <span class="string">&quot;11&quot;</span>,</span><br><span class="line">          <span class="string">&quot;label&quot;</span>: <span class="string">&quot;武汉&quot;</span>,</span><br><span class="line">          <span class="string">&quot;pid&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">          <span class="string">&quot;className&quot;</span>: <span class="string">&quot;fa fa-cube&quot;</span>,</span><br><span class="line">          <span class="string">&quot;children&quot;</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">              <span class="string">&quot;id&quot;</span>: <span class="string">&quot;002&quot;</span>,</span><br><span class="line">              <span class="string">&quot;label&quot;</span>: <span class="string">&quot;白模&quot;</span>,</span><br><span class="line">              <span class="string">&quot;queryFlag&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">              <span class="string">&quot;showModel&quot;</span>: <span class="string">&quot;tooltip&quot;</span>,</span><br><span class="line">              <span class="string">&quot;code&quot;</span>: <span class="string">&quot;vec_building&quot;</span>,</span><br><span class="line">              <span class="string">&quot;showView&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">              <span class="string">&quot;datasetName&quot;</span>: <span class="string">&quot;vec_building&quot;</span>,</span><br><span class="line">              <span class="string">&quot;pid&quot;</span>: <span class="string">&quot;00&quot;</span>,</span><br><span class="line">              <span class="string">&quot;className&quot;</span>: <span class="string">&quot;fa fa-file-text-o&quot;</span>,</span><br><span class="line">              <span class="string">&quot;configUrl&quot;</span>: <span class="string">&quot;ViewerMyComponents/SMViewerBaiMo/SMViewerBaiMo&quot;</span>,</span><br><span class="line">              <span class="string">&quot;url&quot;</span>: <span class="string">&quot;http://localhost:8090/iserver/services/3D-wuh_bm0216/rest/realspace/datas/武汉白模0216/config&quot;</span>,</span><br><span class="line">              <span class="string">&quot;type&quot;</span>: <span class="string">&quot;RESTREALSPACE-DATA&quot;</span>,</span><br><span class="line">              <span class="string">&quot;props&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;whiteModel&quot;</span>: &#123;</span><br><span class="line">                  <span class="string">&quot;lineColor&quot;</span>: <span class="string">&quot;#cccccc&quot;</span>,</span><br><span class="line">                  <span class="string">&quot;lineWidth&quot;</span>: <span class="number">1</span>,</span><br><span class="line">                  <span class="string">&quot;transparency&quot;</span>: <span class="number">1</span>,</span><br><span class="line">                  <span class="string">&quot;opacity&quot;</span>: <span class="number">0.8</span>,</span><br><span class="line">                  <span class="string">&quot;fillForeColor&quot;</span>: <span class="string">&quot;#ffffff&quot;</span>,</span><br><span class="line">                  <span class="string">&quot;fillOpacity&quot;</span>: <span class="number">0.9</span></span><br><span class="line">                &#125;</span><br><span class="line">              &#125;,</span><br><span class="line">              <span class="string">&quot;extendedConfig&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;indexItems&quot;</span>: [</span><br><span class="line">                  &#123;</span><br><span class="line">                    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;楼层数&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;value&quot;</span>: <span class="string">&quot;floor&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;data&quot;</span>: [</span><br><span class="line">                      &#123;</span><br><span class="line">                        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;1-5层&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#BFEFFF&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;value&quot;</span>: <span class="string">&quot;$&#123;Floor&#125; &lt; 5&quot;</span></span><br><span class="line">                      &#125;...</span><br><span class="line">                    ]</span><br><span class="line">                  &#125;,</span><br><span class="line">                  &#123;</span><br><span class="line">                    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;楼层高度&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;value&quot;</span>: <span class="string">&quot;height&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;data&quot;</span>: [</span><br><span class="line">                      &#123;</span><br><span class="line">                        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;1-10米&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#BFEFFF&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;value&quot;</span>: <span class="string">&quot;$&#123;Height&#125; &lt; 11&quot;</span></span><br><span class="line">                      &#125;...</span><br><span class="line">                    ]</span><br><span class="line">                  &#125;</span><br><span class="line">                ]</span><br><span class="line">              &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">              <span class="string">&quot;id&quot;</span>: <span class="string">&quot;0052@vec_building&quot;</span>,</span><br><span class="line">              <span class="string">&quot;code&quot;</span>: <span class="string">&quot;vec_building&quot;</span>,</span><br><span class="line">              <span class="string">&quot;label&quot;</span>: <span class="string">&quot;精模&quot;</span>,</span><br><span class="line">              <span class="string">&quot;pid&quot;</span>: <span class="string">&quot;00&quot;</span>,</span><br><span class="line">              <span class="string">&quot;className&quot;</span>: <span class="string">&quot;fa fa-file-text-o&quot;</span>,</span><br><span class="line">              <span class="string">&quot;url&quot;</span>: <span class="string">&quot;http://localhost:8090/iserver/services/3D-WuHanBaiMoWL/rest/realspace/datas/WuHanBaiMoWL/config&quot;</span>,</span><br><span class="line">              <span class="string">&quot;type&quot;</span>: <span class="string">&quot;RESTREALSPACE-DATA&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
-<h1 id="自定义配置加载bim数据"><a class="markdownIt-Anchor" href="#自定义配置加载bim数据">#</a> 自定义配置加载 BIM 数据</h1>
-<p><img data-src="https://s1.ax1x.com/2023/05/28/p9OVcZj.jpg" alt="p9OVcZj.jpg"></p>
+
+<h1 id="自定义配置加载BIM数据"><a href="#自定义配置加载BIM数据" class="headerlink" title="自定义配置加载BIM数据"></a>自定义配置加载BIM数据</h1><p><img data-src="https://s1.ax1x.com/2023/05/28/p9OVcZj.jpg" alt="p9OVcZj.jpg"></p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">      <span class="string">&quot;id&quot;</span>: <span class="string">&quot;12&quot;</span>,</span><br><span class="line">      <span class="string">&quot;label&quot;</span>: <span class="string">&quot;北京&quot;</span>,</span><br><span class="line">      <span class="string">&quot;pid&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">      <span class="string">&quot;className&quot;</span>: <span class="string">&quot;fa fa-cube&quot;</span>,</span><br><span class="line">      <span class="string">&quot;children&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;id&quot;</span>: <span class="string">&quot;121&quot;</span>,</span><br><span class="line">          <span class="string">&quot;label&quot;</span>: <span class="string">&quot;北京CBD&quot;</span>,</span><br><span class="line">          <span class="string">&quot;pid&quot;</span>: <span class="string">&quot;12&quot;</span>,</span><br><span class="line">          <span class="string">&quot;className&quot;</span>: <span class="string">&quot;fa fa-file-text-o&quot;</span>,</span><br><span class="line">          <span class="string">&quot;url&quot;</span>: <span class="string">&quot;http://support.supermap.com.cn:8090//iserver/services/3D-CBD/rest/realspace&quot;</span>,</span><br><span class="line">          <span class="string">&quot;type&quot;</span>: <span class="string">&quot;RESTREALSPACE&quot;</span>,</span><br><span class="line">          <span class="string">&quot;view&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;position&quot;</span>: &#123;</span><br><span class="line">              <span class="string">&quot;x&quot;</span>: -<span class="number">2179766.0939840013</span>,</span><br><span class="line">              <span class="string">&quot;y&quot;</span>: <span class="number">4380454.465062</span>,</span><br><span class="line">              <span class="string">&quot;z&quot;</span>: <span class="number">4091737.612136</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;direction&quot;</span>: &#123;</span><br><span class="line">              <span class="string">&quot;x&quot;</span>: <span class="number">0.3039499749386869</span>,</span><br><span class="line">              <span class="string">&quot;y&quot;</span>: -<span class="number">0.6693147493711944</span>,</span><br><span class="line">              <span class="string">&quot;z&quot;</span>: <span class="number">0.6779617828527998</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;heading&quot;</span>: <span class="number">0.026282028873801266</span>,</span><br><span class="line">            <span class="string">&quot;pitch&quot;</span>: -<span class="number">0.12898209169364483</span>,</span><br><span class="line">            <span class="string">&quot;roll&quot;</span>: <span class="number">6.283185307179586</span>,</span><br><span class="line">            <span class="string">&quot;up&quot;</span>: &#123;</span><br><span class="line">              <span class="string">&quot;x&quot;</span>: -<span class="number">0.30518946092139015</span>,</span><br><span class="line">              <span class="string">&quot;y&quot;</span>: <span class="number">0.6057210199057858</span>,</span><br><span class="line">              <span class="string">&quot;z&quot;</span>: <span class="number">0.7348206849203457</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="模型数据卷帘模式"><a class="markdownIt-Anchor" href="#模型数据卷帘模式">#</a> 模型数据卷帘模式</h1>
-<p><img data-src="https://s1.ax1x.com/2023/05/28/p9OVgds.jpg" alt="p9OVgds.jpg"></p>
-<h1 id="项目总结"><a class="markdownIt-Anchor" href="#项目总结">#</a> 项目总结</h1>
-<p>完整的简历了一次项目的全过程开发，熟悉并实际运用了 vue 框架以及 cesium 的相关 api。不过在项目开发中需要不断学习，不断充实自我，提升开发效率。</p>
+
+<h1 id="模型数据卷帘模式"><a href="#模型数据卷帘模式" class="headerlink" title="模型数据卷帘模式"></a>模型数据卷帘模式</h1><p><img data-src="https://s1.ax1x.com/2023/05/28/p9OVgds.jpg" alt="p9OVgds.jpg"></p>
+<h1 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h1><p>完整的简历了一次项目的全过程开发，熟悉并实际运用了vue框架以及cesium的相关api。不过在项目开发中需要不断学习，不断充实自我，提升开发效率。</p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/web/" rel="tag"><i class="ic i-tag"></i> web</a>
@@ -277,7 +273,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%81%8C%E8%B4%A3"><span class="toc-number">2.</span> <span class="toc-text"> 主要职责</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E5%8A%A0%E8%BD%BD%E7%99%BD%E8%86%9C%E6%95%B0%E6%8D%AE"><span class="toc-number">3.</span> <span class="toc-text"> 自定义配置加载白膜数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E5%8A%A0%E8%BD%BDbim%E6%95%B0%E6%8D%AE"><span class="toc-number">4.</span> <span class="toc-text"> 自定义配置加载 BIM 数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%8D%B7%E5%B8%98%E6%A8%A1%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text"> 模型数据卷帘模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text"> 项目总结</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%81%8C%E8%B4%A3"><span class="toc-number">2.</span> <span class="toc-text">主要职责</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E5%8A%A0%E8%BD%BD%E7%99%BD%E8%86%9C%E6%95%B0%E6%8D%AE"><span class="toc-number">3.</span> <span class="toc-text">自定义配置加载白膜数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E5%8A%A0%E8%BD%BDBIM%E6%95%B0%E6%8D%AE"><span class="toc-number">4.</span> <span class="toc-text">自定义配置加载BIM数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%8D%B7%E5%B8%98%E6%A8%A1%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">模型数据卷帘模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">项目总结</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -396,14 +392,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
+<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
 </div>
 
-    <span><a href="/2022/04/26/3D-study/Cesium/%E5%9F%BA%E7%A1%80/3.cesium%E7%9B%B8%E6%9C%BA%E4%B8%8E%E8%A7%86%E8%A7%92/" title="3.cesium基础-相机与视角">3.cesium基础-相机与视角</a></span>
+    <span><a href="/2022/11/10/project-summary/%E6%B9%96%E5%8D%97%E5%A4%A7%E5%B1%8F%E4%B8%80%E5%BC%A0%E5%9B%BE/" title="湖南大屏一张图">湖南大屏一张图</a></span>
   </li>
 
       
@@ -417,43 +411,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
 </div>
 
-    <span><a href="/2022/05/05/3D-study/Cesium/%E5%9F%BA%E7%A1%80/6.cesium%E4%B8%8Eczml/" title="6.cesium基础-cesium与czml">6.cesium基础-cesium与czml</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%9B%B8%E5%86%8C/" title="分类于 相册">相册</a>
-</div>
-
-    <span><a href="/2023/03/02/photoAlbum/" title="格桑的破相册">格桑的破相册</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
-</div>
-
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/4.%E5%88%9D%E8%AF%86Grasshopper%E7%95%8C%E9%9D%A2/" title="4.初识Grasshopper界面">4.初识Grasshopper界面</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/map-study/QGIS/" title="分类于 QGIS">QGIS</a>
-</div>
-
-    <span><a href="/2022/02/21/map-study/QGIS/1.QGIS-%E5%AE%89%E8%A3%85%E6%95%99%E5%AD%A6/" title="1.QGIS-安装教学">1.QGIS-安装教学</a></span>
+    <span><a href="/2022/05/02/3D-study/Cesium/%E5%9F%BA%E7%A1%80/5.cesium%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%8A%A0%E8%BD%BD/" title="5.cesium基础-中多种模型的加载">5.cesium基础-中多种模型的加载</a></span>
   </li>
 
       
@@ -464,34 +422,10 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <i class="ic i-angle-right"></i>
 <a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
+<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
 </div>
 
-    <span><a href="/2022/04/25/3D-study/Cesium/%E5%9F%BA%E7%A1%80/2.cesium%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/" title="2.cesium基础-坐标转换">2.cesium基础-坐标转换</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
-</div>
-
-    <span><a href="/2022/02/03/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%8A%80%E6%9C%AF/" title="2.关键技术-人工智能技术">2.关键技术-人工智能技术</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/CSS/" title="分类于 CSS">CSS</a>
-</div>
-
-    <span><a href="/2022/12/21/web-study/css-/CSS/" title="CSS入门">CSS入门</a></span>
+    <span><a href="/2022/04/17/3D-study/Cesium/%E5%85%A5%E9%97%A8/4.cesium%E5%85%A5%E9%97%A8-%E8%AE%A4%E8%AF%86cesium/" title="4.cesium入门-cesium地图数据加载">4.cesium入门-cesium地图数据加载</a></span>
   </li>
 
       
@@ -512,12 +446,76 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/BIM/" title="分类于 BIM">BIM</a>
+<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
 </div>
 
-    <span><a href="/2023/03/02/arc-study/BIM/1.%E4%BB%80%E4%B9%88%E6%98%AFBIM%EF%BC%9F/" title="1.什么是BIM">1.什么是BIM</a></span>
+    <span><a href="/2022/05/16/3D-study/Cesium/%E5%9F%BA%E7%A1%80/12.cesium%E4%B8%AD%E7%9A%84primitive/" title="12.cesium基础-cesium中的primitive">12.cesium基础-cesium中的primitive</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/map-study/QGIS/" title="分类于 QGIS">QGIS</a>
+</div>
+
+    <span><a href="/2022/02/21/map-study/QGIS/1.QGIS-%E5%AE%89%E8%A3%85%E6%95%99%E5%AD%A6/" title="1.QGIS-安装教学">1.QGIS-安装教学</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+</div>
+
+    <span><a href="/2022/01/20/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/1.%E4%BB%80%E4%B9%88%E6%98%AF%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%EF%BC%9F/" title="1.智慧城市概述">1.智慧城市概述</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
+</div>
+
+    <span><a href="/2022/04/26/3D-study/Cesium/%E5%9F%BA%E7%A1%80/3.cesium%E7%9B%B8%E6%9C%BA%E4%B8%8E%E8%A7%86%E8%A7%92/" title="3.cesium基础-相机与视角">3.cesium基础-相机与视角</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+</div>
+
+    <span><a href="/2022/02/10/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E5%8C%BB%E7%96%97/" title="3.具体应用-智慧医疗">3.具体应用-智慧医疗</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/13/web-study/dockerstudy/3.docker+vue%E9%83%A8%E7%BD%B2%E5%B0%8F%E7%BB%83%E4%B9%A0/" title="3.docker+vue部署小练习">3.docker+vue部署小练习</a></span>
   </li>
 
   </ul>
@@ -542,13 +540,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">282k 字</span>
+    <span title="站点总字数">283k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:16</span>
+    <span title="站点阅读时长">4:17</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
