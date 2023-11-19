@@ -167,72 +167,64 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>本篇文章是关于如何让 three.js 应用自适应各种情况。 网页的响应式是指让其在桌面、平板及手机等不同尺寸的屏幕上显示良好。</p>
-<p>对 three.js 来说有更多的情况要考虑。例如，我们可能需要处理控件在左侧、右侧、顶部或底部的三维编辑器。本文的中间部分展示了另一个例子。</p>
-<h1 id="css样式响应式"><a class="markdownIt-Anchor" href="#css样式响应式">#</a> css 样式响应式</h1>
-<p>上一个例子中我们使用了一个没有设置样式和尺寸的。</p>
+    <p>本篇文章是关于如何让three.js应用自适应各种情况。 网页的响应式是指让其在桌面、平板及手机等不同尺寸的屏幕上显示良好。</p>
+<p>对three.js来说有更多的情况要考虑。例如，我们可能需要处理控件在左侧、右侧、顶部或底部的三维编辑器。本文的中间部分展示了另一个例子。</p>
+<h1 id="css样式响应式"><a href="#css样式响应式" class="headerlink" title="css样式响应式"></a>css样式响应式</h1><p>上一个例子中我们使用了一个没有设置样式和尺寸的。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;c&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上述 canvas 默认 300x150 像素。<br>
-在 web 平台推荐使用 CSS 来设置物体的尺寸。</p>
-<p>我们通过添加 CSS 来让 canvas 填充整个页面。</p>
+<p>上述canvas默认300x150像素。<br>在web平台推荐使用CSS来设置物体的尺寸。</p>
+<p>我们通过添加CSS来让canvas填充整个页面。</p>
 <figure class="highlight css"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line"><span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123;</span><br><span class="line">   <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">   <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#c</span> &#123;</span><br><span class="line">   <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">   <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">   <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p>HTML 中的 body 默认有 5 个像素的 margin 值所以设置 margin 为 0 来移除 margin 值。 设置 html 和 body 的高度为 100% 让他们充满整个窗口。不然的话他们的大小只会 和填充他们的内容一样。</p>
-<p>然后让 id=c 的元素的尺寸是容器的 100% 这里是 body 标签。</p>
-<p>最后设置它的 display 为 block。canvas 的 display 默认为 inline。行内元素的末尾会有空格。 通过设置 canvas 为块级元素就能消除这个空格。</p>
-<p>这里是<strong>结果 (<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvcmVzcG9uc2l2ZS1uby1yZXNpemUuaHRtbA==">https://threejs.org/manual/examples/responsive-no-resize.html</span>)</strong>。<br>
-<img data-src="https://s1.ax1x.com/2023/03/21/ppNzXqI.jpg" alt="ppNzXqI.jpg"></p>
-<p>可以看到 canvas 充满了整个页面，但是有两个问题。 第一是立方体被拉伸了。他们不是立方体了更像是个盒子，太高或者太宽。 在新标签中打开它然后改变尺寸你就能看到立方体是怎么在宽高上被拉伸的。<br>
-<img data-src="https://s1.ax1x.com/2023/03/21/ppNzzIf.jpg" alt="ppNzzIf.jpg"><br>
- 另一个问题是立方体看起来分辨率太低或者说块状化或者有点模糊。 将窗口拉伸的非常大你就能看到问题。<br>
-<img data-src="https://s1.ax1x.com/2023/03/21/ppNzOsA.jpg" alt="ppNzOsA.jpg"><br>
- 我们先解决拉伸的问题。为此要将相机的宽高比设置为 canvas 的宽高比。 我们可以通过 <code>canvas</code>  的 <code>clientWidth</code>  和 <code>clientHeight</code>  属性来实现。</p>
+<p>HTML中的body默认有5个像素的margin值所以设置margin为0来移除margin值。 设置html和body的高度为100%让他们充满整个窗口。不然的话他们的大小只会 和填充他们的内容一样。</p>
+<p>然后让id&#x3D;c的元素的尺寸是容器的100%这里是body标签。</p>
+<p>最后设置它的display为block。canvas的display默认为 inline。行内元素的末尾会有空格。 通过设置canvas为块级元素就能消除这个空格。</p>
+<p>这里是**结果(<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvcmVzcG9uc2l2ZS1uby1yZXNpemUuaHRtbCkqKiVFMyU4MCU4Mg==">https://threejs.org/manual/examples/responsive-no-resize.html)**。</span><br><img data-src="https://s1.ax1x.com/2023/03/21/ppNzXqI.jpg" alt="ppNzXqI.jpg"></p>
+<p>可以看到canvas充满了整个页面，但是有两个问题。 第一是立方体被拉伸了。他们不是立方体了更像是个盒子，太高或者太宽。 在新标签中打开它然后改变尺寸你就能看到立方体是怎么在宽高上被拉伸的。<br><img data-src="https://s1.ax1x.com/2023/03/21/ppNzzIf.jpg" alt="ppNzzIf.jpg"><br>另一个问题是立方体看起来分辨率太低或者说块状化或者有点模糊。 将窗口拉伸的非常大你就能看到问题。<br><img data-src="https://s1.ax1x.com/2023/03/21/ppNzOsA.jpg" alt="ppNzOsA.jpg"><br>我们先解决拉伸的问题。为此要将相机的宽高比设置为canvas的宽高比。 我们可以通过<code>canvas</code>的<code>clientWidth</code>和<code>clientHeight</code>属性来实现。</p>
 <p>我们需要将渲染循环变成这样。</p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">render</span>(<span class="params">time</span>) &#123;</span><br><span class="line">  time *= <span class="number">0.001</span>;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">const</span> canvas = renderer.<span class="property">domElement</span>;</span><br><span class="line">  camera.<span class="property">aspect</span> = canvas.<span class="property">clientWidth</span> / canvas.<span class="property">clientHeight</span>;</span><br><span class="line">  camera.<span class="title function_">updateProjectionMatrix</span>();</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>现在立方体应该不会变形了。<br>
-<img data-src="https://s1.ax1x.com/2023/03/21/ppNzxdP.jpg" alt="ppNzxdP.jpg"></p>
+<p>现在立方体应该不会变形了。<br><img data-src="https://s1.ax1x.com/2023/03/21/ppNzxdP.jpg" alt="ppNzxdP.jpg"></p>
 <p><strong>实例（<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvcmVzcG9uc2l2ZS11cGRhdGUtY2FtZXJhLmh0bWwlRUYlQkMlODk=">https://threejs.org/manual/examples/responsive-update-camera.html）</span></strong></p>
-<p>在新标签页中打开例子你应该能看到立方体的宽高不会再被拉伸了。 他们都会保持正确的比例不管窗口的尺寸如何。<br>
-<img data-src="https://s1.ax1x.com/2023/03/21/ppUS9JS.jpg" alt="ppUS9JS.jpg"><br>
- 现在来解决块状化的问题。</p>
-<p>canvas 元素有两个尺寸。一个是 canvas 在页面上的显示尺寸， 是我们用 CSS 来设置的。另一个尺寸是 canvas 本身像素的数量。这和图片一样。 比如我们有一个 128x64 像素的图片然后我们可以通过 CSS 让它显示为 400x200 像素。</p>
+<p>在新标签页中打开例子你应该能看到立方体的宽高不会再被拉伸了。 他们都会保持正确的比例不管窗口的尺寸如何。<br><img data-src="https://s1.ax1x.com/2023/03/21/ppUS9JS.jpg" alt="ppUS9JS.jpg"><br>现在来解决块状化的问题。</p>
+<p>canvas元素有两个尺寸。一个是canvas在页面上的显示尺寸， 是我们用CSS来设置的。另一个尺寸是canvas本身像素的数量。这和图片一样。 比如我们有一个128x64像素的图片然后我们可以通过CSS让它显示为 400x200像素。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;some128x64image.jpg&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width:400px; height:200px&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>一个 canvas 的内部尺寸，它的分辨率，通常被叫做绘图缓冲区 (drawingbuffer) 尺寸。 在 three.js 中我们可以通过调用 <code>renderer.setSize</code>  来设置 canvas 的绘图缓冲区。 我们应该选择什么尺寸？最显而易见的是 &quot;和 canvas 的显示尺寸一样&quot;。 即可以直接用 canvas 的 <code>clientWidth</code>  和 <code>clientHeight</code>  属性。</p>
-<p>写一个函数来检查渲染器的 canvas 尺寸是不是和 canvas 的显示尺寸不一样 如果不一样就设置它。</p>
+
+<p>一个canvas的内部尺寸，它的分辨率，通常被叫做绘图缓冲区(drawingbuffer)尺寸。 在three.js中我们可以通过调用<code>renderer.setSize</code>来设置canvas的绘图缓冲区。 我们应该选择什么尺寸? 最显而易见的是”和canvas的显示尺寸一样”。 即可以直接用canvas的<code>clientWidth</code>和<code>clientHeight</code>属性。</p>
+<p>写一个函数来检查渲染器的canvas尺寸是不是和canvas的显示尺寸不一样 如果不一样就设置它。</p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">resizeRendererToDisplaySize</span>(<span class="params">renderer</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> canvas = renderer.<span class="property">domElement</span>;</span><br><span class="line">  <span class="keyword">const</span> width = canvas.<span class="property">clientWidth</span>;</span><br><span class="line">  <span class="keyword">const</span> height = canvas.<span class="property">clientHeight</span>;</span><br><span class="line">  <span class="keyword">const</span> needResize = canvas.<span class="property">width</span> !== width || canvas.<span class="property">height</span> !== height;</span><br><span class="line">  <span class="keyword">if</span> (needResize) &#123;</span><br><span class="line">    renderer.<span class="title function_">setSize</span>(width, height, <span class="literal">false</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> needResize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意我们检查了 canvas 是否真的需要调整大小。 调整画布大小是 canvas 规范的一个有趣部分，如果它已经是我们想要的大小，最好不要设置相同的大小.</p>
-<p>一旦我们知道了是否需要调整大小我们就调用 <code>renderer.setSize</code>  然后 传入新的宽高。在末尾传入 <code>false</code>  很重要。  <code>render.setSize</code>  默认会设置 canvas 的 CSS 尺寸但这并不是我们想要的。 我们希望浏览器能继续工作就像其他使用 CSS 来定义尺寸的其他元素。我们不希望 three.js 使用 canvas 和其他元素不一样。</p>
-<p>注意如果我们的 canvas 大小被调整了那函数会返回 <code>true</code> 。我们可以利用 这个来检查是否有其他的东西应该更新。我们修改渲染循环 来使用我们的新函数。</p>
+
+<p>注意我们检查了canvas是否真的需要调整大小。 调整画布大小是canvas规范的一个有趣部分，如果它已经是我们想要的大小，最好不要设置相同的大小.</p>
+<p>一旦我们知道了是否需要调整大小我们就调用<code>renderer.setSize</code>然后 传入新的宽高。在末尾传入<code>false</code>很重要。 <code>render.setSize</code>默认会设置canvas的CSS尺寸但这并不是我们想要的。 我们希望浏览器能继续工作就像其他使用CSS来定义尺寸的其他元素。我们不希望 three.js使用canvas和其他元素不一样。</p>
+<p>注意如果我们的canvas大小被调整了那函数会返回<code>true</code>。我们可以利用 这个来检查是否有其他的东西应该更新。我们修改渲染循环 来使用我们的新函数。</p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">render</span>(<span class="params">time</span>) &#123;</span><br><span class="line">  time *= <span class="number">0.001</span>;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">if</span> (<span class="title function_">resizeRendererToDisplaySize</span>(renderer)) &#123;</span><br><span class="line">    <span class="keyword">const</span> canvas = renderer.<span class="property">domElement</span>;</span><br><span class="line">    camera.<span class="property">aspect</span> = canvas.<span class="property">clientWidth</span> / canvas.<span class="property">clientHeight</span>;</span><br><span class="line">    camera.<span class="title function_">updateProjectionMatrix</span>();</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>因为只有 canvas 的显示尺寸变化时宽高比才变化所以我们 只在 <code>resizeRendererToDisplaySize</code>  函数返回 <code>true</code>  时才设置摄像机的宽高比。<br>
-<img data-src="https://s1.ax1x.com/2023/03/21/ppNzvZt.jpg" alt="ppNzvZt.jpg"></p>
+
+<p>因为只有canvas的显示尺寸变化时宽高比才变化所以我们 只在<code>resizeRendererToDisplaySize</code>函数返回<code>true</code>时才设置摄像机的宽高比。<br><img data-src="https://s1.ax1x.com/2023/03/21/ppNzvZt.jpg" alt="ppNzvZt.jpg"></p>
 <!-- ![ppUSpi8.jpg](https://s1.ax1x.com/2023/03/21/ppUSpi8.jpg) -->
+
 <p><strong>实例（<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvcmVzcG9uc2l2ZS5odG1sJUVGJUJDJTg5">https://threejs.org/manual/examples/responsive.html）</span></strong></p>
-<p>现在渲染的分辨率应该是和 canvas 的显示尺寸一样的。</p>
-<p>为了说清楚让 CSS 处理调整尺寸将代码放进一个单独的 js 文件。 这里还有一些例子让 CSS 决定尺寸的大小并且注意我们并没有改变任何 代码来让他们工作。</p>
-<p>将立方体放在文字段落的中间。<br>
-<img data-src="https://s1.ax1x.com/2023/03/21/ppUSCRg.jpg" alt="ppUSCRg.jpg"></p>
+<p>现在渲染的分辨率应该是和canvas的显示尺寸一样的。</p>
+<p>为了说清楚让CSS处理调整尺寸将代码放进一个单独的js文件。 这里还有一些例子让CSS决定尺寸的大小并且注意我们并没有改变任何 代码来让他们工作。</p>
+<p>将立方体放在文字段落的中间。<br><img data-src="https://s1.ax1x.com/2023/03/21/ppUSCRg.jpg" alt="ppUSCRg.jpg"></p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Donec laoreet</span><br><span class="line">maximus metus, a interdum massa faucibus id.  Pellentesque in mauris elit.</span><br><span class="line">Vestibulum quis consectetur nisi. <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;c&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span> Nulla pellentesque, sapien in</span><br><span class="line">condimentum ullamcorper, mi nisl sollicitudin felis, a ullamcorper sapien</span><br><span class="line">dui vel metus.  Nam augue nisi, elementum id diam vel, blandit imperdiet</span><br><span class="line">nunc.  Vivamus facilisis imperdiet neque id porttitor.  Mauris sapien</span><br><span class="line">felis, mollis tempus orci vitae, sollicitudin varius augue.  Nullam non</span><br><span class="line">magna id sem faucibus sollicitudin.  Proin nunc mi, rutrum et elementum</span><br><span class="line">ut, auctor eget massa.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>  <span class="attr">type</span>=<span class="string">&quot;importmap&quot;</span>&gt;</span><span class="language-javascript">&#123;</span></span><br><span class="line"><span class="language-javascript">	<span class="string">&quot;imports&quot;</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">		<span class="string">&quot;three&quot;</span>: <span class="string">&quot;https://threejs.org/build/three.module.js&quot;</span></span></span><br><span class="line"><span class="language-javascript">	&#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://threejs.org/manual/examples/threejs-responsive.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>实例（<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvcmVzcG9uc2l2ZS1wYXJhZ3JhcGguaHRtbCVFRiVCQyU4OQ==">https://threejs.org/manual/examples/responsive-paragraph.html）</span></strong></p>
 <p>这是在编辑器样式布局中使用的相同代码，右侧的控制区域可以调整大小。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;editor&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;view&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;c&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;controls&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">p</span>&gt;</span>various controls</span><br><span class="line">             would appear here<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span>&gt;</span>Drag this bar<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span>&gt;</span>⇐<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>  <span class="attr">type</span>=<span class="string">&quot;importmap&quot;</span>&gt;</span><span class="language-javascript">&#123;</span></span><br><span class="line"><span class="language-javascript">	<span class="string">&quot;imports&quot;</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">		<span class="string">&quot;three&quot;</span>: <span class="string">&quot;https://threejs.org/build/three.module.js&quot;</span></span></span><br><span class="line"><span class="language-javascript">	&#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://threejs.org/manual/examples/threejs-responsive.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://threejs.org/manual/3rdparty/split.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>实例 (<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvcmVzcG9uc2l2ZS1lZGl0b3IuaHRtbA==">https://threejs.org/manual/examples/responsive-editor.html</span>)</strong><br>
- 重点注意我们的代码并没有改变，只有我们的 HTML 和 CSS 变了。</p>
-<h1 id="应对hd-dpi显示器"><a class="markdownIt-Anchor" href="#应对hd-dpi显示器">#</a> 应对 HD-DPI 显示器</h1>
-<p>HD-DPI 代表每英寸高密度点显示器 (视网膜显示器)。它指的是当今大多数的 Mac 和 windows 机器以及几乎所有的智能手机。</p>
-<p>浏览器中的工作方式是不管屏幕的分辨率有多高使用 CSS 像素设置尺寸会被认为是一样的。 同样的物理尺寸浏览器会渲染出字体的更多细节。</p>
-<p>使用 three.js 有多种方法来应对 HD-DPI。</p>
-<p>第一种就是不做任何特别的事情。这可以说是最常见的。 渲染三维图形需要大量的 GPU 处理能力。移动端的 GPU 能力比桌面端的要弱。至少截止到 2018 年，手机都有非常高的分辨率显示器。 目前最好的手机的 HD-DPI 比例为 3x，意思是非高密度点显示器上的一个像素在高密度显示器上是 9 个像素。 意味着需要 9 倍的渲染。</p>
-<p>计算 9 倍的像素是个大工程所以如果保持代码不变我们将计算一个像素然后浏览器将以三倍大小绘制 (3x3=9 像素)。</p>
-<p>对于大型的 three.js 应用来说上面就是你想要的否侧你的帧速率会很低。</p>
-<p>尽管如此如果你确实想用设备的分辨率来渲染，three.js 中有两种方法来实现。</p>
-<p>一种是使用 renderer.setPixelRatio 来告诉 three.js 分辨率的倍数。 访问浏览器从 CSS 像素到设备像素的倍数然后传给 three.js。</p>
+<p><strong>实例(<span class="exturl" data-url="aHR0cHM6Ly90aHJlZWpzLm9yZy9tYW51YWwvZXhhbXBsZXMvcmVzcG9uc2l2ZS1lZGl0b3IuaHRtbA==">https://threejs.org/manual/examples/responsive-editor.html</span>)</strong><br>重点注意我们的代码并没有改变，只有我们的HTML和CSS变了。</p>
+<h1 id="应对HD-DPI显示器"><a href="#应对HD-DPI显示器" class="headerlink" title="应对HD-DPI显示器"></a>应对HD-DPI显示器</h1><p>HD-DPI代表每英寸高密度点显示器(视网膜显示器)。它指的是当今大多数的Mac和windows机器以及几乎所有的智能手机。</p>
+<p>浏览器中的工作方式是不管屏幕的分辨率有多高使用CSS像素设置尺寸会被认为是一样的。 同样的物理尺寸浏览器会渲染出字体的更多细节。</p>
+<p>使用three.js有多种方法来应对HD-DPI。</p>
+<p>第一种就是不做任何特别的事情。这可以说是最常见的。 渲染三维图形需要大量的GPU处理能力。移动端的GPU能力比桌面端的要弱。至少截止到2018年, 手机都有非常高的分辨率显示器。 目前最好的手机的HD-DPI比例为3x，意思是非高密度点显示器上的一个像素在高密度显示器上是9个像素。 意味着需要9倍的渲染。</p>
+<p>计算9倍的像素是个大工程所以如果保持代码不变我们将计算一个像素然后浏览器将以三倍大小绘制(3x3&#x3D;9像素)。</p>
+<p>对于大型的three.js应用来说上面就是你想要的否侧你的帧速率会很低。</p>
+<p>尽管如此如果你确实想用设备的分辨率来渲染，three.js中有两种方法来实现。</p>
+<p>一种是使用renderer.setPixelRatio来告诉three.js分辨率的倍数。 访问浏览器从CSS像素到设备像素的倍数然后传给three.js。</p>
 <figure class="highlight text"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">renderer.setPixelRatio(window.devicePixelRatio);</span><br></pre></td></tr></table></figure>
-<p>之后任何对 <code>renderer.setSize</code>  的调用都会神奇地使用您请求的大小乘以您传入的像素比例。强烈不建议这样。 看下面。</p>
-<p>另一种方法是在调整 canvas 的大小时自己处理。</p>
+<p>之后任何对<code>renderer.setSize</code>的调用都会神奇地使用您请求的大小乘以您传入的像素比例. 强烈不建议这样。 看下面。</p>
+<p>另一种方法是在调整canvas的大小时自己处理。</p>
 <figure class="highlight js"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">resizeRendererToDisplaySize</span>(<span class="params">renderer</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> canvas = renderer.<span class="property">domElement</span>;</span><br><span class="line">      <span class="keyword">const</span> pixelRatio = <span class="variable language_">window</span>.<span class="property">devicePixelRatio</span>;</span><br><span class="line">      <span class="keyword">const</span> width = canvas.<span class="property">clientWidth</span> * pixelRatio | <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">const</span> height = canvas.<span class="property">clientHeight</span> * pixelRatio | <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">const</span> needResize = canvas.<span class="property">width</span> !== width || canvas.<span class="property">height</span> !== height;</span><br><span class="line">      <span class="keyword">if</span> (needResize) &#123;</span><br><span class="line">        renderer.<span class="title function_">setSize</span>(width, height, <span class="literal">false</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> needResize;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>第二种方法从客观上来说更好。为什么？因为我拿到了我想要的。 在使用 three.js 时有很多种情况下我们需要知道 canvas 的绘图缓冲区的确切尺寸。 比如制作后期处理滤镜或者我们在操作着色器需要访问 gl_FragCoord 变量，如果我们截屏或者给 GPU 读取像素，绘制到二维的 canvas 等等。 通过我们自己处理我们会一直知道使用的尺寸是不是我们需要的。 幕后并没有什么特殊的魔法发生。</p>
+
+<p>第二种方法从客观上来说更好。为什么？因为我拿到了我想要的。 在使用three.js时有很多种情况下我们需要知道canvas的绘图缓冲区的确切尺寸。 比如制作后期处理滤镜或者我们在操作着色器需要访问gl_FragCoord变量，如果我们截屏或者给GPU 读取像素，绘制到二维的canvas等等。 通过我们自己处理我们会一直知道使用的尺寸是不是我们需要的。 幕后并没有什么特殊的魔法发生。</p>
 <p>这是一个使用上面代码的例子。</p>
-<p>可能很难看出区别但是如果你有一个 HD-DPI 显示器 和上面的例子做对比你就能发现边角更清晰。</p>
+<p>可能很难看出区别但是如果你有一个HD-DPI显示器 和上面的例子做对比你就能发现边角更清晰。</p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/three-js/" rel="tag"><i class="ic i-tag"></i> three.js</a>
@@ -319,7 +311,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css%E6%A0%B7%E5%BC%8F%E5%93%8D%E5%BA%94%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text"> css 样式响应式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E5%AF%B9hd-dpi%E6%98%BE%E7%A4%BA%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text"> 应对 HD-DPI 显示器</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css%E6%A0%B7%E5%BC%8F%E5%93%8D%E5%BA%94%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">css样式响应式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E5%AF%B9HD-DPI%E6%98%BE%E7%A4%BA%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">应对HD-DPI显示器</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -438,42 +430,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
+<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
 </div>
 
-    <span><a href="/2022/04/10/3D-study/Cesium/%E5%85%A5%E9%97%A8/1.3D%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/" title="1.cesium入门-3D图形学基础">1.cesium入门-3D图形学基础</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
-</div>
-
-    <span><a href="/2022/04/11/3D-study/Cesium/%E5%85%A5%E9%97%A8/2.JavaScript%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" title="2.cesium入门-编程语言">2.cesium入门-编程语言</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
-</div>
-
-    <span><a href="/2022/05/12/3D-study/Cesium/%E5%9F%BA%E7%A1%80/8.cesium%E8%87%AA%E5%AE%9A%E4%B9%89popup/" title="8.cesium基础-自定义popup">8.cesium基础-自定义popup</a></span>
+    <span><a href="/2022/02/05/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E4%BA%A4%E9%80%9A/" title="3.具体应用-智慧交通">3.具体应用-智慧交通</a></span>
   </li>
 
       
@@ -485,31 +447,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
 </div>
 
-    <span><a href="/2022/10/08/project-summary/%E6%99%BA%E6%85%A7%E5%9B%AD%E5%8C%BAdemo/" title="智慧园区demo">智慧园区demo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
-</div>
-
-    <span><a href="/2022/02/03/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/2.%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%8A%80%E6%9C%AF/" title="2.关键技术-人工智能技术">2.关键技术-人工智能技术</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/CSS/" title="分类于 CSS">CSS</a>
-</div>
-
-    <span><a href="/2022/12/21/web-study/css-/CSS/" title="CSS入门">CSS入门</a></span>
+    <span><a href="/2022/11/10/project-summary/%E6%B9%96%E5%8D%97%E5%A4%A7%E5%B1%8F%E4%B8%80%E5%BC%A0%E5%9B%BE/" title="湖南大屏一张图">湖南大屏一张图</a></span>
   </li>
 
       
@@ -518,38 +456,24 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
+<a href="/categories/3D-study/webXR/" title="分类于 webXR">webXR</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
+<a href="/categories/3D-study/webXR/webXR%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 webXR基础知识">webXR基础知识</a>
 </div>
 
-    <span><a href="/2022/04/17/3D-study/Cesium/%E5%85%A5%E9%97%A8/4.cesium%E5%85%A5%E9%97%A8-%E8%AE%A4%E8%AF%86cesium/" title="4.cesium入门-cesium地图数据加载">4.cesium入门-cesium地图数据加载</a></span>
+    <span><a href="/2023/04/10/3D-study/webXR/1.%E4%BB%80%E4%B9%88%E6%98%AFwebXR/" title="1.什么是webXR？">1.什么是webXR？</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<a href="/categories/WebGIS/" title="分类于 WebGIS">WebGIS</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/three-js/" title="分类于 three.js">three.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/three-js/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" title="分类于 入门基础">入门基础</a>
+<a href="/categories/WebGIS/echarts-map/" title="分类于 echarts-map">echarts-map</a>
 </div>
 
-    <span><a href="/2022/06/15/3D-study/threeJs/2.%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="2.响应式设计">2.响应式设计</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/js-study/" title="分类于 Javascript">Javascript</a>
-</div>
-
-    <span><a href="/2022/12/21/web-study/js-study/JavaScript/" title="JavaScript入门">JavaScript入门</a></span>
+    <span><a href="/2022/12/22/map-study/echarts-map/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
   </li>
 
       
@@ -564,6 +488,68 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 </div>
 
     <span><a href="/2022/04/26/3D-study/Cesium/%E5%9F%BA%E7%A1%80/3.cesium%E7%9B%B8%E6%9C%BA%E4%B8%8E%E8%A7%86%E8%A7%92/" title="3.cesium基础-相机与视角">3.cesium基础-相机与视角</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/2022/12/21/web-study/html-/HTML/" title="HTML入门">HTML入门</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/17/web-study/dockerstudy/5.linux%E4%B9%8B%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" title="5.linux之部署环境安装">5.linux之部署环境安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
+</div>
+
+    <span><a href="/2023/03/13/web-study/dockerstudy/3.docker+vue%E9%83%A8%E7%BD%B2%E5%B0%8F%E7%BB%83%E4%B9%A0/" title="3.docker+vue部署小练习">3.docker+vue部署小练习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/js%E5%B0%8F%E5%B8%AE%E6%89%8B/" title="分类于 js小帮手">js小帮手</a>
+</div>
+
+    <span><a href="/2023/03/02/project-summary/demo-project/%E5%9B%BE%E7%89%87%E8%BD%ACbase64/" title="图片转base64">图片转base64</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
   </li>
 
   </ul>
@@ -588,13 +574,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">282k 字</span>
+    <span title="站点总字数">283k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:16</span>
+    <span title="站点阅读时长">4:17</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

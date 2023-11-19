@@ -167,19 +167,16 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p><strong>在 Cesium 中进行坐标转换涉及将不同坐标系统之间的地理坐标进行转换，例如经纬度坐标与笛卡尔坐标（X、Y、Z）之间的转换。以下是一个示例代码，演示如何在 Cesium 中执行坐标转换：</strong></p>
-<h2 id="操作代码"><a class="markdownIt-Anchor" href="#操作代码">#</a> 操作代码</h2>
-<figure class="highlight js"><figcaption><span>sanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Viewer实例</span></span><br><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&#x27;cesiumContainer&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取Cartographic坐标（经纬度）</span></span><br><span class="line"><span class="keyword">var</span> longitude = -<span class="number">75.59777</span>;</span><br><span class="line"><span class="keyword">var</span> latitude = <span class="number">40.03883</span>;</span><br><span class="line"><span class="keyword">var</span> height = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个Cartographic对象</span></span><br><span class="line"><span class="keyword">var</span> cartographic = <span class="title class_">Cesium</span>.<span class="property">Cartographic</span>.<span class="title function_">fromDegrees</span>(longitude, latitude, height);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将Cartographic坐标转换为笛卡尔坐标（世界坐标）</span></span><br><span class="line"><span class="keyword">var</span> cartesian = <span class="title class_">Cesium</span>.<span class="property">Cartographic</span>.<span class="title function_">toCartesian</span>(cartographic);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在控制台打印转换后的笛卡尔坐标</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;转换后的笛卡尔坐标：&#x27;</span>, cartesian);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将笛卡尔坐标转换回Cartographic坐标</span></span><br><span class="line"><span class="keyword">var</span> cartographicResult = <span class="title class_">Cesium</span>.<span class="property">Cartographic</span>.<span class="title function_">fromCartesian</span>(cartesian);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将Cartographic坐标转换为经纬度坐标</span></span><br><span class="line"><span class="keyword">var</span> degreesResult = &#123;</span><br><span class="line">  <span class="attr">longitude</span>: <span class="title class_">Cesium</span>.<span class="property">Math</span>.<span class="title function_">toDegrees</span>(cartographicResult.<span class="property">longitude</span>),</span><br><span class="line">  <span class="attr">latitude</span>: <span class="title class_">Cesium</span>.<span class="property">Math</span>.<span class="title function_">toDegrees</span>(cartographicResult.<span class="property">latitude</span>),</span><br><span class="line">  <span class="attr">height</span>: cartographicResult.<span class="property">height</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在控制台打印转换后的经纬度坐标</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;转换后的经纬度坐标：&#x27;</span>, degreesResult);</span><br></pre></td></tr></table></figure>
+    <p><strong>在Cesium中进行坐标转换涉及将不同坐标系统之间的地理坐标进行转换，例如经纬度坐标与笛卡尔坐标（X、Y、Z）之间的转换。以下是一个示例代码，演示如何在Cesium中执行坐标转换：</strong></p>
+<h2 id="操作代码"><a href="#操作代码" class="headerlink" title="操作代码"></a>操作代码</h2><figure class="highlight js"><figcaption><span>sanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Viewer实例</span></span><br><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&#x27;cesiumContainer&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取Cartographic坐标（经纬度）</span></span><br><span class="line"><span class="keyword">var</span> longitude = -<span class="number">75.59777</span>;</span><br><span class="line"><span class="keyword">var</span> latitude = <span class="number">40.03883</span>;</span><br><span class="line"><span class="keyword">var</span> height = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个Cartographic对象</span></span><br><span class="line"><span class="keyword">var</span> cartographic = <span class="title class_">Cesium</span>.<span class="property">Cartographic</span>.<span class="title function_">fromDegrees</span>(longitude, latitude, height);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将Cartographic坐标转换为笛卡尔坐标（世界坐标）</span></span><br><span class="line"><span class="keyword">var</span> cartesian = <span class="title class_">Cesium</span>.<span class="property">Cartographic</span>.<span class="title function_">toCartesian</span>(cartographic);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在控制台打印转换后的笛卡尔坐标</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;转换后的笛卡尔坐标：&#x27;</span>, cartesian);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将笛卡尔坐标转换回Cartographic坐标</span></span><br><span class="line"><span class="keyword">var</span> cartographicResult = <span class="title class_">Cesium</span>.<span class="property">Cartographic</span>.<span class="title function_">fromCartesian</span>(cartesian);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将Cartographic坐标转换为经纬度坐标</span></span><br><span class="line"><span class="keyword">var</span> degreesResult = &#123;</span><br><span class="line">  <span class="attr">longitude</span>: <span class="title class_">Cesium</span>.<span class="property">Math</span>.<span class="title function_">toDegrees</span>(cartographicResult.<span class="property">longitude</span>),</span><br><span class="line">  <span class="attr">latitude</span>: <span class="title class_">Cesium</span>.<span class="property">Math</span>.<span class="title function_">toDegrees</span>(cartographicResult.<span class="property">latitude</span>),</span><br><span class="line">  <span class="attr">height</span>: cartographicResult.<span class="property">height</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在控制台打印转换后的经纬度坐标</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;转换后的经纬度坐标：&#x27;</span>, degreesResult);</span><br></pre></td></tr></table></figure>
 <p><img data-src="https://s1.ax1x.com/2023/05/25/p9HWQ0S.jpg" alt="p9HWQ0S.jpg"></p>
-<h2 id="代码详解"><a class="markdownIt-Anchor" href="#代码详解">#</a> 代码详解</h2>
-<ul>
-<li>创建一个 Cesium Viewer 实例，用于显示地图。</li>
+<h2 id="代码详解"><a href="#代码详解" class="headerlink" title="代码详解"></a>代码详解</h2><ul>
+<li>创建一个Cesium Viewer实例，用于显示地图。</li>
 <li>定义一个经纬度坐标（longitude、latitude）以及高度（height）。</li>
-<li>使用 Cesium.Cartographic.fromDegrees 函数将经纬度坐标转换为 Cartographic 坐标对象。</li>
-<li>使用 Cesium.Cartographic.toCartesian 函数将 Cartographic 坐标转换为笛卡尔坐标（世界坐标）。<br>
-打印转换后的笛卡尔坐标。</li>
-<li>使用 Cesium.Cartographic.fromCartesian 函数将笛卡尔坐标转换回 Cartographic 坐标。</li>
-<li>使用 Cesium.Math.toDegrees 函数将 Cartographic 坐标的经纬度转换为度数。</li>
+<li>使用Cesium.Cartographic.fromDegrees函数将经纬度坐标转换为Cartographic坐标对象。</li>
+<li>使用Cesium.Cartographic.toCartesian函数将Cartographic坐标转换为笛卡尔坐标（世界坐标）。<br>打印转换后的笛卡尔坐标。</li>
+<li>使用Cesium.Cartographic.fromCartesian函数将笛卡尔坐标转换回Cartographic坐标。</li>
+<li>使用Cesium.Math.toDegrees函数将Cartographic坐标的经纬度转换为度数。</li>
 <li>将转换后的经纬度坐标打印到控制台。。</li>
 </ul>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
@@ -268,7 +265,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E4%BB%A3%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text"> 操作代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3"><span class="toc-number">2.</span> <span class="toc-text"> 代码详解</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E4%BB%A3%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">操作代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3"><span class="toc-number">2.</span> <span class="toc-text">代码详解</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -387,12 +384,26 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
+<a href="/categories/project-summary/BIM-GIS/" title="分类于 BIM+GIS">BIM+GIS</a>
 </div>
 
-    <span><a href="/2022/02/10/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E5%8C%BB%E7%96%97/" title="3.具体应用-智慧医疗">3.具体应用-智慧医疗</a></span>
+    <span><a href="/2022/04/07/project-summary/cesium+bim/" title="cesium展示BIM模型">cesium展示BIM模型</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/0.gh%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" title="0.grasshopper下载与安装">0.grasshopper下载与安装</a></span>
   </li>
 
       
@@ -411,38 +422,12 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/gs-books/" title="分类于 “阅”过大海">“阅”过大海</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/gs-books/my-history/" title="分类于 历史传记">历史传记</a>
-</div>
-
-    <span><a href="/2022/12/21/gs-books/my-history/%E9%82%93%E5%B0%8F%E5%B9%B3%E6%97%B6%E4%BB%A3/" title="邓小平时代">邓小平时代</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/web-study/vue-study/" title="分类于 Vue">Vue</a>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
 </div>
 
-    <span><a href="/2022/12/21/web-study/vue-study/1.vue%E6%A0%B8%E5%BF%83/" title="1.vue核心">1.vue核心</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
-</div>
-
-    <span><a href="/2022/04/20/3D-study/Cesium/%E5%9F%BA%E7%A1%80/1.%E7%AC%AC%E4%B8%80%E4%B8%AAcesium/" title="1.cesium基础-第一个Cesium.js应用程序">1.cesium基础-第一个Cesium.js应用程序</a></span>
+    <span><a href="/2023/03/13/web-study/dockerstudy/3.docker+vue%E9%83%A8%E7%BD%B2%E5%B0%8F%E7%BB%83%E4%B9%A0/" title="3.docker+vue部署小练习">3.docker+vue部署小练习</a></span>
   </li>
 
       
@@ -456,17 +441,57 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
 </div>
 
-    <span><a href="/2022/04/15/3D-study/Cesium/%E5%85%A5%E9%97%A8/5.cesium%E5%85%A5%E9%97%A8-cesium%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" title="5.cesium入门-cesium基础概念">5.cesium入门-cesium基础概念</a></span>
+    <span><a href="/2022/04/11/3D-study/Cesium/%E5%85%A5%E9%97%A8/2.JavaScript%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" title="2.cesium入门-编程语言">2.cesium入门-编程语言</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E7%9B%B8%E5%86%8C/" title="分类于 相册">相册</a>
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/docker/" title="分类于 docker">docker</a>
 </div>
 
-    <span><a href="/2023/03/02/photoAlbum/" title="格桑的破相册">格桑的破相册</a></span>
+    <span><a href="/2023/03/14/web-study/dockerstudy/4.docker%E9%83%A8%E7%BD%B2%E6%95%B0%E6%8D%AE%E5%BA%93/" title="4.docker部署数据库">4.docker部署数据库</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
+</div>
+
+    <span><a href="/2022/03/10/gs-movies/my-movies/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/" title="辛德勒的名单">辛德勒的名单</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/three-js/" title="分类于 three.js">three.js</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/3D-study/three-js/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" title="分类于 入门基础">入门基础</a>
+</div>
+
+    <span><a href="/2022/06/15/3D-study/threeJs/2.%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" title="2.响应式设计">2.响应式设计</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/web-study/js-study/" title="分类于 Javascript">Javascript</a>
+</div>
+
+    <span><a href="/2022/12/21/web-study/js-study/JavaScript/" title="JavaScript入门">JavaScript入门</a></span>
   </li>
 
       
@@ -475,36 +500,10 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <div class="breadcrumb">
 <a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/js%E5%B0%8F%E5%B8%AE%E6%89%8B/" title="分类于 js小帮手">js小帮手</a>
+<a href="/categories/project-summary/BIM-GIS/" title="分类于 BIM+GIS">BIM+GIS</a>
 </div>
 
-    <span><a href="/2023/03/03/project-summary/demo-project/%E6%89%AB%E9%9B%B7%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="扫雷小游戏">扫雷小游戏</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
-</div>
-
-    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/3.%E4%BB%8B%E7%BB%8DGrasshopper%20Geometry/" title="3.介绍Grasshopper Geometry（GH几何）">3.介绍Grasshopper Geometry（GH几何）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/" title="分类于 智慧城市">智慧城市</a>
-</div>
-
-    <span><a href="/2022/02/06/arc-study/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82/3.%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8-%E6%99%BA%E6%85%A7%E7%8E%AF%E4%BF%9D/" title="3.具体应用-智慧环保">3.具体应用-智慧环保</a></span>
+    <span><a href="/2022/10/07/project-summary/threejs%E5%B1%95%E7%A4%BABIM%E6%A8%A1%E5%9E%8B/" title="threejs展示BIM模型">threejs展示BIM模型</a></span>
   </li>
 
   </ul>
@@ -529,13 +528,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">282k 字</span>
+    <span title="站点总字数">283k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:16</span>
+    <span title="站点阅读时长">4:17</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
