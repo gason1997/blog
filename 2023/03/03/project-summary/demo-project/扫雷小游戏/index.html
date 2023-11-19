@@ -165,9 +165,10 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     
 
     <blockquote>
-<p>《扫雷》是一款大众类的益智小游戏，于1992年发行。游戏目标是在最短的时间内根据点击格子出现的数字找出所有非雷格子，同时避免踩雷，踩到一个雷即全盘皆输。</p>
+<p>《扫雷》是一款大众类的益智小游戏，于 1992 年发行。游戏目标是在最短的时间内根据点击格子出现的数字找出所有非雷格子，同时避免踩雷，踩到一个雷即全盘皆输。</p>
 </blockquote>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>  扫雷在科技历史上也扮演了相似的角色。这个基于数字的逻辑谜题最早来自20世纪六七十年代，当时Jerimac Ratliff推出的名为“Cube”的游戏已经非常受人欢迎。几十年后的1992年，扫雷游戏被加入了Windows3.1，这并不是为了展示Windows是游戏操作系统专家，而是为了训练用户的鼠标左右键操作能力，让这些动作变得非常自然，并培养鼠标移动的速度和准确性。</p>
+<h2 id="背景"><a class="markdownIt-Anchor" href="#背景">#</a> 背景</h2>
+<p>扫雷在科技历史上也扮演了相似的角色。这个基于数字的逻辑谜题最早来自 20 世纪六七十年代，当时 Jerimac Ratliff 推出的名为 “Cube” 的游戏已经非常受人欢迎。几十年后的 1992 年，扫雷游戏被加入了 Windows3.1，这并不是为了展示 Windows 是游戏操作系统专家，而是为了训练用户的鼠标左右键操作能力，让这些动作变得非常自然，并培养鼠标移动的速度和准确性。</p>
 <figure class="highlight html"><figcaption><span>scanner</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>扫雷<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">		<span class="selector-id">#grid</span> &#123;</span></span><br><span class="line"><span class="language-css">			<span class="attribute">display</span>: grid;</span></span><br><span class="line"><span class="language-css">			<span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">10</span>, <span class="number">20px</span>);</span></span><br><span class="line"><span class="language-css">			<span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">10</span>, <span class="number">20px</span>);</span></span><br><span class="line"><span class="language-css">			<span class="attribute">gap</span>: <span class="number">1px</span>;</span></span><br><span class="line"><span class="language-css">			<span class="attribute">background-color</span>: <span class="number">#ccc</span>;</span></span><br><span class="line"><span class="language-css">			<span class="attribute">padding</span>: <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">			<span class="attribute">width</span>: <span class="number">208px</span>;</span></span><br><span class="line"><span class="language-css">		&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">		<span class="selector-class">.cell</span> &#123;</span></span><br><span class="line"><span class="language-css">			<span class="attribute">background-color</span>: <span class="number">#fff</span>;</span></span><br><span class="line"><span class="language-css">			<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#aaa</span>;</span></span><br><span class="line"><span class="language-css">			<span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">			<span class="attribute">font-size</span>: <span class="number">16px</span>;</span></span><br><span class="line"><span class="language-css">			<span class="attribute">line-height</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">			<span class="attribute">cursor</span>: pointer;</span></span><br><span class="line"><span class="language-css">		&#125;</span></span><br><span class="line"><span class="language-css">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;grid&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">const</span> <span class="variable constant_">ROWS</span> = <span class="number">10</span>;</span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">const</span> <span class="variable constant_">COLS</span> = <span class="number">10</span>;</span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">const</span> <span class="variable constant_">MINES</span> = <span class="number">10</span>;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">const</span> grid = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;grid&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">const</span> cells = [];</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		<span class="comment">// 创建游戏网格</span></span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">for</span> (<span class="keyword">let</span> row = <span class="number">0</span>; row &lt; <span class="variable constant_">ROWS</span>; row++) &#123;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">for</span> (<span class="keyword">let</span> col = <span class="number">0</span>; col &lt; <span class="variable constant_">COLS</span>; col++) &#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">const</span> cell = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">				cell.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;cell&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">				cell.<span class="property">dataset</span>.<span class="property">row</span> = row;</span></span><br><span class="line"><span class="language-javascript">				cell.<span class="property">dataset</span>.<span class="property">col</span> = col;</span></span><br><span class="line"><span class="language-javascript">				grid.<span class="title function_">appendChild</span>(cell);</span></span><br><span class="line"><span class="language-javascript">				cells.<span class="title function_">push</span>(cell);</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">		&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		<span class="comment">// 随机放置地雷</span></span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">const</span> mines = <span class="keyword">new</span> <span class="title class_">Set</span>();</span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">while</span> (mines.<span class="property">size</span> &lt; <span class="variable constant_">MINES</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">const</span> row = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="variable constant_">ROWS</span>);</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">const</span> col = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="variable constant_">COLS</span>);</span></span><br><span class="line"><span class="language-javascript">			mines.<span class="title function_">add</span>(<span class="string">`<span class="subst">$&#123;row&#125;</span>,<span class="subst">$&#123;col&#125;</span>`</span>);</span></span><br><span class="line"><span class="language-javascript">		&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		<span class="comment">// 处理点击事件</span></span></span><br><span class="line"><span class="language-javascript">		grid.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">const</span> cell = event.<span class="property">target</span>;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">const</span> row = <span class="title class_">Number</span>(cell.<span class="property">dataset</span>.<span class="property">row</span>);</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">const</span> col = <span class="title class_">Number</span>(cell.<span class="property">dataset</span>.<span class="property">col</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">if</span> (mines.<span class="title function_">has</span>(<span class="string">`<span class="subst">$&#123;row&#125;</span>,<span class="subst">$&#123;col&#125;</span>`</span>)) &#123;</span></span><br><span class="line"><span class="language-javascript">				cell.<span class="property">textContent</span> = <span class="string">&#x27;💣&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="title function_">gameOver</span>();</span></span><br><span class="line"><span class="language-javascript">			&#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">const</span> count = <span class="title function_">getMineCount</span>(row, col);</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">if</span> (count === <span class="number">0</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="title function_">expand</span>(row, col);</span></span><br><span class="line"><span class="language-javascript">				&#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">					cell.<span class="property">textContent</span> = count;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">		&#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		<span class="comment">// 获取周围方格中的地雷数量</span></span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">function</span> <span class="title function_">getMineCount</span>(<span class="params">row, col</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">let</span> count = <span class="number">0</span>;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">for</span> (<span class="keyword">let</span> r = row - <span class="number">1</span>; r &lt;= row + <span class="number">1</span>; r++) &#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">for</span> (<span class="keyword">let</span> c = col - <span class="number">1</span>; c &lt;= col + <span class="number">1</span>; c++) &#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">if</span> (mines.<span class="title function_">has</span>(<span class="string">`<span class="subst">$&#123;r&#125;</span>,<span class="subst">$&#123;c&#125;</span>`</span>)) &#123;</span></span><br><span class="line"><span class="language-javascript">						count++;</span></span><br><span class="line"><span class="language-javascript">					&#125;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">return</span> count</span></span><br><span class="line"><span class="language-javascript">		&#125;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       <div class="tags">
           <a href="/tags/js%E5%B0%8F%E6%B8%B8%E6%88%8F/" rel="tag"><i class="ic i-tag"></i> js小游戏</a>
@@ -254,7 +255,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text"> 背景</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -373,48 +374,38 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/gs-books/" title="分类于 “阅”过大海">“阅”过大海</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/gs-books/my-history/" title="分类于 历史传记">历史传记</a>
+</div>
+
+    <span><a href="/2022/12/21/gs-books/my-history/%E9%82%93%E5%B0%8F%E5%B9%B3%E6%97%B6%E4%BB%A3/" title="邓小平时代">邓小平时代</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/webXR/" title="分类于 webXR">webXR</a>
+<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/webXR/webXR%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 webXR基础知识">webXR基础知识</a>
+<a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
 </div>
 
-    <span><a href="/2023/04/10/3D-study/webXR/1.%E4%BB%80%E4%B9%88%E6%98%AFwebXR/" title="1.什么是webXR？">1.什么是webXR？</a></span>
+    <span><a href="/2022/05/16/3D-study/Cesium/%E5%9F%BA%E7%A1%80/12.cesium%E4%B8%AD%E7%9A%84primitive/" title="12.cesium基础-cesium中的primitive">12.cesium基础-cesium中的primitive</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
+<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
 </div>
 
-    <span><a href="/2022/10/08/project-summary/%E6%99%BA%E6%85%A7%E5%9B%AD%E5%8C%BAdemo/" title="智慧园区demo">智慧园区demo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%9B%B8%E5%86%8C/" title="分类于 相册">相册</a>
-</div>
-
-    <span><a href="/2023/03/02/photoAlbum/" title="格桑的破相册">格桑的破相册</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/web-study/" title="分类于 软件开发">软件开发</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/web-study/mysql/" title="分类于 mysql">mysql</a>
-</div>
-
-    <span><a href="/2023/05/26/web-study/mysql%E5%85%A5%E9%97%A8/" title="MySql入门学习">MySql入门学习</a></span>
+    <span><a href="/2022/02/15/map-study/gis-theory/1.gis%E5%9F%BA%E7%A1%80-%E5%9C%B0%E7%90%86%E6%8A%95%E5%BD%B1/" title="1.GIS中的地图投影">1.GIS中的地图投影</a></span>
   </li>
 
       
@@ -428,7 +419,33 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
 </div>
 
-    <span><a href="/2022/04/15/3D-study/Cesium/%E5%85%A5%E9%97%A8/5.cesium%E5%85%A5%E9%97%A8-cesium%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" title="5.cesium入门-cesium基础概念">5.cesium入门-cesium基础概念</a></span>
+    <span><a href="/2022/04/11/3D-study/Cesium/%E5%85%A5%E9%97%A8/2.JavaScript%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" title="2.cesium入门-编程语言">2.cesium入门-编程语言</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/arc-study/" title="分类于 BIM/CIM/智慧城市">BIM/CIM/智慧城市</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/" title="分类于 Rhino与grasshopper">Rhino与grasshopper</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/arc-study/rhino-GH/grasshopper%E5%85%A5%E9%97%A8/" title="分类于 grasshopper入门">grasshopper入门</a>
+</div>
+
+    <span><a href="/2022/12/21/arc-study/rhino-GH/GH/2.%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Grasshopper/" title="2.开始使用Grasshopper">2.开始使用Grasshopper</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/project-summary/%E6%99%BA%E6%85%A7-GIS/" title="分类于 智慧+GIS">智慧+GIS</a>
+</div>
+
+    <span><a href="/2022/10/09/project-summary/%E5%AE%9E%E6%99%AF%E4%B8%89%E7%BB%B4demo/" title="实景三维demo">实景三维demo</a></span>
   </li>
 
       
@@ -449,26 +466,24 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/3D-study/" title="分类于 三维开发">三维开发</a>
+<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/" title="分类于 Cesium.js">Cesium.js</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/3D-study/Cesium-js/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="分类于 基础知识">基础知识</a>
+<a href="/categories/map-study/leaflet-js/" title="分类于 leaflet.js">leaflet.js</a>
 </div>
 
-    <span><a href="/2022/04/10/3D-study/Cesium/%E5%85%A5%E9%97%A8/1.3D%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/" title="1.cesium入门-3D图形学基础">1.cesium入门-3D图形学基础</a></span>
+    <span><a href="/2022/12/21/map-study/leaflet-js/0.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="0.Leaflet 快速入门指南">0.Leaflet 快速入门指南</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/map-study/" title="分类于 GIS开发">GIS开发</a>
+<a href="/categories/project-summary/" title="分类于 项目总结">项目总结</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/map-study/gis%E5%9F%BA%E7%A1%80/" title="分类于 gis基础">gis基础</a>
+<a href="/categories/project-summary/web%E5%85%A8%E6%A0%88/" title="分类于 web全栈">web全栈</a>
 </div>
 
-    <span><a href="/2022/02/21/map-study/gis-theory/6.gis%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="6.GIS中的数据处理">6.GIS中的数据处理</a></span>
+    <span><a href="/2023/05/20/project-summary/%E4%BC%A0%E7%BB%9F%E4%BD%93%E8%82%B2%E5%9F%BA%E5%9B%A0%E5%BA%93/" title="传统体育基因库">传统体育基因库</a></span>
   </li>
 
       
@@ -482,19 +497,7 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
 <a href="/categories/3D-study/Cesium-js/%E5%85%A5%E9%97%A8/" title="分类于 入门">入门</a>
 </div>
 
-    <span><a href="/2022/05/05/3D-study/Cesium/%E5%9F%BA%E7%A1%80/6.cesium%E4%B8%8Eczml/" title="6.cesium基础-cesium与czml">6.cesium基础-cesium与czml</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/gs-movies/" title="分类于 光“影”人生">光“影”人生</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/gs-movies/my-movies/" title="分类于 电影">电影</a>
-</div>
-
-    <span><a href="/2022/03/10/gs-movies/my-movies/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/" title="辛德勒的名单">辛德勒的名单</a></span>
+    <span><a href="/2022/05/02/3D-study/Cesium/%E5%9F%BA%E7%A1%80/5.cesium%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%8A%A0%E8%BD%BD/" title="5.cesium基础-中多种模型的加载">5.cesium基础-中多种模型的加载</a></span>
   </li>
 
   </ul>
@@ -519,13 +522,13 @@ Sang`s Homepage = Nichts ist wahr, alles ist erlaubt.</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">283k 字</span>
+    <span title="站点总字数">282k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:17</span>
+    <span title="站点阅读时长">4:16</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> the Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
